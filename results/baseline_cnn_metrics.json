@@ -1,0 +1,12 @@
+{
+  "model": "BaselineCNN",
+  "auc_macro": 0.9068,
+  "f1_macro": 0.6817,
+  "per_class_auc": {
+    "NORM": 0.9391,
+    "MI": 0.9216,
+    "STTC": 0.9278,
+    "CD": 0.9209,
+    "HYP": 0.8244
+  }
+}
