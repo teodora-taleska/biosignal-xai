@@ -9,7 +9,7 @@ data:
 training:
   batch_size: 64
   batch_size_full: 32      # for HuBERT-ECG (full records)
-  epochs: 20
+  epochs: 3             # set to 3 for quick testing, increase for better performance
   lr_peft: 0.0003
   lr_pretrained: 0.0001    # lower for pretrained models
   weight_decay: 0.01
