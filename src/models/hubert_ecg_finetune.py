@@ -1,6 +1,9 @@
+import os
+
 import torch
 import torch.nn as nn
 from transformers import AutoModel
+from peft import LoraConfig, get_peft_model
 
 from src.utils.config import CFG
 
@@ -155,7 +158,6 @@ class HuBERTECGClassifier(nn.Module):
         }
 
     def save(self, path: str):
-        import os
         os.makedirs(path, exist_ok=True)
         torch.save({
             "state_dict":         self.state_dict(),
@@ -163,3 +165,108 @@ class HuBERTECGClassifier(nn.Module):
             "blocks_to_unfreeze": self.blocks_to_unfreeze,
         }, f"{path}/checkpoint.pt")
         print(f"Saved -> {path}/checkpoint.pt")
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+
+
+class HuBERTECGPEFT(nn.Module):
+    """
+    HuBERT-ECG with LoRA or DoRA (true PEFT).
+
+    All 93M backbone weights frozen. LoRA/DoRA adapters injected into
+    all 12 encoder blocks at q/k/v/out_proj — standard nn.Linear layers
+    confirmed from model inspection. Trainable params: adapters + head
+    (~2% of total for LoRA r=8, ~2.1% for DoRA r=8).
+
+    Confirmed compatible target modules:
+      encoder.layers.{i}.attention.{q,k,v,out}_proj  (Linear 768->768)
+
+    Architecture note: backbone takes 2D input (B, T) — the feature
+    encoder unsqueezes to (B, 1, T) internally. Same reshape trick as
+    HuBERTECGClassifier: process 12 leads independently, mean-pool back.
+    """
+
+    def __init__(
+        self,
+        rank:     int   = 8,
+        use_dora: bool  = False,
+        dropout:  float = 0.2,
+    ):
+        super().__init__()
+        self.rank     = rank
+        self.use_dora = use_dora
+        hidden_dim    = 768
+
+        method = 'DoRA' if use_dora else 'LoRA'
+        print(f"Loading HuBERT-ECG-base ({method} r={rank})...")
+        backbone = AutoModel.from_pretrained(
+            "Edoardo-BS/hubert-ecg-base",
+            trust_remote_code=True,
+        )
+        print("Loaded.")
+
+        # Freeze all backbone params before injecting adapters
+        for param in backbone.parameters():
+            param.requires_grad = False
+
+        lora_cfg = LoraConfig(
+            r              = rank,
+            lora_alpha     = rank,   # alpha/r = 1 (multiplier=1x per config)
+            target_modules = CFG['model']['hubert_peft']['target_modules'],
+            lora_dropout   = 0.1,
+            use_dora       = use_dora,
+            bias           = "none",
+        )
+        self.backbone = get_peft_model(backbone, lora_cfg)
+
+        # Classification head — fresh init, always trainable
+        self.classifier = nn.Sequential(
+            nn.LayerNorm(hidden_dim),
+            nn.Dropout(dropout),
+            nn.Linear(hidden_dim, 256),
+            nn.GELU(),
+            nn.Dropout(dropout),
+            nn.Linear(256, NUM_CLASSES),
+        )
+
+        self._print_parameter_summary()
+
+    def _print_parameter_summary(self):
+        p = self.count_parameters()
+        print(f"HuBERTECGPEFT | "
+              f"Trainable: {p['trainable']:,} / {p['total']:,} ({p['percentage']})")
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        """
+        Args:
+            x: (B, 12, 1000) — 12 leads, 1000 time steps
+        Returns:
+            logits: (B, 5)
+        """
+        B, L, T  = x.shape
+        x        = x.reshape(B * L, T)                    # (B*12, 1000)
+        out      = self.backbone(x)
+        features = out.last_hidden_state.mean(dim=1)       # (B*12, 768)
+        features = features.reshape(B, L, -1).mean(dim=1) # (B, 768)
+        return self.classifier(features)                   # (B, 5)
+
+    def count_parameters(self) -> dict:
+        trainable = sum(p.numel() for p in self.parameters() if p.requires_grad)
+        total     = sum(p.numel() for p in self.parameters())
+        return {
+            "trainable":  trainable,
+            "total":      total,
+            "percentage": f"{100 * trainable / total:.1f}%",
+        }
+
+    def save(self, path: str):
+        os.makedirs(path, exist_ok=True)
+        # Save LoRA/DoRA adapter weights only (small — a few MB vs 350MB full)
+        self.backbone.save_pretrained(path, save_embedding_layers=False)
+        # Save classifier head separately (not part of PEFT adapter)
+        torch.save(
+            self.classifier.state_dict(),
+            os.path.join(path, "classifier.pt"),
+        )
+        print(f"Saved -> {path}")

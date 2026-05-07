@@ -19,6 +19,11 @@ training:
 model:
   hubert_size: "base"
   hubert_blocks_to_unfreeze: [4, 8]
+  hubert_peft:
+    target_modules: ["q_proj", "v_proj", "k_proj", "out_proj"]
+    lora_rank: [4, 8]
+    lora_alpha_multiplier: 1
+    use_dora: [false, true]
   leadwise:
     d_model: 128
     num_temporal_layers: 3
