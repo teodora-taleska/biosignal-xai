@@ -30,3 +30,9 @@ paths:
   models: "results/models/"
   figures: "results/figures/"
   logs: "results/logs/"
+
+inference:
+  threshold: 0.5
+
+baseline:
+  dummy_strategy: "prior"
