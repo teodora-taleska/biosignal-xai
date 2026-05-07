@@ -2,8 +2,10 @@ import pandas as pd
 import ast
 import numpy as np
 
+from src.utils.config import CFG
+
 # The 5 superclasses — order matters, this defines your output vector positions
-SUPERCLASSES = ['NORM', 'MI', 'STTC', 'CD', 'HYP']
+SUPERCLASSES = CFG['data']['superclasses']
 
 
 def load_label_mapping(scp_path):

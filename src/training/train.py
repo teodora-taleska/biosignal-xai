@@ -2,7 +2,9 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 
-def train_model(model, train_ds, val_ds, epochs=20, lr=1e-3, batch_size=64):
+from src.utils.config import CFG
+
+def train_model(model, train_ds, val_ds, epochs=CFG['training']['epochs'], lr=1e-3, batch_size=CFG['training']['batch_size']):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"Training on: {device}")
 
@@ -49,7 +51,7 @@ def train_model(model, train_ds, val_ds, epochs=20, lr=1e-3, batch_size=64):
         if vl < best_val_loss:
             best_val_loss = vl
             epochs_no_improve = 0
-            torch.save(model.state_dict(), '../results/best_model.pt')
+            torch.save(model.state_dict(), CFG['paths']['results'] + 'best_model.pt')
             print(f"  ✓ Saved best model (val_loss={vl:.4f})")
         else:
             epochs_no_improve += 1

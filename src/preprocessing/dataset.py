@@ -5,6 +5,7 @@ import wfdb
 
 from src.preprocessing.preprocess import preprocess_record
 from src.preprocessing.label_utils import SUPERCLASSES
+from src.utils.config import CFG
 
 
 class ECGDataset(Dataset):
@@ -44,7 +45,7 @@ class ECGDataset(Dataset):
             # Just build the index by loading signals once to count windows
             for i, row in self.df.iterrows():
                 raw, _ = wfdb.rdsamp(self.data_path + row['filename_lr'])
-                n_windows = (raw.shape[0] - 250) // 125 + 1
+                n_windows = (raw.shape[0] - CFG['data']['window_size']) // CFG['data']['stride'] + 1
                 for w_idx in range(n_windows):
                     self.index.append((i, w_idx))
 

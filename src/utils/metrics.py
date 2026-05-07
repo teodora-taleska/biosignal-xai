@@ -1,7 +1,9 @@
 import torch
 from sklearn.metrics import roc_auc_score, f1_score
 
-SUPERCLASSES = ['NORM', 'MI', 'STTC', 'CD', 'HYP']
+from src.utils.config import CFG
+
+SUPERCLASSES = CFG['data']['superclasses']
 
 def compute_metrics(all_logits, all_labels, threshold=0.5):
     """

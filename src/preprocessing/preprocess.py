@@ -1,6 +1,8 @@
 import numpy as np
 from scipy.signal import butter, filtfilt
 
+from src.utils.config import CFG
+
 def bandpass_filter(signal, lowcut=0.5, highcut=40.0, fs=100, order=4):
     """
     Remove baseline wander (below 0.5 Hz) and high-frequency noise (above 40 Hz).
@@ -26,7 +28,7 @@ def normalize_signal(signal):
     return (signal - mean) / std
 
 
-def create_windows(signal, window_size=250, stride=125):
+def create_windows(signal, window_size=CFG['data']['window_size'], stride=CFG['data']['stride']):
     """
     Slice a (1000, 12) signal into overlapping windows.
 
