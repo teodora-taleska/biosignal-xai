@@ -1,0 +1,13 @@
+{
+  "model": "DummyClassifier",
+  "strategy": "prior",
+  "auc_macro": 0.5,
+  "f1_macro": 0.1241,
+  "per_class_auc": {
+    "NORM": 0.5,
+    "MI": 0.5,
+    "STTC": 0.5,
+    "CD": 0.5,
+    "HYP": 0.5
+  }
+}

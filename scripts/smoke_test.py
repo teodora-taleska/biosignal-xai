@@ -1,0 +1,175 @@
+"""
+Smoke test all models: 2 epochs, small data subset.
+
+Produces real history.json files under results/<experiment_name>/
+so notebook cells that load history work immediately after.
+
+Usage:
+    python scripts/smoke_test.py
+    python scripts/smoke_test.py --epochs 3 --train 200 --val 50 --batch 8
+"""
+from __future__ import annotations
+
+import argparse
+import os
+import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+os.environ['TRANSFORMERS_OFFLINE'] = '1'
+os.environ['HF_HUB_DISABLE_SYMLINKS_WARNING'] = '1'
+
+import warnings
+warnings.filterwarnings('ignore', category=FutureWarning)
+warnings.filterwarnings('ignore', category=UserWarning)
+
+import json
+
+import torch
+from torch.utils.data import DataLoader
+
+from src.utils.config import CFG
+from src.preprocessing.label_utils import load_all_labels
+from src.preprocessing.dataset import ECGDataset
+from src.preprocessing.dataset_full import ECGDatasetFull
+from src.models.baseline_cnn import BaselineCNN
+from src.models.dummy_classifier import DummyECGClassifier
+from src.models.hubert_ecg_finetune import HuBERTECGClassifier
+from src.models.leadwise_transformer import LeadwiseTransformer
+from src.training.train import train_model
+from src.training.train_peft import run_experiment
+
+from src.utils.metrics import compute_metrics
+
+
+def parse_args() -> argparse.Namespace:
+    p = argparse.ArgumentParser(description='Smoke test all models')
+    p.add_argument('--epochs', type=int, default=2)
+    p.add_argument('--train',  type=int, default=100, help='training samples')
+    p.add_argument('--val',    type=int, default=20,  help='validation samples')
+    p.add_argument('--batch',  type=int, default=8)
+    return p.parse_args()
+
+
+def main():
+    args = parse_args()
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    print(f'Device: {device}')
+    print(f'Epochs: {args.epochs}  Train: {args.train}  Val: {args.val}  Batch: {args.batch}\n')
+
+    DATA_PATH = CFG['data']['path']
+    RESULTS   = os.path.join(CFG['paths']['results'], 'smoke')
+    os.makedirs(RESULTS, exist_ok=True)
+
+    Y = load_all_labels(
+        DATA_PATH + 'ptbxl_database.csv',
+        DATA_PATH + 'scp_statements.csv',
+    )
+    train_df = Y[Y.strat_fold < 9].head(args.train)
+    val_df   = Y[Y.strat_fold == 9].head(args.val)
+
+    train_ds_w = ECGDataset(train_df, DATA_PATH)
+    val_ds_w   = ECGDataset(val_df,   DATA_PATH)
+    train_ds_f = ECGDatasetFull(train_df, DATA_PATH)
+    val_ds_f   = ECGDatasetFull(val_df,   DATA_PATH)
+
+    results = {}
+
+    #  CNN baseline
+    print('=' * 50)
+    print('Baseline CNN')
+    cnn = BaselineCNN()
+    cnn = train_model(cnn, train_ds_w, val_ds_w, epochs=args.epochs, batch_size=args.batch,
+                      save_dir=os.path.join(RESULTS, 'baseline_cnn'))
+
+    cnn.eval()
+    val_loader = DataLoader(val_ds_w, batch_size=args.batch)
+    all_logits, all_labels = [], []
+    with torch.no_grad():
+        for x, y in val_loader:
+            all_logits.append(cnn(x.to(device)).cpu())
+            all_labels.append(y)
+    cnn_metrics = compute_metrics(torch.cat(all_logits), torch.cat(all_labels))
+    with open(os.path.join(RESULTS, 'baseline_cnn_metrics.json'), 'w') as f:
+        json.dump(cnn_metrics, f, indent=2)
+
+    results['cnn'] = cnn_metrics['auc_macro']
+    del cnn; torch.cuda.empty_cache()
+    print(f"AUC: {cnn_metrics['auc_macro']:.4f}")
+
+    #  Dummy
+    print('=' * 50)
+    print('Dummy classifier')
+    dummy = DummyECGClassifier()
+    dummy._results_dir = RESULTS   # redirect to smoke/
+    dummy.fit(train_ds_f)
+    metrics = dummy.evaluate(val_ds_f)
+    dummy.save_results(metrics, 'dummy_metrics.json')
+    results['dummy'] = metrics['auc_macro']
+    print(f"AUC: {metrics['auc_macro']:.4f}")
+
+    #  HuBERT 4 blocks 
+    print()
+    model_A = HuBERTECGClassifier(
+        size=CFG['model']['hubert_size'], blocks_to_unfreeze=4
+    )
+    auc_A, _ = run_experiment(
+        model_A, train_ds_f, val_ds_f,
+        experiment_name='hubert_ecg_blocks4',
+        epochs=args.epochs,
+        lr=CFG['training']['lr_pretrained'],
+        batch_size=args.batch,
+        save_dir=RESULTS,
+    )
+    del model_A; torch.cuda.empty_cache()
+    results['hubert_4'] = auc_A
+
+    #  HuBERT 8 blocks 
+    print()
+    model_B = HuBERTECGClassifier(
+        size=CFG['model']['hubert_size'], blocks_to_unfreeze=8
+    )
+    auc_B, _ = run_experiment(
+        model_B, train_ds_f, val_ds_f,
+        experiment_name='hubert_ecg_blocks8',
+        epochs=args.epochs,
+        lr=CFG['training']['lr_pretrained'],
+        batch_size=args.batch,
+        save_dir=RESULTS,
+    )
+    del model_B; torch.cuda.empty_cache()
+    results['hubert_8'] = auc_B
+
+    #  Lead-wise Transformer 
+    print()
+    model_C = LeadwiseTransformer()
+    auc_C, _ = run_experiment(
+        model_C, train_ds_f, val_ds_f,
+        experiment_name='leadwise_transformer',
+        epochs=args.epochs,
+        lr=CFG['training']['lr_peft'],
+        batch_size=args.batch,
+        save_dir=RESULTS,
+    )
+    del model_C; torch.cuda.empty_cache()
+    results['leadwise'] = auc_C
+
+    #  Summary 
+    print()
+    print('=' * 50)
+    print('SMOKE TEST SUMMARY')
+    print('=' * 50)
+    labels = {
+        'dummy':    'Dummy (prior)',
+        'cnn':      'CNN (baseline)',
+        'hubert_4': 'HuBERT-ECG 4 blocks',
+        'hubert_8': 'HuBERT-ECG 8 blocks',
+        'leadwise': 'Lead-wise Transformer',
+    }
+    for key, label in labels.items():
+        print(f'  {label:<25s}  AUC {results[key]:.4f}')
+    print()
+    print(f'All outputs written to {RESULTS}/')
+
+
+if __name__ == '__main__':
+    main()
