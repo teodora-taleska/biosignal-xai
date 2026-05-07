@@ -19,6 +19,15 @@ training:
 model:
   hubert_size: "base"
   hubert_blocks_to_unfreeze: [4, 8]
+  leadwise:
+    d_model: 128
+    num_temporal_layers: 3
+    num_heads: 8
+    num_cross_heads: 4
+    dropout: 0.1
+    head_dropout: 0.2
+    patch_length: 25
+    patch_stride: 25
 
 paths:
   results: "results/"
