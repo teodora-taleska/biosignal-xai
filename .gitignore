@@ -222,3 +222,4 @@ __marimo__/
 data/
 *.pt
 *.pt
+/docs

@@ -34,7 +34,7 @@ from src.preprocessing.dataset_full import ECGDatasetFull
 from src.models.baseline_cnn import BaselineCNN
 from src.models.dummy_classifier import DummyECGClassifier
 from src.models.hubert_ecg_finetune import HuBERTECGClassifier, HuBERTECGPEFT
-from src.models.leadwise_transformer import LeadwiseTransformer, build_leadwise_with_peft
+from src.models.leadwise_transformer import build_leadwise_with_peft
 from src.training.train import train_model
 from src.training.train_peft import run_experiment
 
@@ -107,23 +107,7 @@ def main():
     results['dummy'] = metrics['auc_macro']
     print(f"AUC: {metrics['auc_macro']:.4f}")
 
-    #  HuBERT 4 blocks 
-    print()
-    model_A = HuBERTECGClassifier(
-        size=CFG['model']['hubert_size'], blocks_to_unfreeze=4
-    )
-    auc_A, _ = run_experiment(
-        model_A, train_ds_f, val_ds_f,
-        experiment_name='hubert_ecg_blocks4',
-        epochs=args.epochs,
-        lr=CFG['training']['lr_pretrained'],
-        batch_size=args.batch,
-        save_dir=RESULTS,
-    )
-    del model_A; torch.cuda.empty_cache()
-    results['hubert_4'] = auc_A
-
-    #  HuBERT 8 blocks 
+    #  HuBERT 8 blocks
     print()
     model_B = HuBERTECGClassifier(
         size=CFG['model']['hubert_size'], blocks_to_unfreeze=8
@@ -141,7 +125,7 @@ def main():
 
     #  HuBERT PEFT — LoRA r=8
     print()
-    _probe = HuBERTECGPEFT(rank=8, use_dora=False)
+    _probe = HuBERTECGPEFT(rank=8, use_dora=False).to(device)
     _dummy_in = torch.randn(2, 12, 1000)
     with torch.no_grad():
         _out = _probe(_dummy_in.to(device))
@@ -180,24 +164,10 @@ def main():
     del model_dora; torch.cuda.empty_cache()
     results['dora'] = auc_dora
 
-    #  Lead-wise — full training
-    print()
-    model_lw = LeadwiseTransformer()
-    auc_lw, _ = run_experiment(
-        model_lw, train_ds_f, val_ds_f,
-        experiment_name='leadwise_full',
-        epochs=args.epochs,
-        lr=CFG['training']['lr_peft'],
-        batch_size=args.batch,
-        save_dir=RESULTS,
-    )
-    del model_lw; torch.cuda.empty_cache()
-    results['leadwise'] = auc_lw
-
     #  Lead-wise PEFT — LoRA r=8
     print()
     # Shape + param assertions before training
-    _probe_lw = build_leadwise_with_peft(rank=8, use_dora=False)
+    _probe_lw = build_leadwise_with_peft(rank=8, use_dora=False).to(device)
     _lw_dummy = torch.randn(2, 12, 1000)
     with torch.no_grad():
         _lw_out = _probe_lw(_lw_dummy.to(device))
@@ -222,21 +192,7 @@ def main():
     del model_lw_lora; torch.cuda.empty_cache()
     results['lw_lora'] = auc_lw_lora
 
-    #  Lead-wise PEFT — DoRA r=8
-    print()
-    model_lw_dora = build_leadwise_with_peft(rank=8, use_dora=True)
-    auc_lw_dora, _ = run_experiment(
-        model_lw_dora, train_ds_f, val_ds_f,
-        experiment_name='leadwise_dora_r8',
-        epochs=args.epochs,
-        lr=CFG['training']['lr_peft'],
-        batch_size=args.batch,
-        save_dir=RESULTS,
-    )
-    del model_lw_dora; torch.cuda.empty_cache()
-    results['lw_dora'] = auc_lw_dora
-
-    #  Summary 
+    #  Summary
     print()
     print('=' * 50)
     print('SMOKE TEST SUMMARY')
@@ -244,13 +200,10 @@ def main():
     labels = {
         'dummy':    'Dummy (prior)',
         'cnn':      'CNN (baseline)',
-        'hubert_4': 'HuBERT-ECG 4 blocks',
         'hubert_8': 'HuBERT-ECG 8 blocks',
         'lora':     'HuBERT-ECG LoRA r=8',
         'dora':     'HuBERT-ECG DoRA r=8',
-        'leadwise': 'Lead-wise full',
         'lw_lora':  'Lead-wise LoRA r=8',
-        'lw_dora':  'Lead-wise DoRA r=8',
     }
     for key, label in labels.items():
         print(f'  {label:<25s}  AUC {results[key]:.4f}')
