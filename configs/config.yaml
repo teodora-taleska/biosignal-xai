@@ -19,9 +19,6 @@ training:
 model:
   hubert_size: "base"
   hubert_blocks_to_unfreeze: [4, 8]
-  lora_rank: [4, 8, 16]
-  lora_alpha_multiplier: 1   # alpha = rank * multiplier
-  use_dora: [false, true]
 
 paths:
   results: "results/"
