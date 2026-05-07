@@ -179,3 +179,56 @@ class LeadwiseTransformer(nn.Module):
         os.makedirs(path, exist_ok=True)
         torch.save(self.state_dict(), os.path.join(path, 'checkpoint.pt'))
         print(f'Saved -> {path}/checkpoint.pt')
+
+    def apply_peft(self, rank: int = 8, use_dora: bool = False):
+        """
+        Wrap this model with LoRA or DoRA adapters.
+
+        Targets "out_proj" (nn.Linear inside nn.MultiheadAttention) in:
+          - temporal_encoder.layers.{i}.self_attn.out_proj  (3 temporal blocks)
+          - cross_lead_attn.out_proj                         (cross-lead stage)
+
+        After calling this, only adapter deltas + classifier are trainable.
+        Returns a PeftModel with .save() and .count_parameters() patched for
+        compatibility with run_experiment.
+
+        Note: call apply_peft on a freshly-created model only. It mutates
+        self.classifier (wraps it in ModulesToSaveWrapper).
+        """
+        from peft import LoraConfig, get_peft_model
+
+        lora_cfg = LoraConfig(
+            r               = rank,
+            lora_alpha      = rank,
+            lora_dropout    = 0.05,
+            bias            = "none",
+            use_dora        = use_dora,
+            target_modules  = ["out_proj"],
+            modules_to_save = ["classifier"],
+        )
+        peft_model = get_peft_model(self, lora_cfg)
+        peft_model.print_trainable_parameters()
+
+        # Patch methods required by run_experiment (PeftModel lacks them)
+        def _count():
+            t = sum(p.numel() for p in peft_model.parameters() if p.requires_grad)
+            n = sum(p.numel() for p in peft_model.parameters())
+            return {'trainable': t, 'total': n, 'percentage': f'{100*t/n:.1f}%'}
+
+        def _save(path: str):
+            os.makedirs(path, exist_ok=True)
+            peft_model.save_pretrained(path)
+            print(f'Saved -> {path}')
+
+        peft_model.count_parameters = _count
+        peft_model.save = _save
+        return peft_model
+
+
+def build_leadwise_with_peft(rank: int = 8, use_dora: bool = False) -> nn.Module:
+    """
+    Build a LeadwiseTransformer and immediately apply LoRA or DoRA.
+    Returns a PeftModel ready for run_experiment.
+    All architecture config comes from CFG['model']['leadwise'].
+    """
+    return LeadwiseTransformer().apply_peft(rank=rank, use_dora=use_dora)
