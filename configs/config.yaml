@@ -1,0 +1,32 @@
+
+data:
+  path: "data/"
+  sampling_rate: 100
+  window_size: 250
+  stride: 125
+  superclasses: ["NORM", "MI", "STTC", "CD", "HYP"]
+
+training:
+  batch_size: 64
+  batch_size_full: 32      # for HuBERT-ECG (full records)
+  epochs: 20
+  lr_peft: 3e-4
+  lr_pretrained: 1e-4      # lower for pretrained models
+  weight_decay: 1e-2
+  grad_clip: 1.0
+  num_workers: 0           # 0 for Windows, 4 for Linux
+
+model:
+  hubert_size: "base"
+  hubert_blocks_to_unfreeze: [4, 8]
+  lora_rank: [4, 8, 16]
+  lora_alpha_multiplier: 1   # alpha = rank * multiplier
+  use_dora: [false, true]
+
+paths:
+  results: "results/"
+  checkpoints: "results/checkpoints/"
+  notebooks: "notebooks/"
+  models: "results/models/"
+  figures: "results/figures/"
+  logs: "results/logs/"

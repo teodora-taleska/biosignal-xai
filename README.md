@@ -65,6 +65,39 @@ PTB-XL ECG Records (WFDB)
 
 ---
 
+## Installation & Setup
+
+### Option A — Conda (recommended)
+```bash
+conda env create -f environment.yml
+conda activate biosignal-xai
+```
+
+### Option B — pip only
+```bash
+pip install -r requirements.txt
+```
+
+### Hardware
+Developed and tested on NVIDIA RTX 4060 Laptop GPU (8GB VRAM).
+Minimum recommended: 8GB VRAM GPU with CUDA 12.1.
+
+---
+
+## Configuration
+
+All hyperparameters, paths, and model settings are centralized in `configs/config.yaml`.
+
+To change any setting — batch size, learning rate, window size, model size — edit that file only. No changes needed in source code.
+
+Key settings:
+- `data.window_size` — ECG window length in time steps (default: 250 = 2.5 sec at 100Hz)
+- `training.num_workers` — set to 0 on Windows, 4 on Linux
+- `model.hubert_blocks_to_unfreeze` — list of values to ablate (default: [4, 8])
+- `model.lora_rank` — list of ranks to ablate (default: [4, 8, 16])
+
+---
+
 ## Quick Start
 
 ### Prerequisites
@@ -72,24 +105,6 @@ PTB-XL ECG Records (WFDB)
 - Python 3.10+
 - CUDA-capable GPU (8 GB VRAM minimum; developed on RTX 4060 Laptop GPU)
 - PTB-XL dataset (see [Dataset Setup](#dataset-setup))
-
-### Installation
-
-```bash
-git clone https://github.com/your-username/biosignal-xai.git
-cd biosignal-xai
-
-python -m venv .venv
-# Windows
-.venv\Scripts\activate
-# Linux / macOS
-source .venv/bin/activate
-
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-pip install transformers peft accelerate bitsandbytes
-pip install wfdb scipy scikit-learn pandas numpy matplotlib tqdm
-pip install jupyter
-```
 
 ### Run notebooks
 
