@@ -10,9 +10,9 @@ training:
   batch_size: 64
   batch_size_full: 32      # for HuBERT-ECG (full records)
   epochs: 20
-  lr_peft: 3e-4
-  lr_pretrained: 1e-4      # lower for pretrained models
-  weight_decay: 1e-2
+  lr_peft: 0.0003
+  lr_pretrained: 0.0001    # lower for pretrained models
+  weight_decay: 0.01
   grad_clip: 1.0
   num_workers: 0           # 0 for Windows, 4 for Linux
 

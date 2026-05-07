@@ -47,5 +47,5 @@ def print_metrics(metrics):
     print(f"  F1  (macro): {metrics['f1_macro']:.4f}")
     print(f"  Per-class AUC:")
     for cls, val in metrics['per_class_auc'].items():
-        bar = '█' * int(val * 20)
+        bar = '#' * int(val * 20)
         print(f"    {cls:5s}: {val:.3f}  {bar}")

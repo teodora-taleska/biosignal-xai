@@ -52,7 +52,7 @@ def train_model(model, train_ds, val_ds, epochs=CFG['training']['epochs'], lr=1e
             best_val_loss = vl
             epochs_no_improve = 0
             torch.save(model.state_dict(), CFG['paths']['results'] + 'best_model.pt')
-            print(f"  ✓ Saved best model (val_loss={vl:.4f})")
+            print(f"  * Saved best model (val_loss={vl:.4f})")
         else:
             epochs_no_improve += 1
             if epochs_no_improve >= patience:
