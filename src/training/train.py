@@ -1,12 +1,18 @@
+import os
+
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 
 from src.utils.config import CFG
 
-def train_model(model, train_ds, val_ds, epochs=CFG['training']['epochs'], lr=1e-3, batch_size=CFG['training']['batch_size']):
+def train_model(model, train_ds, val_ds, epochs=CFG['training']['epochs'], lr=1e-3, batch_size=CFG['training']['batch_size'], save_dir=None):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"Training on: {device}")
+    if save_dir is None:
+        save_dir = os.path.join(CFG['paths']['results'], 'baseline_cnn')
+    os.makedirs(save_dir, exist_ok=True)
+    ckpt_path = os.path.join(save_dir, 'checkpoint.pt')
 
     model = model.to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-4)
@@ -51,8 +57,8 @@ def train_model(model, train_ds, val_ds, epochs=CFG['training']['epochs'], lr=1e
         if vl < best_val_loss:
             best_val_loss = vl
             epochs_no_improve = 0
-            torch.save(model.state_dict(), CFG['paths']['results'] + 'best_model.pt')
-            print(f"  * Saved best model (val_loss={vl:.4f})")
+            torch.save(model.state_dict(), ckpt_path)
+            print(f"  * Saved -> {ckpt_path}  (val_loss={vl:.4f})")
         else:
             epochs_no_improve += 1
             if epochs_no_improve >= patience:
