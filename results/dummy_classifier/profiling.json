@@ -1,10 +1,10 @@
 {
   "experiment": "dummy_classifier",
-  "total_time_sec": 7.99,
-  "total_time_human": "7.99s",
-  "avg_epoch_time_sec": 7.99,
+  "total_time_sec": 16.2,
+  "total_time_human": "16.2s",
+  "avg_epoch_time_sec": 16.2,
   "epoch_times_sec": [
-    7.99
+    16.2
   ],
   "peak_gpu_memory_mb": 0.0,
   "peak_gpu_memory_gb": 0.0,
