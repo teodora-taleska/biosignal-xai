@@ -18,6 +18,7 @@ training:
 
 model:
   hubert_size: "base"
+  hubert_hidden_dim: 768         # confirmed from architecture inspection
   hubert_blocks_to_unfreeze: [4, 8]
   hubert_peft:
     target_modules: ["q_proj", "v_proj", "k_proj", "out_proj"]
