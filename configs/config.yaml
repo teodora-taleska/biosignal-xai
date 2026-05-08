@@ -47,3 +47,6 @@ inference:
 
 baseline:
   dummy_strategy: "prior"
+
+explainability:
+  uncertainty_threshold: 0.5
