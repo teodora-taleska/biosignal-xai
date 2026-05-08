@@ -8,6 +8,7 @@ import os
 
 from src.utils.metrics import compute_metrics, print_metrics
 from src.utils.config import CFG
+from src.utils.profiler import ExperimentProfiler
 
 
 def run_experiment(
@@ -21,13 +22,14 @@ def run_experiment(
     save_dir:    str   = CFG['paths']['results'],
     num_workers: int   = CFG['training']['num_workers'],  # set to 4 if on Linux, keep 0 on Windows
     patience:    int   = 4,
-) -> tuple[float, list]:
+) -> tuple[float, list, dict]:
     """
     Train one PEFT experiment end-to-end.
 
     Returns:
-        best_auc: float
-        history:  list of dicts (one per epoch)
+        best_auc:  float
+        history:   list of dicts (one per epoch, includes epoch_time_sec)
+        profiling: dict with timing and memory metrics
 
     Saves to results/{experiment_name}/:
         best_adapter/   — PEFT adapter weights (small, ~MB)
@@ -42,6 +44,10 @@ def run_experiment(
     print(f"{'='*60}")
 
     model = model.to(device)
+
+    profiler = ExperimentProfiler(experiment_name)
+    profiler.log_model(model)
+    profiler.start()
 
     # Optimizer
     # Only trainable params (adapters + classifier head)
@@ -96,8 +102,9 @@ def run_experiment(
     epochs_no_improve = 0
 
     for epoch in range(epochs):
+        profiler.start_epoch()
 
-        # TRAIN 
+        # TRAIN
         model.train()
         train_loss = 0.0
         n_batches  = 0
@@ -148,6 +155,7 @@ def run_experiment(
         print(f"\nEpoch {epoch+1:02d}/{epochs}  lr={current_lr:.2e}")
         print(f"  train_loss={tl:.4f}  val_loss={vl:.4f}")
         print_metrics(metrics)
+        profiler.end_epoch()
 
         # Save best
         if auc > best_auc:
@@ -160,24 +168,26 @@ def run_experiment(
             if epochs_no_improve >= patience:
                 print(f"  Early stopping (no AUC improvement for {patience} epochs)")
                 history.append({
-                    "epoch":      epoch + 1,
-                    "lr":         current_lr,
-                    "train_loss": tl,
-                    "val_loss":   vl,
-                    "auc_macro":  auc,
-                    "f1_macro":   f1,
-                    "per_class":  metrics["per_class_auc"],
+                    "epoch":          epoch + 1,
+                    "lr":             current_lr,
+                    "train_loss":     tl,
+                    "val_loss":       vl,
+                    "auc_macro":      auc,
+                    "f1_macro":       f1,
+                    "per_class":      metrics["per_class_auc"],
+                    "epoch_time_sec": profiler.epoch_times[-1],
                 })
                 break
 
         history.append({
-            "epoch":      epoch + 1,
-            "lr":         current_lr,
-            "train_loss": tl,
-            "val_loss":   vl,
-            "auc_macro":  auc,
-            "f1_macro":   f1,
-            "per_class":  metrics["per_class_auc"],
+            "epoch":          epoch + 1,
+            "lr":             current_lr,
+            "train_loss":     tl,
+            "val_loss":       vl,
+            "auc_macro":      auc,
+            "f1_macro":       f1,
+            "per_class":      metrics["per_class_auc"],
+            "epoch_time_sec": profiler.epoch_times[-1],
         })
 
     # Save history
@@ -194,4 +204,9 @@ def run_experiment(
     print(f" Saved to: {exp_path}/")
     print(f"{'='*60}\n")
 
-    return best_auc, history
+    profiler.end()
+    profiler.log_checkpoint_size(os.path.join(exp_path, "best_adapter"))
+    profiler.save(exp_path)
+    profiler.print_summary()
+
+    return best_auc, history, profiler.summary()

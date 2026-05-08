@@ -112,7 +112,7 @@ def main():
     model_B = HuBERTECGClassifier(
         size=CFG['model']['hubert_size'], blocks_to_unfreeze=8
     )
-    auc_B, _ = run_experiment(
+    auc_B, _, _ = run_experiment(
         model_B, train_ds_f, val_ds_f,
         experiment_name='hubert_ecg_blocks8',
         epochs=args.epochs,
@@ -139,7 +139,7 @@ def main():
     del _probe, _dummy_in, _out
 
     model_lora = HuBERTECGPEFT(rank=8, use_dora=False)
-    auc_lora, _ = run_experiment(
+    auc_lora, _, _ = run_experiment(
         model_lora, train_ds_f, val_ds_f,
         experiment_name='hubert_ecg_lora_r8',
         epochs=args.epochs,
@@ -153,7 +153,7 @@ def main():
     #  HuBERT PEFT — DoRA r=8
     print()
     model_dora = HuBERTECGPEFT(rank=8, use_dora=True)
-    auc_dora, _ = run_experiment(
+    auc_dora, _, _ = run_experiment(
         model_dora, train_ds_f, val_ds_f,
         experiment_name='hubert_ecg_dora_r8',
         epochs=args.epochs,
@@ -181,7 +181,7 @@ def main():
     del _probe_lw, _lw_dummy, _lw_out
 
     model_lw_lora = build_leadwise_with_peft(rank=8, use_dora=False)
-    auc_lw_lora, _ = run_experiment(
+    auc_lw_lora, _, _ = run_experiment(
         model_lw_lora, train_ds_f, val_ds_f,
         experiment_name='leadwise_lora_r8',
         epochs=args.epochs,

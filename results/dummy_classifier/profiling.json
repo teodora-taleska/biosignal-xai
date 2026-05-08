@@ -1,0 +1,15 @@
+{
+  "experiment": "dummy_classifier",
+  "total_time_sec": 7.99,
+  "total_time_human": "7.99s",
+  "avg_epoch_time_sec": 7.99,
+  "epoch_times_sec": [
+    7.99
+  ],
+  "peak_gpu_memory_mb": 0.0,
+  "peak_gpu_memory_gb": 0.0,
+  "trainable_params": 0,
+  "total_params": 0,
+  "trainable_pct": 0.0,
+  "checkpoint_size_mb": 0.0
+}

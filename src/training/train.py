@@ -5,6 +5,7 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 
 from src.utils.config import CFG
+from src.utils.profiler import ExperimentProfiler
 
 def train_model(model, train_ds, val_ds, epochs=CFG['training']['epochs'], lr=1e-3, batch_size=CFG['training']['batch_size'], save_dir=None):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -15,6 +16,11 @@ def train_model(model, train_ds, val_ds, epochs=CFG['training']['epochs'], lr=1e
     ckpt_path = os.path.join(save_dir, 'checkpoint.pt')
 
     model = model.to(device)
+
+    profiler = ExperimentProfiler('baseline_cnn')
+    profiler.log_model(model)
+    profiler.start()
+
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-4)
     # BCEWithLogitsLoss for multi-label
     criterion = nn.BCEWithLogitsLoss()
@@ -28,6 +34,7 @@ def train_model(model, train_ds, val_ds, epochs=CFG['training']['epochs'], lr=1e
     patience = 4
 
     for epoch in range(epochs):
+        profiler.start_epoch()
         # --- Train ---
         model.train()
         train_loss = 0
@@ -52,6 +59,7 @@ def train_model(model, train_ds, val_ds, epochs=CFG['training']['epochs'], lr=1e
         tl = train_loss / len(train_loader)
         vl = val_loss   / len(val_loader)
         print(f"Epoch {epoch+1:02d}/{epochs} | Train Loss: {tl:.4f} | Val Loss: {vl:.4f}")
+        profiler.end_epoch()
 
         # Save best model / early stopping
         if vl < best_val_loss:
@@ -64,5 +72,10 @@ def train_model(model, train_ds, val_ds, epochs=CFG['training']['epochs'], lr=1e
             if epochs_no_improve >= patience:
                 print(f"  Early stopping triggered (no improvement for {patience} epochs)")
                 break
+
+    profiler.end()
+    profiler.log_checkpoint_size(ckpt_path)
+    profiler.save(save_dir)
+    profiler.print_summary()
 
     return model

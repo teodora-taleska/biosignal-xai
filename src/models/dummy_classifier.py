@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import time
 
 import numpy as np
 from sklearn.dummy import DummyClassifier
@@ -37,6 +38,8 @@ class DummyECGClassifier:
         return np.vstack(dataset.df['label_vec'].values)
 
     def fit(self, dataset) -> DummyECGClassifier:
+        t_start = time.time()
+
         labels  = self._collect_labels(dataset)
         X_dummy = np.zeros((len(labels), 1))
         self._model.fit(X_dummy, labels)
@@ -46,6 +49,25 @@ class DummyECGClassifier:
         for i, cls in enumerate(SUPERCLASSES):
             freq = labels[:, i].mean()
             print(f"  {cls:5s}: {freq:.3f} ({freq * 100:.1f}%)")
+
+        elapsed = round(time.time() - t_start, 2)
+        dummy_profiling = {
+            "experiment":         "dummy_classifier",
+            "total_time_sec":     elapsed,
+            "total_time_human":   f"{elapsed}s",
+            "avg_epoch_time_sec": elapsed,
+            "epoch_times_sec":    [elapsed],
+            "peak_gpu_memory_mb": 0.0,
+            "peak_gpu_memory_gb": 0.0,
+            "trainable_params":   0,
+            "total_params":       0,
+            "trainable_pct":      0.0,
+            "checkpoint_size_mb": 0.0,
+        }
+        save_dir = os.path.join(CFG['paths']['results'], 'dummy_classifier')
+        os.makedirs(save_dir, exist_ok=True)
+        with open(os.path.join(save_dir, 'profiling.json'), 'w') as f:
+            json.dump(dummy_profiling, f, indent=2)
 
         return self
 

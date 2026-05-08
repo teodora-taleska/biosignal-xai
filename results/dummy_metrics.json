@@ -2,7 +2,7 @@
   "model": "DummyClassifier",
   "strategy": "prior",
   "auc_macro": 0.5,
-  "f1_macro": 0.1241,
+  "f1_macro": 0.0,
   "per_class_auc": {
     "NORM": 0.5,
     "MI": 0.5,
