@@ -1,0 +1,20 @@
+{
+  "experiment": "uncertainty_model",
+  "total_time_sec": 2229.2,
+  "total_time_human": "37.2min",
+  "avg_epoch_time_sec": 371.4,
+  "epoch_times_sec": [
+    373.35,
+    369.12,
+    374.72,
+    358.11,
+    362.41,
+    390.5
+  ],
+  "peak_gpu_memory_mb": 5313.2,
+  "peak_gpu_memory_gb": 5.19,
+  "trainable_params": 57300490,
+  "total_params": 93721226,
+  "trainable_pct": 61.14,
+  "checkpoint_size_mb": 374.98
+}

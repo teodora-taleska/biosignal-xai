@@ -28,9 +28,9 @@ import torch
 from torch.utils.data import DataLoader
 
 from src.utils.config import CFG
-from src.preprocessing.label_utils import load_all_labels
-from src.preprocessing.dataset import ECGDataset
-from src.preprocessing.dataset_full import ECGDatasetFull
+from src.data.label_utils import load_all_labels
+from src.data.dataset import ECGDataset
+from src.data.dataset_full import ECGDatasetFull
 from src.models.baseline_cnn import BaselineCNN
 from src.models.dummy_classifier import DummyECGClassifier
 from src.models.hubert_ecg_finetune import HuBERTECGClassifier, HuBERTECGPEFT

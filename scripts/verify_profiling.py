@@ -14,8 +14,8 @@ warnings.filterwarnings('ignore', category=UserWarning)
 
 import torch
 from src.utils.config import CFG
-from src.preprocessing.label_utils import load_all_labels
-from src.preprocessing.dataset_full import ECGDatasetFull
+from src.data.label_utils import load_all_labels
+from src.data.dataset_full import ECGDatasetFull
 from src.models.hubert_ecg_finetune import HuBERTECGPEFT
 from src.training.train_peft import run_experiment
 from src.utils.profiler import ExperimentProfiler
