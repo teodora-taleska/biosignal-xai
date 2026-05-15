@@ -1,0 +1,40 @@
+{
+  "dataset": "PTB-XL v1.0.3",
+  "sampling_rate_hz": 100,
+  "n_records_raw": 21799,
+  "n_records_labelled": 21388,
+  "n_patients": 18617,
+  "superclasses": [
+    "NORM",
+    "MI",
+    "STTC",
+    "CD",
+    "HYP"
+  ],
+  "class_counts": {
+    "NORM": 9514,
+    "MI": 5469,
+    "STTC": 5235,
+    "CD": 4898,
+    "HYP": 2649
+  },
+  "class_freq": {
+    "NORM": 0.4448288760052366,
+    "MI": 0.2557041331587806,
+    "STTC": 0.24476341873948007,
+    "CD": 0.22900691976809426,
+    "HYP": 0.12385449784926127
+  },
+  "splits": {
+    "train": 17084,
+    "val": 2146,
+    "test": 2158
+  },
+  "pos_weight_used_in_training": [
+    1.0,
+    1.8,
+    1.8,
+    1.9,
+    3.5
+  ]
+}
