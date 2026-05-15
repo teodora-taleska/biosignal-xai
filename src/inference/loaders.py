@@ -8,7 +8,7 @@ from src.utils.config import CFG
 def load_baseline_cnn():
     """Load BaselineCNN from checkpoint. Returns (model, ECGDataset)."""
     from src.models.baseline_cnn import BaselineCNN
-    from src.data.dataset import ECGDataset
+    from src.preprocessing.dataset import ECGDataset
 
     path = os.path.join(CFG['paths']['results'], 'baseline_cnn', 'checkpoint.pt')
     model = BaselineCNN()
@@ -20,7 +20,7 @@ def load_baseline_cnn():
 def load_hubert_blocks(n=8):
     """Load HuBERTECGClassifier (selective unfreezing). Returns (model, ECGDatasetFull)."""
     from src.models.hubert_ecg_finetune import HuBERTECGClassifier
-    from src.data.dataset_full import ECGDatasetFull
+    from src.preprocessing.dataset_full import ECGDatasetFull
 
     path = os.path.join(
         CFG['paths']['results'], f'hubert_ecg_blocks{n}', 'best_adapter', 'checkpoint.pt'
@@ -35,7 +35,7 @@ def load_hubert_blocks(n=8):
 def load_hubert_peft(rank=8, use_dora=False):
     """Load HuBERTECGPEFT (LoRA or DoRA). Returns (model, ECGDatasetFull)."""
     from src.models.hubert_ecg_finetune import HuBERTECGPEFT
-    from src.data.dataset_full import ECGDatasetFull
+    from src.preprocessing.dataset_full import ECGDatasetFull
 
     suffix       = 'dora' if use_dora else 'lora'
     adapter_path = os.path.join(
@@ -55,7 +55,7 @@ def load_hubert_peft(rank=8, use_dora=False):
 def load_leadwise():
     """Load LeadwiseTransformer from checkpoint. Returns (model, ECGDatasetFull)."""
     from src.models.leadwise_transformer import LeadwiseTransformer
-    from src.data.dataset_full import ECGDatasetFull
+    from src.preprocessing.dataset_full import ECGDatasetFull
 
     path = os.path.join(
         CFG['paths']['results'], 'leadwise_transformer', 'best_adapter', 'checkpoint.pt'

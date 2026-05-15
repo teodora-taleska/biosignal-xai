@@ -20,7 +20,7 @@ def predict_proba(model, dataset, device, batch_size=32):
         probs:  (N_records, 5) float tensor -- sigmoid probabilities
         labels: (N_records, 5) float tensor -- ground-truth multi-hot
     """
-    from src.data.dataset import ECGDataset
+    from src.preprocessing.dataset import ECGDataset
 
     loader     = DataLoader(dataset, batch_size=batch_size, shuffle=False, num_workers=0)
     all_probs, all_labels = [], []
