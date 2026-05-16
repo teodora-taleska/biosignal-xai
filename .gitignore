@@ -225,3 +225,5 @@ data/
 *.pt
 /docs
 *.safetensors
+/.superpowers
+CLAUDE.md
