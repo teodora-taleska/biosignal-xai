@@ -22,6 +22,8 @@ from app.data.loader import (
     load_predictions_cache,
     SUPERCLASSES,
     LEAD_NAMES,
+    SCP_CSV,
+    DATA_CSV,
 )
 from app.components.patient_card import render_patient_card
 from app.components.confidence_gauge import render_confidence_gauge
@@ -33,6 +35,16 @@ from app.components.ecg_viewer import render_ecg
 @st.cache_data(show_spinner='Loading PTB-XL metadata …')
 def _get_metadata() -> pd.DataFrame:
     return load_metadata()
+
+
+@st.cache_data(show_spinner='Computing class distribution …')
+def _get_label_counts() -> dict[str, int]:
+    """Count records per superclass using proper SCP→superclass mapping."""
+    from src.preprocessing.label_utils import load_all_labels
+    df = load_all_labels(str(DATA_CSV), str(SCP_CSV))
+    import numpy as np
+    label_matrix = np.stack(df['label_vec'].values)
+    return {sc: int(label_matrix[:, i].sum()) for i, sc in enumerate(SUPERCLASSES)}
 
 
 @st.cache_data(show_spinner='Loading curated index …')
@@ -52,18 +64,11 @@ def _get_signal(filename_lr: str) -> np.ndarray:
 
 # ── Class distribution chart ──────────────────────────────────────────────────
 
-def _class_distribution_chart(df: pd.DataFrame) -> None:
+def _class_distribution_chart() -> None:
     """Bar chart of superclass counts in the full dataset."""
     import plotly.graph_objects as go
 
-    # Count records per superclass (multi-hot, so count each separately)
-    counts: dict[str, int] = {}
-    for sc in SUPERCLASSES:
-        counts[sc] = int(df['scp_codes'].apply(
-            lambda codes: any(
-                c == sc for c in codes
-            )
-        ).sum())
+    counts = _get_label_counts()
 
     colors = {
         'NORM': '#388e3c', 'MI': '#d32f2f',
@@ -208,7 +213,7 @@ def render() -> None:
 
     col_chart, col_info = st.columns([2, 1])
     with col_chart:
-        _class_distribution_chart(df)
+        _class_distribution_chart()
     with col_info:
         st.markdown("""
 **PTB-XL at a glance**
