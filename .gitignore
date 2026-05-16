@@ -220,6 +220,7 @@ __marimo__/
 .idea
 .claude
 data/
+!app/data/
 *.pt
 *.pt
 /docs

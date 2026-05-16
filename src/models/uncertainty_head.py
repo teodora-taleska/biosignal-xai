@@ -8,7 +8,7 @@ import torch.nn.functional as F
 
 from src.utils.config import CFG
 
-NUM_CLASSES = len(CFG['data']['superclasses'])
+NUM_CLASSES = len(CFG['preprocessing']['superclasses'])
 _DROPOUT    = CFG['model']['leadwise']['dropout']
 
 

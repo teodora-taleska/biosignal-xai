@@ -14,13 +14,13 @@ warnings.filterwarnings('ignore', category=UserWarning)
 
 import torch
 from src.utils.config import CFG
-from src.data.label_utils import load_all_labels
-from src.data.dataset_full import ECGDatasetFull
+from src.preprocessing.label_utils import load_all_labels
+from src.preprocessing.dataset_full import ECGDatasetFull
 from src.models.hubert_ecg_finetune import HuBERTECGPEFT
 from src.training.train_peft import run_experiment
 from src.utils.profiler import ExperimentProfiler
 
-DATA_PATH = CFG['data']['path']
+DATA_PATH = CFG['preprocessing']['path']
 SMOKE     = os.path.join(CFG['paths']['results'], 'smoke')
 
 Y        = load_all_labels(DATA_PATH + 'ptbxl_database.csv', DATA_PATH + 'scp_statements.csv')

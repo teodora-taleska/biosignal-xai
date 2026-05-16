@@ -1,0 +1,3667 @@
+[
+  {
+    "ecg_id": 16150,
+    "patient_id": 19415,
+    "age": 70.0,
+    "sex": "1",
+    "filename_lr": "records100/16000/16150_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 1251,
+    "patient_id": 8574,
+    "age": 60.0,
+    "sex": "1",
+    "filename_lr": "records100/01000/01251_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 17891,
+    "patient_id": 12507,
+    "age": 35.0,
+    "sex": "0",
+    "filename_lr": "records100/17000/17891_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 2848,
+    "patient_id": 16463,
+    "age": 44.0,
+    "sex": "0",
+    "filename_lr": "records100/02000/02848_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 931,
+    "patient_id": 12493,
+    "age": 32.0,
+    "sex": "0",
+    "filename_lr": "records100/00000/00931_lr",
+    "superclass": [
+      "CD",
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 18639,
+    "patient_id": 4502,
+    "age": 74.0,
+    "sex": "1",
+    "filename_lr": "records100/18000/18639_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 19669,
+    "patient_id": 17218,
+    "age": 57.0,
+    "sex": "0",
+    "filename_lr": "records100/19000/19669_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 1266,
+    "patient_id": 14284,
+    "age": 50.0,
+    "sex": "0",
+    "filename_lr": "records100/01000/01266_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 7819,
+    "patient_id": 12121,
+    "age": 50.0,
+    "sex": "0",
+    "filename_lr": "records100/07000/07819_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 12835,
+    "patient_id": 14399,
+    "age": 52.0,
+    "sex": "0",
+    "filename_lr": "records100/12000/12835_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 9995,
+    "patient_id": 1944,
+    "age": 65.0,
+    "sex": "1",
+    "filename_lr": "records100/09000/09995_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 1172,
+    "patient_id": 4228,
+    "age": 72.0,
+    "sex": "0",
+    "filename_lr": "records100/01000/01172_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 7621,
+    "patient_id": 20277,
+    "age": 36.0,
+    "sex": "1",
+    "filename_lr": "records100/07000/07621_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 12172,
+    "patient_id": 15109,
+    "age": 50.0,
+    "sex": "1",
+    "filename_lr": "records100/12000/12172_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 7034,
+    "patient_id": 10555,
+    "age": 56.0,
+    "sex": "0",
+    "filename_lr": "records100/07000/07034_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 1790,
+    "patient_id": 1839,
+    "age": 73.0,
+    "sex": "0",
+    "filename_lr": "records100/01000/01790_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 3164,
+    "patient_id": 1674,
+    "age": 45.0,
+    "sex": "0",
+    "filename_lr": "records100/03000/03164_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 12082,
+    "patient_id": 18812,
+    "age": 33.0,
+    "sex": "1",
+    "filename_lr": "records100/12000/12082_lr",
+    "superclass": [
+      "CD",
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 8902,
+    "patient_id": 8605,
+    "age": 35.0,
+    "sex": "0",
+    "filename_lr": "records100/08000/08902_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 16407,
+    "patient_id": 3049,
+    "age": 34.0,
+    "sex": "0",
+    "filename_lr": "records100/16000/16407_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 13404,
+    "patient_id": 19873,
+    "age": 56.0,
+    "sex": "0",
+    "filename_lr": "records100/13000/13404_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 9174,
+    "patient_id": 11293,
+    "age": 75.0,
+    "sex": "1",
+    "filename_lr": "records100/09000/09174_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 7170,
+    "patient_id": 15774,
+    "age": 58.0,
+    "sex": "0",
+    "filename_lr": "records100/07000/07170_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 17358,
+    "patient_id": 20584,
+    "age": 50.0,
+    "sex": "0",
+    "filename_lr": "records100/17000/17358_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 14375,
+    "patient_id": 3481,
+    "age": 39.0,
+    "sex": "0",
+    "filename_lr": "records100/14000/14375_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 16499,
+    "patient_id": 11291,
+    "age": 38.0,
+    "sex": "0",
+    "filename_lr": "records100/16000/16499_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 13923,
+    "patient_id": 15242,
+    "age": 44.0,
+    "sex": "0",
+    "filename_lr": "records100/13000/13923_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 9338,
+    "patient_id": 18444,
+    "age": 44.0,
+    "sex": "1",
+    "filename_lr": "records100/09000/09338_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 16537,
+    "patient_id": 1509,
+    "age": 44.0,
+    "sex": "1",
+    "filename_lr": "records100/16000/16537_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 2596,
+    "patient_id": 20190,
+    "age": 43.0,
+    "sex": "0",
+    "filename_lr": "records100/02000/02596_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 15057,
+    "patient_id": 2019,
+    "age": 49.0,
+    "sex": "1",
+    "filename_lr": "records100/15000/15057_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 5914,
+    "patient_id": 15439,
+    "age": 30.0,
+    "sex": "1",
+    "filename_lr": "records100/05000/05914_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 4059,
+    "patient_id": 9872,
+    "age": 37.0,
+    "sex": "0",
+    "filename_lr": "records100/04000/04059_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 15001,
+    "patient_id": 390,
+    "age": 16.0,
+    "sex": "1",
+    "filename_lr": "records100/15000/15001_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 10238,
+    "patient_id": 16384,
+    "age": 76.0,
+    "sex": "0",
+    "filename_lr": "records100/10000/10238_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 12034,
+    "patient_id": 2506,
+    "age": 65.0,
+    "sex": "1",
+    "filename_lr": "records100/12000/12034_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 14304,
+    "patient_id": 17745,
+    "age": 40.0,
+    "sex": "0",
+    "filename_lr": "records100/14000/14304_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 6295,
+    "patient_id": 406,
+    "age": 52.0,
+    "sex": "0",
+    "filename_lr": "records100/06000/06295_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 7561,
+    "patient_id": 16752,
+    "age": 18.0,
+    "sex": "1",
+    "filename_lr": "records100/07000/07561_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 1158,
+    "patient_id": 3695,
+    "age": 89.0,
+    "sex": "1",
+    "filename_lr": "records100/01000/01158_lr",
+    "superclass": [
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "NORM"
+  },
+  {
+    "ecg_id": 14667,
+    "patient_id": 6901,
+    "age": 86.0,
+    "sex": "1",
+    "filename_lr": "records100/14000/14667_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 12328,
+    "patient_id": 6109,
+    "age": 62.0,
+    "sex": "0",
+    "filename_lr": "records100/12000/12328_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 16609,
+    "patient_id": 2737,
+    "age": 82.0,
+    "sex": "1",
+    "filename_lr": "records100/16000/16609_lr",
+    "superclass": [
+      "HYP",
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 13819,
+    "patient_id": 21338,
+    "age": 56.0,
+    "sex": "0",
+    "filename_lr": "records100/13000/13819_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 5826,
+    "patient_id": 17804,
+    "age": 42.0,
+    "sex": "0",
+    "filename_lr": "records100/05000/05826_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 18712,
+    "patient_id": 9636,
+    "age": 63.0,
+    "sex": "0",
+    "filename_lr": "records100/18000/18712_lr",
+    "superclass": [
+      "HYP",
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 16135,
+    "patient_id": 12422,
+    "age": 57.0,
+    "sex": "0",
+    "filename_lr": "records100/16000/16135_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 4072,
+    "patient_id": 4474,
+    "age": 81.0,
+    "sex": "1",
+    "filename_lr": "records100/04000/04072_lr",
+    "superclass": [
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 3241,
+    "patient_id": 20550,
+    "age": 75.0,
+    "sex": "0",
+    "filename_lr": "records100/03000/03241_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 16152,
+    "patient_id": 11815,
+    "age": 49.0,
+    "sex": "0",
+    "filename_lr": "records100/16000/16152_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 15279,
+    "patient_id": 10836,
+    "age": 83.0,
+    "sex": "0",
+    "filename_lr": "records100/15000/15279_lr",
+    "superclass": [
+      "CD",
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 16225,
+    "patient_id": 12511,
+    "age": 66.0,
+    "sex": "1",
+    "filename_lr": "records100/16000/16225_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 17007,
+    "patient_id": 13997,
+    "age": 55.0,
+    "sex": "0",
+    "filename_lr": "records100/17000/17007_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 8680,
+    "patient_id": 7343,
+    "age": 77.0,
+    "sex": "0",
+    "filename_lr": "records100/08000/08680_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 947,
+    "patient_id": 2560,
+    "age": 71.0,
+    "sex": "1",
+    "filename_lr": "records100/00000/00947_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 13853,
+    "patient_id": 13343,
+    "age": 67.0,
+    "sex": "1",
+    "filename_lr": "records100/13000/13853_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 5251,
+    "patient_id": 14952,
+    "age": 75.0,
+    "sex": "1",
+    "filename_lr": "records100/05000/05251_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 3559,
+    "patient_id": 20967,
+    "age": 55.0,
+    "sex": "0",
+    "filename_lr": "records100/03000/03559_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 13849,
+    "patient_id": 13343,
+    "age": 67.0,
+    "sex": "1",
+    "filename_lr": "records100/13000/13849_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 6231,
+    "patient_id": 10187,
+    "age": 47.0,
+    "sex": "0",
+    "filename_lr": "records100/06000/06231_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 16532,
+    "patient_id": 19983,
+    "age": 80.0,
+    "sex": "1",
+    "filename_lr": "records100/16000/16532_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 12991,
+    "patient_id": 18608,
+    "age": 84.0,
+    "sex": "0",
+    "filename_lr": "records100/12000/12991_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 16952,
+    "patient_id": 1862,
+    "age": 82.0,
+    "sex": "1",
+    "filename_lr": "records100/16000/16952_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 2050,
+    "patient_id": 307,
+    "age": 59.0,
+    "sex": "1",
+    "filename_lr": "records100/02000/02050_lr",
+    "superclass": [
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 9756,
+    "patient_id": 21361,
+    "age": 49.0,
+    "sex": "0",
+    "filename_lr": "records100/09000/09756_lr",
+    "superclass": [
+      "HYP",
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 7877,
+    "patient_id": 13777,
+    "age": 57.0,
+    "sex": "0",
+    "filename_lr": "records100/07000/07877_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 16272,
+    "patient_id": 7833,
+    "age": 82.0,
+    "sex": "0",
+    "filename_lr": "records100/16000/16272_lr",
+    "superclass": [
+      "CD",
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 18364,
+    "patient_id": 18137,
+    "age": 67.0,
+    "sex": "0",
+    "filename_lr": "records100/18000/18364_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 10984,
+    "patient_id": 1445,
+    "age": 70.0,
+    "sex": "1",
+    "filename_lr": "records100/10000/10984_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 11872,
+    "patient_id": 15943,
+    "age": 59.0,
+    "sex": "0",
+    "filename_lr": "records100/11000/11872_lr",
+    "superclass": [
+      "HYP",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 3272,
+    "patient_id": 4917,
+    "age": 83.0,
+    "sex": "1",
+    "filename_lr": "records100/03000/03272_lr",
+    "superclass": [
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 12169,
+    "patient_id": 9472,
+    "age": 75.0,
+    "sex": "0",
+    "filename_lr": "records100/12000/12169_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 8473,
+    "patient_id": 12926,
+    "age": 54.0,
+    "sex": "0",
+    "filename_lr": "records100/08000/08473_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 12828,
+    "patient_id": 16405,
+    "age": 49.0,
+    "sex": "1",
+    "filename_lr": "records100/12000/12828_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 9860,
+    "patient_id": 4710,
+    "age": 85.0,
+    "sex": "1",
+    "filename_lr": "records100/09000/09860_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 5856,
+    "patient_id": 7760,
+    "age": 74.0,
+    "sex": "0",
+    "filename_lr": "records100/05000/05856_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 210,
+    "patient_id": 16062,
+    "age": 58.0,
+    "sex": "0",
+    "filename_lr": "records100/00000/00210_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 16463,
+    "patient_id": 6727,
+    "age": 67.0,
+    "sex": "1",
+    "filename_lr": "records100/16000/16463_lr",
+    "superclass": [
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 4755,
+    "patient_id": 13893,
+    "age": 43.0,
+    "sex": "0",
+    "filename_lr": "records100/04000/04755_lr",
+    "superclass": [
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 16465,
+    "patient_id": 5703,
+    "age": 77.0,
+    "sex": "0",
+    "filename_lr": "records100/16000/16465_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "MI"
+  },
+  {
+    "ecg_id": 6666,
+    "patient_id": 17805,
+    "age": 84.0,
+    "sex": "0",
+    "filename_lr": "records100/06000/06666_lr",
+    "superclass": [
+      "HYP",
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 7598,
+    "patient_id": 9740,
+    "age": 59.0,
+    "sex": "0",
+    "filename_lr": "records100/07000/07598_lr",
+    "superclass": [
+      "CD",
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 13946,
+    "patient_id": 1493,
+    "age": 67.0,
+    "sex": "0",
+    "filename_lr": "records100/13000/13946_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 20776,
+    "patient_id": 21784,
+    "age": 47.0,
+    "sex": "1",
+    "filename_lr": "records100/20000/20776_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 13361,
+    "patient_id": 12506,
+    "age": 40.0,
+    "sex": "0",
+    "filename_lr": "records100/13000/13361_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 8834,
+    "patient_id": 21657,
+    "age": 56.0,
+    "sex": "1",
+    "filename_lr": "records100/08000/08834_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 20068,
+    "patient_id": 18081,
+    "age": 67.0,
+    "sex": "0",
+    "filename_lr": "records100/20000/20068_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 1998,
+    "patient_id": 318,
+    "age": 78.0,
+    "sex": "0",
+    "filename_lr": "records100/01000/01998_lr",
+    "superclass": [
+      "CD",
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 9211,
+    "patient_id": 16015,
+    "age": 64.0,
+    "sex": "1",
+    "filename_lr": "records100/09000/09211_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 7534,
+    "patient_id": 15029,
+    "age": 84.0,
+    "sex": "1",
+    "filename_lr": "records100/07000/07534_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 2867,
+    "patient_id": 11544,
+    "age": 55.0,
+    "sex": "1",
+    "filename_lr": "records100/02000/02867_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 2734,
+    "patient_id": 3111,
+    "age": 70.0,
+    "sex": "1",
+    "filename_lr": "records100/02000/02734_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 14869,
+    "patient_id": 8962,
+    "age": 65.0,
+    "sex": "0",
+    "filename_lr": "records100/14000/14869_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 6192,
+    "patient_id": 14698,
+    "age": 30.0,
+    "sex": "1",
+    "filename_lr": "records100/06000/06192_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 12338,
+    "patient_id": 14881,
+    "age": 65.0,
+    "sex": "0",
+    "filename_lr": "records100/12000/12338_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 5868,
+    "patient_id": 10623,
+    "age": 63.0,
+    "sex": "1",
+    "filename_lr": "records100/05000/05868_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 8442,
+    "patient_id": 8487,
+    "age": 82.0,
+    "sex": "0",
+    "filename_lr": "records100/08000/08442_lr",
+    "superclass": [
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 13577,
+    "patient_id": 11335,
+    "age": 82.0,
+    "sex": "1",
+    "filename_lr": "records100/13000/13577_lr",
+    "superclass": [
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 2556,
+    "patient_id": 21158,
+    "age": 77.0,
+    "sex": "0",
+    "filename_lr": "records100/02000/02556_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 13556,
+    "patient_id": 8788,
+    "age": 67.0,
+    "sex": "0",
+    "filename_lr": "records100/13000/13556_lr",
+    "superclass": [
+      "CD",
+      "HYP",
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 19251,
+    "patient_id": 21738,
+    "age": 55.0,
+    "sex": "1",
+    "filename_lr": "records100/19000/19251_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 14670,
+    "patient_id": 740,
+    "age": 74.0,
+    "sex": "0",
+    "filename_lr": "records100/14000/14670_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 7822,
+    "patient_id": 20727,
+    "age": 68.0,
+    "sex": "1",
+    "filename_lr": "records100/07000/07822_lr",
+    "superclass": [
+      "HYP",
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 7022,
+    "patient_id": 15504,
+    "age": 300.0,
+    "sex": "1",
+    "filename_lr": "records100/07000/07022_lr",
+    "superclass": [
+      "CD",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 347,
+    "patient_id": 449,
+    "age": 75.0,
+    "sex": "0",
+    "filename_lr": "records100/00000/00347_lr",
+    "superclass": [
+      "CD",
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 17870,
+    "patient_id": 1907,
+    "age": 80.0,
+    "sex": "1",
+    "filename_lr": "records100/17000/17870_lr",
+    "superclass": [
+      "CD",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 2693,
+    "patient_id": 2087,
+    "age": 67.0,
+    "sex": "1",
+    "filename_lr": "records100/02000/02693_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 7438,
+    "patient_id": 20683,
+    "age": 86.0,
+    "sex": "0",
+    "filename_lr": "records100/07000/07438_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 18756,
+    "patient_id": 13186,
+    "age": 52.0,
+    "sex": "1",
+    "filename_lr": "records100/18000/18756_lr",
+    "superclass": [
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 15795,
+    "patient_id": 20267,
+    "age": 51.0,
+    "sex": "1",
+    "filename_lr": "records100/15000/15795_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 4476,
+    "patient_id": 19972,
+    "age": 40.0,
+    "sex": "1",
+    "filename_lr": "records100/04000/04476_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 11868,
+    "patient_id": 16795,
+    "age": 57.0,
+    "sex": "1",
+    "filename_lr": "records100/11000/11868_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 5881,
+    "patient_id": 21164,
+    "age": 58.0,
+    "sex": "1",
+    "filename_lr": "records100/05000/05881_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 13954,
+    "patient_id": 6088,
+    "age": 85.0,
+    "sex": "1",
+    "filename_lr": "records100/13000/13954_lr",
+    "superclass": [
+      "CD",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 20602,
+    "patient_id": 20774,
+    "age": 89.0,
+    "sex": "1",
+    "filename_lr": "records100/20000/20602_lr",
+    "superclass": [
+      "CD",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 8475,
+    "patient_id": 536,
+    "age": 67.0,
+    "sex": "0",
+    "filename_lr": "records100/08000/08475_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 12533,
+    "patient_id": 21408,
+    "age": 60.0,
+    "sex": "0",
+    "filename_lr": "records100/12000/12533_lr",
+    "superclass": [
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 2151,
+    "patient_id": 10266,
+    "age": 71.0,
+    "sex": "0",
+    "filename_lr": "records100/02000/02151_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 1792,
+    "patient_id": 7719,
+    "age": 300.0,
+    "sex": "1",
+    "filename_lr": "records100/01000/01792_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 1736,
+    "patient_id": 19382,
+    "age": 76.0,
+    "sex": "0",
+    "filename_lr": "records100/01000/01736_lr",
+    "superclass": [
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "primary_class": "STTC"
+  },
+  {
+    "ecg_id": 14005,
+    "patient_id": 1306,
+    "age": 83.0,
+    "sex": "1",
+    "filename_lr": "records100/14000/14005_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 20515,
+    "patient_id": 20774,
+    "age": 89.0,
+    "sex": "1",
+    "filename_lr": "records100/20000/20515_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 15573,
+    "patient_id": 11439,
+    "age": 84.0,
+    "sex": "0",
+    "filename_lr": "records100/15000/15573_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 19305,
+    "patient_id": 15115,
+    "age": 73.0,
+    "sex": "0",
+    "filename_lr": "records100/19000/19305_lr",
+    "superclass": [
+      "CD"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 21093,
+    "patient_id": 19420,
+    "age": 84.0,
+    "sex": "0",
+    "filename_lr": "records100/21000/21093_lr",
+    "superclass": [
+      "CD"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 21325,
+    "patient_id": 17347,
+    "age": 83.0,
+    "sex": "0",
+    "filename_lr": "records100/21000/21325_lr",
+    "superclass": [
+      "CD",
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 10283,
+    "patient_id": 14800,
+    "age": 64.0,
+    "sex": "0",
+    "filename_lr": "records100/10000/10283_lr",
+    "superclass": [
+      "CD"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 12552,
+    "patient_id": 1873,
+    "age": 65.0,
+    "sex": "1",
+    "filename_lr": "records100/12000/12552_lr",
+    "superclass": [
+      "CD"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 10501,
+    "patient_id": 18534,
+    "age": 84.0,
+    "sex": "1",
+    "filename_lr": "records100/10000/10501_lr",
+    "superclass": [
+      "CD"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 3299,
+    "patient_id": 1020,
+    "age": 70.0,
+    "sex": "0",
+    "filename_lr": "records100/03000/03299_lr",
+    "superclass": [
+      "CD",
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 9108,
+    "patient_id": 11385,
+    "age": 83.0,
+    "sex": "0",
+    "filename_lr": "records100/09000/09108_lr",
+    "superclass": [
+      "CD"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 6284,
+    "patient_id": 14287,
+    "age": 38.0,
+    "sex": "0",
+    "filename_lr": "records100/06000/06284_lr",
+    "superclass": [
+      "CD"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 3699,
+    "patient_id": 17339,
+    "age": 76.0,
+    "sex": "0",
+    "filename_lr": "records100/03000/03699_lr",
+    "superclass": [
+      "CD"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 12223,
+    "patient_id": 18277,
+    "age": 72.0,
+    "sex": "1",
+    "filename_lr": "records100/12000/12223_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 2345,
+    "patient_id": 11065,
+    "age": 46.0,
+    "sex": "1",
+    "filename_lr": "records100/02000/02345_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 20902,
+    "patient_id": 7991,
+    "age": 66.0,
+    "sex": "1",
+    "filename_lr": "records100/20000/20902_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 6355,
+    "patient_id": 13703,
+    "age": 80.0,
+    "sex": "0",
+    "filename_lr": "records100/06000/06355_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 2153,
+    "patient_id": 20353,
+    "age": 88.0,
+    "sex": "0",
+    "filename_lr": "records100/02000/02153_lr",
+    "superclass": [
+      "CD"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 1940,
+    "patient_id": 1496,
+    "age": 76.0,
+    "sex": "1",
+    "filename_lr": "records100/01000/01940_lr",
+    "superclass": [
+      "CD",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 9562,
+    "patient_id": 14721,
+    "age": 300.0,
+    "sex": "1",
+    "filename_lr": "records100/09000/09562_lr",
+    "superclass": [
+      "CD"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 16205,
+    "patient_id": 5432,
+    "age": 64.0,
+    "sex": "0",
+    "filename_lr": "records100/16000/16205_lr",
+    "superclass": [
+      "CD",
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 688,
+    "patient_id": 362,
+    "age": 85.0,
+    "sex": "0",
+    "filename_lr": "records100/00000/00688_lr",
+    "superclass": [
+      "CD",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 12679,
+    "patient_id": 2355,
+    "age": 83.0,
+    "sex": "0",
+    "filename_lr": "records100/12000/12679_lr",
+    "superclass": [
+      "CD",
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 512,
+    "patient_id": 16695,
+    "age": 77.0,
+    "sex": "1",
+    "filename_lr": "records100/00000/00512_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 13052,
+    "patient_id": 21775,
+    "age": 35.0,
+    "sex": "0",
+    "filename_lr": "records100/13000/13052_lr",
+    "superclass": [
+      "CD",
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 3708,
+    "patient_id": 7939,
+    "age": 78.0,
+    "sex": "1",
+    "filename_lr": "records100/03000/03708_lr",
+    "superclass": [
+      "CD"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 3740,
+    "patient_id": 11717,
+    "age": 23.0,
+    "sex": "0",
+    "filename_lr": "records100/03000/03740_lr",
+    "superclass": [
+      "CD",
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 3855,
+    "patient_id": 11055,
+    "age": 81.0,
+    "sex": "0",
+    "filename_lr": "records100/03000/03855_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 11932,
+    "patient_id": 15735,
+    "age": 39.0,
+    "sex": "0",
+    "filename_lr": "records100/11000/11932_lr",
+    "superclass": [
+      "CD",
+      "NORM"
+    ],
+    "label_vec": [
+      1.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 7837,
+    "patient_id": 11456,
+    "age": 61.0,
+    "sex": "1",
+    "filename_lr": "records100/07000/07837_lr",
+    "superclass": [
+      "CD"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 10336,
+    "patient_id": 3198,
+    "age": 87.0,
+    "sex": "1",
+    "filename_lr": "records100/10000/10336_lr",
+    "superclass": [
+      "CD",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 7055,
+    "patient_id": 18366,
+    "age": 58.0,
+    "sex": "1",
+    "filename_lr": "records100/07000/07055_lr",
+    "superclass": [
+      "CD",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 16748,
+    "patient_id": 8313,
+    "age": 72.0,
+    "sex": "0",
+    "filename_lr": "records100/16000/16748_lr",
+    "superclass": [
+      "CD",
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 8504,
+    "patient_id": 13937,
+    "age": 68.0,
+    "sex": "0",
+    "filename_lr": "records100/08000/08504_lr",
+    "superclass": [
+      "CD"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 3201,
+    "patient_id": 5902,
+    "age": 66.0,
+    "sex": "0",
+    "filename_lr": "records100/03000/03201_lr",
+    "superclass": [
+      "CD"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 12400,
+    "patient_id": 11104,
+    "age": 62.0,
+    "sex": "0",
+    "filename_lr": "records100/12000/12400_lr",
+    "superclass": [
+      "CD"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 12936,
+    "patient_id": 1406,
+    "age": 78.0,
+    "sex": "0",
+    "filename_lr": "records100/12000/12936_lr",
+    "superclass": [
+      "CD",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "primary_class": "CD"
+  },
+  {
+    "ecg_id": 1864,
+    "patient_id": 2666,
+    "age": 81.0,
+    "sex": "0",
+    "filename_lr": "records100/01000/01864_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 15871,
+    "patient_id": 16938,
+    "age": 79.0,
+    "sex": "0",
+    "filename_lr": "records100/15000/15871_lr",
+    "superclass": [
+      "HYP",
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 2409,
+    "patient_id": 19202,
+    "age": 85.0,
+    "sex": "0",
+    "filename_lr": "records100/02000/02409_lr",
+    "superclass": [
+      "CD",
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 14729,
+    "patient_id": 2619,
+    "age": 300.0,
+    "sex": "1",
+    "filename_lr": "records100/14000/14729_lr",
+    "superclass": [
+      "CD",
+      "HYP",
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 19526,
+    "patient_id": 16510,
+    "age": 83.0,
+    "sex": "1",
+    "filename_lr": "records100/19000/19526_lr",
+    "superclass": [
+      "HYP",
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 10594,
+    "patient_id": 8247,
+    "age": 65.0,
+    "sex": "1",
+    "filename_lr": "records100/10000/10594_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 3895,
+    "patient_id": 16715,
+    "age": 77.0,
+    "sex": "1",
+    "filename_lr": "records100/03000/03895_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 3688,
+    "patient_id": 19890,
+    "age": 49.0,
+    "sex": "0",
+    "filename_lr": "records100/03000/03688_lr",
+    "superclass": [
+      "CD",
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 3281,
+    "patient_id": 3324,
+    "age": 62.0,
+    "sex": "0",
+    "filename_lr": "records100/03000/03281_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 534,
+    "patient_id": 20068,
+    "age": 80.0,
+    "sex": "1",
+    "filename_lr": "records100/00000/00534_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 10388,
+    "patient_id": 7811,
+    "age": 64.0,
+    "sex": "0",
+    "filename_lr": "records100/10000/10388_lr",
+    "superclass": [
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 6380,
+    "patient_id": 7870,
+    "age": 87.0,
+    "sex": "1",
+    "filename_lr": "records100/06000/06380_lr",
+    "superclass": [
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 20950,
+    "patient_id": 9934,
+    "age": 81.0,
+    "sex": "0",
+    "filename_lr": "records100/20000/20950_lr",
+    "superclass": [
+      "CD",
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 8744,
+    "patient_id": 9642,
+    "age": 87.0,
+    "sex": "1",
+    "filename_lr": "records100/08000/08744_lr",
+    "superclass": [
+      "CD",
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 7861,
+    "patient_id": 19498,
+    "age": 73.0,
+    "sex": "1",
+    "filename_lr": "records100/07000/07861_lr",
+    "superclass": [
+      "HYP",
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 21431,
+    "patient_id": 19115,
+    "age": 70.0,
+    "sex": "1",
+    "filename_lr": "records100/21000/21431_lr",
+    "superclass": [
+      "CD",
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 5163,
+    "patient_id": 19116,
+    "age": 71.0,
+    "sex": "0",
+    "filename_lr": "records100/05000/05163_lr",
+    "superclass": [
+      "CD",
+      "HYP",
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 21673,
+    "patient_id": 12998,
+    "age": 66.0,
+    "sex": "1",
+    "filename_lr": "records100/21000/21673_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 5810,
+    "patient_id": 17184,
+    "age": 70.0,
+    "sex": "0",
+    "filename_lr": "records100/05000/05810_lr",
+    "superclass": [
+      "HYP",
+      "MI",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 3603,
+    "patient_id": 19762,
+    "age": 68.0,
+    "sex": "1",
+    "filename_lr": "records100/03000/03603_lr",
+    "superclass": [
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 16876,
+    "patient_id": 10046,
+    "age": 41.0,
+    "sex": "0",
+    "filename_lr": "records100/16000/16876_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 14315,
+    "patient_id": 10982,
+    "age": 53.0,
+    "sex": "0",
+    "filename_lr": "records100/14000/14315_lr",
+    "superclass": [
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 19686,
+    "patient_id": 14081,
+    "age": 33.0,
+    "sex": "0",
+    "filename_lr": "records100/19000/19686_lr",
+    "superclass": [
+      "CD",
+      "HYP",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 17298,
+    "patient_id": 11584,
+    "age": 78.0,
+    "sex": "1",
+    "filename_lr": "records100/17000/17298_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 1013,
+    "patient_id": 6079,
+    "age": 68.0,
+    "sex": "1",
+    "filename_lr": "records100/01000/01013_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 17226,
+    "patient_id": 11709,
+    "age": 73.0,
+    "sex": "1",
+    "filename_lr": "records100/17000/17226_lr",
+    "superclass": [
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 17868,
+    "patient_id": 584,
+    "age": 67.0,
+    "sex": "1",
+    "filename_lr": "records100/17000/17868_lr",
+    "superclass": [
+      "HYP",
+      "MI"
+    ],
+    "label_vec": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 11132,
+    "patient_id": 2168,
+    "age": 64.0,
+    "sex": "0",
+    "filename_lr": "records100/11000/11132_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 3867,
+    "patient_id": 20053,
+    "age": 80.0,
+    "sex": "1",
+    "filename_lr": "records100/03000/03867_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 8704,
+    "patient_id": 3724,
+    "age": 76.0,
+    "sex": "0",
+    "filename_lr": "records100/08000/08704_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 5338,
+    "patient_id": 11960,
+    "age": 86.0,
+    "sex": "0",
+    "filename_lr": "records100/05000/05338_lr",
+    "superclass": [
+      "CD",
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 7882,
+    "patient_id": 13678,
+    "age": 69.0,
+    "sex": "0",
+    "filename_lr": "records100/07000/07882_lr",
+    "superclass": [
+      "CD",
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 4546,
+    "patient_id": 5814,
+    "age": 62.0,
+    "sex": "0",
+    "filename_lr": "records100/04000/04546_lr",
+    "superclass": [
+      "CD",
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 15863,
+    "patient_id": 17025,
+    "age": 68.0,
+    "sex": "0",
+    "filename_lr": "records100/15000/15863_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 18017,
+    "patient_id": 584,
+    "age": 67.0,
+    "sex": "1",
+    "filename_lr": "records100/18000/18017_lr",
+    "superclass": [
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 20236,
+    "patient_id": 13308,
+    "age": 65.0,
+    "sex": "0",
+    "filename_lr": "records100/20000/20236_lr",
+    "superclass": [
+      "HYP",
+      "STTC"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 8524,
+    "patient_id": 3181,
+    "age": 86.0,
+    "sex": "1",
+    "filename_lr": "records100/08000/08524_lr",
+    "superclass": [
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 12301,
+    "patient_id": 6442,
+    "age": 88.0,
+    "sex": "1",
+    "filename_lr": "records100/12000/12301_lr",
+    "superclass": [
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 9024,
+    "patient_id": 3307,
+    "age": 75.0,
+    "sex": "1",
+    "filename_lr": "records100/09000/09024_lr",
+    "superclass": [
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  },
+  {
+    "ecg_id": 9110,
+    "patient_id": 4136,
+    "age": 78.0,
+    "sex": "0",
+    "filename_lr": "records100/09000/09110_lr",
+    "superclass": [
+      "CD",
+      "HYP"
+    ],
+    "label_vec": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "primary_class": "HYP"
+  }
+]

@@ -8,7 +8,7 @@ import torch.nn as nn
 
 from src.utils.config import CFG
 
-SUPERCLASSES = CFG['data']['superclasses']
+SUPERCLASSES = CFG['preprocessing']['superclasses']
 NUM_CLASSES  = len(SUPERCLASSES)
 
 _LW = CFG['model']['leadwise']
@@ -47,7 +47,7 @@ class LeadwiseTransformer(nn.Module):
         self.d_model = d_model
 
         # Compute number of patches from config, no hardcoded 40/1000
-        time_steps = CFG['data']['sampling_rate'] * 10   # 1000 for 10-sec recordings at 100 Hz
+        time_steps = CFG['preprocessing']['sampling_rate'] * 10   # 1000 for 10-sec recordings at 100 Hz
         n_patches  = (time_steps - patch_length) // patch_stride + 1  # (1000-25)//25+1 = 40
 
         #  Stage 1: Patch projection 

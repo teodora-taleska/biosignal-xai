@@ -5,21 +5,16 @@ from peft import PeftModel
 from src.utils.config import CFG
 
 
-def load_xresnet(layers=None):
-    """
-    Load XResNet1D-101 from checkpoint.
-    layers: e.g. [3,4,23,3] for -101 (default) or [3,4,6,3] for -50.
-    Returns (model, ECGDatasetAblation config dict).
-    """
-    from src.models.xresnet1d import XResNet1d
-    from src.preprocessing.dataset_ablation import ABLATION_CONFIGS
+def load_baseline_cnn():
+    """Load BaselineCNN from checkpoint. Returns (model, ECGDataset)."""
+    from src.models.baseline_cnn import BaselineCNN
+    from src.preprocessing.dataset import ECGDataset
 
-    path  = os.path.join(CFG['paths']['results'], 'xresnet_baseline', 'checkpoint.pt')
-    model = XResNet1d(layers=layers)
+    path = os.path.join(CFG['paths']['results'], 'baseline_cnn', 'checkpoint.pt')
+    model = BaselineCNN()
     model.load_state_dict(torch.load(path, map_location='cpu'))
     model.eval()
-    # Return the canonical preprocessing config used during training
-    return model, ABLATION_CONFIGS['bandpass_zscore_250']
+    return model, ECGDataset
 
 
 def load_hubert_blocks(n=8):

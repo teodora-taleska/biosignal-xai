@@ -1,5 +1,5 @@
 """
-Smoke test all models: 2 epochs, small data subset.
+Smoke test all models: 2 epochs, small preprocessing subset.
 
 Produces real history.json files under results/<experiment_name>/
 so notebook cells that load history work immediately after.
@@ -28,9 +28,9 @@ import torch
 from torch.utils.data import DataLoader
 
 from src.utils.config import CFG
-from src.data.label_utils import load_all_labels
-from src.data.dataset import ECGDataset
-from src.data.dataset_full import ECGDatasetFull
+from src.preprocessing.label_utils import load_all_labels
+from src.preprocessing.dataset import ECGDataset
+from src.preprocessing.dataset_full import ECGDatasetFull
 from src.models.baseline_cnn import BaselineCNN
 from src.models.dummy_classifier import DummyECGClassifier
 from src.models.hubert_ecg_finetune import HuBERTECGClassifier, HuBERTECGPEFT
@@ -56,7 +56,7 @@ def main():
     print(f'Device: {device}')
     print(f'Epochs: {args.epochs}  Train: {args.train}  Val: {args.val}  Batch: {args.batch}\n')
 
-    DATA_PATH = CFG['data']['path']
+    DATA_PATH = CFG['preprocessing']['path']
     RESULTS   = os.path.join(CFG['paths']['results'], 'smoke')
     os.makedirs(RESULTS, exist_ok=True)
 

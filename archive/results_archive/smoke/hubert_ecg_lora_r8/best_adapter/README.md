@@ -77,7 +77,7 @@ Use the code below to get started with the model.
 
 ### Training Data
 
-<!-- This should link to a Dataset Card, perhaps with a short stub of information on what the training data is all about as well as documentation related to data pre-processing or additional filtering. -->
+<!-- This should link to a Dataset Card, perhaps with a short stub of information on what the training preprocessing is all about as well as documentation related to preprocessing pre-processing or additional filtering. -->
 
 [More Information Needed]
 

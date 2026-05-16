@@ -7,7 +7,7 @@ from peft import LoraConfig, get_peft_model
 
 from src.utils.config import CFG
 
-SUPERCLASSES = CFG['data']['superclasses']
+SUPERCLASSES = CFG['preprocessing']['superclasses']
 NUM_CLASSES  = len(SUPERCLASSES)
 
 # ──────────────────────────────────────────────────────────────

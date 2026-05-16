@@ -3,7 +3,7 @@ from sklearn.metrics import roc_auc_score, f1_score
 
 from src.utils.config import CFG
 
-SUPERCLASSES = CFG['data']['superclasses']
+SUPERCLASSES = CFG['preprocessing']['superclasses']
 
 def compute_metrics(all_logits, all_labels, threshold=0.5):
     """

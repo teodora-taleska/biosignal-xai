@@ -10,7 +10,7 @@ For a record named `00001_lr` you will see:
 
 The wfdb library reads the pair together with a single call, for example:
 ```python
-path = '../data/'
+path = '../preprocessing/'
 record = wfdb.rdsamp(path + 'records100/00000/00001_lr')
 ```
 
@@ -34,7 +34,7 @@ The main metadata file contains one row per ECG record (21,799 rows total) with 
 import pandas as pd
 import matplotlib.pyplot as plt
 
-path = '../data/'
+path = '../preprocessing/'
 
 # Load the database
 db = pd.read_csv(path + 'ptbxl_database.csv')
