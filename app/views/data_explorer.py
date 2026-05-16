@@ -110,7 +110,13 @@ def _curated_table(records: list[dict]) -> list[dict]:
             key='de_age_filter',
         )
 
-    sex_map = {'Male': 'M', 'Female': 'F'}
+    # PTB-XL stores sex as 0=male, 1=female (may also appear as '0'/'1' in JSON)
+    def _sex_label(raw) -> str:
+        return {'0': 'Male', '1': 'Female', 0: 'Male', 1: 'Female',
+                'M': 'Male', 'F': 'Female'}.get(raw, '—')
+
+    sex_filter_map = {'Male': {'0', 0, 'M'}, 'Female': {'1', 1, 'F'}}
+
     filtered = []
     for rec in records:
         # Class filter
@@ -118,7 +124,8 @@ def _curated_table(records: list[dict]) -> list[dict]:
             continue
         # Sex filter
         if sel_sex != 'All':
-            if str(rec.get('sex', '')).upper() != sex_map.get(sel_sex, ''):
+            raw_sex = rec.get('sex', '')
+            if str(raw_sex) not in {str(v) for v in sex_filter_map.get(sel_sex, set())}:
                 continue
         # Age filter
         age = rec.get('age')
@@ -136,7 +143,7 @@ def _curated_table(records: list[dict]) -> list[dict]:
         rows.append({
             'ECG ID':   rec['ecg_id'],
             'Age':      int(rec['age']) if rec['age'] is not None else '—',
-            'Sex':      {'M': 'Male', 'F': 'Female'}.get(str(rec.get('sex','')).upper(), '—'),
+            'Sex':      _sex_label(rec.get('sex')),
             'Classes':  ', '.join(rec.get('superclass', [])),
             'Primary':  rec.get('primary_class', '—'),
         })

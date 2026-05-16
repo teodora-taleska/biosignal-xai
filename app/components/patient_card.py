@@ -44,8 +44,9 @@ def render_patient_card(record: dict) -> None:
     """
     age    = record.get('age')
     age_s  = f"{int(age)} yrs" if age is not None else "N/A"
-    sex    = str(record.get('sex', 'N/A')).strip()
-    sex_s  = {'M': 'Male', 'F': 'Female'}.get(sex.upper(), sex)
+    sex    = record.get('sex', '')
+    sex_s  = {'0': 'Male', '1': 'Female', 0: 'Male', 1: 'Female',
+              'M': 'Male', 'F': 'Female'}.get(str(sex), 'N/A')
     ecg_id = record.get('ecg_id', '—')
 
     classes   = record.get('superclass', [])
