@@ -142,7 +142,7 @@ def _build_monitor_html(
   </div>
   <canvas id="ecg"></canvas>
   <div id="controls">
-    <button id="btn">&#9654; Play</button>
+    <button id="btn">▶ Play</button>
     <span id="progress">Click Play to animate the ECG signal</span>
   </div>
 </div>
@@ -225,7 +225,7 @@ def _build_monitor_html(
   function stop() {{
     if (animId) {{ cancelAnimationFrame(animId); animId = null; }}
     running = false;
-    btn.textContent = '&#9654; Play again';
+    btn.textContent = '▶ Play again';
     prog.textContent = 'Done — ' + (N / FS).toFixed(0) + ' s recorded';
   }}
 
@@ -241,7 +241,7 @@ def _build_monitor_html(
 
       startTs = null;
       running = true;
-      btn.textContent = '&#9646;&#9646; Stop';
+      btn.textContent = '⏹ Stop';
       requestAnimationFrame(frame);
     }});
   }}
