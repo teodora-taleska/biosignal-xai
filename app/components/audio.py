@@ -37,7 +37,7 @@ def _build_js(p: dict, volume: float = 0.18) -> str:
            padding:6px 14px; cursor:pointer; font-size:13px;">
     ♥ Play heartbeat
   </button>
-  <span style="font-size:12px; color:#555;">{p['label']} · {p['bpm']} BPM</span>
+  <span style="font-size:12px; color:#000000;">{p['label']} · {p['bpm']} BPM</span>
 </div>
 
 <script>

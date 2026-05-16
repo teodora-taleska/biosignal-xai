@@ -63,17 +63,17 @@ def render_patient_card(record: dict) -> None:
 ">
   <div style="display:flex; justify-content:space-between; align-items:flex-start;">
     <div>
-      <span style="font-size:13px; color:#888;">ECG ID</span><br>
+      <span style="font-size:13px; color:#000000;">ECG ID</span><br>
       <span style="font-size:18px; font-weight:600; color:{_BLUE};">#{ecg_id}</span>
     </div>
     <div style="text-align:right;">
-      <span style="font-size:13px; color:#888;">{sex_s}</span><br>
+      <span style="font-size:13px; color:#000000;">{sex_s}</span><br>
       <span style="font-size:16px; font-weight:500;">{age_s}</span>
     </div>
   </div>
   <div style="margin-top:8px;">
-    <span style="font-size:12px; color:#888; margin-right:6px;">Diagnoses:</span>
-    {chips_html if chips_html else '<span style="color:#aaa; font-size:12px;">none</span>'}
+    <span style="font-size:12px; color:#000000; margin-right:6px;">Diagnoses:</span>
+    {chips_html if chips_html else '<span style="color:#000000; font-size:12px;">none</span>'}
   </div>
 </div>
 """
