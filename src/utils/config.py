@@ -12,6 +12,8 @@ def load_config(path: str = "configs/config.yaml") -> dict:
 
     # Resolve all paths to absolute, works from anywhere
     # Trailing '/' preserved so callers can concatenate filenames directly
+    if 'data' in cfg and 'path' in cfg['data']:
+        cfg['data']['path'] = str(PROJECT_ROOT / cfg['data']['path']) + '/'
     if 'preprocessing' in cfg:
         cfg['preprocessing']['path'] = str(PROJECT_ROOT / cfg['preprocessing']['path']) + '/'
     for key in cfg['paths']:
