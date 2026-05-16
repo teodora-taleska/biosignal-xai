@@ -107,6 +107,7 @@ def _build_monitor_html(
   canvas {{
     display:block;
     width:100%;
+    height:130px;
     background:#0d1117;
   }}
   #controls {{
@@ -139,7 +140,7 @@ def _build_monitor_html(
     <span id="bpm-display">{bpm:.0f}<span id="bpm-unit">BPM</span></span>
     <span id="status">{status_label}</span>
   </div>
-  <canvas id="ecg" height="{height - 60}"></canvas>
+  <canvas id="ecg"></canvas>
   <div id="controls">
     <button id="btn">&#9654; Play</button>
     <span id="progress">Click Play to animate the ECG signal</span>
@@ -161,11 +162,14 @@ def _build_monitor_html(
   const btn     = document.getElementById('btn');
   const prog    = document.getElementById('progress');
 
-  // Make canvas pixel-width match CSS width
+  // Set canvas pixel dimensions to match its CSS size
   function resizeCanvas() {{
-    canvas.width = canvas.offsetWidth || 600;
+    const rect = canvas.getBoundingClientRect();
+    canvas.width  = rect.width  || canvas.offsetWidth  || 600;
+    canvas.height = rect.height || canvas.offsetHeight || 130;
   }}
-  resizeCanvas();
+  // Run after layout is painted
+  requestAnimationFrame(() => {{ resizeCanvas(); drawGrid(); }});
 
   // Normalise signal for display: map to [0.1 * H, 0.9 * H]
   const lo = Math.min(...signal), hi = Math.max(...signal);
@@ -298,9 +302,6 @@ def _build_monitor_html(
       start();
     }}
   }});
-
-  // Initial grid
-  drawGrid();
 }})();
 </script>
 </body>
@@ -312,7 +313,7 @@ def _build_monitor_html(
 def render_ecg_monitor(
     signal:     np.ndarray,
     is_anomaly: bool = False,
-    height:     int  = 220,
+    height:     int  = 260,
 ) -> tuple[float, list[int]]:
     """
     Render the animated ECG cardiac monitor widget.
