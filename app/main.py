@@ -12,6 +12,14 @@ Five tabs:
   5. Real-Time Monitor  — [scaffolded] live inference streaming
 """
 from __future__ import annotations
+import sys
+from pathlib import Path
+
+# Ensure repo root is on sys.path so `app`, `src` etc. are importable
+# regardless of which directory streamlit was launched from.
+_REPO_ROOT = str(Path(__file__).resolve().parents[1])
+if _REPO_ROOT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT)
 
 import streamlit as st
 
