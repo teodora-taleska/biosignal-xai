@@ -15,9 +15,9 @@ from __future__ import annotations
 import numpy as np
 import streamlit as st
 
-from app.components.audio import render_heartbeat
+from app.components.ecg_animation import render_ecg_monitor
 from app.components.confidence_gauge import render_confidence_gauge
-from app.components.ecg_viewer import render_ecg, render_ecg_with_saliency
+from app.components.ecg_viewer import render_ecg_with_saliency
 from app.components.patient_card import render_patient_card
 from app.data.loader import (
     LEAD_NAMES,
@@ -98,21 +98,17 @@ def render() -> None:
     rec  = next(r for r in filtered if r['ecg_id'] == chosen_id)
     pred = predictions.get(str(chosen_id))  # may be None
 
-    # ── Patient info + audio ──────────────────────────────────────────────────
+    # ── Patient info ──────────────────────────────────────────────────────────
     _section_header('👤', 'Patient info')
-    info_col, audio_col = st.columns([2, 1])
-    with info_col:
-        render_patient_card(rec)
-    with audio_col:
-        is_anomaly = bool(rec.get('superclass') and rec['superclass'] != ['NORM'])
-        st.markdown('**Heartbeat**')
-        render_heartbeat(is_anomaly=is_anomaly)
+    render_patient_card(rec)
 
-    # ── ECG waveform ──────────────────────────────────────────────────────────
-    _section_header('📈', 'ECG waveform')
+    # ── ECG monitor + heartbeat ───────────────────────────────────────────────
+    _section_header('📈', 'ECG monitor')
     with st.spinner('Loading ECG …'):
         raw = _get_signal(rec['filename_lr'])
-    render_ecg(raw, lead_names=LEAD_NAMES, title=f'Raw ECG — Record #{chosen_id}', key='id_ecg_raw')
+    is_anomaly = bool(rec.get('superclass') and rec['superclass'] != ['NORM'])
+    st.caption('Press **Play** to scroll the lead II signal in real-time with heartbeat audio synced to detected R-peaks.')
+    render_ecg_monitor(raw, is_anomaly=is_anomaly)
 
     # ── Prediction ────────────────────────────────────────────────────────────
     _section_header('🤖', 'XResNet1D-101 prediction')
