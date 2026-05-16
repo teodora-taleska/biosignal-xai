@@ -1,0 +1,12 @@
+{
+  "config_name": "bandpass_none_250",
+  "label": "Bandpass only, 2.5 s",
+  "filter_fn": "bandpass_filter",
+  "norm_fn": null,
+  "window_size": 250,
+  "stride": 125,
+  "sampling_rate": 100,
+  "window_sec": 2.5,
+  "auc_ablation": 0.79353,
+  "fmax_ablation": 0.56087
+}

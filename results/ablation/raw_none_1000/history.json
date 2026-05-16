@@ -1,0 +1,38 @@
+{
+  "experiment": "raw_none_1000",
+  "best_auc": 0.5552591602648639,
+  "history": [
+    {
+      "epoch": 1,
+      "lr": 0.00034567147540784,
+      "train_loss": 0.95698,
+      "val_loss": 0.81295,
+      "auc_macro": 0.55526,
+      "fmax": 0.40673,
+      "per_class_auc": {
+        "NORM": 0.61527,
+        "MI": 0.46811,
+        "STTC": 0.51989,
+        "CD": 0.51074,
+        "HYP": 0.66228
+      },
+      "epoch_time_sec": 12.02
+    },
+    {
+      "epoch": 2,
+      "lr": 9.772630431047016e-06,
+      "train_loss": 0.86353,
+      "val_loss": 0.80948,
+      "auc_macro": 0.47722,
+      "fmax": 0.40061,
+      "per_class_auc": {
+        "NORM": 0.59036,
+        "MI": 0.46077,
+        "STTC": 0.4836,
+        "CD": 0.44771,
+        "HYP": 0.40366
+      },
+      "epoch_time_sec": 11.82
+    }
+  ]
+}

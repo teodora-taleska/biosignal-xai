@@ -1,0 +1,38 @@
+{
+  "experiment": "bandpass_robust_250",
+  "best_auc": 0.7386930641394447,
+  "history": [
+    {
+      "epoch": 1,
+      "lr": 0.0003977706920510366,
+      "train_loss": 0.91863,
+      "val_loss": 1.73101,
+      "auc_macro": 0.51828,
+      "fmax": 0.38968,
+      "per_class_auc": {
+        "NORM": 0.56672,
+        "MI": 0.52774,
+        "STTC": 0.52287,
+        "CD": 0.5494,
+        "HYP": 0.42465
+      },
+      "epoch_time_sec": 116.09
+    },
+    {
+      "epoch": 2,
+      "lr": 2.1004933165362323e-07,
+      "train_loss": 0.78416,
+      "val_loss": 0.69573,
+      "auc_macro": 0.73869,
+      "fmax": 0.50805,
+      "per_class_auc": {
+        "NORM": 0.83297,
+        "MI": 0.75537,
+        "STTC": 0.74548,
+        "CD": 0.70293,
+        "HYP": 0.65671
+      },
+      "epoch_time_sec": 112.98
+    }
+  ]
+}

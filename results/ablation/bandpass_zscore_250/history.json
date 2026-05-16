@@ -1,0 +1,38 @@
+{
+  "experiment": "bandpass_zscore_250",
+  "best_auc": 0.7435232120002941,
+  "history": [
+    {
+      "epoch": 1,
+      "lr": 0.0003977706920510366,
+      "train_loss": 0.92433,
+      "val_loss": 1.48676,
+      "auc_macro": 0.56226,
+      "fmax": 0.39787,
+      "per_class_auc": {
+        "NORM": 0.61605,
+        "MI": 0.58455,
+        "STTC": 0.55557,
+        "CD": 0.51988,
+        "HYP": 0.53523
+      },
+      "epoch_time_sec": 198.26
+    },
+    {
+      "epoch": 2,
+      "lr": 2.1004933165362323e-07,
+      "train_loss": 0.75842,
+      "val_loss": 0.69931,
+      "auc_macro": 0.74352,
+      "fmax": 0.5137,
+      "per_class_auc": {
+        "NORM": 0.83506,
+        "MI": 0.74785,
+        "STTC": 0.75155,
+        "CD": 0.743,
+        "HYP": 0.64016
+      },
+      "epoch_time_sec": 210.42
+    }
+  ]
+}

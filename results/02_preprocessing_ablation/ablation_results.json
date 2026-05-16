@@ -1,0 +1,119 @@
+{
+  "fast_mode": true,
+  "ablation_epochs": 2,
+  "best_config": "bandpass_none_250",
+  "results": {
+    "raw_zscore_250": {
+      "label": "Raw + Z-score, 2.5 s",
+      "best_auc": 0.72167,
+      "final_fmax": 0.49572,
+      "per_class_auc": {
+        "NORM": 0.80169,
+        "MI": 0.73392,
+        "STTC": 0.73288,
+        "CD": 0.68153,
+        "HYP": 0.65833
+      },
+      "epochs_run": 2,
+      "total_time_sec": 257.5
+    },
+    "bandpass_zscore_250": {
+      "label": "Bandpass + Z-score, 2.5 s  \u2605",
+      "best_auc": 0.74352,
+      "final_fmax": 0.5137,
+      "per_class_auc": {
+        "NORM": 0.83506,
+        "MI": 0.74785,
+        "STTC": 0.75155,
+        "CD": 0.743,
+        "HYP": 0.64016
+      },
+      "epochs_run": 2,
+      "total_time_sec": 409.8
+    },
+    "bandpass_none_250": {
+      "label": "Bandpass only, 2.5 s",
+      "best_auc": 0.79353,
+      "final_fmax": 0.56087,
+      "per_class_auc": {
+        "NORM": 0.88786,
+        "MI": 0.79823,
+        "STTC": 0.75485,
+        "CD": 0.75473,
+        "HYP": 0.77199
+      },
+      "epochs_run": 2,
+      "total_time_sec": 278.6
+    },
+    "bandpass_minmax_250": {
+      "label": "Bandpass + Min-max, 2.5 s",
+      "best_auc": 0.66963,
+      "final_fmax": 0.46545,
+      "per_class_auc": {
+        "NORM": 0.73346,
+        "MI": 0.70198,
+        "STTC": 0.58489,
+        "CD": 0.79126,
+        "HYP": 0.53655
+      },
+      "epochs_run": 2,
+      "total_time_sec": 198.3
+    },
+    "bandpass_robust_250": {
+      "label": "Bandpass + Robust, 2.5 s",
+      "best_auc": 0.73869,
+      "final_fmax": 0.50805,
+      "per_class_auc": {
+        "NORM": 0.83297,
+        "MI": 0.75537,
+        "STTC": 0.74548,
+        "CD": 0.70293,
+        "HYP": 0.65671
+      },
+      "epochs_run": 2,
+      "total_time_sec": 229.8
+    },
+    "bandpass_zscore_500": {
+      "label": "Bandpass + Z-score, 5 s",
+      "best_auc": 0.55616,
+      "final_fmax": 0.39992,
+      "per_class_auc": {
+        "NORM": 0.57725,
+        "MI": 0.55808,
+        "STTC": 0.52933,
+        "CD": 0.58348,
+        "HYP": 0.53266
+      },
+      "epochs_run": 2,
+      "total_time_sec": 83.1
+    },
+    "bandpass_zscore_1000": {
+      "label": "Bandpass + Z-score, 10 s",
+      "best_auc": 0.50895,
+      "final_fmax": 0.40054,
+      "per_class_auc": {
+        "NORM": 0.52217,
+        "MI": 0.48527,
+        "STTC": 0.50654,
+        "CD": 0.51805,
+        "HYP": 0.5127
+      },
+      "epochs_run": 2,
+      "total_time_sec": 30.1
+    },
+    "raw_none_1000": {
+      "label": "Raw (paper baseline), 10 s",
+      "best_auc": 0.55526,
+      "final_fmax": 0.40061,
+      "per_class_auc": {
+        "NORM": 0.59036,
+        "MI": 0.46077,
+        "STTC": 0.4836,
+        "CD": 0.44771,
+        "HYP": 0.40366
+      },
+      "epochs_run": 2,
+      "total_time_sec": 24.1
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "experiment": "bandpass_none_250",
+  "best_auc": 0.7935336601655153,
+  "history": [
+    {
+      "epoch": 1,
+      "lr": 0.0003977706920510366,
+      "train_loss": 0.90025,
+      "val_loss": 0.89443,
+      "auc_macro": 0.641,
+      "fmax": 0.46055,
+      "per_class_auc": {
+        "NORM": 0.65497,
+        "MI": 0.49699,
+        "STTC": 0.56631,
+        "CD": 0.64689,
+        "HYP": 0.83984
+      },
+      "epoch_time_sec": 182.75
+    },
+    {
+      "epoch": 2,
+      "lr": 2.1004933165362323e-07,
+      "train_loss": 0.70675,
+      "val_loss": 0.63354,
+      "auc_macro": 0.79353,
+      "fmax": 0.56087,
+      "per_class_auc": {
+        "NORM": 0.88786,
+        "MI": 0.79823,
+        "STTC": 0.75485,
+        "CD": 0.75473,
+        "HYP": 0.77199
+      },
+      "epoch_time_sec": 95.25
+    }
+  ]
+}
