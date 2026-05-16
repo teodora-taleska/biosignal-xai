@@ -24,6 +24,7 @@ def render_confidence_gauge(
     result: dict,
     true_classes: list[str] | None = None,
     height: int = 220,
+    key: str = 'confidence_gauge',
 ) -> None:
     """
     Render a horizontal bar chart of class probabilities.
@@ -67,7 +68,7 @@ def render_confidence_gauge(
         showlegend=False,
     )
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, key=key)
 
     # Legend note if ground truth is shown
     if true_set:

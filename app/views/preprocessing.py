@@ -180,7 +180,7 @@ def render() -> None:
         )
         st.plotly_chart(
             _lead_strip(raw_lead, t, f'Raw — {chosen_lead}', color='#607d8b'),
-            use_container_width=True,
+            use_container_width=True, key='pp_step1',
         )
 
     # ── Step 2: Bandpass ──────────────────────────────────────────────────────
@@ -192,7 +192,7 @@ def render() -> None:
         )
         bp = bandpass_filter(raw)[:, li]
         fig = _lead_strip(bp, t, f'Bandpass — {chosen_lead}', color=_BLUE, reference=raw_lead)
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, key='pp_step2')
 
     # ── Step 3: Z-score (educational) ────────────────────────────────────────
     with st.expander('**Step 3 — Z-score normalisation (for reference)**'):
@@ -205,7 +205,7 @@ def render() -> None:
         bp_full  = bandpass_filter(raw)
         norm_lead = normalize_signal(bp_full)[:, li]
         fig = _lead_strip(norm_lead, t, f'Z-score — {chosen_lead}', color=_ORANGE, reference=bp)
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, key='pp_step3')
 
     # ── Step 4: Sliding windows ───────────────────────────────────────────────
     with st.expander('**Step 4 — Sliding windows (2.5 s, stride 1.25 s)**', expanded=True):
@@ -216,7 +216,7 @@ def render() -> None:
             'predictions are aggregated by mean pooling at inference time.'
         )
         bp_lead = bandpass_filter(raw)[:, li]
-        st.plotly_chart(_window_diagram(bp_lead, t), use_container_width=True)
+        st.plotly_chart(_window_diagram(bp_lead, t), use_container_width=True, key='pp_step4')
 
         n_windows = (raw.shape[0] - 250) // 125 + 1
         c1, c2, c3 = st.columns(3)

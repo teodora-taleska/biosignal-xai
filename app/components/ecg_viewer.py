@@ -35,6 +35,7 @@ def render_ecg(
     title:      str       = 'ECG — 12 leads',
     height:     int       = 480,
     fs:         int       = _FS,
+    key:        str       = 'ecg_viewer',
 ) -> None:
     """
     Render all 12 leads in a vertically stacked subplot grid (6 rows × 2 cols).
@@ -87,7 +88,7 @@ def render_ecg(
     fig.update_xaxes(showgrid=True, gridcolor='#f0f0f0', title_text='s', title_font_size=10)
     fig.update_yaxes(showgrid=True, gridcolor='#f0f0f0', title_text='mV', title_font_size=10)
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, key=key)
 
 
 def render_ecg_with_saliency(
@@ -97,6 +98,7 @@ def render_ecg_with_saliency(
     top_leads:  list[str] | None = None,
     height:     int              = 520,
     fs:         int              = _FS,
+    key:        str              = 'ecg_saliency',
 ) -> None:
     """
     Render ECG waveform with saliency heatmap overlay and colorbar.
@@ -198,7 +200,7 @@ def render_ecg_with_saliency(
     fig.update_xaxes(showgrid=False)
     fig.update_yaxes(showgrid=False)
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, key=key)
 
     # Colorbar legend caption
     st.caption('Saliency colorbar: light blue = low gradient magnitude → dark red = high')

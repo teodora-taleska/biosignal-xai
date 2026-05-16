@@ -112,7 +112,7 @@ def render() -> None:
     _section_header('📈', 'ECG waveform')
     with st.spinner('Loading ECG …'):
         raw = _get_signal(rec['filename_lr'])
-    render_ecg(raw, lead_names=LEAD_NAMES, title=f'Raw ECG — Record #{chosen_id}')
+    render_ecg(raw, lead_names=LEAD_NAMES, title=f'Raw ECG — Record #{chosen_id}', key='id_ecg_raw')
 
     # ── Prediction ────────────────────────────────────────────────────────────
     _section_header('🤖', 'XResNet1D-101 prediction')
@@ -129,7 +129,7 @@ def render() -> None:
     if pred:
         g_col, p_col = st.columns([2, 1])
         with g_col:
-            render_confidence_gauge(pred, true_classes=rec.get('superclass'))
+            render_confidence_gauge(pred, true_classes=rec.get('superclass'), key='id_gauge')
         with p_col:
             st.markdown('**Predicted:**')
             for cls in pred['predicted_classes']:
@@ -179,7 +179,7 @@ def render() -> None:
             sal = st.session_state['_sal']
             top = st.session_state['_top']
             st.markdown(f'**Top-3 salient leads:** {", ".join(top)}')
-            render_ecg_with_saliency(raw, sal, lead_names=LEAD_NAMES, top_leads=top)
+            render_ecg_with_saliency(raw, sal, lead_names=LEAD_NAMES, top_leads=top, key='id_ecg_sal')
 
     # ── LLM explanation ───────────────────────────────────────────────────────
     if pred:

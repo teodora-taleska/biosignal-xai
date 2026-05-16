@@ -85,7 +85,7 @@ def _class_distribution_chart(df: pd.DataFrame) -> None:
         plot_bgcolor='#ffffff', paper_bgcolor='#ffffff',
         margin=dict(l=20, r=20, t=40, b=20),
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, key='de_class_dist')
 
 
 # ── Curated table with filters ────────────────────────────────────────────────
@@ -167,14 +167,14 @@ def _record_detail(records: list[dict], predictions: dict) -> None:
         render_patient_card(rec)
         if pred:
             st.markdown('**Model prediction (XResNet1D)**')
-            render_confidence_gauge(pred, true_classes=rec.get('superclass'))
+            render_confidence_gauge(pred, true_classes=rec.get('superclass'), key='de_gauge')
         else:
             st.info('No cached prediction for this record.')
 
     with col_right:
         with st.spinner('Loading ECG signal …'):
             sig = _get_signal(rec['filename_lr'])
-        render_ecg(sig, lead_names=LEAD_NAMES, title=f'ECG #{chosen_id}')
+        render_ecg(sig, lead_names=LEAD_NAMES, title=f'ECG #{chosen_id}', key='de_ecg')
 
 
 # ── Main render ───────────────────────────────────────────────────────────────
