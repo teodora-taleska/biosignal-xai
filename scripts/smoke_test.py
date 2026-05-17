@@ -1,8 +1,8 @@
 """
-Smoke test all models: 2 epochs, small preprocessing subset.
+Smoke test: 2 epochs, small data subset, all models.
 
-Produces real history.json files under results/<experiment_name>/
-so notebook cells that load history work immediately after.
+Verifies the full stack (data loading → model forward → training loop →
+metrics) runs without errors. Not a quality benchmark — just a sanity check.
 
 Usage:
     python scripts/smoke_test.py
@@ -11,6 +11,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import sys
 
@@ -22,23 +23,20 @@ import warnings
 warnings.filterwarnings('ignore', category=FutureWarning)
 warnings.filterwarnings('ignore', category=UserWarning)
 
-import json
-
 import torch
 from torch.utils.data import DataLoader
 
 from src.utils.config import CFG
 from src.preprocessing.label_utils import load_all_labels
-from src.preprocessing.dataset import ECGDataset
+from src.preprocessing.dataset_ablation import ECGDatasetAblation, ABLATION_CONFIGS
 from src.preprocessing.dataset_full import ECGDatasetFull
-from src.models.baseline_cnn import BaselineCNN
+from src.models.fcn_wang import fcn_wang
 from src.models.dummy_classifier import DummyECGClassifier
 from src.models.hubert_ecg_finetune import HuBERTECGClassifier, HuBERTECGPEFT
 from src.models.leadwise_transformer import build_leadwise_with_peft
-from src.training.train import train_model
+from src.training.train_baseline import quick_ablation_run
 from src.training.train_peft import run_experiment
-
-from src.utils.metrics import compute_metrics
+from src.evaluation.metrics import compute_auc, compute_probs
 
 
 def parse_args() -> argparse.Namespace:
@@ -53,10 +51,10 @@ def parse_args() -> argparse.Namespace:
 def main():
     args = parse_args()
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    print(f'Device: {device}')
-    print(f'Epochs: {args.epochs}  Train: {args.train}  Val: {args.val}  Batch: {args.batch}\n')
+    print(f'Device : {device}')
+    print(f'Epochs : {args.epochs}  Train : {args.train}  Val : {args.val}  Batch : {args.batch}\n')
 
-    DATA_PATH = CFG['preprocessing']['path']
+    DATA_PATH = CFG['data']['path']
     RESULTS   = os.path.join(CFG['paths']['results'], 'smoke')
     os.makedirs(RESULTS, exist_ok=True)
 
@@ -67,139 +65,137 @@ def main():
     train_df = Y[Y.strat_fold < 9].head(args.train)
     val_df   = Y[Y.strat_fold == 9].head(args.val)
 
-    train_ds_w = ECGDataset(train_df, DATA_PATH)
-    val_ds_w   = ECGDataset(val_df,   DATA_PATH)
+    # Window dataset (FCN-Wang, windowed inputs)
+    preprocess_cfg = ABLATION_CONFIGS['bandpass_none_250']
+    train_ds_w = ECGDatasetAblation(train_df, DATA_PATH, **preprocess_cfg)
+    val_ds_w   = ECGDatasetAblation(val_df,   DATA_PATH, **preprocess_cfg)
+
+    # Full-record dataset (HuBERT, Leadwise — need 1000-sample inputs)
     train_ds_f = ECGDatasetFull(train_df, DATA_PATH)
     val_ds_f   = ECGDatasetFull(val_df,   DATA_PATH)
 
     results = {}
 
-    #  CNN baseline
+    # ── FCN-Wang baseline ─────────────────────────────────────────────────────
     print('=' * 50)
-    print('Baseline CNN')
-    cnn = BaselineCNN()
-    cnn = train_model(cnn, train_ds_w, val_ds_w, epochs=args.epochs, batch_size=args.batch,
-                      save_dir=os.path.join(RESULTS, 'baseline_cnn'))
+    print('FCN-Wang baseline')
+    fcn = fcn_wang()
+    summary = quick_ablation_run(
+        model           = fcn,
+        train_ds        = train_ds_w,
+        val_ds          = val_ds_w,
+        experiment_name = 'smoke_fcn_wang',
+        epochs          = args.epochs,
+        batch_size      = args.batch,
+        save_dir        = RESULTS,
+    )
+    results['fcn_wang'] = summary['best_auc']
+    del fcn; torch.cuda.empty_cache()
+    print(f"AUC: {summary['best_auc']:.4f}")
 
-    cnn.eval()
-    val_loader = DataLoader(val_ds_w, batch_size=args.batch)
-    all_logits, all_labels = [], []
-    with torch.no_grad():
-        for x, y in val_loader:
-            all_logits.append(cnn(x.to(device)).cpu())
-            all_labels.append(y)
-    cnn_metrics = compute_metrics(torch.cat(all_logits), torch.cat(all_labels))
-    with open(os.path.join(RESULTS, 'baseline_cnn_metrics.json'), 'w') as f:
-        json.dump(cnn_metrics, f, indent=2)
-
-    results['cnn'] = cnn_metrics['auc_macro']
-    del cnn; torch.cuda.empty_cache()
-    print(f"AUC: {cnn_metrics['auc_macro']:.4f}")
-
-    #  Dummy
+    # ── Dummy classifier ──────────────────────────────────────────────────────
     print('=' * 50)
     print('Dummy classifier')
     dummy = DummyECGClassifier()
-    dummy._results_dir = RESULTS   # redirect to smoke/
+    dummy._results_dir = RESULTS
     dummy.fit(train_ds_f)
     metrics = dummy.evaluate(val_ds_f)
     dummy.save_results(metrics, 'dummy_metrics.json')
     results['dummy'] = metrics['auc_macro']
     print(f"AUC: {metrics['auc_macro']:.4f}")
 
-    #  HuBERT 8 blocks
-    print()
+    # ── HuBERT-ECG 8 blocks ───────────────────────────────────────────────────
+    print('=' * 50)
+    print('HuBERT-ECG 8 blocks')
     model_B = HuBERTECGClassifier(
         size=CFG['model']['hubert_size'], blocks_to_unfreeze=8
     )
     auc_B, _, _ = run_experiment(
         model_B, train_ds_f, val_ds_f,
-        experiment_name='hubert_ecg_blocks8',
-        epochs=args.epochs,
-        lr=CFG['training']['lr_pretrained'],
-        batch_size=args.batch,
-        save_dir=RESULTS,
+        experiment_name = 'smoke_hubert_8',
+        epochs          = args.epochs,
+        lr              = CFG['training']['lr_pretrained'],
+        batch_size      = args.batch,
+        save_dir        = RESULTS,
     )
-    del model_B; torch.cuda.empty_cache()
     results['hubert_8'] = auc_B
+    del model_B; torch.cuda.empty_cache()
 
-    #  HuBERT PEFT — LoRA r=8
-    print()
+    # ── HuBERT-ECG PEFT LoRA r=8 ─────────────────────────────────────────────
+    print('=' * 50)
+    print('HuBERT-ECG LoRA r=8')
     _probe = HuBERTECGPEFT(rank=8, use_dora=False).to(device)
-    _dummy_in = torch.randn(2, 12, 1000)
     with torch.no_grad():
-        _out = _probe(_dummy_in.to(device))
+        _out = _probe(torch.randn(2, 12, 1000).to(device))
     assert _out.shape == (2, 5), f"Shape error: {_out.shape}"
-    print(f"Forward pass OK: (2, 12, 1000) -> {_out.shape}")
     _p = _probe.count_parameters()
     assert _p['trainable'] / _p['total'] < 0.05, \
         f"LoRA trainable {_p['trainable']/_p['total']:.1%} exceeds 5%"
-    print(f"Parameter check OK: {_p['trainable']:,} / {_p['total']:,} = "
-          f"{100*_p['trainable']/_p['total']:.1f}%")
-    del _probe, _dummy_in, _out
+    print(f"Forward pass OK: (2,12,1000) → {_out.shape}  "
+          f"LoRA params: {_p['trainable']:,}/{_p['total']:,}")
+    del _probe, _out; torch.cuda.empty_cache()
 
     model_lora = HuBERTECGPEFT(rank=8, use_dora=False)
     auc_lora, _, _ = run_experiment(
         model_lora, train_ds_f, val_ds_f,
-        experiment_name='hubert_ecg_lora_r8',
-        epochs=args.epochs,
-        lr=CFG['training']['lr_pretrained'],
-        batch_size=args.batch,
-        save_dir=RESULTS,
+        experiment_name = 'smoke_hubert_lora_r8',
+        epochs          = args.epochs,
+        lr              = CFG['training']['lr_pretrained'],
+        batch_size      = args.batch,
+        save_dir        = RESULTS,
     )
-    del model_lora; torch.cuda.empty_cache()
     results['lora'] = auc_lora
+    del model_lora; torch.cuda.empty_cache()
 
-    #  HuBERT PEFT — DoRA r=8
-    print()
+    # ── HuBERT-ECG PEFT DoRA r=8 ─────────────────────────────────────────────
+    print('=' * 50)
+    print('HuBERT-ECG DoRA r=8')
     model_dora = HuBERTECGPEFT(rank=8, use_dora=True)
     auc_dora, _, _ = run_experiment(
         model_dora, train_ds_f, val_ds_f,
-        experiment_name='hubert_ecg_dora_r8',
-        epochs=args.epochs,
-        lr=CFG['training']['lr_pretrained'],
-        batch_size=args.batch,
-        save_dir=RESULTS,
+        experiment_name = 'smoke_hubert_dora_r8',
+        epochs          = args.epochs,
+        lr              = CFG['training']['lr_pretrained'],
+        batch_size      = args.batch,
+        save_dir        = RESULTS,
     )
-    del model_dora; torch.cuda.empty_cache()
     results['dora'] = auc_dora
+    del model_dora; torch.cuda.empty_cache()
 
-    #  Lead-wise PEFT — LoRA r=8
-    print()
-    # Shape + param assertions before training
+    # ── Lead-wise Transformer LoRA r=8 ────────────────────────────────────────
+    print('=' * 50)
+    print('Lead-wise Transformer LoRA r=8')
     _probe_lw = build_leadwise_with_peft(rank=8, use_dora=False).to(device)
-    _lw_dummy = torch.randn(2, 12, 1000)
     with torch.no_grad():
-        _lw_out = _probe_lw(_lw_dummy.to(device))
+        _lw_out = _probe_lw(torch.randn(2, 12, 1000).to(device))
     assert _lw_out.shape == (2, 5), f"Shape error: {_lw_out.shape}"
     _lw_p = _probe_lw.count_parameters()
     assert _lw_p['trainable'] / _lw_p['total'] < 0.10, \
         f"Leadwise LoRA trainable {_lw_p['trainable']/_lw_p['total']:.1%} exceeds 10%"
-    print(f"Leadwise LoRA: (2,12,1000) -> {_lw_out.shape} OK | "
-          f"{_lw_p['trainable']:,} / {_lw_p['total']:,} = "
-          f"{100*_lw_p['trainable']/_lw_p['total']:.1f}%")
-    del _probe_lw, _lw_dummy, _lw_out
+    print(f"Forward pass OK: (2,12,1000) → {_lw_out.shape}  "
+          f"LoRA params: {_lw_p['trainable']:,}/{_lw_p['total']:,}")
+    del _probe_lw, _lw_out; torch.cuda.empty_cache()
 
-    model_lw_lora = build_leadwise_with_peft(rank=8, use_dora=False)
-    auc_lw_lora, _, _ = run_experiment(
-        model_lw_lora, train_ds_f, val_ds_f,
-        experiment_name='leadwise_lora_r8',
-        epochs=args.epochs,
-        lr=CFG['training']['lr_peft'],
-        batch_size=args.batch,
-        save_dir=RESULTS,
+    model_lw = build_leadwise_with_peft(rank=8, use_dora=False)
+    auc_lw, _, _ = run_experiment(
+        model_lw, train_ds_f, val_ds_f,
+        experiment_name = 'smoke_leadwise_lora_r8',
+        epochs          = args.epochs,
+        lr              = CFG['training']['lr_peft'],
+        batch_size      = args.batch,
+        save_dir        = RESULTS,
     )
-    del model_lw_lora; torch.cuda.empty_cache()
-    results['lw_lora'] = auc_lw_lora
+    results['lw_lora'] = auc_lw
+    del model_lw; torch.cuda.empty_cache()
 
-    #  Summary
+    # ── Summary ───────────────────────────────────────────────────────────────
     print()
     print('=' * 50)
     print('SMOKE TEST SUMMARY')
     print('=' * 50)
     labels = {
         'dummy':    'Dummy (prior)',
-        'cnn':      'CNN (baseline)',
+        'fcn_wang': 'FCN-Wang baseline',
         'hubert_8': 'HuBERT-ECG 8 blocks',
         'lora':     'HuBERT-ECG LoRA r=8',
         'dora':     'HuBERT-ECG DoRA r=8',
@@ -208,7 +204,10 @@ def main():
     for key, label in labels.items():
         print(f'  {label:<25s}  AUC {results[key]:.4f}')
     print()
-    print(f'All outputs written to {RESULTS}/')
+    print(f'All outputs → {RESULTS}/')
+
+    with open(os.path.join(RESULTS, 'smoke_summary.json'), 'w') as f:
+        json.dump(results, f, indent=2)
 
 
 if __name__ == '__main__':

@@ -1,21 +1,29 @@
 """
-Training loop for XResNet1D-101 on PTB-XL.
+Generic baseline training loop for PTB-XL ECG classification.
 
-Matches the training protocol from Strodthoff et al. 2020:
+Implements the training protocol from Strodthoff et al. (2021), Appendix I:
   - AdamW optimiser
   - 1-cycle LR schedule (linear warm-up → cosine decay)
   - BCEWithLogitsLoss with pos_weight for class imbalance
   - Early stopping on validation macro-AUC (not loss)
   - Gradient clipping for stability
-  - Full training history + profiling saved to JSON
+  - Full per-epoch history + profiling saved to JSON
+
+Model-agnostic: works with FCN-Wang, XResNet1D, or any nn.Module that
+accepts (B, 12, T) inputs, returns (B, 5) logits, and exposes
+.count_parameters() -> {'total': int, 'trainable': int, 'percentage': str}.
+
+Primary use: FCN-Wang (project baseline, ~310k params).
 
 Usage
 -----
-    from src.models.xresnet1d import xresnet1d101
-    from src.training.train_xresnet import train_xresnet
+    from src.models.fcn_wang import fcn_wang
+    from src.training.train_baseline import train_baseline
 
-    model = xresnet1d101()
-    best_auc, history = train_xresnet(model, train_ds, val_ds, 'xresnet_baseline')
+    model = fcn_wang()
+    best_auc, history, profiling = train_baseline(
+        model, train_ds, val_ds, experiment_name='fcn_wang_baseline'
+    )
 """
 
 from __future__ import annotations
@@ -37,47 +45,49 @@ from src.utils.profiler import ExperimentProfiler
 _DEFAULT_POS_WEIGHT = torch.tensor([1.0, 1.74, 1.82, 1.94, 3.59])
 
 
-def train_xresnet(
+def train_baseline(
     model,
     train_ds,
     val_ds,
-    experiment_name:   str   = 'xresnet_baseline',
-    epochs:            int   = CFG['training']['epochs'],
-    lr_peak:           float = 1e-3,
-    batch_size:        int   = 64,
-    weight_decay:      float = CFG['training']['weight_decay'],
-    warmup_pct:        float = 0.3,
-    patience:          int   = 8,
-    grad_clip:         float = CFG['training']['grad_clip'],
-    pos_weight:        torch.Tensor = None,
-    num_workers:       int   = CFG['training']['num_workers'],
-    save_dir:          str   = None,
+    experiment_name:  str          = 'fcn_wang_baseline',
+    epochs:           int          = CFG['training']['epochs'],
+    lr_peak:          float        = 1e-3,
+    batch_size:       int          = 64,
+    weight_decay:     float        = CFG['training']['weight_decay'],
+    warmup_pct:       float        = 0.3,
+    patience:         int          = 8,
+    grad_clip:        float        = CFG['training']['grad_clip'],
+    pos_weight:       torch.Tensor = None,
+    num_workers:      int          = CFG['training']['num_workers'],
+    save_dir:         str          = None,
 ) -> tuple[float, list, dict]:
     """
-    Train XResNet1D-101 with 1-cycle LR and AUC-based early stopping.
+    Train an ECG classifier with 1-cycle LR and AUC-based early stopping.
 
     Parameters
     ----------
-    model           : XResNet1d instance (untrained or pretrained)
+    model           : nn.Module — any model with .count_parameters(); primary use FCN-Wang
     train_ds        : training Dataset (ECGDatasetAblation or ECGDatasetFull)
     val_ds          : validation Dataset
     experiment_name : used for save directory and profiling JSON key
     epochs          : maximum training epochs
-    lr_peak         : peak learning rate for 1-cycle schedule
-    batch_size      : samples per batch (64 recommended for 8 GB VRAM)
+    lr_peak         : peak learning rate for 1-cycle schedule (default 1e-3)
+    batch_size      : samples per batch (64 for FCN-Wang; can go higher — only 310k params)
     weight_decay    : AdamW weight decay
-    warmup_pct      : fraction of total steps used for linear warm-up
-    patience        : early stopping — stop if AUC hasn't improved for N epochs
-    grad_clip       : max gradient norm
-    pos_weight      : BCEWithLogitsLoss positive class weights (length 5)
-    num_workers     : DataLoader workers (0 on Windows)
-    save_dir        : root directory for checkpoints; default CFG['paths']['results']
+    warmup_pct      : fraction of total steps used for linear warm-up (0.3 = 30 %)
+    patience        : early stopping — halt if val AUC hasn't improved for N epochs
+    grad_clip       : max gradient norm (clips exploding gradients)
+    pos_weight      : BCEWithLogitsLoss positive class weights, length 5;
+                      defaults to inverse class frequencies of PTB-XL training set
+    num_workers     : DataLoader workers (0 on Windows; 4 on Linux)
+    save_dir        : root directory for checkpoints; defaults to CFG['paths']['results']
 
     Returns
     -------
     (best_auc, history, profiling_summary)
         best_auc  : float — best validation macro-AUC achieved
-        history   : list of per-epoch dicts
+        history   : list of per-epoch dicts (epoch, lr, train_loss, val_loss,
+                    auc_macro, fmax, per_class_auc, epoch_time_sec)
         profiling : dict from ExperimentProfiler.summary()
     """
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -91,32 +101,31 @@ def train_xresnet(
 
     if save_dir is None:
         save_dir = CFG['paths']['results']
-    exp_path = os.path.join(save_dir, experiment_name)
+    exp_path  = os.path.join(save_dir, experiment_name)
     os.makedirs(exp_path, exist_ok=True)
     ckpt_path = os.path.join(exp_path, 'checkpoint.pt')
 
     model = model.to(device)
 
-    # ---- Profiler ----
+    # ── Profiler ──────────────────────────────────────────────────────────────
     profiler = ExperimentProfiler(experiment_name)
     profiler.log_model(model)
     profiler.start()
 
-    # ---- Optimiser ----
+    # ── Optimiser ─────────────────────────────────────────────────────────────
     optimizer = torch.optim.AdamW(
         model.parameters(),
-        lr=lr_peak,
-        weight_decay=weight_decay,
-        betas=(0.9, 0.999),
+        lr           = lr_peak,
+        weight_decay = weight_decay,
+        betas        = (0.9, 0.999),
     )
 
-    # ---- Loss ----
+    # ── Loss ──────────────────────────────────────────────────────────────────
     if pos_weight is None:
         pos_weight = _DEFAULT_POS_WEIGHT
     criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weight.to(device))
 
-    # ---- 1-cycle LR schedule ----
-    # PyTorch OneCycleLR: linear warm-up to lr_peak, then cosine annealing
+    # ── DataLoaders ───────────────────────────────────────────────────────────
     train_loader = DataLoader(
         train_ds, batch_size=batch_size, shuffle=True,
         num_workers=num_workers, pin_memory=(device.type == 'cuda'),
@@ -126,18 +135,20 @@ def train_xresnet(
         num_workers=num_workers, pin_memory=(device.type == 'cuda'),
     )
 
+    # ── 1-cycle LR schedule ───────────────────────────────────────────────────
+    # Linear warm-up for warmup_pct of total steps, then cosine annealing.
     total_steps = epochs * len(train_loader)
     scheduler   = torch.optim.lr_scheduler.OneCycleLR(
         optimizer,
-        max_lr         = lr_peak,
-        total_steps    = total_steps,
-        pct_start      = warmup_pct,
-        anneal_strategy= 'cos',
-        div_factor     = 25.0,       # initial_lr = lr_peak / 25
-        final_div_factor=1e4,        # final_lr   = initial_lr / 1e4
+        max_lr          = lr_peak,
+        total_steps     = total_steps,
+        pct_start       = warmup_pct,
+        anneal_strategy = 'cos',
+        div_factor      = 25.0,    # initial_lr = lr_peak / 25
+        final_div_factor= 1e4,     # final_lr   = initial_lr / 1e4
     )
 
-    # ---- Training loop ----
+    # ── Training loop ─────────────────────────────────────────────────────────
     best_auc          = 0.0
     history           = []
     epochs_no_improve = 0
@@ -145,10 +156,10 @@ def train_xresnet(
     for epoch in range(epochs):
         profiler.start_epoch()
 
-        # -- Train --
+        # Train
         model.train()
-        train_loss  = 0.0
-        n_batches   = 0
+        train_loss = 0.0
+        n_batches  = 0
 
         for x, y in train_loader:
             x, y = x.to(device), y.to(device)
@@ -161,7 +172,7 @@ def train_xresnet(
             train_loss += loss.item()
             n_batches  += 1
 
-        # -- Validate --
+        # Validate
         model.eval()
         val_loss   = 0.0
         all_logits = []
@@ -178,15 +189,15 @@ def train_xresnet(
         all_logits = torch.cat(all_logits)
         all_labels = torch.cat(all_labels)
 
-        probs      = compute_probs(all_logits)
-        labels_np  = all_labels.numpy().astype(int)
-        auc_res    = compute_auc(probs, labels_np)
-        fmax_res   = compute_fmax(probs, labels_np)
+        probs     = compute_probs(all_logits)
+        labels_np = all_labels.numpy().astype(int)
+        auc_res   = compute_auc(probs, labels_np)
+        fmax_res  = compute_fmax(probs, labels_np)
 
-        tl   = train_loss / n_batches
-        vl   = val_loss   / len(val_loader)
-        auc  = auc_res['auc_macro']
-        fmax = fmax_res['fmax']
+        tl         = train_loss / n_batches
+        vl         = val_loss   / len(val_loader)
+        auc        = auc_res['auc_macro']
+        fmax       = fmax_res['fmax']
         current_lr = scheduler.get_last_lr()[0]
 
         profiler.end_epoch()
@@ -195,7 +206,7 @@ def train_xresnet(
               f"train={tl:.4f}  val={vl:.4f}  "
               f"AUC={auc:.4f}  Fmax={fmax:.4f}")
 
-        epoch_rec = {
+        history.append({
             'epoch':          epoch + 1,
             'lr':             current_lr,
             'train_loss':     round(tl, 5),
@@ -204,10 +215,9 @@ def train_xresnet(
             'fmax':           round(fmax, 5),
             'per_class_auc':  {k: round(v, 5) for k, v in auc_res['per_class_auc'].items()},
             'epoch_time_sec': profiler.epoch_times[-1],
-        }
-        history.append(epoch_rec)
+        })
 
-        # -- Checkpoint & early stopping on AUC --
+        # Checkpoint + early stopping on AUC
         if auc > best_auc:
             best_auc = auc
             epochs_no_improve = 0
@@ -219,7 +229,7 @@ def train_xresnet(
                 print(f"  Early stopping (no AUC improvement for {patience} epochs)")
                 break
 
-    # ---- Save outputs ----
+    # ── Save outputs ──────────────────────────────────────────────────────────
     profiler.end()
     profiler.log_checkpoint_size(ckpt_path)
     profiler.save(exp_path)
@@ -241,37 +251,38 @@ def train_xresnet(
     return best_auc, history, profiler.summary()
 
 
-
-# Quick-run variant — for ablation (fewer epochs, subset of data)
-
+# ── Ablation variant ──────────────────────────────────────────────────────────
 
 def quick_ablation_run(
     model,
     train_ds,
     val_ds,
-    experiment_name: str,
-    epochs:          int = 10,
+    experiment_name: str   = 'ablation_run',
+    epochs:          int   = 10,
     lr_peak:         float = 5e-4,
-    batch_size:      int = 64,
-    save_dir:        str = None,
+    batch_size:      int   = 64,
+    save_dir:        str   = None,
 ) -> dict:
     """
     Lightweight training run for ablation comparisons.
 
-    Uses fewer epochs (10 default) and a lower peak LR to get a meaningful
-    relative comparison without waiting for full convergence. The AUC ordering
-    across preprocessing configs is stable after 10 epochs even if absolute
-    values are below the final converged level.
+    Runs fewer epochs at a lower peak LR to get a stable relative ordering
+    across preprocessing configs without waiting for full convergence. The
+    AUC ranking is stable after 10 epochs even if absolute values are below
+    the converged level. Early stopping is disabled so all conditions run
+    for exactly `epochs` epochs (fair fixed-budget comparison).
 
     Parameters
     ----------
     save_dir : root directory for this run's checkpoint; defaults to
-               CFG['paths']['results']. Pass e.g. results/ablation/ so all
-               ablation conditions land in one dedicated subfolder.
+               CFG['paths']['results']. Pass e.g. 'results/ablation/' so
+               all ablation conditions land in one dedicated subfolder.
 
-    Returns a flat summary dict ready for ablation_results.json.
+    Returns
+    -------
+    Flat summary dict ready for ablation_results.json.
     """
-    best_auc, history, profiling = train_xresnet(
+    best_auc, history, profiling = train_baseline(
         model           = model,
         train_ds        = train_ds,
         val_ds          = val_ds,
@@ -279,7 +290,7 @@ def quick_ablation_run(
         epochs          = epochs,
         lr_peak         = lr_peak,
         batch_size      = batch_size,
-        patience        = epochs,   # disable early stopping for fair comparison
+        patience        = epochs,   # patience == epochs → early stopping disabled
         save_dir        = save_dir,
     )
 

@@ -26,8 +26,8 @@ Head (concat-pooling):
   BN → Dropout(0.25) → Linear(256→128) → ReLU
   BN → Dropout(0.50) → Linear(128→5)
 
-Input  : (B, 12, T)   — any T (adaptive pooling handles it)
-Output : (B, 5)       — raw logits; use BCEWithLogitsLoss
+Input  : (B, 12, T)   - any T (adaptive pooling handles it)
+Output : (B, 5)       - raw logits; use BCEWithLogitsLoss
 
 Parameter count : ~270k–300k (vs ~12M for XResNet1D-101)
 
@@ -89,7 +89,7 @@ class FCNWang(nn.Module):
         super().__init__()
 
         # ------------------------------------------------------------------
-        # Three FCN blocks — no spatial downsampling between blocks.
+        # Three FCN blocks - no spatial downsampling between blocks.
         # Kernel sizes (8, 5, 3) follow Wang et al. (2017) exactly.
         # padding = kernel_size // 2 keeps sequence length unchanged.
         # ------------------------------------------------------------------
@@ -114,7 +114,7 @@ class FCNWang(nn.Module):
             nn.BatchNorm1d(128),
             nn.Dropout(p=0.50),
             nn.Linear(128, num_classes),
-            # No sigmoid — caller uses BCEWithLogitsLoss
+            # No sigmoid - caller uses BCEWithLogitsLoss
         )
 
         self._init_weights()
@@ -155,10 +155,10 @@ class FCNWang(nn.Module):
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """
         Args:
-            x : (B, 12, T) — raw or preprocessed ECG, any sequence length T
+            x : (B, 12, T) - raw or preprocessed ECG, any sequence length T
 
         Returns:
-            logits : (B, num_classes) — raw logits (no sigmoid)
+            logits : (B, num_classes) - raw logits (no sigmoid)
         """
         x = self.block1(x)   # (B, 128, T)
         x = self.block2(x)   # (B, 256, T)
@@ -207,5 +207,5 @@ class FCNWang(nn.Module):
 # ── Factory ───────────────────────────────────────────────────────────────────
 
 def fcn_wang(**kwargs) -> FCNWang:
-    """FCN-Wang baseline — ~270k params, AUROC ≈ 0.925 on PTB-XL super-diag."""
+    """FCN-Wang baseline - ~270k params, AUROC ≈ 0.925 on PTB-XL super-diag."""
     return FCNWang(**kwargs)
