@@ -7,6 +7,7 @@ Implements the training protocol from Strodthoff et al. (2021), Appendix I:
   - BCEWithLogitsLoss with pos_weight for class imbalance
   - Early stopping on validation macro-AUC (not loss)
   - Gradient clipping for stability
+  - AMP (automatic mixed precision) for faster GPU throughput
   - Full per-epoch history + profiling saved to JSON
 
 Model-agnostic: works with FCN-Wang, XResNet1D, or any nn.Module that
@@ -15,6 +16,14 @@ accepts (B, 12, T) inputs, returns (B, 5) logits, and exposes
 
 Primary use: FCN-Wang (project baseline, ~310k params).
 
+Speed tips for FCN-Wang
+-----------------------
+  batch_size=256   — GPU is underutilised at 64; 256 gives ~3× throughput
+  num_workers=2    — only safe outside notebooks on Windows; eliminates data
+                     stall (keep 0 inside Jupyter on Windows)
+  compile=True     — torch.compile() fuses conv+BN ops; ~15% faster on 2.x+
+                     (first epoch slower due to JIT compilation)
+
 Usage
 -----
     from src.models.fcn_wang import fcn_wang
@@ -22,7 +31,9 @@ Usage
 
     model = fcn_wang()
     best_auc, history, profiling = train_baseline(
-        model, train_ds, val_ds, experiment_name='fcn_wang_baseline'
+        model, train_ds, val_ds,
+        experiment_name='fcn_wang_baseline',
+        batch_size=256,
     )
 """
 
@@ -33,6 +44,7 @@ import os
 
 import torch
 import torch.nn as nn
+from torch.amp import autocast, GradScaler
 from torch.utils.data import DataLoader
 
 from src.evaluation.metrics import compute_auc, compute_fmax, compute_probs
@@ -52,17 +64,18 @@ def train_baseline(
     experiment_name:  str          = 'fcn_wang_baseline',
     epochs:           int          = CFG['training']['epochs'],
     lr_peak:          float        = 1e-3,
-    batch_size:       int          = 64,
+    batch_size:       int          = 256,
     weight_decay:     float        = CFG['training']['weight_decay'],
     warmup_pct:       float        = 0.3,
-    patience:         int          = 8,
+    patience:         int          = 2,
     grad_clip:        float        = CFG['training']['grad_clip'],
     pos_weight:       torch.Tensor = None,
     num_workers:      int          = CFG['training']['num_workers'],
     save_dir:         str          = None,
+    compile_model:    bool         = False,
 ) -> tuple[float, list, dict]:
     """
-    Train an ECG classifier with 1-cycle LR and AUC-based early stopping.
+    Train an ECG classifier with 1-cycle LR, AMP, and AUC-based early stopping.
 
     Parameters
     ----------
@@ -72,15 +85,19 @@ def train_baseline(
     experiment_name : used for save directory and profiling JSON key
     epochs          : maximum training epochs
     lr_peak         : peak learning rate for 1-cycle schedule (default 1e-3)
-    batch_size      : samples per batch (64 for FCN-Wang; can go higher — only 310k params)
+    batch_size      : samples per batch; default 256 (FCN-Wang is tiny — GPU
+                      is underutilised at 64, 256 gives ~3× throughput)
     weight_decay    : AdamW weight decay
     warmup_pct      : fraction of total steps used for linear warm-up (0.3 = 30 %)
     patience        : early stopping — halt if val AUC hasn't improved for N epochs
-    grad_clip       : max gradient norm (clips exploding gradients)
+    grad_clip       : max gradient norm
     pos_weight      : BCEWithLogitsLoss positive class weights, length 5;
                       defaults to inverse class frequencies of PTB-XL training set
-    num_workers     : DataLoader workers (0 on Windows; 4 on Linux)
+    num_workers     : DataLoader workers; 0 inside Jupyter on Windows,
+                      2–4 in scripts (eliminates data-loading stall)
     save_dir        : root directory for checkpoints; defaults to CFG['paths']['results']
+    compile_model   : run torch.compile() on the model before training (~15 % faster
+                      on PyTorch 2.x+; first epoch is slower due to JIT compilation)
 
     Returns
     -------
@@ -90,10 +107,12 @@ def train_baseline(
                     auc_macro, fmax, per_class_auc, epoch_time_sec)
         profiling : dict from ExperimentProfiler.summary()
     """
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device   = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    use_amp  = device.type == 'cuda'
+
     print(f"\n{'='*64}")
     print(f" Experiment : {experiment_name}")
-    print(f" Device     : {device}")
+    print(f" Device     : {device}  |  AMP: {use_amp}  |  compile: {compile_model}")
     p = model.count_parameters()
     print(f" Params     : {p['total']:,} total | {p['trainable']:,} trainable ({p['percentage']})")
     print(f" Epochs     : {epochs}  |  LR peak: {lr_peak:.0e}  |  BS: {batch_size}")
@@ -106,6 +125,10 @@ def train_baseline(
     ckpt_path = os.path.join(exp_path, 'checkpoint.pt')
 
     model = model.to(device)
+
+    if compile_model:
+        model = torch.compile(model)
+        print(" torch.compile() applied — first epoch will be slower (JIT)")
 
     # ── Profiler ──────────────────────────────────────────────────────────────
     profiler = ExperimentProfiler(experiment_name)
@@ -125,18 +148,29 @@ def train_baseline(
         pos_weight = _DEFAULT_POS_WEIGHT
     criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weight.to(device))
 
+    # ── AMP scaler ────────────────────────────────────────────────────────────
+    # GradScaler prevents FP16 underflow during backprop.
+    # No-op on CPU (enabled=False).
+    scaler = GradScaler(device='cuda', enabled=use_amp)
+
     # ── DataLoaders ───────────────────────────────────────────────────────────
+    # persistent_workers=True keeps worker processes alive between epochs,
+    # eliminating the per-epoch spawn overhead (only effective when num_workers>0).
+    _persist = num_workers > 0
     train_loader = DataLoader(
         train_ds, batch_size=batch_size, shuffle=True,
-        num_workers=num_workers, pin_memory=(device.type == 'cuda'),
+        num_workers=num_workers,
+        persistent_workers=_persist,
+        pin_memory=(device.type == 'cuda'),
     )
     val_loader = DataLoader(
         val_ds, batch_size=batch_size, shuffle=False,
-        num_workers=num_workers, pin_memory=(device.type == 'cuda'),
+        num_workers=num_workers,
+        persistent_workers=_persist,
+        pin_memory=(device.type == 'cuda'),
     )
 
     # ── 1-cycle LR schedule ───────────────────────────────────────────────────
-    # Linear warm-up for warmup_pct of total steps, then cosine annealing.
     total_steps = epochs * len(train_loader)
     scheduler   = torch.optim.lr_scheduler.OneCycleLR(
         optimizer,
@@ -164,11 +198,17 @@ def train_baseline(
         for x, y in train_loader:
             x, y = x.to(device), y.to(device)
             optimizer.zero_grad()
-            loss = criterion(model(x), y)
-            loss.backward()
+
+            with autocast(device_type='cuda', enabled=use_amp):
+                loss = criterion(model(x), y)
+
+            scaler.scale(loss).backward()
+            scaler.unscale_(optimizer)
             torch.nn.utils.clip_grad_norm_(model.parameters(), grad_clip)
-            optimizer.step()
+            scaler.step(optimizer)
+            scaler.update()
             scheduler.step()
+
             train_loss += loss.item()
             n_batches  += 1
 
@@ -181,9 +221,10 @@ def train_baseline(
         with torch.no_grad():
             for x, y in val_loader:
                 x, y = x.to(device), y.to(device)
-                logits = model(x)
-                val_loss += criterion(logits, y).item()
-                all_logits.append(logits.cpu())
+                with autocast(device_type='cuda', enabled=use_amp):
+                    logits = model(x)
+                    val_loss += criterion(logits, y).item()
+                all_logits.append(logits.float().cpu())
                 all_labels.append(y.cpu())
 
         all_logits = torch.cat(all_logits)
@@ -260,27 +301,19 @@ def quick_ablation_run(
     experiment_name: str   = 'ablation_run',
     epochs:          int   = 10,
     lr_peak:         float = 5e-4,
-    batch_size:      int   = 64,
+    batch_size:      int   = 256,
+    patience:        int   = 2,
     save_dir:        str   = None,
 ) -> dict:
     """
     Lightweight training run for ablation comparisons.
 
     Runs fewer epochs at a lower peak LR to get a stable relative ordering
-    across preprocessing configs without waiting for full convergence. The
-    AUC ranking is stable after 10 epochs even if absolute values are below
-    the converged level. Early stopping is disabled so all conditions run
-    for exactly `epochs` epochs (fair fixed-budget comparison).
+    across preprocessing configs without waiting for full convergence.
+    Early stopping is active (default patience=2); pass patience=epochs
+    to disable it for a strict fixed-budget comparison.
 
-    Parameters
-    ----------
-    save_dir : root directory for this run's checkpoint; defaults to
-               CFG['paths']['results']. Pass e.g. 'results/ablation/' so
-               all ablation conditions land in one dedicated subfolder.
-
-    Returns
-    -------
-    Flat summary dict ready for ablation_results.json.
+    Returns a flat summary dict ready for ablation_results.json.
     """
     best_auc, history, profiling = train_baseline(
         model           = model,
@@ -290,7 +323,7 @@ def quick_ablation_run(
         epochs          = epochs,
         lr_peak         = lr_peak,
         batch_size      = batch_size,
-        patience        = epochs,   # patience == epochs → early stopping disabled
+        patience        = patience,
         save_dir        = save_dir,
     )
 
