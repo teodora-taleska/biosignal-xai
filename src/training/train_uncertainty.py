@@ -10,6 +10,7 @@ from src.models.uncertainty_head import aleatoric_loss
 from src.utils.config import CFG
 from src.utils.metrics import compute_metrics, print_metrics
 from src.utils.profiler import ExperimentProfiler
+from src.utils.seed import set_seed
 
 
 def run_uncertainty_experiment(
@@ -23,6 +24,7 @@ def run_uncertainty_experiment(
     save_dir:    str   = CFG['paths']['results'],
     num_workers: int   = CFG['training']['num_workers'],
     patience:    int   = 4,
+    seed:        int   = 42,
 ) -> tuple[float, list, dict]:
     """
     Train AleatoricWrapper end-to-end with aleatoric uncertainty loss.
@@ -43,6 +45,7 @@ def run_uncertainty_experiment(
         history.json
         profiling.json
     """
+    set_seed(seed)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"\n{'='*60}")
     print(f" Experiment : {experiment_name}")

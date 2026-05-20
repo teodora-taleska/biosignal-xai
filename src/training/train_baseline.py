@@ -50,6 +50,7 @@ from torch.utils.data import DataLoader
 from src.evaluation.metrics import compute_auc, compute_fmax, compute_probs
 from src.utils.config import CFG
 from src.utils.profiler import ExperimentProfiler
+from src.utils.seed import set_seed
 
 
 # Default pos_weight: inverse class frequencies in PTB-XL training set
@@ -73,6 +74,7 @@ def train_baseline(
     num_workers:      int          = CFG['training']['num_workers'],
     save_dir:         str          = None,
     compile_model:    bool         = False,
+    seed:             int          = 42,
 ) -> tuple[float, list, dict]:
     """
     Train an ECG classifier with 1-cycle LR, AMP, and AUC-based early stopping.
@@ -107,6 +109,7 @@ def train_baseline(
                     auc_macro, fmax, per_class_auc, epoch_time_sec)
         profiling : dict from ExperimentProfiler.summary()
     """
+    set_seed(seed)
     device   = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     use_amp  = device.type == 'cuda'
 

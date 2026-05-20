@@ -9,6 +9,7 @@ import os
 from src.utils.metrics import compute_metrics, print_metrics
 from src.utils.config import CFG
 from src.utils.profiler import ExperimentProfiler
+from src.utils.seed import set_seed
 
 
 def run_experiment(
@@ -22,6 +23,7 @@ def run_experiment(
     save_dir:    str   = CFG['paths']['results'],
     num_workers: int   = CFG['training']['num_workers'],  # set to 4 if on Linux, keep 0 on Windows
     patience:    int   = 4,
+    seed:        int   = 42,
 ) -> tuple[float, list, dict]:
     """
     Train one PEFT experiment end-to-end.
@@ -35,6 +37,7 @@ def run_experiment(
         best_adapter/   — PEFT adapter weights (small, ~MB)
         history.json    — full training log
     """
+    set_seed(seed)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"\n{'='*60}")
     print(f" Experiment : {experiment_name}")
