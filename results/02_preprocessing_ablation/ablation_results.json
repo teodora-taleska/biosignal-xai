@@ -1,119 +1,119 @@
 {
-  "fast_mode": true,
-  "ablation_epochs": 2,
+  "fast_mode": false,
+  "ablation_epochs": 10,
   "best_config": "bandpass_none_250",
   "results": {
     "raw_zscore_250": {
       "label": "Raw + Z-score, 2.5 s",
-      "best_auc": 0.72167,
-      "final_fmax": 0.49572,
+      "best_auc": 0.90571,
+      "final_fmax": 0.70292,
       "per_class_auc": {
-        "NORM": 0.80169,
-        "MI": 0.73392,
-        "STTC": 0.73288,
-        "CD": 0.68153,
-        "HYP": 0.65833
+        "NORM": 0.93278,
+        "MI": 0.92079,
+        "STTC": 0.92012,
+        "CD": 0.92298,
+        "HYP": 0.82279
       },
-      "epochs_run": 2,
-      "total_time_sec": 257.5
+      "epochs_run": 9,
+      "total_time_sec": 4285.3
     },
     "bandpass_zscore_250": {
       "label": "Bandpass + Z-score, 2.5 s  \u2605",
-      "best_auc": 0.74352,
-      "final_fmax": 0.5137,
+      "best_auc": 0.9094,
+      "final_fmax": 0.71715,
       "per_class_auc": {
-        "NORM": 0.83506,
-        "MI": 0.74785,
-        "STTC": 0.75155,
-        "CD": 0.743,
-        "HYP": 0.64016
+        "NORM": 0.93555,
+        "MI": 0.9269,
+        "STTC": 0.92253,
+        "CD": 0.92559,
+        "HYP": 0.82301
       },
-      "epochs_run": 2,
-      "total_time_sec": 409.8
+      "epochs_run": 7,
+      "total_time_sec": 4072.0
     },
     "bandpass_none_250": {
       "label": "Bandpass only, 2.5 s",
-      "best_auc": 0.79353,
-      "final_fmax": 0.56087,
+      "best_auc": 0.9272,
+      "final_fmax": 0.74537,
       "per_class_auc": {
-        "NORM": 0.88786,
-        "MI": 0.79823,
-        "STTC": 0.75485,
-        "CD": 0.75473,
-        "HYP": 0.77199
+        "NORM": 0.94183,
+        "MI": 0.92845,
+        "STTC": 0.93076,
+        "CD": 0.92111,
+        "HYP": 0.9002
       },
-      "epochs_run": 2,
-      "total_time_sec": 278.6
+      "epochs_run": 9,
+      "total_time_sec": 4898.7
     },
     "bandpass_minmax_250": {
       "label": "Bandpass + Min-max, 2.5 s",
-      "best_auc": 0.66963,
-      "final_fmax": 0.46545,
+      "best_auc": 0.8859,
+      "final_fmax": 0.68225,
       "per_class_auc": {
-        "NORM": 0.73346,
-        "MI": 0.70198,
-        "STTC": 0.58489,
-        "CD": 0.79126,
-        "HYP": 0.53655
+        "NORM": 0.92436,
+        "MI": 0.90495,
+        "STTC": 0.90027,
+        "CD": 0.91267,
+        "HYP": 0.78375
       },
-      "epochs_run": 2,
-      "total_time_sec": 198.3
+      "epochs_run": 6,
+      "total_time_sec": 3404.3
     },
     "bandpass_robust_250": {
       "label": "Bandpass + Robust, 2.5 s",
-      "best_auc": 0.73869,
-      "final_fmax": 0.50805,
+      "best_auc": 0.90809,
+      "final_fmax": 0.70918,
       "per_class_auc": {
-        "NORM": 0.83297,
-        "MI": 0.75537,
-        "STTC": 0.74548,
-        "CD": 0.70293,
-        "HYP": 0.65671
+        "NORM": 0.93269,
+        "MI": 0.91591,
+        "STTC": 0.92511,
+        "CD": 0.91971,
+        "HYP": 0.83107
       },
-      "epochs_run": 2,
-      "total_time_sec": 229.8
+      "epochs_run": 8,
+      "total_time_sec": 4985.8
     },
     "bandpass_zscore_500": {
       "label": "Bandpass + Z-score, 5 s",
-      "best_auc": 0.55616,
-      "final_fmax": 0.39992,
+      "best_auc": 0.91145,
+      "final_fmax": 0.72328,
       "per_class_auc": {
-        "NORM": 0.57725,
-        "MI": 0.55808,
-        "STTC": 0.52933,
-        "CD": 0.58348,
-        "HYP": 0.53266
+        "NORM": 0.93726,
+        "MI": 0.92827,
+        "STTC": 0.92698,
+        "CD": 0.92856,
+        "HYP": 0.8356
       },
-      "epochs_run": 2,
-      "total_time_sec": 83.1
+      "epochs_run": 10,
+      "total_time_sec": 3651.2
     },
     "bandpass_zscore_1000": {
       "label": "Bandpass + Z-score, 10 s",
-      "best_auc": 0.50895,
-      "final_fmax": 0.40054,
+      "best_auc": 0.90282,
+      "final_fmax": 0.71198,
       "per_class_auc": {
-        "NORM": 0.52217,
-        "MI": 0.48527,
-        "STTC": 0.50654,
-        "CD": 0.51805,
-        "HYP": 0.5127
+        "NORM": 0.93522,
+        "MI": 0.91794,
+        "STTC": 0.92373,
+        "CD": 0.91824,
+        "HYP": 0.81897
       },
-      "epochs_run": 2,
-      "total_time_sec": 30.1
+      "epochs_run": 10,
+      "total_time_sec": 819.9
     },
     "raw_none_1000": {
       "label": "Raw (paper baseline), 10 s",
-      "best_auc": 0.55526,
-      "final_fmax": 0.40061,
+      "best_auc": 0.91661,
+      "final_fmax": 0.73662,
       "per_class_auc": {
-        "NORM": 0.59036,
-        "MI": 0.46077,
-        "STTC": 0.4836,
-        "CD": 0.44771,
-        "HYP": 0.40366
+        "NORM": 0.9372,
+        "MI": 0.91787,
+        "STTC": 0.92044,
+        "CD": 0.90823,
+        "HYP": 0.89933
       },
-      "epochs_run": 2,
-      "total_time_sec": 24.1
+      "epochs_run": 10,
+      "total_time_sec": 634.0
     }
   }
 }

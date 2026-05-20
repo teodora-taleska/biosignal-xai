@@ -1,0 +1,22 @@
+{
+  "experiment": "bandpass_robust_250",
+  "total_time_sec": 4985.8,
+  "total_time_human": "1.4h",
+  "avg_epoch_time_sec": 623.2,
+  "epoch_times_sec": [
+    620.42,
+    620.41,
+    624.26,
+    628.88,
+    620.67,
+    618.56,
+    624.1,
+    628.42
+  ],
+  "peak_gpu_memory_mb": 227.7,
+  "peak_gpu_memory_gb": 0.22,
+  "trainable_params": 309765,
+  "total_params": 309765,
+  "trainable_pct": 100.0,
+  "checkpoint_size_mb": 1.26
+}

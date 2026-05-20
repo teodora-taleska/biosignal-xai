@@ -1,0 +1,82 @@
+{
+  "model": "FCN-Wang",
+  "preprocessing": "bandpass_none_250",
+  "split": "test (fold 10)",
+  "paper_target": {
+    "auc_macro": 0.925,
+    "fmax": 0.643
+  },
+  "auc_macro": 0.92246,
+  "per_class_auc": {
+    "NORM": 0.9439873106889765,
+    "MI": 0.9275536757668502,
+    "STTC": 0.933289310581823,
+    "CD": 0.907031182187971,
+    "HYP": 0.9004539623257307
+  },
+  "fmax": 0.74578,
+  "fmax_threshold": 0.47576,
+  "f1_at_05": 0.74361,
+  "auprc_macro": 0.81633,
+  "per_class_auprc": {
+    "NORM": 0.9239134932697346,
+    "MI": 0.8431362105171518,
+    "STTC": 0.8208370272533014,
+    "CD": 0.8334410242903585,
+    "HYP": 0.6603421640839935
+  },
+  "auc_ci_lo": 0.91973,
+  "auc_ci_hi": 0.92527,
+  "auc_ci_95": "0.922 [0.920, 0.925]",
+  "fmax_ci_lo": 0.74048,
+  "fmax_ci_hi": 0.75183,
+  "fmax_ci_95": "0.746 [0.740, 0.752]",
+  "latency": [
+    {
+      "batch_size": 1,
+      "device": "cuda",
+      "latency_ms_mean": 1.0488720001012553,
+      "latency_ms_median": 1.0287999998581654,
+      "latency_ms_p95": 1.0527549998641916,
+      "latency_ms_per_sample": 1.029,
+      "throughput_per_sec": 972.0
+    },
+    {
+      "batch_size": 4,
+      "device": "cuda",
+      "latency_ms_mean": 1.678068000019266,
+      "latency_ms_median": 1.6300499996759754,
+      "latency_ms_p95": 1.8724850000126025,
+      "latency_ms_per_sample": 0.408,
+      "throughput_per_sec": 2453.9
+    },
+    {
+      "batch_size": 16,
+      "device": "cuda",
+      "latency_ms_mean": 2.5480119999519957,
+      "latency_ms_median": 1.7512999997961742,
+      "latency_ms_p95": 4.026024999848232,
+      "latency_ms_per_sample": 0.109,
+      "throughput_per_sec": 9136.1
+    },
+    {
+      "batch_size": 32,
+      "device": "cuda",
+      "latency_ms_mean": 1.3684839999950782,
+      "latency_ms_median": 1.3051000000814383,
+      "latency_ms_p95": 2.1191550004004958,
+      "latency_ms_per_sample": 0.041,
+      "throughput_per_sec": 24519.2
+    },
+    {
+      "batch_size": 64,
+      "device": "cuda",
+      "latency_ms_mean": 1.4766360000612622,
+      "latency_ms_median": 1.463049999983923,
+      "latency_ms_p95": 1.7857349999758299,
+      "latency_ms_per_sample": 0.023,
+      "throughput_per_sec": 43744.2
+    }
+  ],
+  "model_params": 309765
+}

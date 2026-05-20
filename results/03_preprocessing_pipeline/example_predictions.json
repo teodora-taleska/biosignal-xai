@@ -1,0 +1,78 @@
+{
+  "NORM": {
+    "ecg_id": 1,
+    "true_class": "NORM",
+    "probs": {
+      "NORM": 0.9778,
+      "MI": 0.0153,
+      "STTC": 0.0253,
+      "CD": 0.0195,
+      "HYP": 0.0042
+    },
+    "pred_classes": [
+      "NORM"
+    ],
+    "correct": true
+  },
+  "MI": {
+    "ecg_id": 177,
+    "true_class": "MI",
+    "probs": {
+      "NORM": 0.0036,
+      "MI": 0.9959,
+      "STTC": 0.0876,
+      "CD": 0.5846,
+      "HYP": 0.0228
+    },
+    "pred_classes": [
+      "MI",
+      "CD"
+    ],
+    "correct": true
+  },
+  "STTC": {
+    "ecg_id": 22,
+    "true_class": "STTC",
+    "probs": {
+      "NORM": 0.9223,
+      "MI": 0.0192,
+      "STTC": 0.0949,
+      "CD": 0.0736,
+      "HYP": 0.015
+    },
+    "pred_classes": [
+      "NORM"
+    ],
+    "correct": false
+  },
+  "CD": {
+    "ecg_id": 32,
+    "true_class": "CD",
+    "probs": {
+      "NORM": 0.7588,
+      "MI": 0.2078,
+      "STTC": 0.0243,
+      "CD": 0.0564,
+      "HYP": 0.0616
+    },
+    "pred_classes": [
+      "NORM"
+    ],
+    "correct": false
+  },
+  "HYP": {
+    "ecg_id": 30,
+    "true_class": "HYP",
+    "probs": {
+      "NORM": 0.858,
+      "MI": 0.0133,
+      "STTC": 0.0279,
+      "CD": 0.1297,
+      "HYP": 0.4313
+    },
+    "pred_classes": [
+      "NORM"
+    ],
+    "correct": false
+  }
+}

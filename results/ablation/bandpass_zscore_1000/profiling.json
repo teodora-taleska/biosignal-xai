@@ -1,0 +1,24 @@
+{
+  "experiment": "bandpass_zscore_1000",
+  "total_time_sec": 819.9,
+  "total_time_human": "13.7min",
+  "avg_epoch_time_sec": 82.0,
+  "epoch_times_sec": [
+    82.62,
+    81.4,
+    81.57,
+    82.47,
+    82.2,
+    82.2,
+    82.08,
+    81.86,
+    81.79,
+    81.66
+  ],
+  "peak_gpu_memory_mb": 831.2,
+  "peak_gpu_memory_gb": 0.81,
+  "trainable_params": 309765,
+  "total_params": 309765,
+  "trainable_pct": 100.0,
+  "checkpoint_size_mb": 1.26
+}

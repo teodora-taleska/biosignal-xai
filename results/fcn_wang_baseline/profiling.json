@@ -1,0 +1,20 @@
+{
+  "experiment": "fcn_wang_baseline",
+  "total_time_sec": 5358.7,
+  "total_time_human": "1.5h",
+  "avg_epoch_time_sec": 893.1,
+  "epoch_times_sec": [
+    1002.67,
+    1098.75,
+    1124.36,
+    1019.67,
+    558.33,
+    554.82
+  ],
+  "peak_gpu_memory_mb": 233.3,
+  "peak_gpu_memory_gb": 0.23,
+  "trainable_params": 309765,
+  "total_params": 309765,
+  "trainable_pct": 100.0,
+  "checkpoint_size_mb": 1.26
+}

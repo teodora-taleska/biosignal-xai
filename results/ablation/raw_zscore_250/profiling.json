@@ -1,0 +1,23 @@
+{
+  "experiment": "raw_zscore_250",
+  "total_time_sec": 4285.3,
+  "total_time_human": "1.2h",
+  "avg_epoch_time_sec": 476.0,
+  "epoch_times_sec": [
+    504.95,
+    478.76,
+    472.51,
+    470.53,
+    475.41,
+    465.2,
+    470.71,
+    481.04,
+    464.53
+  ],
+  "peak_gpu_memory_mb": 228.7,
+  "peak_gpu_memory_gb": 0.22,
+  "trainable_params": 309765,
+  "total_params": 309765,
+  "trainable_pct": 100.0,
+  "checkpoint_size_mb": 1.26
+}

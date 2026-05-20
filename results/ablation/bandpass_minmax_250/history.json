@@ -1,0 +1,102 @@
+{
+  "experiment": "bandpass_minmax_250",
+  "best_auc": 0.8858958253582738,
+  "history": [
+    {
+      "epoch": 1,
+      "lr": 0.00014015550207251831,
+      "train_loss": 0.90488,
+      "val_loss": 0.62886,
+      "auc_macro": 0.81924,
+      "fmax": 0.59619,
+      "per_class_auc": {
+        "NORM": 0.85018,
+        "MI": 0.86057,
+        "STTC": 0.79271,
+        "CD": 0.87635,
+        "HYP": 0.71638
+      },
+      "epoch_time_sec": 558.51
+    },
+    {
+      "epoch": 2,
+      "lr": 0.00038031080263758196,
+      "train_loss": 0.62379,
+      "val_loss": 0.51501,
+      "auc_macro": 0.86729,
+      "fmax": 0.6584,
+      "per_class_auc": {
+        "NORM": 0.90684,
+        "MI": 0.89153,
+        "STTC": 0.88758,
+        "CD": 0.89501,
+        "HYP": 0.75551
+      },
+      "epoch_time_sec": 557.7
+    },
+    {
+      "epoch": 3,
+      "lr": 0.0004999998845541976,
+      "train_loss": 0.48669,
+      "val_loss": 0.48418,
+      "auc_macro": 0.87954,
+      "fmax": 0.67452,
+      "per_class_auc": {
+        "NORM": 0.92376,
+        "MI": 0.90051,
+        "STTC": 0.90409,
+        "CD": 0.90557,
+        "HYP": 0.76376
+      },
+      "epoch_time_sec": 576.04
+    },
+    {
+      "epoch": 4,
+      "lr": 0.00047513796908259205,
+      "train_loss": 0.4393,
+      "val_loss": 0.47934,
+      "auc_macro": 0.8859,
+      "fmax": 0.68208,
+      "per_class_auc": {
+        "NORM": 0.9252,
+        "MI": 0.90685,
+        "STTC": 0.90749,
+        "CD": 0.91005,
+        "HYP": 0.77989
+      },
+      "epoch_time_sec": 580.58
+    },
+    {
+      "epoch": 5,
+      "lr": 0.00040568491576045224,
+      "train_loss": 0.40871,
+      "val_loss": 0.49134,
+      "auc_macro": 0.88428,
+      "fmax": 0.68356,
+      "per_class_auc": {
+        "NORM": 0.92553,
+        "MI": 0.90095,
+        "STTC": 0.90486,
+        "CD": 0.90867,
+        "HYP": 0.78138
+      },
+      "epoch_time_sec": 576.48
+    },
+    {
+      "epoch": 6,
+      "lr": 0.0003053967535840284,
+      "train_loss": 0.38202,
+      "val_loss": 0.48596,
+      "auc_macro": 0.8852,
+      "fmax": 0.68225,
+      "per_class_auc": {
+        "NORM": 0.92436,
+        "MI": 0.90495,
+        "STTC": 0.90027,
+        "CD": 0.91267,
+        "HYP": 0.78375
+      },
+      "epoch_time_sec": 554.91
+    }
+  ]
+}

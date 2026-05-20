@@ -1,0 +1,101 @@
+{
+  "experiment": "fcn_wang_baseline",
+  "history": [
+    {
+      "epoch": 1,
+      "lr": 0.00015240123471595233,
+      "train_loss": 0.70225,
+      "val_loss": 0.50589,
+      "auc_macro": 0.8989,
+      "fmax": 0.70094,
+      "per_class_auc": {
+        "NORM": 0.92389,
+        "MI": 0.88877,
+        "STTC": 0.91193,
+        "CD": 0.88747,
+        "HYP": 0.88244
+      },
+      "epoch_time_sec": 1002.67
+    },
+    {
+      "epoch": 2,
+      "lr": 0.000436963115673515,
+      "train_loss": 0.51752,
+      "val_loss": 0.42895,
+      "auc_macro": 0.91485,
+      "fmax": 0.7255,
+      "per_class_auc": {
+        "NORM": 0.93557,
+        "MI": 0.91005,
+        "STTC": 0.92155,
+        "CD": 0.90885,
+        "HYP": 0.89823
+      },
+      "epoch_time_sec": 1098.75
+    },
+    {
+      "epoch": 3,
+      "lr": 0.0007604143646530053,
+      "train_loss": 0.41652,
+      "val_loss": 0.40991,
+      "auc_macro": 0.92123,
+      "fmax": 0.73216,
+      "per_class_auc": {
+        "NORM": 0.93965,
+        "MI": 0.92015,
+        "STTC": 0.92709,
+        "CD": 0.92175,
+        "HYP": 0.8975
+      },
+      "epoch_time_sec": 1124.36
+    },
+    {
+      "epoch": 4,
+      "lr": 0.0009712703160056248,
+      "train_loss": 0.38073,
+      "val_loss": 0.396,
+      "auc_macro": 0.9279,
+      "fmax": 0.74774,
+      "per_class_auc": {
+        "NORM": 0.94378,
+        "MI": 0.9285,
+        "STTC": 0.93139,
+        "CD": 0.92641,
+        "HYP": 0.90943
+      },
+      "epoch_time_sec": 1019.67
+    },
+    {
+      "epoch": 5,
+      "lr": 0.000994367589695564,
+      "train_loss": 0.35856,
+      "val_loss": 0.40407,
+      "auc_macro": 0.92694,
+      "fmax": 0.73895,
+      "per_class_auc": {
+        "NORM": 0.94251,
+        "MI": 0.92748,
+        "STTC": 0.93094,
+        "CD": 0.92493,
+        "HYP": 0.90886
+      },
+      "epoch_time_sec": 558.33
+    },
+    {
+      "epoch": 6,
+      "lr": 0.0009503455489974237,
+      "train_loss": 0.34178,
+      "val_loss": 0.40353,
+      "auc_macro": 0.92699,
+      "fmax": 0.73801,
+      "per_class_auc": {
+        "NORM": 0.94402,
+        "MI": 0.92812,
+        "STTC": 0.93055,
+        "CD": 0.92643,
+        "HYP": 0.90581
+      },
+      "epoch_time_sec": 554.82
+    }
+  ]
+}

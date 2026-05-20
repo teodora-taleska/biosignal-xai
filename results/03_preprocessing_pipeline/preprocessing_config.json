@@ -7,6 +7,10 @@
   "stride": 125,
   "sampling_rate": 100,
   "window_sec": 2.5,
-  "auc_ablation": 0.9272,
-  "fmax_ablation": 0.74537
+  "n_leads": 12,
+  "filter_cutoffs_hz": [
+    0.5,
+    40.0
+  ],
+  "filter_order": 4
 }
