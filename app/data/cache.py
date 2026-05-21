@@ -22,7 +22,7 @@ import wfdb
 # Allow running as a script from the repo root
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from src.models.xresnet1d import XResNet1d
+from archive.models.xresnet1d import XResNet1d
 from src.preprocessing.label_utils import load_all_labels
 from src.preprocessing.preprocess import bandpass_filter
 from src.utils.config import CFG

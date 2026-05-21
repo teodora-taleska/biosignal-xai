@@ -23,7 +23,7 @@ import torch
 from src.explainability.llm import load_qwen3
 from src.explainability.saliency import compute_saliency, top_salient_leads
 from src.inference.pipeline import ECGInferencePipeline
-from src.models.xresnet1d import XResNet1d
+from archive.models.xresnet1d import XResNet1d
 from src.preprocessing.preprocess import bandpass_filter
 from src.utils.config import CFG
 

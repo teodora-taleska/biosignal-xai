@@ -5,17 +5,6 @@ from peft import PeftModel
 from src.utils.config import CFG
 
 
-def load_baseline_cnn():
-    """Load BaselineCNN from checkpoint. Returns (model, ECGDataset)."""
-    from src.models.baseline_cnn import BaselineCNN
-    from src.preprocessing.dataset import ECGDataset
-
-    path = os.path.join(CFG['paths']['results'], 'baseline_cnn', 'checkpoint.pt')
-    model = BaselineCNN()
-    model.load_state_dict(torch.load(path, map_location='cpu'))
-    model.eval()
-    return model, ECGDataset
-
 
 def load_hubert_blocks(n=8):
     """Load HuBERTECGClassifier (selective unfreezing). Returns (model, ECGDatasetFull)."""
@@ -52,15 +41,3 @@ def load_hubert_peft(rank=8, use_dora=False):
     return model, ECGDatasetFull
 
 
-def load_leadwise():
-    """Load LeadwiseTransformer from checkpoint. Returns (model, ECGDatasetFull)."""
-    from src.models.leadwise_transformer import LeadwiseTransformer
-    from src.preprocessing.dataset_full import ECGDatasetFull
-
-    path = os.path.join(
-        CFG['paths']['results'], 'leadwise_transformer', 'best_adapter', 'checkpoint.pt'
-    )
-    model = LeadwiseTransformer()
-    model.load_state_dict(torch.load(path, map_location='cpu'))
-    model.eval()
-    return model, ECGDatasetFull

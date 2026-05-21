@@ -24,19 +24,15 @@ warnings.filterwarnings('ignore', category=FutureWarning)
 warnings.filterwarnings('ignore', category=UserWarning)
 
 import torch
-from torch.utils.data import DataLoader
 
 from src.utils.config import CFG
 from src.preprocessing.label_utils import load_all_labels
 from src.preprocessing.dataset_ablation import ECGDatasetAblation, ABLATION_CONFIGS
 from src.preprocessing.dataset_full import ECGDatasetFull
 from src.models.fcn_wang import fcn_wang
-from src.models.dummy_classifier import DummyECGClassifier
 from src.models.hubert_ecg_finetune import HuBERTECGClassifier, HuBERTECGPEFT
-from src.models.leadwise_transformer import build_leadwise_with_peft
 from src.training.train_baseline import quick_ablation_run
 from src.training.train_peft import run_experiment
-from src.evaluation.metrics import compute_auc, compute_probs
 
 
 def parse_args() -> argparse.Namespace:
@@ -70,7 +66,7 @@ def main():
     train_ds_w = ECGDatasetAblation(train_df, DATA_PATH, **preprocess_cfg)
     val_ds_w   = ECGDatasetAblation(val_df,   DATA_PATH, **preprocess_cfg)
 
-    # Full-record dataset (HuBERT, Leadwise — need 1000-sample inputs)
+    # Full-record dataset
     train_ds_f = ECGDatasetFull(train_df, DATA_PATH)
     val_ds_f   = ECGDatasetFull(val_df,   DATA_PATH)
 
@@ -162,31 +158,6 @@ def main():
     results['dora'] = auc_dora
     del model_dora; torch.cuda.empty_cache()
 
-    # ── Lead-wise Transformer LoRA r=8 ────────────────────────────────────────
-    print('=' * 50)
-    print('Lead-wise Transformer LoRA r=8')
-    _probe_lw = build_leadwise_with_peft(rank=8, use_dora=False).to(device)
-    with torch.no_grad():
-        _lw_out = _probe_lw(torch.randn(2, 12, 1000).to(device))
-    assert _lw_out.shape == (2, 5), f"Shape error: {_lw_out.shape}"
-    _lw_p = _probe_lw.count_parameters()
-    assert _lw_p['trainable'] / _lw_p['total'] < 0.10, \
-        f"Leadwise LoRA trainable {_lw_p['trainable']/_lw_p['total']:.1%} exceeds 10%"
-    print(f"Forward pass OK: (2,12,1000) → {_lw_out.shape}  "
-          f"LoRA params: {_lw_p['trainable']:,}/{_lw_p['total']:,}")
-    del _probe_lw, _lw_out; torch.cuda.empty_cache()
-
-    model_lw = build_leadwise_with_peft(rank=8, use_dora=False)
-    auc_lw, _, _ = run_experiment(
-        model_lw, train_ds_f, val_ds_f,
-        experiment_name = 'smoke_leadwise_lora_r8',
-        epochs          = args.epochs,
-        lr              = CFG['training']['lr_peft'],
-        batch_size      = args.batch,
-        save_dir        = RESULTS,
-    )
-    results['lw_lora'] = auc_lw
-    del model_lw; torch.cuda.empty_cache()
 
     # ── Summary ───────────────────────────────────────────────────────────────
     print()
@@ -194,12 +165,10 @@ def main():
     print('SMOKE TEST SUMMARY')
     print('=' * 50)
     labels = {
-        'dummy':    'Dummy (prior)',
         'fcn_wang': 'FCN-Wang baseline',
         'hubert_8': 'HuBERT-ECG 8 blocks',
         'lora':     'HuBERT-ECG LoRA r=8',
         'dora':     'HuBERT-ECG DoRA r=8',
-        'lw_lora':  'Lead-wise LoRA r=8',
     }
     for key, label in labels.items():
         print(f'  {label:<25s}  AUC {results[key]:.4f}')

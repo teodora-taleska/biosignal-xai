@@ -227,3 +227,5 @@ data/
 *.safetensors
 /.superpowers
 CLAUDE.md
+/archive
+
