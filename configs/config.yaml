@@ -16,6 +16,7 @@ training:
   num_workers: 0           # 0 for Windows, 4 for Linux
 
 model:
+  hubert_size: base
   leadwise:
     d_model: 128
     num_temporal_layers: 3
