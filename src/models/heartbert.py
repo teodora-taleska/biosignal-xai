@@ -55,11 +55,17 @@ class HeartBERTClassifier:
     # ── Loading ───────────────────────────────────────────────────────────────
 
     def load(self):
-        """Download pretrained weights from HuggingFace."""
-        print(f"Loading HeartBERT from {self.HF_ID} ...")
-        self.tokenizer = AutoTokenizer.from_pretrained(self.HF_ID)
+        """Download pretrained weights from HuggingFace (falls back to roberta-base)."""
+        try:
+            AutoTokenizer.from_pretrained(self.HF_ID)
+            base_id = self.HF_ID
+            print(f"Loading HeartBERT from {self.HF_ID} ...")
+        except Exception:
+            base_id = "roberta-base"
+            print(f"{self.HF_ID} not available — loading roberta-base (same architecture).")
+        self.tokenizer = AutoTokenizer.from_pretrained(base_id)
         self.model = AutoModelForSequenceClassification.from_pretrained(
-            self.HF_ID,
+            base_id,
             num_labels              = self.num_labels,
             problem_type            = "multi_label_classification",
             ignore_mismatched_sizes = True,
