@@ -8,23 +8,14 @@ data:
 
 training:
   batch_size: 64
-  batch_size_full: 32      # for HuBERT-ECG (full records)
+  batch_size_full: 32
   epochs: 15
-  lr_peft: 0.0003
-  lr_pretrained: 0.0001    # lower for pretrained models
+  lr_pretrained: 0.0001
   weight_decay: 0.01
   grad_clip: 1.0
   num_workers: 0           # 0 for Windows, 4 for Linux
 
 model:
-  hubert_size: "base"
-  hubert_hidden_dim: 768         # confirmed from architecture inspection
-  hubert_blocks_to_unfreeze: [4, 8]
-  hubert_peft:
-    target_modules: ["q_proj", "v_proj", "k_proj", "out_proj"]
-    lora_rank: [4, 8]
-    lora_alpha_multiplier: 1
-    use_dora: [false, true]
   leadwise:
     d_model: 128
     num_temporal_layers: 3
@@ -45,9 +36,6 @@ paths:
 
 inference:
   threshold: 0.5
-
-baseline:
-  dummy_strategy: "prior"
 
 explainability:
   uncertainty_threshold: 0.5

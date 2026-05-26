@@ -8,11 +8,10 @@ from src.preprocessing.preprocess import bandpass_filter, normalize_signal
 
 class ECGDatasetFull(Dataset):
     """
-    Dataset for HuBERT-ECG and LeadwiseTransformer: returns FULL 10-second records.
+    Dataset for LeadwiseTransformer: returns FULL 10-second records.
     No windowing. One record = one training sample.
 
     Different from ECGDataset which returns 2.5-sec windows.
-    Use this for HuBERT-ECG and LeadwiseTransformer experiments.
 
     Output shapes:
         x: (12, 1000)  ← 12 leads, 1000 time steps

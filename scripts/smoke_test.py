@@ -16,9 +16,6 @@ import os
 import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-os.environ['TRANSFORMERS_OFFLINE'] = '1'
-os.environ['HF_HUB_DISABLE_SYMLINKS_WARNING'] = '1'
-
 import warnings
 warnings.filterwarnings('ignore', category=FutureWarning)
 warnings.filterwarnings('ignore', category=UserWarning)
@@ -28,11 +25,8 @@ import torch
 from src.utils.config import CFG
 from src.preprocessing.label_utils import load_all_labels
 from src.preprocessing.dataset_ablation import ECGDatasetAblation, ABLATION_CONFIGS
-from src.preprocessing.dataset_full import ECGDatasetFull
 from src.models.fcn_wang import fcn_wang
-from src.models.hubert_ecg_finetune import HuBERTECGClassifier, HuBERTECGPEFT
 from src.training.train_baseline import quick_ablation_run
-from src.training.train_peft import run_experiment
 
 
 def parse_args() -> argparse.Namespace:
@@ -66,10 +60,6 @@ def main():
     train_ds_w = ECGDatasetAblation(train_df, DATA_PATH, **preprocess_cfg)
     val_ds_w   = ECGDatasetAblation(val_df,   DATA_PATH, **preprocess_cfg)
 
-    # Full-record dataset
-    train_ds_f = ECGDatasetFull(train_df, DATA_PATH)
-    val_ds_f   = ECGDatasetFull(val_df,   DATA_PATH)
-
     results = {}
 
     # ── FCN-Wang baseline ─────────────────────────────────────────────────────
@@ -89,76 +79,6 @@ def main():
     del fcn; torch.cuda.empty_cache()
     print(f"AUC: {summary['best_auc']:.4f}")
 
-    # ── Dummy classifier ──────────────────────────────────────────────────────
-    print('=' * 50)
-    print('Dummy classifier')
-    dummy = DummyECGClassifier()
-    dummy._results_dir = RESULTS
-    dummy.fit(train_ds_f)
-    metrics = dummy.evaluate(val_ds_f)
-    dummy.save_results(metrics, 'dummy_metrics.json')
-    results['dummy'] = metrics['auc_macro']
-    print(f"AUC: {metrics['auc_macro']:.4f}")
-
-    # ── HuBERT-ECG 8 blocks ───────────────────────────────────────────────────
-    print('=' * 50)
-    print('HuBERT-ECG 8 blocks')
-    model_B = HuBERTECGClassifier(
-        size=CFG['model']['hubert_size'], blocks_to_unfreeze=8
-    )
-    auc_B, _, _ = run_experiment(
-        model_B, train_ds_f, val_ds_f,
-        experiment_name = 'smoke_hubert_8',
-        epochs          = args.epochs,
-        lr              = CFG['training']['lr_pretrained'],
-        batch_size      = args.batch,
-        save_dir        = RESULTS,
-    )
-    results['hubert_8'] = auc_B
-    del model_B; torch.cuda.empty_cache()
-
-    # ── HuBERT-ECG PEFT LoRA r=8 ─────────────────────────────────────────────
-    print('=' * 50)
-    print('HuBERT-ECG LoRA r=8')
-    _probe = HuBERTECGPEFT(rank=8, use_dora=False).to(device)
-    with torch.no_grad():
-        _out = _probe(torch.randn(2, 12, 1000).to(device))
-    assert _out.shape == (2, 5), f"Shape error: {_out.shape}"
-    _p = _probe.count_parameters()
-    assert _p['trainable'] / _p['total'] < 0.05, \
-        f"LoRA trainable {_p['trainable']/_p['total']:.1%} exceeds 5%"
-    print(f"Forward pass OK: (2,12,1000) → {_out.shape}  "
-          f"LoRA params: {_p['trainable']:,}/{_p['total']:,}")
-    del _probe, _out; torch.cuda.empty_cache()
-
-    model_lora = HuBERTECGPEFT(rank=8, use_dora=False)
-    auc_lora, _, _ = run_experiment(
-        model_lora, train_ds_f, val_ds_f,
-        experiment_name = 'smoke_hubert_lora_r8',
-        epochs          = args.epochs,
-        lr              = CFG['training']['lr_pretrained'],
-        batch_size      = args.batch,
-        save_dir        = RESULTS,
-    )
-    results['lora'] = auc_lora
-    del model_lora; torch.cuda.empty_cache()
-
-    # ── HuBERT-ECG PEFT DoRA r=8 ─────────────────────────────────────────────
-    print('=' * 50)
-    print('HuBERT-ECG DoRA r=8')
-    model_dora = HuBERTECGPEFT(rank=8, use_dora=True)
-    auc_dora, _, _ = run_experiment(
-        model_dora, train_ds_f, val_ds_f,
-        experiment_name = 'smoke_hubert_dora_r8',
-        epochs          = args.epochs,
-        lr              = CFG['training']['lr_pretrained'],
-        batch_size      = args.batch,
-        save_dir        = RESULTS,
-    )
-    results['dora'] = auc_dora
-    del model_dora; torch.cuda.empty_cache()
-
-
     # ── Summary ───────────────────────────────────────────────────────────────
     print()
     print('=' * 50)
@@ -166,9 +86,6 @@ def main():
     print('=' * 50)
     labels = {
         'fcn_wang': 'FCN-Wang baseline',
-        'hubert_8': 'HuBERT-ECG 8 blocks',
-        'lora':     'HuBERT-ECG LoRA r=8',
-        'dora':     'HuBERT-ECG DoRA r=8',
     }
     for key, label in labels.items():
         print(f'  {label:<25s}  AUC {results[key]:.4f}')
