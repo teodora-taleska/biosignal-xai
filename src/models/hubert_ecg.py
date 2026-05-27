@@ -136,3 +136,13 @@ class HuBERTECGClassifier(nn.Module):
             os.makedirs(path, exist_ok=True)
             torch.save(self._head.state_dict(), os.path.join(path, "weights.pt"))
             print(f"Weights saved → {path}/weights.pt")
+
+    # ── Adapter loading ───────────────────────────────────────────────────────
+
+    def load_adapter(self, path: str):
+        """Load a saved PEFT adapter into the already-loaded head."""
+        from peft import PeftModel
+        assert self._head is not None, "Call .load() first."
+        self._head = PeftModel.from_pretrained(self._head, path)
+        self._head.eval()
+        return self

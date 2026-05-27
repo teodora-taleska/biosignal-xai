@@ -267,3 +267,22 @@ class HeartBERTClassifier:
     def save(self, path: str):
         """Save PEFT adapter weights."""
         self.model.save_pretrained(path)
+
+    # ── Adapter loading ───────────────────────────────────────────────────────
+
+    def load_adapter(self, path: str):
+        """Load a saved PEFT adapter into the already-loaded base model."""
+        from peft import PeftModel
+        assert self.model is not None, "Call .load() first."
+        self.model = PeftModel.from_pretrained(self.model, path)
+        self.model.eval()
+        return self
+
+    def predict_logits(self, X: np.ndarray) -> np.ndarray:
+        """Return raw logits (before sigmoid), shape (N, 5)."""
+        assert self.model is not None, "Call .load() first."
+        enc = {k: v.to(self.device) for k, v in self._encode(X).items()}
+        self.model.eval()
+        with torch.no_grad():
+            logits = self.model(**enc).logits.cpu()
+        return logits.numpy()

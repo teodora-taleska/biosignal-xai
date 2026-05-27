@@ -1,6 +1,6 @@
 """Temporary test runner — deleted after use."""
 import sys
-sys.path.insert(0, r'D:\GitHub\biosignal-xai\.claude\worktrees\dreamy-sutherland-b22df1')
+sys.path.insert(0, r'D:\GitHub\biosignal-xai')
 
 import numpy as np
 import pandas as pd
@@ -125,6 +125,79 @@ try:
     assert ids.max().item() <= 255
     ok("test_patch_tokenizer_range")
 except Exception as e: fail("test_patch_tokenizer_range", e)
+
+# ── load_adapter / predict_logits ─────────────────────────────────────────────
+
+try:
+    from src.models.heartbert import HeartBERTClassifier
+    hb = HeartBERTClassifier()
+    try:
+        hb.load_adapter('some/path')
+        fail("test_heartbert_load_adapter_requires_load", "no AssertionError raised")
+    except AssertionError:
+        ok("test_heartbert_load_adapter_requires_load")
+except Exception as e:
+    fail("test_heartbert_load_adapter_requires_load", e)
+
+try:
+    from src.models.ecgpt import ECGPTClassifier
+    clf = ECGPTClassifier()
+    try:
+        clf.load_adapter('some/path')
+        fail("test_ecgpt_load_adapter_requires_load", "no AssertionError raised")
+    except AssertionError:
+        ok("test_ecgpt_load_adapter_requires_load")
+except Exception as e:
+    fail("test_ecgpt_load_adapter_requires_load", e)
+
+try:
+    from src.models.hubert_ecg import HuBERTECGClassifier
+    clf = HuBERTECGClassifier()
+    try:
+        clf.load_adapter('some/path')
+        fail("test_hubert_load_adapter_requires_load", "no AssertionError raised")
+    except AssertionError:
+        ok("test_hubert_load_adapter_requires_load")
+except Exception as e:
+    fail("test_hubert_load_adapter_requires_load", e)
+
+try:
+    from unittest.mock import MagicMock
+    from src.models.heartbert import HeartBERTClassifier
+    hb = HeartBERTClassifier(num_labels=5)
+    mock_tok_out = {
+        'input_ids':      torch.zeros(2, 8, dtype=torch.long),
+        'attention_mask': torch.ones(2, 8, dtype=torch.long),
+    }
+    hb.tokenizer = MagicMock(return_value=mock_tok_out)
+    mock_out = MagicMock()
+    mock_out.logits = torch.randn(2, 5) * 5.0
+    hb.model = MagicMock(return_value=mock_out)
+    hb.model.eval = MagicMock()
+    X = np.random.randn(2, 1000).astype(np.float32)
+    result = hb.predict_logits(X)
+    assert result.shape == (2, 5), result.shape
+    assert isinstance(result, np.ndarray)
+    ok("test_heartbert_predict_logits_shape")
+except Exception as e:
+    fail("test_heartbert_predict_logits_shape", e)
+
+try:
+    from src.models.ecgpt import ECGPTClassifier, _ECGPatchTokenizer
+    from unittest.mock import MagicMock
+    clf = ECGPTClassifier(num_labels=5, patch_size=36)
+    clf._tokenizer = _ECGPatchTokenizer(patch_size=36, vocab_size=256)
+    mock_out = MagicMock()
+    mock_out.logits = torch.randn(2, 5) * 5.0
+    clf.model = MagicMock(return_value=mock_out)
+    clf.model.eval = MagicMock()
+    X = np.random.randn(2, 1000).astype(np.float32)
+    result = clf.predict_logits(X)
+    assert result.shape == (2, 5), result.shape
+    assert isinstance(result, np.ndarray)
+    ok("test_ecgpt_predict_logits_shape")
+except Exception as e:
+    fail("test_ecgpt_predict_logits_shape", e)
 
 # ── Summary ───────────────────────────────────────────────────────────────────
 print(f"\n{len(PASS)} passed, {len(FAIL)} failed")
