@@ -1,0 +1,29 @@
+{
+  "experiment": "heartbert_lora_r8",
+  "total_time_sec": 11056.7,
+  "total_time_human": "3.1h",
+  "avg_epoch_time_sec": 737.1,
+  "epoch_times_sec": [
+    748.38,
+    756.93,
+    733.59,
+    738.61,
+    736.91,
+    731.29,
+    735.52,
+    733.22,
+    732.89,
+    733.19,
+    735.45,
+    740.01,
+    733.38,
+    733.44,
+    733.86
+  ],
+  "peak_gpu_memory_mb": 4682.9,
+  "peak_gpu_memory_gb": 4.57,
+  "trainable_params": 889349,
+  "total_params": 125538826,
+  "trainable_pct": 0.71,
+  "checkpoint_size_mb": 3.57
+}

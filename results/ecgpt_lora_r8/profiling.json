@@ -1,0 +1,29 @@
+{
+  "experiment": "ecgpt_lora_r8",
+  "total_time_sec": 607.4,
+  "total_time_human": "10.1min",
+  "avg_epoch_time_sec": 40.5,
+  "epoch_times_sec": [
+    40.75,
+    39.51,
+    39.5,
+    41.6,
+    40.75,
+    41.64,
+    39.89,
+    40.04,
+    39.84,
+    41.8,
+    41.45,
+    41.25,
+    40.07,
+    39.6,
+    39.69
+  ],
+  "peak_gpu_memory_mb": 942.9,
+  "peak_gpu_memory_gb": 0.92,
+  "trainable_params": 298752,
+  "total_params": 124742400,
+  "trainable_pct": 0.24,
+  "checkpoint_size_mb": 1.2
+}

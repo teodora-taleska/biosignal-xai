@@ -1,0 +1,29 @@
+{
+  "experiment": "hubert_ecg_dora_r8",
+  "total_time_sec": 5424.8,
+  "total_time_human": "1.5h",
+  "avg_epoch_time_sec": 361.7,
+  "epoch_times_sec": [
+    360.04,
+    361.64,
+    360.75,
+    362.72,
+    362.01,
+    361.75,
+    361.35,
+    362.73,
+    362.87,
+    361.47,
+    361.26,
+    360.23,
+    361.66,
+    363.22,
+    361.13
+  ],
+  "peak_gpu_memory_mb": 1059.7,
+  "peak_gpu_memory_gb": 1.03,
+  "trainable_params": 313344,
+  "total_params": 93442437,
+  "trainable_pct": 0.34,
+  "checkpoint_size_mb": 1.27
+}
