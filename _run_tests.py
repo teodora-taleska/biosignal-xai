@@ -231,6 +231,46 @@ try:
 except Exception as e:
     fail("test_heartbert_get_attention_requires_load", e)
 
+# ── HeartBERTPipeline ─────────────────────────────────────────────────────────
+
+try:
+    from src.inference.pipeline import HeartBERTPipeline
+    from unittest.mock import MagicMock
+    mock_clf        = MagicMock()
+    mock_clf.predict_logits = MagicMock(
+        return_value=np.array([[1.0, -1.0, -1.0, -1.0, -1.0]])
+    )
+    mock_clf.device = torch.device('cpu')
+    pipeline        = HeartBERTPipeline(mock_clf)
+    result          = pipeline.predict(np.zeros(1000, dtype=np.float32))
+    expected_keys   = {
+        'predicted_classes', 'class_probabilities', 'confidence_score',
+        'uncertainty', 'raw_logits', 'uncertainty_level',
+    }
+    assert set(result.keys()) == expected_keys
+    ok("test_heartbert_pipeline_predict_keys")
+except Exception as e:
+    fail("test_heartbert_pipeline_predict_keys", e)
+
+try:
+    from src.inference.pipeline import HeartBERTPipeline
+    from unittest.mock import MagicMock
+    captured = {}
+    def _mock_logits(x):
+        captured['x'] = x.copy()
+        return np.array([[1.0, -1.0, -1.0, -1.0, -1.0]])
+    mock_clf        = MagicMock()
+    mock_clf.predict_logits = _mock_logits
+    mock_clf.device = torch.device('cpu')
+    pipeline        = HeartBERTPipeline(mock_clf)
+    signal          = np.zeros((12, 1000), dtype=np.float32)
+    signal[1]       = 1.0                    # Lead II all-ones, all other leads zero
+    pipeline.predict(signal)
+    assert np.all(captured['x'][0] == 1.0), "Lead II not extracted correctly"
+    ok("test_heartbert_pipeline_lead_extraction")
+except Exception as e:
+    fail("test_heartbert_pipeline_lead_extraction", e)
+
 # ── Summary ───────────────────────────────────────────────────────────────────
 print(f"\n{len(PASS)} passed, {len(FAIL)} failed")
 if FAIL:
