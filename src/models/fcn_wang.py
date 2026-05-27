@@ -199,7 +199,7 @@ class FCNWang(nn.Module):
         if os.path.isdir(path):
             path = os.path.join(path, 'checkpoint.pt')
         model = cls(**kwargs)
-        model.load_state_dict(torch.load(path, map_location='cpu'))
+        model.load_state_dict(torch.load(path, map_location='cpu', weights_only=True))
         model.eval()
         return model
 
