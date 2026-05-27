@@ -1,14 +1,13 @@
 """
-Tab 3 — Interactive Demo.
+Tab 3 -- Interactive Demo.
 
 Full end-to-end clinical workflow for one selected ECG record:
   1. Patient selector (curated 200, filterable by class)
-  2. Patient card + heartbeat audio
-  3. Raw ECG waveform
-  4. XResNet1D prediction (cached or live re-run)
+  2. Patient card
+  3. ECG monitor animation (Lead II, real-time scrolling)
+  4. FCN-Wang prediction (cached or live re-run)
   5. Confidence gauge with ground-truth comparison
-  6. Saliency heatmap overlay (top-3 leads highlighted)
-  7. Qwen3 clinical narrative (optional, on demand)
+  6. XAI analysis (one-click): gradient saliency + Qwen2-0.5B clinical narrative
 """
 from __future__ import annotations
 
@@ -164,58 +163,81 @@ def render() -> None:
                     else:
                         st.error('❌ Incorrect prediction')
 
-    # ── Saliency ──────────────────────────────────────────────────────────────
+    # ── XAI analysis ──────────────────────────────────────────────────────────
     if pred:
-        _section_header('gradient', 'Gradient saliency map')
+        _section_header('psychology', 'XAI Analysis')
+        st.markdown(
+            'Gradient saliency highlights the ECG segments that most influenced '
+            'the prediction. Qwen2-0.5B-Instruct then generates a concise clinical '
+            'interpretation. Both run together in one step.'
+        )
+
         target_class = st.selectbox(
             'Target class for saliency',
             options=pred['predicted_classes'],
             key='id_saliency_target',
         )
 
-        if st.button('🔍 Compute saliency', key='id_sal_btn'):
-            from app.model import get_saliency, get_top_leads
-            with st.spinner('Computing gradient saliency …'):
-                sal = get_saliency(raw, target_class=target_class, result=pred)
-                top = get_top_leads(sal, top_k=3)
-            st.session_state['_sal']  = sal
-            st.session_state['_top']  = top
-            st.session_state['_sal_target'] = target_class
-
-        if '_sal' in st.session_state and st.session_state.get('_sal_target') == target_class:
-            sal = st.session_state['_sal']
-            top = st.session_state['_top']
-            st.markdown(f'**Top-3 salient leads:** {", ".join(top)}')
-            render_ecg_with_saliency(raw, sal, lead_names=LEAD_NAMES, top_leads=top, key='id_ecg_sal')
-
-    # ── LLM explanation ───────────────────────────────────────────────────────
-    if pred:
-        _section_header('chat', 'Clinical narrative (Qwen2-0.5B)')
-        st.markdown(
-            '_AI-generated interpretation — for educational purposes only. '
-            'Always requires clinical correlation._'
-        )
-
-        if st.button('Generate clinical explanation', key='id_llm_btn'):
-            from app.model import get_qwen3
+        if st.button(
+            f'{_icon("biotech", 16)} Run XAI analysis',
+            type='primary',
+            key='id_xai_btn',
+        ):
+            from app.model import get_saliency, get_top_leads, get_qwen3
             from src.explainability.llm import build_ecg_prompt, generate_explanation
 
+            # Step 1: gradient saliency
+            with st.spinner('Computing gradient saliency ...'):
+                sal = get_saliency(raw, target_class=target_class, result=pred)
+                top = get_top_leads(sal, top_k=3)
+            st.session_state['_sal']        = sal
+            st.session_state['_top']        = top
+            st.session_state['_sal_target'] = target_class
+
+            # Step 2: Qwen2 clinical narrative
             qwen_model, qwen_tok = get_qwen3()
-            if qwen_model is None:
-                st.warning('Qwen3 not available.')
-            else:
-                # Enrich result with dummy uncertainty fields if absent
+            if qwen_model is not None:
                 full_pred = dict(pred)
                 full_pred.setdefault('uncertainty', None)
                 full_pred.setdefault('uncertainty_level', 'not computed')
 
-                sal = st.session_state.get('_sal')
                 prompt = build_ecg_prompt(
                     result_dict  = full_pred,
                     saliency     = sal,
                     lead_names   = LEAD_NAMES,
                     true_classes = rec.get('superclass'),
                 )
-                with st.spinner('Qwen2 generating explanation ...'):
+                with st.spinner('Qwen2 generating clinical narrative ...'):
                     explanation = generate_explanation(prompt, qwen_model, qwen_tok)
-                st.info(explanation)
+                st.session_state['_xai_explanation']        = explanation
+                st.session_state['_xai_explanation_target'] = target_class
+            else:
+                st.warning('Qwen2 model unavailable -- showing saliency only.')
+                st.session_state.pop('_xai_explanation', None)
+
+        # Display results when available for the selected target class
+        if (
+            '_sal' in st.session_state
+            and st.session_state.get('_sal_target') == target_class
+        ):
+            sal = st.session_state['_sal']
+            top = st.session_state['_top']
+
+            st.markdown(f'**Top-3 salient leads:** {", ".join(top)}')
+            render_ecg_with_saliency(
+                raw, sal,
+                lead_names = LEAD_NAMES,
+                top_leads  = top,
+                key        = 'id_ecg_sal',
+            )
+
+            if (
+                '_xai_explanation' in st.session_state
+                and st.session_state.get('_xai_explanation_target') == target_class
+            ):
+                _section_header('chat', 'Clinical narrative (Qwen2-0.5B-Instruct)')
+                st.caption(
+                    'AI-generated interpretation -- for educational purposes only. '
+                    'Always requires clinical correlation.'
+                )
+                st.info(st.session_state['_xai_explanation'])

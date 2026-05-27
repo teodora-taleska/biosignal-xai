@@ -20,7 +20,7 @@ import numpy as np
 import streamlit as st
 import torch
 
-from src.explainability.llm import load_qwen3
+from src.explainability.llm import load_qwen
 from src.explainability.saliency import compute_saliency, top_salient_leads
 from src.inference.pipeline import ECGInferencePipeline
 from src.models.fcn_wang import FCNWang
@@ -66,15 +66,16 @@ def get_inference_pipeline() -> ECGInferencePipeline:
     return ECGInferencePipeline(model=model, device=device, has_uncertainty=False)
 
 
-@st.cache_resource(show_spinner='Loading Qwen2-0.5B (first run downloads ~400 MB) ...')
+@st.cache_resource(show_spinner='Loading Qwen2-0.5B-Instruct (first run downloads ~400 MB) ...')
 def get_qwen3():
     """
-    Load Qwen2-0.5B for clinical narrative generation.
+    Load Qwen2-0.5B-Instruct for clinical narrative generation.
 
+    Uses the same model as notebook 06_explainability.ipynb.
     Returns (model, tokenizer) or (None, None) if loading fails.
     """
     try:
-        return load_qwen3()
+        return load_qwen(model_id='Qwen/Qwen2-0.5B-Instruct')
     except Exception as exc:  # noqa: BLE001
         st.warning(f'Qwen not available: {exc}')
         return None, None
