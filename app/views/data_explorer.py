@@ -178,7 +178,7 @@ def _record_detail(records: list[dict], predictions: dict) -> None:
     with col_left:
         render_patient_card(rec)
         if pred:
-            st.markdown('**Model prediction (XResNet1D)**')
+            st.markdown('**Model prediction (FCN-Wang)**')
             render_confidence_gauge(pred, true_classes=rec.get('superclass'), key='de_gauge')
         else:
             st.info('No cached prediction for this record.')
@@ -192,7 +192,12 @@ def _record_detail(records: list[dict], predictions: dict) -> None:
 # ── Main render ───────────────────────────────────────────────────────────────
 
 def render() -> None:
-    st.subheader('📊 Data Explorer')
+    st.markdown(
+        '<h3 style="margin-bottom:4px;">'
+        '<span class="material-icons" style="vertical-align:middle;font-size:24px;">bar_chart</span>'
+        ' Data Explorer</h3>',
+        unsafe_allow_html=True,
+    )
 
     # Dataset summary metrics
     try:

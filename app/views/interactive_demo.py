@@ -47,11 +47,18 @@ def _get_signal(filename_lr: str) -> np.ndarray:
 
 # ── Section helpers ───────────────────────────────────────────────────────────
 
-def _section_header(icon: str, title: str) -> None:
+def _icon(name: str, size: int = 18) -> str:
+    return (
+        f'<span class="material-icons" '
+        f'style="vertical-align:middle;font-size:{size}px;">{name}</span>'
+    )
+
+
+def _section_header(icon_name: str, title: str) -> None:
     st.markdown(
         f'<div style="background:#f5f7fa; border-left:3px solid #1976d2; '
         f'padding:6px 12px; border-radius:4px; margin:12px 0 6px 0;">'
-        f'<strong>{icon} {title}</strong></div>',
+        f'<strong>{_icon(icon_name)} {title}</strong></div>',
         unsafe_allow_html=True,
     )
 
@@ -59,11 +66,15 @@ def _section_header(icon: str, title: str) -> None:
 # ── Main render ───────────────────────────────────────────────────────────────
 
 def render() -> None:
-    st.subheader('🧠 Interactive Demo')
+    st.markdown(
+        f'<h3 style="margin-bottom:4px;">'
+        f'{_icon("psychology", 26)} Interactive Demo</h3>',
+        unsafe_allow_html=True,
+    )
     st.markdown(
         'Select a patient from the curated 200-record test subset. '
-        'The XResNet1D-101 model classifies the 12-lead ECG into one or more '
-        'of 5 diagnostic superclasses. Gradient saliency explains which '
+        'FCN-Wang classifies the 12-lead ECG into one or more of '
+        '5 diagnostic superclasses. Gradient saliency explains which '
         'leads drove the prediction.'
     )
 
@@ -76,7 +87,7 @@ def render() -> None:
         return
 
     # ── Patient selector ──────────────────────────────────────────────────────
-    _section_header('🔍', 'Patient selector')
+    _section_header('search', 'Patient selector')
 
     sel_col1, sel_col2 = st.columns([1, 2])
     with sel_col1:
@@ -99,11 +110,11 @@ def render() -> None:
     pred = predictions.get(str(chosen_id))  # may be None
 
     # ── Patient info ──────────────────────────────────────────────────────────
-    _section_header('👤', 'Patient info')
+    _section_header('person', 'Patient info')
     render_patient_card(rec)
 
     # ── ECG monitor + heartbeat ───────────────────────────────────────────────
-    _section_header('📈', 'ECG monitor')
+    _section_header('show_chart', 'ECG monitor')
     with st.spinner('Loading ECG …'):
         raw = _get_signal(rec['filename_lr'])
     is_anomaly = bool(rec.get('superclass') and rec['superclass'] != ['NORM'])
@@ -111,7 +122,7 @@ def render() -> None:
     render_ecg_monitor(raw, is_anomaly=is_anomaly)
 
     # ── Prediction ────────────────────────────────────────────────────────────
-    _section_header('🤖', 'XResNet1D-101 prediction')
+    _section_header('smart_toy', 'FCN-Wang prediction')
 
     if pred is None:
         st.warning('No cached prediction. Click "Run inference" to compute one live.')
@@ -155,7 +166,7 @@ def render() -> None:
 
     # ── Saliency ──────────────────────────────────────────────────────────────
     if pred:
-        _section_header('🔍', 'Gradient saliency map')
+        _section_header('gradient', 'Gradient saliency map')
         target_class = st.selectbox(
             'Target class for saliency',
             options=pred['predicted_classes'],
@@ -179,7 +190,7 @@ def render() -> None:
 
     # ── LLM explanation ───────────────────────────────────────────────────────
     if pred:
-        _section_header('💬', 'Clinical narrative (Qwen3-0.6B)')
+        _section_header('chat', 'Clinical narrative (Qwen2-0.5B)')
         st.markdown(
             '_AI-generated interpretation — for educational purposes only. '
             'Always requires clinical correlation._'
@@ -205,6 +216,6 @@ def render() -> None:
                     lead_names   = LEAD_NAMES,
                     true_classes = rec.get('superclass'),
                 )
-                with st.spinner('Qwen3 generating explanation …'):
+                with st.spinner('Qwen2 generating explanation ...'):
                     explanation = generate_explanation(prompt, qwen_model, qwen_tok)
                 st.info(explanation)

@@ -4,891 +4,875 @@
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.5396,
-      "MI": 0.3522,
-      "STTC": 0.3354,
-      "CD": 0.2577,
-      "HYP": 0.1714
+      "NORM": 0.7575,
+      "MI": 0.1148,
+      "STTC": 0.1008,
+      "CD": 0.2738,
+      "HYP": 0.0516
     },
-    "confidence_score": 0.5396
+    "confidence_score": 0.7575
   },
   "1251": {
     "predicted_classes": [
-      "MI",
-      "STTC"
+      "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.241,
-      "MI": 0.549,
-      "STTC": 0.5463,
-      "CD": 0.3988,
-      "HYP": 0.3477
+      "NORM": 0.6678,
+      "MI": 0.2436,
+      "STTC": 0.1254,
+      "CD": 0.2491,
+      "HYP": 0.053
     },
-    "confidence_score": 0.549
+    "confidence_score": 0.6678
   },
   "17891": {
     "predicted_classes": [
-      "CD"
+      "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.2385,
-      "MI": 0.4123,
-      "STTC": 0.3904,
-      "CD": 0.4575,
-      "HYP": 0.2851
+      "NORM": 0.9265,
+      "MI": 0.0044,
+      "STTC": 0.0287,
+      "CD": 0.0111,
+      "HYP": 0.2355
     },
-    "confidence_score": 0.4575
+    "confidence_score": 0.9265
   },
   "2848": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9414,
-      "MI": 0.0536,
-      "STTC": 0.0561,
-      "CD": 0.0737,
-      "HYP": 0.0266
+      "NORM": 0.987,
+      "MI": 0.0043,
+      "STTC": 0.0051,
+      "CD": 0.0212,
+      "HYP": 0.0395
     },
-    "confidence_score": 0.9414
+    "confidence_score": 0.987
   },
   "931": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9413,
-      "MI": 0.0532,
-      "STTC": 0.0589,
-      "CD": 0.0729,
-      "HYP": 0.0273
+      "NORM": 0.9845,
+      "MI": 0.0071,
+      "STTC": 0.0122,
+      "CD": 0.0397,
+      "HYP": 0.0203
     },
-    "confidence_score": 0.9413
+    "confidence_score": 0.9845
   },
   "18639": {
     "predicted_classes": [
-      "MI",
-      "STTC"
+      "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.1923,
-      "MI": 0.5729,
-      "STTC": 0.5662,
-      "CD": 0.3989,
-      "HYP": 0.3525
+      "NORM": 0.5373,
+      "MI": 0.3602,
+      "STTC": 0.1568,
+      "CD": 0.1838,
+      "HYP": 0.0792
     },
-    "confidence_score": 0.5729
+    "confidence_score": 0.5373
   },
   "19669": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9278,
-      "MI": 0.0654,
-      "STTC": 0.0655,
-      "CD": 0.086,
-      "HYP": 0.0325
+      "NORM": 0.9611,
+      "MI": 0.0079,
+      "STTC": 0.0138,
+      "CD": 0.0225,
+      "HYP": 0.0793
     },
-    "confidence_score": 0.9278
+    "confidence_score": 0.9611
   },
   "1266": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9484,
-      "MI": 0.0491,
-      "STTC": 0.0513,
-      "CD": 0.0675,
-      "HYP": 0.0232
+      "NORM": 0.994,
+      "MI": 0.0063,
+      "STTC": 0.0058,
+      "CD": 0.017,
+      "HYP": 0.0058
     },
-    "confidence_score": 0.9484
+    "confidence_score": 0.994
   },
   "7819": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.6512,
-      "MI": 0.2596,
-      "STTC": 0.2669,
-      "CD": 0.2363,
-      "HYP": 0.1614
+      "NORM": 0.761,
+      "MI": 0.0368,
+      "STTC": 0.2239,
+      "CD": 0.1508,
+      "HYP": 0.102
     },
-    "confidence_score": 0.6512
+    "confidence_score": 0.761
   },
   "12835": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9349,
-      "MI": 0.0588,
-      "STTC": 0.0632,
-      "CD": 0.0778,
-      "HYP": 0.0305
+      "NORM": 0.8887,
+      "MI": 0.1025,
+      "STTC": 0.0297,
+      "CD": 0.0581,
+      "HYP": 0.05
     },
-    "confidence_score": 0.9349
+    "confidence_score": 0.8887
   },
   "9995": {
+    "predicted_classes": [
+      "STTC",
+      "HYP"
+    ],
+    "class_probabilities": {
+      "NORM": 0.4147,
+      "MI": 0.08,
+      "STTC": 0.5166,
+      "CD": 0.1286,
+      "HYP": 0.6396
+    },
+    "confidence_score": 0.6396
+  },
+  "1172": {
+    "predicted_classes": [
+      "CD"
+    ],
+    "class_probabilities": {
+      "NORM": 0.2712,
+      "MI": 0.3623,
+      "STTC": 0.3234,
+      "CD": 0.8022,
+      "HYP": 0.4168
+    },
+    "confidence_score": 0.8022
+  },
+  "7621": {
+    "predicted_classes": [
+      "NORM",
+      "STTC"
+    ],
+    "class_probabilities": {
+      "NORM": 0.6624,
+      "MI": 0.0421,
+      "STTC": 0.5063,
+      "CD": 0.0629,
+      "HYP": 0.0506
+    },
+    "confidence_score": 0.6624
+  },
+  "12172": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.5555,
-      "MI": 0.3756,
-      "STTC": 0.372,
-      "CD": 0.3303,
-      "HYP": 0.3761
+      "NORM": 0.8152,
+      "MI": 0.0527,
+      "STTC": 0.1331,
+      "CD": 0.0642,
+      "HYP": 0.2111
     },
-    "confidence_score": 0.5555
-  },
-  "1172": {
-    "predicted_classes": [
-      "MI"
-    ],
-    "class_probabilities": {
-      "NORM": 0.2859,
-      "MI": 0.4941,
-      "STTC": 0.4725,
-      "CD": 0.4465,
-      "HYP": 0.4887
-    },
-    "confidence_score": 0.4941
-  },
-  "7621": {
-    "predicted_classes": [
-      "MI",
-      "STTC"
-    ],
-    "class_probabilities": {
-      "NORM": 0.2687,
-      "MI": 0.5203,
-      "STTC": 0.506,
-      "CD": 0.3488,
-      "HYP": 0.2632
-    },
-    "confidence_score": 0.5203
-  },
-  "12172": {
-    "predicted_classes": [
-      "STTC"
-    ],
-    "class_probabilities": {
-      "NORM": 0.3859,
-      "MI": 0.452,
-      "STTC": 0.462,
-      "CD": 0.3676,
-      "HYP": 0.3315
-    },
-    "confidence_score": 0.462
+    "confidence_score": 0.8152
   },
   "7034": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9412,
-      "MI": 0.0559,
-      "STTC": 0.0592,
-      "CD": 0.0728,
-      "HYP": 0.0267
+      "NORM": 0.9892,
+      "MI": 0.005,
+      "STTC": 0.0061,
+      "CD": 0.0208,
+      "HYP": 0.0147
     },
-    "confidence_score": 0.9412
+    "confidence_score": 0.9892
   },
   "1790": {
     "predicted_classes": [
-      "MI",
-      "STTC"
+      "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.1821,
-      "MI": 0.5981,
-      "STTC": 0.5909,
-      "CD": 0.4494,
-      "HYP": 0.4004
+      "NORM": 0.5252,
+      "MI": 0.3418,
+      "STTC": 0.2022,
+      "CD": 0.1572,
+      "HYP": 0.1284
     },
-    "confidence_score": 0.5981
+    "confidence_score": 0.5252
   },
   "3164": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9402,
-      "MI": 0.0554,
-      "STTC": 0.0569,
-      "CD": 0.075,
-      "HYP": 0.0268
+      "NORM": 0.9527,
+      "MI": 0.0316,
+      "STTC": 0.0157,
+      "CD": 0.0305,
+      "HYP": 0.0485
     },
-    "confidence_score": 0.9402
+    "confidence_score": 0.9527
   },
   "12082": {
     "predicted_classes": [
-      "HYP"
+      "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.4789,
-      "MI": 0.3798,
-      "STTC": 0.3805,
-      "CD": 0.4068,
-      "HYP": 0.5097
+      "NORM": 0.8762,
+      "MI": 0.0279,
+      "STTC": 0.0841,
+      "CD": 0.1468,
+      "HYP": 0.1767
     },
-    "confidence_score": 0.5097
+    "confidence_score": 0.8762
   },
   "8902": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.934,
-      "MI": 0.0585,
-      "STTC": 0.0621,
-      "CD": 0.0801,
-      "HYP": 0.0323
+      "NORM": 0.9523,
+      "MI": 0.0073,
+      "STTC": 0.0101,
+      "CD": 0.1268,
+      "HYP": 0.0928
     },
-    "confidence_score": 0.934
+    "confidence_score": 0.9523
   },
   "16407": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.877,
-      "MI": 0.1047,
-      "STTC": 0.1086,
-      "CD": 0.1178,
-      "HYP": 0.055
+      "NORM": 0.9424,
+      "MI": 0.0142,
+      "STTC": 0.0708,
+      "CD": 0.1015,
+      "HYP": 0.0215
     },
-    "confidence_score": 0.877
+    "confidence_score": 0.9424
   },
   "13404": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.625,
-      "MI": 0.2942,
-      "STTC": 0.3048,
-      "CD": 0.26,
-      "HYP": 0.2083
+      "NORM": 0.588,
+      "MI": 0.3342,
+      "STTC": 0.1512,
+      "CD": 0.1331,
+      "HYP": 0.1368
     },
-    "confidence_score": 0.625
+    "confidence_score": 0.588
   },
   "9174": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9229,
-      "MI": 0.0682,
-      "STTC": 0.0686,
-      "CD": 0.0915,
-      "HYP": 0.0367
+      "NORM": 0.9744,
+      "MI": 0.0104,
+      "STTC": 0.0101,
+      "CD": 0.0306,
+      "HYP": 0.0683
     },
-    "confidence_score": 0.9229
+    "confidence_score": 0.9744
   },
   "7170": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.776,
-      "MI": 0.1887,
-      "STTC": 0.184,
-      "CD": 0.177,
-      "HYP": 0.0973
+      "NORM": 0.9599,
+      "MI": 0.0151,
+      "STTC": 0.0555,
+      "CD": 0.0243,
+      "HYP": 0.0115
     },
-    "confidence_score": 0.776
+    "confidence_score": 0.9599
   },
   "17358": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9183,
-      "MI": 0.0736,
-      "STTC": 0.0754,
-      "CD": 0.0906,
-      "HYP": 0.0389
+      "NORM": 0.923,
+      "MI": 0.0106,
+      "STTC": 0.0269,
+      "CD": 0.0375,
+      "HYP": 0.3087
     },
-    "confidence_score": 0.9183
+    "confidence_score": 0.923
   },
   "14375": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9317,
-      "MI": 0.0623,
-      "STTC": 0.0625,
-      "CD": 0.0806,
-      "HYP": 0.0305
+      "NORM": 0.9759,
+      "MI": 0.0142,
+      "STTC": 0.0084,
+      "CD": 0.0408,
+      "HYP": 0.0332
     },
-    "confidence_score": 0.9317
+    "confidence_score": 0.9759
   },
   "16499": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9445,
-      "MI": 0.0514,
-      "STTC": 0.0544,
-      "CD": 0.0701,
-      "HYP": 0.0255
+      "NORM": 0.9771,
+      "MI": 0.0154,
+      "STTC": 0.0038,
+      "CD": 0.0209,
+      "HYP": 0.0344
     },
-    "confidence_score": 0.9445
+    "confidence_score": 0.9771
   },
   "13923": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8399,
-      "MI": 0.131,
-      "STTC": 0.131,
-      "CD": 0.1428,
-      "HYP": 0.0734
+      "NORM": 0.7977,
+      "MI": 0.0903,
+      "STTC": 0.1114,
+      "CD": 0.1198,
+      "HYP": 0.1075
     },
-    "confidence_score": 0.8399
+    "confidence_score": 0.7977
   },
   "9338": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8677,
-      "MI": 0.1062,
-      "STTC": 0.1078,
-      "CD": 0.1351,
-      "HYP": 0.0703
+      "NORM": 0.5576,
+      "MI": 0.0549,
+      "STTC": 0.2167,
+      "CD": 0.0523,
+      "HYP": 0.4925
     },
-    "confidence_score": 0.8677
+    "confidence_score": 0.5576
   },
   "16537": {
     "predicted_classes": [
-      "MI",
-      "STTC"
+      "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.22,
-      "MI": 0.5531,
-      "STTC": 0.5422,
-      "CD": 0.3895,
-      "HYP": 0.339
+      "NORM": 0.8217,
+      "MI": 0.0942,
+      "STTC": 0.0864,
+      "CD": 0.1081,
+      "HYP": 0.0484
     },
-    "confidence_score": 0.5531
+    "confidence_score": 0.8217
   },
   "2596": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9266,
-      "MI": 0.0643,
-      "STTC": 0.0651,
-      "CD": 0.089,
-      "HYP": 0.0345
+      "NORM": 0.9625,
+      "MI": 0.0094,
+      "STTC": 0.0053,
+      "CD": 0.0102,
+      "HYP": 0.0773
     },
-    "confidence_score": 0.9266
+    "confidence_score": 0.9625
   },
   "15057": {
     "predicted_classes": [
-      "MI",
-      "STTC"
+      "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.2075,
-      "MI": 0.5671,
-      "STTC": 0.5497,
-      "CD": 0.4531,
-      "HYP": 0.4394
+      "NORM": 0.7615,
+      "MI": 0.1322,
+      "STTC": 0.0924,
+      "CD": 0.2962,
+      "HYP": 0.1901
     },
-    "confidence_score": 0.5671
+    "confidence_score": 0.7615
   },
   "5914": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9073,
-      "MI": 0.082,
-      "STTC": 0.0806,
-      "CD": 0.1012,
-      "HYP": 0.0427
+      "NORM": 0.9794,
+      "MI": 0.0081,
+      "STTC": 0.0073,
+      "CD": 0.018,
+      "HYP": 0.0469
     },
-    "confidence_score": 0.9073
+    "confidence_score": 0.9794
   },
   "4059": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.5139,
-      "MI": 0.3528,
-      "STTC": 0.3575,
-      "CD": 0.2734,
-      "HYP": 0.203
+      "NORM": 0.8529,
+      "MI": 0.0516,
+      "STTC": 0.1579,
+      "CD": 0.042,
+      "HYP": 0.0243
     },
-    "confidence_score": 0.5139
+    "confidence_score": 0.8529
   },
   "15001": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9082,
-      "MI": 0.0775,
-      "STTC": 0.0768,
-      "CD": 0.1029,
-      "HYP": 0.0461
+      "NORM": 0.9746,
+      "MI": 0.0062,
+      "STTC": 0.0056,
+      "CD": 0.0117,
+      "HYP": 0.1397
     },
-    "confidence_score": 0.9082
+    "confidence_score": 0.9746
   },
   "10238": {
     "predicted_classes": [
-      "MI"
+      "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.4027,
-      "MI": 0.4278,
-      "STTC": 0.4179,
-      "CD": 0.3061,
-      "HYP": 0.2179
+      "NORM": 0.5968,
+      "MI": 0.4632,
+      "STTC": 0.0901,
+      "CD": 0.0447,
+      "HYP": 0.0193
     },
-    "confidence_score": 0.4278
+    "confidence_score": 0.5968
   },
   "12034": {
     "predicted_classes": [
-      "MI"
+      "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.3307,
-      "MI": 0.4845,
-      "STTC": 0.483,
-      "CD": 0.3448,
-      "HYP": 0.2662
+      "NORM": 0.8343,
+      "MI": 0.1139,
+      "STTC": 0.1324,
+      "CD": 0.0769,
+      "HYP": 0.0475
     },
-    "confidence_score": 0.4845
+    "confidence_score": 0.8343
   },
   "14304": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9115,
-      "MI": 0.0776,
-      "STTC": 0.0772,
-      "CD": 0.0998,
-      "HYP": 0.0443
+      "NORM": 0.7071,
+      "MI": 0.161,
+      "STTC": 0.0981,
+      "CD": 0.0811,
+      "HYP": 0.2869
     },
-    "confidence_score": 0.9115
+    "confidence_score": 0.7071
   },
   "6295": {
     "predicted_classes": [
-      "NORM"
+      "NORM",
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.9055,
-      "MI": 0.0863,
-      "STTC": 0.0789,
-      "CD": 0.0999,
-      "HYP": 0.0399
+      "NORM": 0.8166,
+      "MI": 0.0917,
+      "STTC": 0.0359,
+      "CD": 0.5791,
+      "HYP": 0.0572
     },
-    "confidence_score": 0.9055
+    "confidence_score": 0.8166
   },
   "7561": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9283,
-      "MI": 0.063,
-      "STTC": 0.0663,
-      "CD": 0.0866,
-      "HYP": 0.0341
+      "NORM": 0.9676,
+      "MI": 0.0084,
+      "STTC": 0.016,
+      "CD": 0.0309,
+      "HYP": 0.0775
     },
-    "confidence_score": 0.9283
+    "confidence_score": 0.9676
   },
   "1158": {
     "predicted_classes": [
-      "CD"
+      "MI",
+      "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0,
-      "MI": 0.0001,
-      "STTC": 0.0655,
-      "CD": 0.6809,
-      "HYP": 0.0011
+      "NORM": 0.123,
+      "MI": 0.7345,
+      "STTC": 0.1636,
+      "CD": 0.4461,
+      "HYP": 0.8028
     },
-    "confidence_score": 0.6809
+    "confidence_score": 0.8028
   },
   "14667": {
     "predicted_classes": [
-      "NORM"
+      "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.584,
-      "MI": 0.3796,
-      "STTC": 0.4052,
-      "CD": 0.3285,
-      "HYP": 0.3608
+      "NORM": 0.0984,
+      "MI": 0.9659,
+      "STTC": 0.0324,
+      "CD": 0.1029,
+      "HYP": 0.0465
     },
-    "confidence_score": 0.584
+    "confidence_score": 0.9659
   },
   "12328": {
     "predicted_classes": [
-      "NORM"
+      "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.5729,
-      "MI": 0.3097,
-      "STTC": 0.338,
-      "CD": 0.2807,
-      "HYP": 0.2065
+      "NORM": 0.4539,
+      "MI": 0.5788,
+      "STTC": 0.0484,
+      "CD": 0.0841,
+      "HYP": 0.1061
     },
-    "confidence_score": 0.5729
+    "confidence_score": 0.5788
   },
   "16609": {
     "predicted_classes": [
       "MI",
       "STTC",
-      "CD",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0831,
-      "MI": 0.6069,
-      "STTC": 0.5236,
-      "CD": 0.6516,
-      "HYP": 0.6163
+      "NORM": 0.0881,
+      "MI": 0.7029,
+      "STTC": 0.5009,
+      "CD": 0.3,
+      "HYP": 0.92
     },
-    "confidence_score": 0.6516
+    "confidence_score": 0.92
   },
   "13819": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9378,
-      "MI": 0.0579,
-      "STTC": 0.0605,
-      "CD": 0.0753,
-      "HYP": 0.0281
+      "NORM": 0.98,
+      "MI": 0.0176,
+      "STTC": 0.0101,
+      "CD": 0.0119,
+      "HYP": 0.0099
     },
-    "confidence_score": 0.9378
+    "confidence_score": 0.98
   },
   "5826": {
     "predicted_classes": [
-      "NORM"
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.7599,
-      "MI": 0.182,
-      "STTC": 0.1908,
-      "CD": 0.1923,
-      "HYP": 0.1231
+      "NORM": 0.1248,
+      "MI": 0.3486,
+      "STTC": 0.0258,
+      "CD": 0.9167,
+      "HYP": 0.044
     },
-    "confidence_score": 0.7599
+    "confidence_score": 0.9167
   },
   "18712": {
     "predicted_classes": [
       "MI",
       "STTC",
-      "CD",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0536,
-      "MI": 0.6819,
-      "STTC": 0.5225,
-      "CD": 0.7237,
-      "HYP": 0.6678
+      "NORM": 0.0139,
+      "MI": 0.9335,
+      "STTC": 0.8973,
+      "CD": 0.1516,
+      "HYP": 0.6966
     },
-    "confidence_score": 0.7237
+    "confidence_score": 0.9335
   },
   "16135": {
-    "predicted_classes": [
-      "NORM"
-    ],
-    "class_probabilities": {
-      "NORM": 0.9159,
-      "MI": 0.0777,
-      "STTC": 0.0758,
-      "CD": 0.0915,
-      "HYP": 0.0366
-    },
-    "confidence_score": 0.9159
-  },
-  "4072": {
-    "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
-      "HYP"
-    ],
-    "class_probabilities": {
-      "NORM": 0.0711,
-      "MI": 0.6861,
-      "STTC": 0.5895,
-      "CD": 0.6144,
-      "HYP": 0.5737
-    },
-    "confidence_score": 0.6861
-  },
-  "3241": {
-    "predicted_classes": [
-      "MI",
-      "STTC"
-    ],
-    "class_probabilities": {
-      "NORM": 0.0973,
-      "MI": 0.6537,
-      "STTC": 0.6206,
-      "CD": 0.4925,
-      "HYP": 0.4566
-    },
-    "confidence_score": 0.6537
-  },
-  "16152": {
-    "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
-      "HYP"
-    ],
-    "class_probabilities": {
-      "NORM": 0.0589,
-      "MI": 0.6768,
-      "STTC": 0.5264,
-      "CD": 0.6979,
-      "HYP": 0.6721
-    },
-    "confidence_score": 0.6979
-  },
-  "15279": {
-    "predicted_classes": [
-      "MI",
-      "CD",
-      "HYP"
-    ],
-    "class_probabilities": {
-      "NORM": 0.0479,
-      "MI": 0.6647,
-      "STTC": 0.4766,
-      "CD": 0.7579,
-      "HYP": 0.697
-    },
-    "confidence_score": 0.7579
-  },
-  "16225": {
-    "predicted_classes": [
-      "NORM"
-    ],
-    "class_probabilities": {
-      "NORM": 0.5649,
-      "MI": 0.3302,
-      "STTC": 0.3165,
-      "CD": 0.246,
-      "HYP": 0.1623
-    },
-    "confidence_score": 0.5649
-  },
-  "17007": {
-    "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD"
-    ],
-    "class_probabilities": {
-      "NORM": 0.1024,
-      "MI": 0.6525,
-      "STTC": 0.6125,
-      "CD": 0.5139,
-      "HYP": 0.4827
-    },
-    "confidence_score": 0.6525
-  },
-  "8680": {
-    "predicted_classes": [
-      "MI",
-      "CD",
-      "HYP"
-    ],
-    "class_probabilities": {
-      "NORM": 0.1183,
-      "MI": 0.572,
-      "STTC": 0.4666,
-      "CD": 0.6757,
-      "HYP": 0.6891
-    },
-    "confidence_score": 0.6891
-  },
-  "947": {
-    "predicted_classes": [
-      "NORM"
-    ],
-    "class_probabilities": {
-      "NORM": 0.7139,
-      "MI": 0.2116,
-      "STTC": 0.2146,
-      "CD": 0.2009,
-      "HYP": 0.1288
-    },
-    "confidence_score": 0.7139
-  },
-  "13853": {
-    "predicted_classes": [
-      "CD"
-    ],
-    "class_probabilities": {
-      "NORM": 0.0001,
-      "MI": 0.0006,
-      "STTC": 0.0404,
-      "CD": 0.9998,
-      "HYP": 0.2805
-    },
-    "confidence_score": 0.9998
-  },
-  "5251": {
-    "predicted_classes": [
-      "MI",
-      "STTC"
-    ],
-    "class_probabilities": {
-      "NORM": 0.109,
-      "MI": 0.6472,
-      "STTC": 0.6171,
-      "CD": 0.4884,
-      "HYP": 0.4297
-    },
-    "confidence_score": 0.6472
-  },
-  "3559": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.4291,
-      "MI": 0.4811,
-      "STTC": 0.4781,
-      "CD": 0.3787,
-      "HYP": 0.3418
+      "NORM": 0.4278,
+      "MI": 0.4887,
+      "STTC": 0.2139,
+      "CD": 0.1822,
+      "HYP": 0.2751
     },
-    "confidence_score": 0.4811
+    "confidence_score": 0.4887
   },
-  "13849": {
+  "4072": {
     "predicted_classes": [
-      "CD"
-    ],
-    "class_probabilities": {
-      "NORM": 0.0721,
-      "MI": 0.4711,
-      "STTC": 0.4636,
-      "CD": 0.6951,
-      "HYP": 0.3922
-    },
-    "confidence_score": 0.6951
-  },
-  "6231": {
-    "predicted_classes": [
-      "MI",
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.2646,
-      "MI": 0.5336,
-      "STTC": 0.5293,
-      "CD": 0.362,
-      "HYP": 0.2712
+      "NORM": 0.2749,
+      "MI": 0.2543,
+      "STTC": 0.5913,
+      "CD": 0.3667,
+      "HYP": 0.0954
     },
-    "confidence_score": 0.5336
+    "confidence_score": 0.5913
+  },
+  "3241": {
+    "predicted_classes": [
+      "MI"
+    ],
+    "class_probabilities": {
+      "NORM": 0.0703,
+      "MI": 0.9116,
+      "STTC": 0.214,
+      "CD": 0.1979,
+      "HYP": 0.0338
+    },
+    "confidence_score": 0.9116
+  },
+  "16152": {
+    "predicted_classes": [
+      "MI"
+    ],
+    "class_probabilities": {
+      "NORM": 0.0107,
+      "MI": 0.9831,
+      "STTC": 0.3172,
+      "CD": 0.4571,
+      "HYP": 0.0599
+    },
+    "confidence_score": 0.9831
+  },
+  "15279": {
+    "predicted_classes": [
+      "MI",
+      "STTC",
+      "CD",
+      "HYP"
+    ],
+    "class_probabilities": {
+      "NORM": 0.0472,
+      "MI": 0.8274,
+      "STTC": 0.7136,
+      "CD": 0.5119,
+      "HYP": 0.8303
+    },
+    "confidence_score": 0.8303
+  },
+  "16225": {
+    "predicted_classes": [
+      "MI"
+    ],
+    "class_probabilities": {
+      "NORM": 0.1012,
+      "MI": 0.9496,
+      "STTC": 0.0321,
+      "CD": 0.0727,
+      "HYP": 0.0161
+    },
+    "confidence_score": 0.9496
+  },
+  "17007": {
+    "predicted_classes": [
+      "MI",
+      "CD"
+    ],
+    "class_probabilities": {
+      "NORM": 0.0139,
+      "MI": 0.9781,
+      "STTC": 0.3155,
+      "CD": 0.6045,
+      "HYP": 0.0592
+    },
+    "confidence_score": 0.9781
+  },
+  "8680": {
+    "predicted_classes": [
+      "MI",
+      "CD"
+    ],
+    "class_probabilities": {
+      "NORM": 0.059,
+      "MI": 0.8987,
+      "STTC": 0.2105,
+      "CD": 0.9208,
+      "HYP": 0.496
+    },
+    "confidence_score": 0.9208
+  },
+  "947": {
+    "predicted_classes": [
+      "MI"
+    ],
+    "class_probabilities": {
+      "NORM": 0.2408,
+      "MI": 0.7708,
+      "STTC": 0.072,
+      "CD": 0.0623,
+      "HYP": 0.0242
+    },
+    "confidence_score": 0.7708
+  },
+  "13853": {
+    "predicted_classes": [
+      "MI",
+      "CD"
+    ],
+    "class_probabilities": {
+      "NORM": 0.0018,
+      "MI": 0.9191,
+      "STTC": 0.1099,
+      "CD": 0.9964,
+      "HYP": 0.4095
+    },
+    "confidence_score": 0.9964
+  },
+  "5251": {
+    "predicted_classes": [
+      "MI"
+    ],
+    "class_probabilities": {
+      "NORM": 0.3765,
+      "MI": 0.6468,
+      "STTC": 0.0461,
+      "CD": 0.0991,
+      "HYP": 0.0852
+    },
+    "confidence_score": 0.6468
+  },
+  "3559": {
+    "predicted_classes": [
+      "NORM"
+    ],
+    "class_probabilities": {
+      "NORM": 0.7328,
+      "MI": 0.0405,
+      "STTC": 0.0496,
+      "CD": 0.2934,
+      "HYP": 0.0686
+    },
+    "confidence_score": 0.7328
+  },
+  "13849": {
+    "predicted_classes": [
+      "MI",
+      "CD"
+    ],
+    "class_probabilities": {
+      "NORM": 0.0017,
+      "MI": 0.9148,
+      "STTC": 0.1235,
+      "CD": 0.9977,
+      "HYP": 0.1923
+    },
+    "confidence_score": 0.9977
+  },
+  "6231": {
+    "predicted_classes": [
+      "MI"
+    ],
+    "class_probabilities": {
+      "NORM": 0.3031,
+      "MI": 0.5104,
+      "STTC": 0.4141,
+      "CD": 0.1244,
+      "HYP": 0.0522
+    },
+    "confidence_score": 0.5104
   },
   "16532": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.659,
-      "MI": 0.3083,
-      "STTC": 0.35,
-      "CD": 0.2819,
-      "HYP": 0.2999
+      "NORM": 0.4589,
+      "MI": 0.4011,
+      "STTC": 0.1355,
+      "CD": 0.1951,
+      "HYP": 0.2236
     },
-    "confidence_score": 0.659
+    "confidence_score": 0.4589
   },
   "12991": {
     "predicted_classes": [
-      "MI",
-      "STTC"
+      "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.1,
-      "MI": 0.652,
-      "STTC": 0.6267,
-      "CD": 0.489,
-      "HYP": 0.4526
+      "NORM": 0.0319,
+      "MI": 0.966,
+      "STTC": 0.1435,
+      "CD": 0.0953,
+      "HYP": 0.0127
     },
-    "confidence_score": 0.652
+    "confidence_score": 0.966
   },
   "16952": {
     "predicted_classes": [
-      "MI",
-      "STTC"
+      "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.2568,
-      "MI": 0.5302,
-      "STTC": 0.5303,
-      "CD": 0.3658,
-      "HYP": 0.2896
+      "NORM": 0.0963,
+      "MI": 0.9596,
+      "STTC": 0.1057,
+      "CD": 0.1078,
+      "HYP": 0.0316
     },
-    "confidence_score": 0.5303
+    "confidence_score": 0.9596
   },
   "2050": {
     "predicted_classes": [
-      "MI",
-      "STTC"
+      "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.1865,
-      "MI": 0.5933,
-      "STTC": 0.5854,
-      "CD": 0.385,
-      "HYP": 0.3151
+      "NORM": 0.5824,
+      "MI": 0.0876,
+      "STTC": 0.3412,
+      "CD": 0.0306,
+      "HYP": 0.0142
     },
-    "confidence_score": 0.5933
+    "confidence_score": 0.5824
   },
   "9756": {
     "predicted_classes": [
       "MI",
       "STTC",
-      "CD",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0821,
-      "MI": 0.6661,
-      "STTC": 0.572,
-      "CD": 0.5962,
-      "HYP": 0.5763
+      "NORM": 0.0172,
+      "MI": 0.7334,
+      "STTC": 0.93,
+      "CD": 0.2367,
+      "HYP": 0.5091
     },
-    "confidence_score": 0.6661
+    "confidence_score": 0.93
   },
   "7877": {
     "predicted_classes": [
-      "NORM"
+      "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.4623,
-      "MI": 0.4055,
-      "STTC": 0.4182,
-      "CD": 0.3797,
-      "HYP": 0.4171
+      "NORM": 0.2323,
+      "MI": 0.4586,
+      "STTC": 0.4339,
+      "CD": 0.2141,
+      "HYP": 0.5319
     },
-    "confidence_score": 0.4623
+    "confidence_score": 0.5319
   },
   "16272": {
     "predicted_classes": [
@@ -896,171 +880,159 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.1024,
-      "MI": 0.5127,
-      "STTC": 0.4526,
-      "CD": 0.6988,
-      "HYP": 0.4733
+      "NORM": 0.018,
+      "MI": 0.7662,
+      "STTC": 0.173,
+      "CD": 0.9941,
+      "HYP": 0.4479
     },
-    "confidence_score": 0.6988
+    "confidence_score": 0.9941
   },
   "18364": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.3256,
-      "MI": 0.4888,
-      "STTC": 0.4804,
-      "CD": 0.3783,
-      "HYP": 0.3795
+      "NORM": 0.0069,
+      "MI": 0.9956,
+      "STTC": 0.0444,
+      "CD": 0.328,
+      "HYP": 0.0362
     },
-    "confidence_score": 0.4888
+    "confidence_score": 0.9956
   },
   "10984": {
     "predicted_classes": [
-      "MI",
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.1525,
-      "MI": 0.5954,
-      "STTC": 0.5804,
-      "CD": 0.4308,
-      "HYP": 0.3937
+      "NORM": 0.3172,
+      "MI": 0.408,
+      "STTC": 0.5232,
+      "CD": 0.1334,
+      "HYP": 0.3076
     },
-    "confidence_score": 0.5954
+    "confidence_score": 0.5232
   },
   "11872": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8822,
-      "MI": 0.0955,
-      "STTC": 0.093,
-      "CD": 0.1227,
-      "HYP": 0.0557
+      "NORM": 0.7132,
+      "MI": 0.4142,
+      "STTC": 0.0406,
+      "CD": 0.0971,
+      "HYP": 0.0414
     },
-    "confidence_score": 0.8822
+    "confidence_score": 0.7132
   },
   "3272": {
     "predicted_classes": [
       "MI",
-      "STTC",
-      "CD",
-      "HYP"
+      "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.0504,
-      "MI": 0.6892,
-      "STTC": 0.5278,
-      "CD": 0.7254,
-      "HYP": 0.6641
+      "NORM": 0.0122,
+      "MI": 0.9608,
+      "STTC": 0.6696,
+      "CD": 0.2095,
+      "HYP": 0.3746
     },
-    "confidence_score": 0.7254
+    "confidence_score": 0.9608
   },
   "12169": {
     "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
-      "HYP"
+      "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.0624,
-      "MI": 0.6847,
-      "STTC": 0.5607,
-      "CD": 0.6628,
-      "HYP": 0.633
+      "NORM": 0.0048,
+      "MI": 0.9986,
+      "STTC": 0.2191,
+      "CD": 0.1314,
+      "HYP": 0.0967
     },
-    "confidence_score": 0.6847
+    "confidence_score": 0.9986
   },
   "8473": {
     "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD"
+      "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.1052,
-      "MI": 0.636,
-      "STTC": 0.6053,
-      "CD": 0.5112,
-      "HYP": 0.488
+      "NORM": 0.0032,
+      "MI": 0.9985,
+      "STTC": 0.027,
+      "CD": 0.3845,
+      "HYP": 0.0256
     },
-    "confidence_score": 0.636
+    "confidence_score": 0.9985
   },
   "12828": {
     "predicted_classes": [
-      "NORM"
+      "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.6823,
-      "MI": 0.2514,
-      "STTC": 0.2505,
-      "CD": 0.2027,
-      "HYP": 0.1256
+      "NORM": 0.0355,
+      "MI": 0.9628,
+      "STTC": 0.2074,
+      "CD": 0.0362,
+      "HYP": 0.0299
     },
-    "confidence_score": 0.6823
+    "confidence_score": 0.9628
   },
   "9860": {
     "predicted_classes": [
       "MI",
-      "STTC",
-      "CD",
-      "HYP"
+      "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.0896,
-      "MI": 0.6614,
-      "STTC": 0.5988,
-      "CD": 0.5546,
-      "HYP": 0.5287
+      "NORM": 0.0199,
+      "MI": 0.9317,
+      "STTC": 0.7287,
+      "CD": 0.1298,
+      "HYP": 0.4409
     },
-    "confidence_score": 0.6614
+    "confidence_score": 0.9317
   },
   "5856": {
     "predicted_classes": [
       "MI",
-      "STTC",
-      "CD",
-      "HYP"
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0792,
-      "MI": 0.66,
-      "STTC": 0.5398,
-      "CD": 0.6448,
-      "HYP": 0.6224
+      "NORM": 0.0187,
+      "MI": 0.9775,
+      "STTC": 0.215,
+      "CD": 0.8268,
+      "HYP": 0.1329
     },
-    "confidence_score": 0.66
+    "confidence_score": 0.9775
   },
   "210": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.867,
-      "MI": 0.1118,
-      "STTC": 0.1092,
-      "CD": 0.1257,
-      "HYP": 0.0588
+      "NORM": 0.7034,
+      "MI": 0.3534,
+      "STTC": 0.0252,
+      "CD": 0.1152,
+      "HYP": 0.0537
     },
-    "confidence_score": 0.867
+    "confidence_score": 0.7034
   },
   "16463": {
     "predicted_classes": [
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.3213,
-      "MI": 0.4707,
-      "STTC": 0.4729,
-      "CD": 0.3635,
-      "HYP": 0.3052
+      "NORM": 0.2325,
+      "MI": 0.4392,
+      "STTC": 0.4697,
+      "CD": 0.1296,
+      "HYP": 0.3627
     },
-    "confidence_score": 0.4729
+    "confidence_score": 0.4697
   },
   "4755": {
     "predicted_classes": [
@@ -1068,295 +1040,281 @@
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.1143,
-      "MI": 0.6364,
-      "STTC": 0.6168,
-      "CD": 0.4665,
-      "HYP": 0.4168
+      "NORM": 0.0317,
+      "MI": 0.9329,
+      "STTC": 0.5408,
+      "CD": 0.1205,
+      "HYP": 0.0843
     },
-    "confidence_score": 0.6364
+    "confidence_score": 0.9329
   },
   "16465": {
     "predicted_classes": [
       "MI",
-      "STTC",
-      "CD",
-      "HYP"
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0562,
-      "MI": 0.6847,
-      "STTC": 0.538,
-      "CD": 0.6942,
-      "HYP": 0.6526
+      "NORM": 0.0051,
+      "MI": 0.9972,
+      "STTC": 0.1156,
+      "CD": 0.771,
+      "HYP": 0.2971
     },
-    "confidence_score": 0.6942
+    "confidence_score": 0.9972
   },
   "6666": {
     "predicted_classes": [
-      "MI",
       "STTC",
-      "CD",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0761,
-      "MI": 0.6266,
-      "STTC": 0.511,
-      "CD": 0.6869,
-      "HYP": 0.6646
+      "NORM": 0.1263,
+      "MI": 0.4709,
+      "STTC": 0.7002,
+      "CD": 0.1879,
+      "HYP": 0.6429
     },
-    "confidence_score": 0.6869
+    "confidence_score": 0.7002
   },
   "7598": {
     "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
-      "HYP"
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0606,
-      "MI": 0.6675,
-      "STTC": 0.5055,
-      "CD": 0.7195,
-      "HYP": 0.6685
+      "NORM": 0.1459,
+      "MI": 0.2581,
+      "STTC": 0.3177,
+      "CD": 0.919,
+      "HYP": 0.34
     },
-    "confidence_score": 0.7195
+    "confidence_score": 0.919
   },
   "13946": {
     "predicted_classes": [
-      "MI",
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.1133,
-      "MI": 0.6335,
-      "STTC": 0.6122,
-      "CD": 0.4642,
-      "HYP": 0.4181
+      "NORM": 0.2299,
+      "MI": 0.4667,
+      "STTC": 0.4672,
+      "CD": 0.1982,
+      "HYP": 0.1071
     },
-    "confidence_score": 0.6335
+    "confidence_score": 0.4672
   },
   "20776": {
     "predicted_classes": [
-      "MI",
-      "STTC"
+      "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.2218,
-      "MI": 0.5617,
-      "STTC": 0.5525,
-      "CD": 0.3731,
-      "HYP": 0.3068
+      "NORM": 0.8783,
+      "MI": 0.0484,
+      "STTC": 0.1214,
+      "CD": 0.0276,
+      "HYP": 0.0291
     },
-    "confidence_score": 0.5617
+    "confidence_score": 0.8783
   },
   "13361": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.761,
-      "MI": 0.1861,
-      "STTC": 0.1902,
-      "CD": 0.1827,
-      "HYP": 0.1042
+      "NORM": 0.5501,
+      "MI": 0.0586,
+      "STTC": 0.4758,
+      "CD": 0.0509,
+      "HYP": 0.0686
     },
-    "confidence_score": 0.761
+    "confidence_score": 0.5501
   },
   "8834": {
+    "predicted_classes": [
+      "NORM"
+    ],
+    "class_probabilities": {
+      "NORM": 0.8762,
+      "MI": 0.0704,
+      "STTC": 0.1096,
+      "CD": 0.0786,
+      "HYP": 0.0158
+    },
+    "confidence_score": 0.8762
+  },
+  "20068": {
+    "predicted_classes": [
+      "STTC",
+      "HYP"
+    ],
+    "class_probabilities": {
+      "NORM": 0.059,
+      "MI": 0.1768,
+      "STTC": 0.9335,
+      "CD": 0.1245,
+      "HYP": 0.6209
+    },
+    "confidence_score": 0.9335
+  },
+  "1998": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.4003,
-      "MI": 0.443,
-      "STTC": 0.4263,
-      "CD": 0.3025,
-      "HYP": 0.2202
+      "NORM": 0.0405,
+      "MI": 0.9262,
+      "STTC": 0.4669,
+      "CD": 0.1811,
+      "HYP": 0.1597
     },
-    "confidence_score": 0.443
-  },
-  "20068": {
-    "predicted_classes": [
-      "MI",
-      "STTC"
-    ],
-    "class_probabilities": {
-      "NORM": 0.226,
-      "MI": 0.5303,
-      "STTC": 0.5235,
-      "CD": 0.3991,
-      "HYP": 0.3668
-    },
-    "confidence_score": 0.5303
-  },
-  "1998": {
-    "predicted_classes": [
-      "MI",
-      "STTC"
-    ],
-    "class_probabilities": {
-      "NORM": 0.2336,
-      "MI": 0.5525,
-      "STTC": 0.5519,
-      "CD": 0.399,
-      "HYP": 0.3362
-    },
-    "confidence_score": 0.5525
+    "confidence_score": 0.9262
   },
   "9211": {
     "predicted_classes": [
-      "MI",
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.1109,
-      "MI": 0.642,
-      "STTC": 0.623,
-      "CD": 0.4886,
-      "HYP": 0.4511
+      "NORM": 0.1934,
+      "MI": 0.1898,
+      "STTC": 0.8309,
+      "CD": 0.0908,
+      "HYP": 0.0512
     },
-    "confidence_score": 0.642
+    "confidence_score": 0.8309
   },
   "7534": {
     "predicted_classes": [
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.3849,
-      "MI": 0.472,
-      "STTC": 0.4795,
-      "CD": 0.3649,
-      "HYP": 0.3058
+      "NORM": 0.1269,
+      "MI": 0.0752,
+      "STTC": 0.8267,
+      "CD": 0.1961,
+      "HYP": 0.2733
     },
-    "confidence_score": 0.4795
+    "confidence_score": 0.8267
   },
   "2867": {
     "predicted_classes": [
-      "NORM"
+      "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.787,
-      "MI": 0.1686,
-      "STTC": 0.1741,
-      "CD": 0.1761,
-      "HYP": 0.1026
+      "NORM": 0.4415,
+      "MI": 0.088,
+      "STTC": 0.5329,
+      "CD": 0.063,
+      "HYP": 0.3971
     },
-    "confidence_score": 0.787
+    "confidence_score": 0.5329
   },
   "2734": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.6309,
-      "MI": 0.2711,
-      "STTC": 0.2868,
-      "CD": 0.2388,
-      "HYP": 0.162
+      "NORM": 0.4553,
+      "MI": 0.452,
+      "STTC": 0.1698,
+      "CD": 0.0646,
+      "HYP": 0.3258
     },
-    "confidence_score": 0.6309
+    "confidence_score": 0.4553
   },
   "14869": {
     "predicted_classes": [
-      "CD"
-    ],
-    "class_probabilities": {
-      "NORM": 0.0821,
-      "MI": 0.4874,
-      "STTC": 0.4788,
-      "CD": 0.6312,
-      "HYP": 0.404
-    },
-    "confidence_score": 0.6312
-  },
-  "6192": {
-    "predicted_classes": [
-      "MI",
-      "STTC"
-    ],
-    "class_probabilities": {
-      "NORM": 0.208,
-      "MI": 0.572,
-      "STTC": 0.5621,
-      "CD": 0.3672,
-      "HYP": 0.2886
-    },
-    "confidence_score": 0.572
-  },
-  "12338": {
-    "predicted_classes": [
-      "MI",
-      "CD",
+      "STTC",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.1718,
-      "MI": 0.562,
-      "STTC": 0.4887,
-      "CD": 0.5491,
-      "HYP": 0.6178
+      "NORM": 0.0075,
+      "MI": 0.2234,
+      "STTC": 0.9582,
+      "CD": 0.1522,
+      "HYP": 0.9941
     },
-    "confidence_score": 0.6178
+    "confidence_score": 0.9941
   },
-  "5868": {
+  "6192": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8409,
-      "MI": 0.1168,
-      "STTC": 0.1249,
-      "CD": 0.1582,
-      "HYP": 0.1038
+      "NORM": 0.8895,
+      "MI": 0.0168,
+      "STTC": 0.2327,
+      "CD": 0.0296,
+      "HYP": 0.0177
     },
-    "confidence_score": 0.8409
+    "confidence_score": 0.8895
+  },
+  "12338": {
+    "predicted_classes": [
+      "STTC",
+      "HYP"
+    ],
+    "class_probabilities": {
+      "NORM": 0.0339,
+      "MI": 0.1686,
+      "STTC": 0.8982,
+      "CD": 0.1392,
+      "HYP": 0.9798
+    },
+    "confidence_score": 0.9798
+  },
+  "5868": {
+    "predicted_classes": [
+      "HYP"
+    ],
+    "class_probabilities": {
+      "NORM": 0.4855,
+      "MI": 0.0233,
+      "STTC": 0.2037,
+      "CD": 0.0517,
+      "HYP": 0.898
+    },
+    "confidence_score": 0.898
   },
   "8442": {
     "predicted_classes": [
-      "MI",
-      "STTC"
+      "STTC",
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.2042,
-      "MI": 0.5683,
-      "STTC": 0.5559,
-      "CD": 0.4164,
-      "HYP": 0.3836
+      "NORM": 0.1538,
+      "MI": 0.4249,
+      "STTC": 0.5398,
+      "CD": 0.7117,
+      "HYP": 0.2991
     },
-    "confidence_score": 0.5683
+    "confidence_score": 0.7117
   },
   "13577": {
     "predicted_classes": [
       "MI",
-      "STTC",
       "CD",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0878,
-      "MI": 0.6323,
-      "STTC": 0.5173,
-      "CD": 0.6156,
-      "HYP": 0.6538
+      "NORM": 0.0044,
+      "MI": 0.9629,
+      "STTC": 0.4491,
+      "CD": 0.9384,
+      "HYP": 0.6147
     },
-    "confidence_score": 0.6538
+    "confidence_score": 0.9629
   },
   "2556": {
     "predicted_classes": [
-      "MI",
-      "STTC"
+      "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.1761,
-      "MI": 0.5693,
-      "STTC": 0.5532,
-      "CD": 0.4675,
-      "HYP": 0.4718
+      "NORM": 0.1888,
+      "MI": 0.5159,
+      "STTC": 0.4966,
+      "CD": 0.141,
+      "HYP": 0.3683
     },
-    "confidence_score": 0.5693
+    "confidence_score": 0.5159
   },
   "13556": {
     "predicted_classes": [
@@ -1365,770 +1323,713 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0496,
-      "MI": 0.6614,
-      "STTC": 0.4668,
-      "CD": 0.7731,
-      "HYP": 0.7067
+      "NORM": 0.0039,
+      "MI": 0.7152,
+      "STTC": 0.4402,
+      "CD": 0.9969,
+      "HYP": 0.6826
     },
-    "confidence_score": 0.7731
+    "confidence_score": 0.9969
   },
   "19251": {
     "predicted_classes": [
-      "MI",
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.1376,
-      "MI": 0.6062,
-      "STTC": 0.595,
-      "CD": 0.4458,
-      "HYP": 0.4082
+      "NORM": 0.1617,
+      "MI": 0.3306,
+      "STTC": 0.7112,
+      "CD": 0.0604,
+      "HYP": 0.0978
     },
-    "confidence_score": 0.6062
+    "confidence_score": 0.7112
   },
   "14670": {
     "predicted_classes": [
-      "NORM"
+      "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.7991,
-      "MI": 0.1561,
-      "STTC": 0.1688,
-      "CD": 0.1871,
-      "HYP": 0.1335
+      "NORM": 0.3303,
+      "MI": 0.6013,
+      "STTC": 0.3366,
+      "CD": 0.3201,
+      "HYP": 0.4285
     },
-    "confidence_score": 0.7991
+    "confidence_score": 0.6013
   },
   "7822": {
+    "predicted_classes": [
+      "MI",
+      "HYP"
+    ],
+    "class_probabilities": {
+      "NORM": 0.0065,
+      "MI": 0.9966,
+      "STTC": 0.4626,
+      "CD": 0.0654,
+      "HYP": 0.8289
+    },
+    "confidence_score": 0.9966
+  },
+  "7022": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0,
-      "MI": 0.0,
-      "STTC": 0.001,
-      "CD": 0.1109,
-      "HYP": 0.0
+      "NORM": 0.0199,
+      "MI": 0.4735,
+      "STTC": 0.121,
+      "CD": 0.9446,
+      "HYP": 0.2059
     },
-    "confidence_score": 0.1109
-  },
-  "7022": {
-    "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
-      "HYP"
-    ],
-    "class_probabilities": {
-      "NORM": 0.12,
-      "MI": 0.5913,
-      "STTC": 0.5237,
-      "CD": 0.6217,
-      "HYP": 0.5752
-    },
-    "confidence_score": 0.6217
+    "confidence_score": 0.9446
   },
   "347": {
     "predicted_classes": [
-      "MI",
-      "CD",
+      "STTC",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0376,
-      "MI": 0.6741,
-      "STTC": 0.452,
-      "CD": 0.8153,
-      "HYP": 0.7116
+      "NORM": 0.0845,
+      "MI": 0.3182,
+      "STTC": 0.7965,
+      "CD": 0.3876,
+      "HYP": 0.6614
     },
-    "confidence_score": 0.8153
+    "confidence_score": 0.7965
   },
   "17870": {
     "predicted_classes": [
       "MI",
-      "STTC",
-      "CD",
-      "HYP"
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0682,
-      "MI": 0.6718,
-      "STTC": 0.5512,
-      "CD": 0.6597,
-      "HYP": 0.623
+      "NORM": 0.0884,
+      "MI": 0.6977,
+      "STTC": 0.3763,
+      "CD": 0.6921,
+      "HYP": 0.3619
     },
-    "confidence_score": 0.6718
+    "confidence_score": 0.6977
   },
   "2693": {
     "predicted_classes": [
-      "MI",
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.1797,
-      "MI": 0.5776,
-      "STTC": 0.5749,
-      "CD": 0.4044,
-      "HYP": 0.3578
+      "NORM": 0.4235,
+      "MI": 0.2659,
+      "STTC": 0.5026,
+      "CD": 0.1152,
+      "HYP": 0.0923
     },
-    "confidence_score": 0.5776
+    "confidence_score": 0.5026
   },
   "7438": {
     "predicted_classes": [
-      "MI",
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.0988,
-      "MI": 0.6551,
-      "STTC": 0.6232,
-      "CD": 0.4905,
-      "HYP": 0.4319
+      "NORM": 0.0854,
+      "MI": 0.4675,
+      "STTC": 0.6977,
+      "CD": 0.1797,
+      "HYP": 0.0974
     },
-    "confidence_score": 0.6551
+    "confidence_score": 0.6977
   },
   "18756": {
     "predicted_classes": [
       "MI",
-      "STTC",
-      "CD",
-      "HYP"
-    ],
-    "class_probabilities": {
-      "NORM": 0.0716,
-      "MI": 0.6826,
-      "STTC": 0.5952,
-      "CD": 0.5975,
-      "HYP": 0.5699
-    },
-    "confidence_score": 0.6826
-  },
-  "15795": {
-    "predicted_classes": [
-      "MI",
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.2672,
-      "MI": 0.5354,
-      "STTC": 0.5264,
-      "CD": 0.3514,
-      "HYP": 0.2613
+      "NORM": 0.0419,
+      "MI": 0.7146,
+      "STTC": 0.7043,
+      "CD": 0.4097,
+      "HYP": 0.1262
     },
-    "confidence_score": 0.5354
+    "confidence_score": 0.7146
+  },
+  "15795": {
+    "predicted_classes": [
+      "MI"
+    ],
+    "class_probabilities": {
+      "NORM": 0.4773,
+      "MI": 0.4937,
+      "STTC": 0.1057,
+      "CD": 0.0518,
+      "HYP": 0.0431
+    },
+    "confidence_score": 0.4937
   },
   "4476": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9,
-      "MI": 0.0864,
-      "STTC": 0.0833,
-      "CD": 0.1078,
-      "HYP": 0.0459
+      "NORM": 0.4988,
+      "MI": 0.0236,
+      "STTC": 0.4896,
+      "CD": 0.0794,
+      "HYP": 0.4294
     },
-    "confidence_score": 0.9
+    "confidence_score": 0.4988
   },
   "11868": {
     "predicted_classes": [
-      "MI",
+      "NORM",
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.1797,
-      "MI": 0.5848,
-      "STTC": 0.5802,
-      "CD": 0.4035,
-      "HYP": 0.3452
+      "NORM": 0.5651,
+      "MI": 0.0291,
+      "STTC": 0.6177,
+      "CD": 0.0306,
+      "HYP": 0.0179
     },
-    "confidence_score": 0.5848
+    "confidence_score": 0.6177
   },
   "5881": {
     "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
-      "HYP"
-    ],
-    "class_probabilities": {
-      "NORM": 0.0748,
-      "MI": 0.6705,
-      "STTC": 0.5895,
-      "CD": 0.5836,
-      "HYP": 0.5778
-    },
-    "confidence_score": 0.6705
-  },
-  "13954": {
-    "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
-      "HYP"
-    ],
-    "class_probabilities": {
-      "NORM": 0.0919,
-      "MI": 0.6564,
-      "STTC": 0.5893,
-      "CD": 0.5642,
-      "HYP": 0.5452
-    },
-    "confidence_score": 0.6564
-  },
-  "20602": {
-    "predicted_classes": [
-      "MI",
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.1676,
-      "MI": 0.5738,
-      "STTC": 0.5684,
-      "CD": 0.4243,
-      "HYP": 0.383
+      "NORM": 0.0854,
+      "MI": 0.3141,
+      "STTC": 0.8285,
+      "CD": 0.0727,
+      "HYP": 0.0886
     },
-    "confidence_score": 0.5738
+    "confidence_score": 0.8285
+  },
+  "13954": {
+    "predicted_classes": [
+      "STTC",
+      "CD"
+    ],
+    "class_probabilities": {
+      "NORM": 0.0212,
+      "MI": 0.2676,
+      "STTC": 0.833,
+      "CD": 0.8308,
+      "HYP": 0.2652
+    },
+    "confidence_score": 0.833
+  },
+  "20602": {
+    "predicted_classes": [
+      "STTC"
+    ],
+    "class_probabilities": {
+      "NORM": 0.1242,
+      "MI": 0.3947,
+      "STTC": 0.6072,
+      "CD": 0.4258,
+      "HYP": 0.0882
+    },
+    "confidence_score": 0.6072
   },
   "8475": {
     "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
-      "HYP"
+      "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.0714,
-      "MI": 0.6812,
-      "STTC": 0.6078,
-      "CD": 0.5822,
-      "HYP": 0.5439
+      "NORM": 0.1503,
+      "MI": 0.2335,
+      "STTC": 0.7054,
+      "CD": 0.3563,
+      "HYP": 0.2895
     },
-    "confidence_score": 0.6812
+    "confidence_score": 0.7054
   },
   "12533": {
     "predicted_classes": [
       "MI",
-      "STTC",
-      "CD",
-      "HYP"
-    ],
-    "class_probabilities": {
-      "NORM": 0.0736,
-      "MI": 0.676,
-      "STTC": 0.5943,
-      "CD": 0.598,
-      "HYP": 0.5699
-    },
-    "confidence_score": 0.676
-  },
-  "2151": {
-    "predicted_classes": [
-      "MI",
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.2235,
-      "MI": 0.5559,
-      "STTC": 0.5506,
-      "CD": 0.4272,
-      "HYP": 0.3877
+      "NORM": 0.0682,
+      "MI": 0.541,
+      "STTC": 0.7433,
+      "CD": 0.1758,
+      "HYP": 0.1693
     },
-    "confidence_score": 0.5559
+    "confidence_score": 0.7433
+  },
+  "2151": {
+    "predicted_classes": [
+      "STTC"
+    ],
+    "class_probabilities": {
+      "NORM": 0.2145,
+      "MI": 0.0436,
+      "STTC": 0.8071,
+      "CD": 0.0472,
+      "HYP": 0.0763
+    },
+    "confidence_score": 0.8071
   },
   "1792": {
     "predicted_classes": [
       "MI",
-      "STTC",
-      "CD",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.1028,
-      "MI": 0.6265,
-      "STTC": 0.5701,
-      "CD": 0.5379,
-      "HYP": 0.5639
+      "NORM": 0.1252,
+      "MI": 0.6868,
+      "STTC": 0.4921,
+      "CD": 0.1976,
+      "HYP": 0.6006
     },
-    "confidence_score": 0.6265
+    "confidence_score": 0.6868
   },
   "1736": {
     "predicted_classes": [
-      "MI",
-      "STTC"
+      "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.1275,
-      "MI": 0.6279,
-      "STTC": 0.6092,
-      "CD": 0.4645,
-      "HYP": 0.4167
+      "NORM": 0.1007,
+      "MI": 0.9022,
+      "STTC": 0.2004,
+      "CD": 0.0704,
+      "HYP": 0.0269
     },
-    "confidence_score": 0.6279
+    "confidence_score": 0.9022
   },
   "14005": {
     "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
-      "HYP"
+      "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.1027,
-      "MI": 0.6263,
-      "STTC": 0.5822,
-      "CD": 0.5249,
-      "HYP": 0.5192
+      "NORM": 0.2489,
+      "MI": 0.4711,
+      "STTC": 0.2468,
+      "CD": 0.3206,
+      "HYP": 0.1117
     },
-    "confidence_score": 0.6263
+    "confidence_score": 0.4711
   },
   "20515": {
     "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
-      "HYP"
+      "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.0899,
-      "MI": 0.6623,
-      "STTC": 0.5896,
-      "CD": 0.5686,
-      "HYP": 0.5464
+      "NORM": 0.4138,
+      "MI": 0.3659,
+      "STTC": 0.2893,
+      "CD": 0.3282,
+      "HYP": 0.1955
     },
-    "confidence_score": 0.6623
+    "confidence_score": 0.4138
   },
   "15573": {
     "predicted_classes": [
       "MI",
-      "STTC",
-      "CD",
-      "HYP"
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0608,
-      "MI": 0.6852,
-      "STTC": 0.5681,
-      "CD": 0.6694,
-      "HYP": 0.6222
+      "NORM": 0.034,
+      "MI": 0.9072,
+      "STTC": 0.1516,
+      "CD": 0.807,
+      "HYP": 0.193
     },
-    "confidence_score": 0.6852
+    "confidence_score": 0.9072
   },
   "19305": {
     "predicted_classes": [
       "MI",
+      "CD"
+    ],
+    "class_probabilities": {
+      "NORM": 0.0044,
+      "MI": 0.6742,
+      "STTC": 0.2441,
+      "CD": 0.9964,
+      "HYP": 0.0894
+    },
+    "confidence_score": 0.9964
+  },
+  "21093": {
+    "predicted_classes": [
       "CD",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0477,
-      "MI": 0.6486,
-      "STTC": 0.4517,
-      "CD": 0.7833,
-      "HYP": 0.7112
+      "NORM": 0.003,
+      "MI": 0.1356,
+      "STTC": 0.1209,
+      "CD": 0.9912,
+      "HYP": 0.5354
     },
-    "confidence_score": 0.7833
+    "confidence_score": 0.9912
   },
-  "21093": {
+  "21325": {
     "predicted_classes": [
       "MI",
       "CD",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.1251,
-      "MI": 0.5529,
-      "STTC": 0.437,
-      "CD": 0.7001,
-      "HYP": 0.6285
+      "NORM": 0.0207,
+      "MI": 0.6799,
+      "STTC": 0.1775,
+      "CD": 0.9791,
+      "HYP": 0.6509
     },
-    "confidence_score": 0.7001
+    "confidence_score": 0.9791
   },
-  "21325": {
+  "10283": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0,
-      "MI": 0.0,
-      "STTC": 0.0,
-      "CD": 0.9995,
-      "HYP": 0.0
+      "NORM": 0.0001,
+      "MI": 0.0062,
+      "STTC": 0.004,
+      "CD": 1.0,
+      "HYP": 0.4846
     },
-    "confidence_score": 0.9995
-  },
-  "10283": {
-    "predicted_classes": [
-      "MI",
-      "CD",
-      "HYP"
-    ],
-    "class_probabilities": {
-      "NORM": 0.1734,
-      "MI": 0.5232,
-      "STTC": 0.4591,
-      "CD": 0.6545,
-      "HYP": 0.6628
-    },
-    "confidence_score": 0.6628
+    "confidence_score": 1.0
   },
   "12552": {
     "predicted_classes": [
-      "MI",
-      "STTC"
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.1155,
-      "MI": 0.6261,
-      "STTC": 0.5977,
-      "CD": 0.4899,
-      "HYP": 0.4678
+      "NORM": 0.0556,
+      "MI": 0.3063,
+      "STTC": 0.1288,
+      "CD": 0.9905,
+      "HYP": 0.2964
     },
-    "confidence_score": 0.6261
+    "confidence_score": 0.9905
   },
   "10501": {
     "predicted_classes": [
-      "NORM"
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.8586,
-      "MI": 0.1203,
-      "STTC": 0.1206,
-      "CD": 0.1341,
-      "HYP": 0.0663
+      "NORM": 0.3978,
+      "MI": 0.0995,
+      "STTC": 0.1828,
+      "CD": 0.7842,
+      "HYP": 0.1181
     },
-    "confidence_score": 0.8586
+    "confidence_score": 0.7842
   },
   "3299": {
     "predicted_classes": [
-      "NORM"
+      "NORM",
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.884,
-      "MI": 0.1019,
-      "STTC": 0.0967,
-      "CD": 0.1164,
-      "HYP": 0.0513
+      "NORM": 0.8929,
+      "MI": 0.0183,
+      "STTC": 0.0116,
+      "CD": 0.5747,
+      "HYP": 0.0896
     },
-    "confidence_score": 0.884
+    "confidence_score": 0.8929
   },
   "9108": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.514,
-      "MI": 0.3544,
-      "STTC": 0.3524,
-      "CD": 0.2777,
-      "HYP": 0.1959
+      "NORM": 0.8796,
+      "MI": 0.0591,
+      "STTC": 0.11,
+      "CD": 0.164,
+      "HYP": 0.0413
     },
-    "confidence_score": 0.514
+    "confidence_score": 0.8796
   },
   "6284": {
-    "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
-      "HYP"
-    ],
-    "class_probabilities": {
-      "NORM": 0.115,
-      "MI": 0.6189,
-      "STTC": 0.5095,
-      "CD": 0.5966,
-      "HYP": 0.6314
-    },
-    "confidence_score": 0.6314
-  },
-  "3699": {
-    "predicted_classes": [
-      "MI"
-    ],
-    "class_probabilities": {
-      "NORM": 0.3782,
-      "MI": 0.5232,
-      "STTC": 0.49,
-      "CD": 0.4686,
-      "HYP": 0.4875
-    },
-    "confidence_score": 0.5232
-  },
-  "12223": {
-    "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
-      "HYP"
-    ],
-    "class_probabilities": {
-      "NORM": 0.1523,
-      "MI": 0.6011,
-      "STTC": 0.5545,
-      "CD": 0.525,
-      "HYP": 0.5471
-    },
-    "confidence_score": 0.6011
-  },
-  "2345": {
-    "predicted_classes": [
-      "NORM"
-    ],
-    "class_probabilities": {
-      "NORM": 0.5037,
-      "MI": 0.3319,
-      "STTC": 0.3445,
-      "CD": 0.3195,
-      "HYP": 0.2898
-    },
-    "confidence_score": 0.5037
-  },
-  "20902": {
-    "predicted_classes": [
-      "MI",
-      "CD",
-      "HYP"
-    ],
-    "class_probabilities": {
-      "NORM": 0.0673,
-      "MI": 0.567,
-      "STTC": 0.4418,
-      "CD": 0.7503,
-      "HYP": 0.5751
-    },
-    "confidence_score": 0.7503
-  },
-  "6355": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0144,
-      "MI": 0.2306,
-      "STTC": 0.3403,
-      "CD": 0.6953,
-      "HYP": 0.1815
+      "NORM": 0.2184,
+      "MI": 0.0827,
+      "STTC": 0.0391,
+      "CD": 0.9874,
+      "HYP": 0.2887
     },
-    "confidence_score": 0.6953
+    "confidence_score": 0.9874
+  },
+  "3699": {
+    "predicted_classes": [
+      "NORM",
+      "CD"
+    ],
+    "class_probabilities": {
+      "NORM": 0.5324,
+      "MI": 0.1764,
+      "STTC": 0.0927,
+      "CD": 0.5406,
+      "HYP": 0.181
+    },
+    "confidence_score": 0.5406
+  },
+  "12223": {
+    "predicted_classes": [
+      "MI"
+    ],
+    "class_probabilities": {
+      "NORM": 0.1164,
+      "MI": 0.7294,
+      "STTC": 0.3286,
+      "CD": 0.4162,
+      "HYP": 0.2567
+    },
+    "confidence_score": 0.7294
+  },
+  "2345": {
+    "predicted_classes": [
+      "MI",
+      "CD"
+    ],
+    "class_probabilities": {
+      "NORM": 0.011,
+      "MI": 0.8754,
+      "STTC": 0.0975,
+      "CD": 0.9932,
+      "HYP": 0.3091
+    },
+    "confidence_score": 0.9932
+  },
+  "20902": {
+    "predicted_classes": [
+      "MI",
+      "CD"
+    ],
+    "class_probabilities": {
+      "NORM": 0.0238,
+      "MI": 0.8608,
+      "STTC": 0.1093,
+      "CD": 0.8973,
+      "HYP": 0.1939
+    },
+    "confidence_score": 0.8973
+  },
+  "6355": {
+    "predicted_classes": [
+      "MI",
+      "CD"
+    ],
+    "class_probabilities": {
+      "NORM": 0.0961,
+      "MI": 0.5118,
+      "STTC": 0.28,
+      "CD": 0.8582,
+      "HYP": 0.3084
+    },
+    "confidence_score": 0.8582
   },
   "2153": {
     "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
-      "HYP"
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.1177,
-      "MI": 0.6259,
-      "STTC": 0.5662,
-      "CD": 0.5496,
-      "HYP": 0.5443
+      "NORM": 0.0097,
+      "MI": 0.2567,
+      "STTC": 0.1503,
+      "CD": 0.9946,
+      "HYP": 0.0881
     },
-    "confidence_score": 0.6259
+    "confidence_score": 0.9946
   },
   "1940": {
     "predicted_classes": [
-      "MI",
       "STTC",
-      "CD",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0686,
-      "MI": 0.6814,
-      "STTC": 0.5807,
-      "CD": 0.6194,
-      "HYP": 0.6038
+      "NORM": 0.0296,
+      "MI": 0.2112,
+      "STTC": 0.9173,
+      "CD": 0.2829,
+      "HYP": 0.6523
     },
-    "confidence_score": 0.6814
+    "confidence_score": 0.9173
   },
   "9562": {
     "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
-      "HYP"
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0987,
-      "MI": 0.6089,
-      "STTC": 0.5013,
-      "CD": 0.6456,
-      "HYP": 0.679
+      "NORM": 0.0006,
+      "MI": 0.1129,
+      "STTC": 0.0115,
+      "CD": 0.9998,
+      "HYP": 0.3496
     },
-    "confidence_score": 0.679
+    "confidence_score": 0.9998
   },
   "16205": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.918,
-      "MI": 0.0748,
-      "STTC": 0.0726,
-      "CD": 0.0919,
-      "HYP": 0.0363
+      "NORM": 0.648,
+      "MI": 0.3106,
+      "STTC": 0.0607,
+      "CD": 0.3076,
+      "HYP": 0.0704
     },
-    "confidence_score": 0.918
+    "confidence_score": 0.648
   },
   "688": {
     "predicted_classes": [
       "MI",
-      "STTC"
+      "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.2305,
-      "MI": 0.5257,
-      "STTC": 0.5176,
-      "CD": 0.405,
-      "HYP": 0.3745
+      "NORM": 0.2158,
+      "MI": 0.5009,
+      "STTC": 0.3426,
+      "CD": 0.4793,
+      "HYP": 0.6874
     },
-    "confidence_score": 0.5257
+    "confidence_score": 0.6874
   },
   "12679": {
     "predicted_classes": [
-      "MI",
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.1082,
-      "MI": 0.6273,
-      "STTC": 0.5989,
-      "CD": 0.4945,
-      "HYP": 0.4779
+      "NORM": 0.1637,
+      "MI": 0.3064,
+      "STTC": 0.7351,
+      "CD": 0.4075,
+      "HYP": 0.3657
     },
-    "confidence_score": 0.6273
+    "confidence_score": 0.7351
   },
   "512": {
     "predicted_classes": [
-      "MI",
       "CD",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.1726,
-      "MI": 0.5549,
-      "STTC": 0.4991,
-      "CD": 0.5152,
-      "HYP": 0.5811
+      "NORM": 0.0439,
+      "MI": 0.3327,
+      "STTC": 0.2772,
+      "CD": 0.9816,
+      "HYP": 0.6367
     },
-    "confidence_score": 0.5811
+    "confidence_score": 0.9816
   },
   "13052": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9298,
-      "MI": 0.0644,
-      "STTC": 0.0625,
-      "CD": 0.0845,
-      "HYP": 0.031
+      "NORM": 0.9498,
+      "MI": 0.0254,
+      "STTC": 0.0656,
+      "CD": 0.0269,
+      "HYP": 0.0242
     },
-    "confidence_score": 0.9298
+    "confidence_score": 0.9498
   },
   "3708": {
     "predicted_classes": [
-      "MI",
       "STTC",
-      "CD",
-      "HYP"
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.1275,
-      "MI": 0.6384,
-      "STTC": 0.568,
-      "CD": 0.5675,
-      "HYP": 0.5477
+      "NORM": 0.1306,
+      "MI": 0.2805,
+      "STTC": 0.5549,
+      "CD": 0.5428,
+      "HYP": 0.2068
     },
-    "confidence_score": 0.6384
+    "confidence_score": 0.5549
   },
   "3740": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9066,
-      "MI": 0.0773,
-      "STTC": 0.0798,
-      "CD": 0.1092,
-      "HYP": 0.0505
+      "NORM": 0.7797,
+      "MI": 0.1066,
+      "STTC": 0.0473,
+      "CD": 0.4967,
+      "HYP": 0.1438
     },
-    "confidence_score": 0.9066
+    "confidence_score": 0.7797
   },
   "3855": {
     "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
-      "HYP"
+      "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.0789,
-      "MI": 0.678,
-      "STTC": 0.5909,
-      "CD": 0.5936,
-      "HYP": 0.5664
+      "NORM": 0.0478,
+      "MI": 0.9628,
+      "STTC": 0.3088,
+      "CD": 0.1944,
+      "HYP": 0.1549
     },
-    "confidence_score": 0.678
+    "confidence_score": 0.9628
   },
   "11932": {
     "predicted_classes": [
-      "NORM"
+      "NORM",
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.8796,
-      "MI": 0.1065,
-      "STTC": 0.098,
-      "CD": 0.1197,
-      "HYP": 0.0536
+      "NORM": 0.6065,
+      "MI": 0.077,
+      "STTC": 0.0485,
+      "CD": 0.7455,
+      "HYP": 0.0892
     },
-    "confidence_score": 0.8796
+    "confidence_score": 0.7455
   },
   "7837": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.6338,
-      "MI": 0.329,
-      "STTC": 0.3555,
-      "CD": 0.3405,
-      "HYP": 0.4057
+      "NORM": 0.5379,
+      "MI": 0.2834,
+      "STTC": 0.3176,
+      "CD": 0.2071,
+      "HYP": 0.2147
     },
-    "confidence_score": 0.6338
+    "confidence_score": 0.5379
   },
   "10336": {
     "predicted_classes": [
-      "MI",
-      "STTC",
       "CD",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0578,
-      "MI": 0.6699,
-      "STTC": 0.523,
-      "CD": 0.7134,
-      "HYP": 0.6735
+      "NORM": 0.0336,
+      "MI": 0.315,
+      "STTC": 0.2281,
+      "CD": 0.9901,
+      "HYP": 0.6411
     },
-    "confidence_score": 0.7134
+    "confidence_score": 0.9901
   },
   "7055": {
     "predicted_classes": [
-      "MI",
-      "STTC"
+      "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.2008,
-      "MI": 0.5759,
-      "STTC": 0.5649,
-      "CD": 0.3827,
-      "HYP": 0.3041
+      "NORM": 0.4051,
+      "MI": 0.2939,
+      "STTC": 0.325,
+      "CD": 0.1851,
+      "HYP": 0.0587
     },
-    "confidence_score": 0.5759
+    "confidence_score": 0.4051
   },
   "16748": {
     "predicted_classes": [
@@ -2136,52 +2037,52 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.1062,
-      "MI": 0.5215,
-      "STTC": 0.4479,
-      "CD": 0.6916,
-      "HYP": 0.4888
+      "NORM": 0.0045,
+      "MI": 0.7401,
+      "STTC": 0.0368,
+      "CD": 0.9955,
+      "HYP": 0.2427
     },
-    "confidence_score": 0.6916
+    "confidence_score": 0.9955
   },
   "8504": {
     "predicted_classes": [
-      "NORM"
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.7222,
-      "MI": 0.1954,
-      "STTC": 0.2126,
-      "CD": 0.2343,
-      "HYP": 0.1821
+      "NORM": 0.0579,
+      "MI": 0.1218,
+      "STTC": 0.0255,
+      "CD": 0.9981,
+      "HYP": 0.4455
     },
-    "confidence_score": 0.7222
+    "confidence_score": 0.9981
   },
   "3201": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0212,
-      "MI": 0.3184,
-      "STTC": 0.3563,
-      "CD": 0.6357,
-      "HYP": 0.2471
+      "NORM": 0.0265,
+      "MI": 0.2064,
+      "STTC": 0.0827,
+      "CD": 0.9926,
+      "HYP": 0.1642
     },
-    "confidence_score": 0.6357
+    "confidence_score": 0.9926
   },
   "12400": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9259,
-      "MI": 0.0655,
-      "STTC": 0.0658,
-      "CD": 0.0888,
-      "HYP": 0.0365
+      "NORM": 0.8802,
+      "MI": 0.0379,
+      "STTC": 0.0395,
+      "CD": 0.0449,
+      "HYP": 0.2074
     },
-    "confidence_score": 0.9259
+    "confidence_score": 0.8802
   },
   "12936": {
     "predicted_classes": [
@@ -2190,244 +2091,237 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0467,
-      "MI": 0.6629,
-      "STTC": 0.4515,
-      "CD": 0.8088,
-      "HYP": 0.7224
+      "NORM": 0.0072,
+      "MI": 0.6224,
+      "STTC": 0.0442,
+      "CD": 0.9986,
+      "HYP": 0.5406
     },
-    "confidence_score": 0.8088
+    "confidence_score": 0.9986
   },
   "1864": {
     "predicted_classes": [
-      "MI",
-      "CD",
+      "STTC",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.1351,
-      "MI": 0.5557,
-      "STTC": 0.4792,
-      "CD": 0.6541,
-      "HYP": 0.6678
+      "NORM": 0.0227,
+      "MI": 0.4744,
+      "STTC": 0.9278,
+      "CD": 0.2049,
+      "HYP": 0.9843
     },
-    "confidence_score": 0.6678
+    "confidence_score": 0.9843
   },
   "15871": {
     "predicted_classes": [
       "MI",
-      "CD",
+      "STTC",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.1985,
-      "MI": 0.5244,
-      "STTC": 0.4468,
-      "CD": 0.6527,
-      "HYP": 0.5935
+      "NORM": 0.0086,
+      "MI": 0.938,
+      "STTC": 0.8869,
+      "CD": 0.1632,
+      "HYP": 0.9716
     },
-    "confidence_score": 0.6527
+    "confidence_score": 0.9716
   },
   "2409": {
     "predicted_classes": [
       "MI",
-      "CD",
-      "HYP"
-    ],
-    "class_probabilities": {
-      "NORM": 0.0583,
-      "MI": 0.6335,
-      "STTC": 0.4499,
-      "CD": 0.7799,
-      "HYP": 0.7165
-    },
-    "confidence_score": 0.7799
-  },
-  "14729": {
-    "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0,
-      "MI": 0.0,
-      "STTC": 0.0075,
-      "CD": 0.3187,
-      "HYP": 0.0
+      "NORM": 0.0054,
+      "MI": 0.7686,
+      "STTC": 0.0587,
+      "CD": 0.9977,
+      "HYP": 0.2862
     },
-    "confidence_score": 0.3187
+    "confidence_score": 0.9977
+  },
+  "14729": {
+    "predicted_classes": [
+      "MI",
+      "HYP"
+    ],
+    "class_probabilities": {
+      "NORM": 0.0484,
+      "MI": 0.8516,
+      "STTC": 0.144,
+      "CD": 0.3474,
+      "HYP": 0.8366
+    },
+    "confidence_score": 0.8516
   },
   "19526": {
     "predicted_classes": [
       "MI",
-      "CD",
+      "STTC",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0515,
-      "MI": 0.6759,
-      "STTC": 0.4951,
-      "CD": 0.7496,
-      "HYP": 0.6877
+      "NORM": 0.0094,
+      "MI": 0.8963,
+      "STTC": 0.915,
+      "CD": 0.1101,
+      "HYP": 0.9335
     },
-    "confidence_score": 0.7496
+    "confidence_score": 0.9335
   },
   "10594": {
     "predicted_classes": [
-      "MI",
       "STTC",
-      "CD",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.1209,
-      "MI": 0.5943,
-      "STTC": 0.5463,
-      "CD": 0.5208,
-      "HYP": 0.5636
+      "NORM": 0.0149,
+      "MI": 0.3117,
+      "STTC": 0.9676,
+      "CD": 0.1084,
+      "HYP": 0.7295
     },
-    "confidence_score": 0.5943
+    "confidence_score": 0.9676
   },
   "3895": {
     "predicted_classes": [
-      "MI",
-      "CD",
+      "STTC",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0894,
-      "MI": 0.5118,
-      "STTC": 0.453,
-      "CD": 0.8769,
-      "HYP": 0.6358
+      "NORM": 0.0041,
+      "MI": 0.2027,
+      "STTC": 0.8773,
+      "CD": 0.0804,
+      "HYP": 0.9999
     },
-    "confidence_score": 0.8769
+    "confidence_score": 0.9999
   },
   "3688": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.812,
-      "MI": 0.1464,
-      "STTC": 0.1478,
-      "CD": 0.1643,
-      "HYP": 0.0852
+      "NORM": 0.4655,
+      "MI": 0.32,
+      "STTC": 0.0911,
+      "CD": 0.1377,
+      "HYP": 0.3973
     },
-    "confidence_score": 0.812
+    "confidence_score": 0.4655
   },
   "3281": {
     "predicted_classes": [
-      "MI",
-      "CD",
+      "STTC",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0664,
-      "MI": 0.6166,
-      "STTC": 0.4505,
-      "CD": 0.7592,
-      "HYP": 0.6991
+      "NORM": 0.0124,
+      "MI": 0.3495,
+      "STTC": 0.9287,
+      "CD": 0.3995,
+      "HYP": 0.9967
     },
-    "confidence_score": 0.7592
+    "confidence_score": 0.9967
   },
   "534": {
     "predicted_classes": [
-      "MI",
-      "CD",
+      "STTC",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0574,
-      "MI": 0.6417,
-      "STTC": 0.4649,
-      "CD": 0.7538,
-      "HYP": 0.6924
+      "NORM": 0.0155,
+      "MI": 0.3003,
+      "STTC": 0.9445,
+      "CD": 0.0991,
+      "HYP": 0.9945
     },
-    "confidence_score": 0.7538
+    "confidence_score": 0.9945
   },
   "10388": {
     "predicted_classes": [
-      "NORM"
+      "NORM",
+      "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.8963,
-      "MI": 0.0869,
-      "STTC": 0.0899,
-      "CD": 0.1129,
-      "HYP": 0.0543
+      "NORM": 0.6837,
+      "MI": 0.0382,
+      "STTC": 0.1663,
+      "CD": 0.0705,
+      "HYP": 0.6667
     },
-    "confidence_score": 0.8963
+    "confidence_score": 0.6837
   },
   "6380": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8231,
-      "MI": 0.1423,
-      "STTC": 0.1406,
-      "CD": 0.1566,
-      "HYP": 0.081
+      "NORM": 0.8425,
+      "MI": 0.0641,
+      "STTC": 0.0455,
+      "CD": 0.0562,
+      "HYP": 0.1524
     },
-    "confidence_score": 0.8231
+    "confidence_score": 0.8425
   },
   "20950": {
     "predicted_classes": [
-      "CD"
+      "CD",
+      "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0066,
-      "MI": 0.2109,
-      "STTC": 0.2801,
-      "CD": 0.7542,
-      "HYP": 0.2185
+      "NORM": 0.0017,
+      "MI": 0.0278,
+      "STTC": 0.0914,
+      "CD": 0.9989,
+      "HYP": 0.5572
     },
-    "confidence_score": 0.7542
+    "confidence_score": 0.9989
   },
   "8744": {
     "predicted_classes": [
-      "MI",
-      "CD",
+      "STTC",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.1259,
-      "MI": 0.5451,
-      "STTC": 0.4391,
-      "CD": 0.716,
-      "HYP": 0.6774
+      "NORM": 0.0282,
+      "MI": 0.1185,
+      "STTC": 0.766,
+      "CD": 0.2257,
+      "HYP": 0.9756
     },
-    "confidence_score": 0.716
+    "confidence_score": 0.9756
   },
   "7861": {
     "predicted_classes": [
-      "MI",
       "STTC",
-      "CD",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0501,
-      "MI": 0.6788,
-      "STTC": 0.5068,
-      "CD": 0.746,
-      "HYP": 0.69
+      "NORM": 0.0155,
+      "MI": 0.3746,
+      "STTC": 0.9276,
+      "CD": 0.0945,
+      "HYP": 0.9686
     },
-    "confidence_score": 0.746
+    "confidence_score": 0.9686
   },
   "21431": {
     "predicted_classes": [
-      "MI",
+      "STTC",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.2502,
-      "MI": 0.5003,
-      "STTC": 0.4689,
-      "CD": 0.4621,
-      "HYP": 0.5224
+      "NORM": 0.0416,
+      "MI": 0.0517,
+      "STTC": 0.9103,
+      "CD": 0.2952,
+      "HYP": 0.9007
     },
-    "confidence_score": 0.5224
+    "confidence_score": 0.9103
   },
   "5163": {
     "predicted_classes": [
@@ -2437,85 +2331,84 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0517,
-      "MI": 0.6823,
-      "STTC": 0.5105,
-      "CD": 0.7401,
-      "HYP": 0.6735
+      "NORM": 0.0061,
+      "MI": 0.986,
+      "STTC": 0.7839,
+      "CD": 0.594,
+      "HYP": 0.6881
     },
-    "confidence_score": 0.7401
+    "confidence_score": 0.986
   },
   "21673": {
     "predicted_classes": [
-      "MI",
       "STTC",
       "CD",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0673,
-      "MI": 0.6614,
-      "STTC": 0.5083,
-      "CD": 0.6952,
-      "HYP": 0.6745
+      "NORM": 0.0022,
+      "MI": 0.2478,
+      "STTC": 0.9842,
+      "CD": 0.522,
+      "HYP": 0.9913
     },
-    "confidence_score": 0.6952
+    "confidence_score": 0.9913
   },
   "5810": {
     "predicted_classes": [
-      "MI",
-      "CD",
+      "STTC",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.1428,
-      "MI": 0.5382,
-      "STTC": 0.4412,
-      "CD": 0.6829,
-      "HYP": 0.6685
+      "NORM": 0.0317,
+      "MI": 0.4419,
+      "STTC": 0.7807,
+      "CD": 0.1321,
+      "HYP": 0.9955
     },
-    "confidence_score": 0.6829
+    "confidence_score": 0.9955
   },
   "3603": {
     "predicted_classes": [
-      "NORM"
+      "NORM",
+      "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.7377,
-      "MI": 0.213,
-      "STTC": 0.2491,
-      "CD": 0.2386,
-      "HYP": 0.263
+      "NORM": 0.6599,
+      "MI": 0.0231,
+      "STTC": 0.1449,
+      "CD": 0.0231,
+      "HYP": 0.8415
     },
-    "confidence_score": 0.7377
+    "confidence_score": 0.8415
   },
   "16876": {
     "predicted_classes": [
       "MI",
-      "CD",
+      "STTC",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0685,
-      "MI": 0.6419,
-      "STTC": 0.4974,
-      "CD": 0.7068,
-      "HYP": 0.6867
+      "NORM": 0.0066,
+      "MI": 0.5172,
+      "STTC": 0.9869,
+      "CD": 0.4021,
+      "HYP": 0.9979
     },
-    "confidence_score": 0.7068
+    "confidence_score": 0.9979
   },
   "14315": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9082,
-      "MI": 0.0803,
-      "STTC": 0.08,
-      "CD": 0.1023,
-      "HYP": 0.0435
+      "NORM": 0.8089,
+      "MI": 0.0507,
+      "STTC": 0.0129,
+      "CD": 0.3714,
+      "HYP": 0.0908
     },
-    "confidence_score": 0.9082
+    "confidence_score": 0.8089
   },
   "19686": {
     "predicted_classes": [
@@ -2524,259 +2417,242 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.1321,
-      "MI": 0.5241,
-      "STTC": 0.4489,
-      "CD": 0.7677,
-      "HYP": 0.5244
+      "NORM": 0.052,
+      "MI": 0.9237,
+      "STTC": 0.2795,
+      "CD": 0.8821,
+      "HYP": 0.5374
     },
-    "confidence_score": 0.7677
+    "confidence_score": 0.9237
   },
   "17298": {
     "predicted_classes": [
-      "NORM"
+      "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.5281,
-      "MI": 0.3048,
-      "STTC": 0.3148,
-      "CD": 0.3134,
-      "HYP": 0.3214
+      "NORM": 0.2255,
+      "MI": 0.0856,
+      "STTC": 0.4597,
+      "CD": 0.2378,
+      "HYP": 0.7319
     },
-    "confidence_score": 0.5281
+    "confidence_score": 0.7319
   },
   "1013": {
     "predicted_classes": [
-      "MI",
       "STTC",
       "CD",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0503,
-      "MI": 0.68,
-      "STTC": 0.5147,
-      "CD": 0.7394,
-      "HYP": 0.6848
+      "NORM": 0.0202,
+      "MI": 0.2501,
+      "STTC": 0.9092,
+      "CD": 0.5262,
+      "HYP": 0.6601
     },
-    "confidence_score": 0.7394
+    "confidence_score": 0.9092
   },
   "17226": {
+    "predicted_classes": [
+      "HYP"
+    ],
+    "class_probabilities": {
+      "NORM": 0.4983,
+      "MI": 0.0599,
+      "STTC": 0.3572,
+      "CD": 0.1195,
+      "HYP": 0.6086
+    },
+    "confidence_score": 0.6086
+  },
+  "17868": {
+    "predicted_classes": [
+      "STTC",
+      "HYP"
+    ],
+    "class_probabilities": {
+      "NORM": 0.0647,
+      "MI": 0.0933,
+      "STTC": 0.6737,
+      "CD": 0.1644,
+      "HYP": 0.8856
+    },
+    "confidence_score": 0.8856
+  },
+  "11132": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8719,
-      "MI": 0.1017,
-      "STTC": 0.107,
-      "CD": 0.134,
-      "HYP": 0.0691
+      "NORM": 0.9036,
+      "MI": 0.0549,
+      "STTC": 0.0199,
+      "CD": 0.099,
+      "HYP": 0.0776
     },
-    "confidence_score": 0.8719
-  },
-  "17868": {
-    "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
-      "HYP"
-    ],
-    "class_probabilities": {
-      "NORM": 0.1113,
-      "MI": 0.6381,
-      "STTC": 0.5726,
-      "CD": 0.5666,
-      "HYP": 0.5534
-    },
-    "confidence_score": 0.6381
-  },
-  "11132": {
-    "predicted_classes": [
-      "MI",
-      "STTC"
-    ],
-    "class_probabilities": {
-      "NORM": 0.2511,
-      "MI": 0.5724,
-      "STTC": 0.5429,
-      "CD": 0.4715,
-      "HYP": 0.462
-    },
-    "confidence_score": 0.5724
+    "confidence_score": 0.9036
   },
   "3867": {
     "predicted_classes": [
-      "MI",
-      "CD",
+      "STTC",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0778,
-      "MI": 0.6176,
-      "STTC": 0.4771,
-      "CD": 0.7167,
-      "HYP": 0.6848
+      "NORM": 0.0122,
+      "MI": 0.2751,
+      "STTC": 0.9442,
+      "CD": 0.0789,
+      "HYP": 0.9972
     },
-    "confidence_score": 0.7167
+    "confidence_score": 0.9972
   },
   "8704": {
     "predicted_classes": [
-      "MI",
-      "CD",
+      "STTC",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.1808,
-      "MI": 0.5303,
-      "STTC": 0.4712,
-      "CD": 0.5203,
-      "HYP": 0.6296
+      "NORM": 0.0571,
+      "MI": 0.1237,
+      "STTC": 0.8413,
+      "CD": 0.2811,
+      "HYP": 0.947
     },
-    "confidence_score": 0.6296
+    "confidence_score": 0.947
   },
   "5338": {
     "predicted_classes": [
       "MI",
-      "CD",
-      "HYP"
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0447,
-      "MI": 0.665,
-      "STTC": 0.4519,
-      "CD": 0.8037,
-      "HYP": 0.7208
+      "NORM": 0.0163,
+      "MI": 0.7927,
+      "STTC": 0.0635,
+      "CD": 0.9884,
+      "HYP": 0.151
     },
-    "confidence_score": 0.8037
+    "confidence_score": 0.9884
   },
   "7882": {
     "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
-      "HYP"
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0854,
-      "MI": 0.6472,
-      "STTC": 0.5404,
-      "CD": 0.6145,
-      "HYP": 0.6211
+      "NORM": 0.0352,
+      "MI": 0.166,
+      "STTC": 0.021,
+      "CD": 0.9989,
+      "HYP": 0.3021
     },
-    "confidence_score": 0.6472
+    "confidence_score": 0.9989
   },
   "4546": {
     "predicted_classes": [
-      "NORM"
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.8577,
-      "MI": 0.1189,
-      "STTC": 0.1168,
-      "CD": 0.134,
-      "HYP": 0.0654
+      "NORM": 0.428,
+      "MI": 0.1848,
+      "STTC": 0.2042,
+      "CD": 0.7332,
+      "HYP": 0.2836
     },
-    "confidence_score": 0.8577
+    "confidence_score": 0.7332
   },
   "15863": {
     "predicted_classes": [
-      "MI",
       "STTC",
-      "CD",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0515,
-      "MI": 0.6809,
-      "STTC": 0.5167,
-      "CD": 0.7354,
-      "HYP": 0.669
+      "NORM": 0.0297,
+      "MI": 0.3216,
+      "STTC": 0.9577,
+      "CD": 0.136,
+      "HYP": 0.7334
     },
-    "confidence_score": 0.7354
+    "confidence_score": 0.9577
   },
   "18017": {
     "predicted_classes": [
-      "MI",
-      "STTC"
-    ],
-    "class_probabilities": {
-      "NORM": 0.1264,
-      "MI": 0.6171,
-      "STTC": 0.6037,
-      "CD": 0.4528,
-      "HYP": 0.3996
-    },
-    "confidence_score": 0.6171
-  },
-  "20236": {
-    "predicted_classes": [
-      "MI",
-      "STTC",
-      "CD",
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0723,
-      "MI": 0.6683,
-      "STTC": 0.5559,
-      "CD": 0.6216,
-      "HYP": 0.6218
+      "NORM": 0.1653,
+      "MI": 0.1808,
+      "STTC": 0.4571,
+      "CD": 0.2457,
+      "HYP": 0.774
     },
-    "confidence_score": 0.6683
+    "confidence_score": 0.774
+  },
+  "20236": {
+    "predicted_classes": [
+      "STTC",
+      "HYP"
+    ],
+    "class_probabilities": {
+      "NORM": 0.0029,
+      "MI": 0.1003,
+      "STTC": 0.9913,
+      "CD": 0.0633,
+      "HYP": 0.9862
+    },
+    "confidence_score": 0.9913
   },
   "8524": {
     "predicted_classes": [
       "MI",
-      "STTC"
+      "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.2102,
-      "MI": 0.5249,
-      "STTC": 0.5106,
-      "CD": 0.4166,
-      "HYP": 0.4079
+      "NORM": 0.2163,
+      "MI": 0.5168,
+      "STTC": 0.4932,
+      "CD": 0.2159,
+      "HYP": 0.8069
     },
-    "confidence_score": 0.5249
+    "confidence_score": 0.8069
   },
   "12301": {
     "predicted_classes": [
-      "MI"
+      "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.3124,
-      "MI": 0.4652,
-      "STTC": 0.4588,
-      "CD": 0.3832,
-      "HYP": 0.3609
+      "NORM": 0.7226,
+      "MI": 0.0857,
+      "STTC": 0.0561,
+      "CD": 0.0405,
+      "HYP": 0.4252
     },
-    "confidence_score": 0.4652
+    "confidence_score": 0.7226
   },
   "9024": {
     "predicted_classes": [
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.4448,
-      "MI": 0.4023,
-      "STTC": 0.4171,
-      "CD": 0.4055,
-      "HYP": 0.4952
+      "NORM": 0.2055,
+      "MI": 0.0885,
+      "STTC": 0.2126,
+      "CD": 0.2014,
+      "HYP": 0.9691
     },
-    "confidence_score": 0.4952
+    "confidence_score": 0.9691
   },
   "9110": {
     "predicted_classes": [
-      "MI",
-      "CD",
-      "HYP"
+      "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0493,
-      "MI": 0.6469,
-      "STTC": 0.4426,
-      "CD": 0.8027,
-      "HYP": 0.7253
+      "NORM": 0.0186,
+      "MI": 0.081,
+      "STTC": 0.1744,
+      "CD": 0.9686,
+      "HYP": 0.3363
     },
-    "confidence_score": 0.8027
+    "confidence_score": 0.9686
   }
 }
