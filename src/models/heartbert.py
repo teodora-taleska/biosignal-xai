@@ -69,6 +69,7 @@ class HeartBERTClassifier:
             num_labels              = self.num_labels,
             problem_type            = "multi_label_classification",
             ignore_mismatched_sizes = True,
+            attn_implementation     = "eager",
         ).to(self.device)
         print("  Done.")
         return self
