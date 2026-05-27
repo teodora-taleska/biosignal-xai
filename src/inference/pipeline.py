@@ -103,16 +103,22 @@ class ECGInferencePipeline:
 
     @staticmethod
     def _uncertainty_level(uncertainty: Optional[float]) -> str:
-        """Human-readable uncertainty label based on CFG threshold."""
+        """
+        Human-readable uncertainty label.
+
+        For aleatoric models (has_uncertainty=True) uses CFG thresholds.
+        For deterministic models (uncertainty=None) returns a placeholder;
+        app/model.py replaces this with the real TTA estimate.
+        """
         if uncertainty is None:
-            return 'not computed'
+            return 'N/A (deterministic model)'
         thresh = CFG['explainability']['uncertainty_threshold']
         if uncertainty < thresh * 0.5:
-            return 'low -- signal was clean, result is trustworthy'
+            return 'low - signal was clean, result is trustworthy'
         elif uncertainty < thresh:
-            return 'moderate -- some signal noise detected'
+            return 'moderate - some signal noise detected'
         else:
-            return 'high -- noisy signal, treat result with caution'
+            return 'high - noisy signal, treat result with caution'
 
 
 class HeartBERTPipeline:
@@ -177,7 +183,7 @@ class HeartBERTPipeline:
             'confidence_score':    round(probs.max().item(), 4),
             'uncertainty':         None,
             'raw_logits':          logits[0].tolist(),
-            'uncertainty_level':   'not computed',
+            'uncertainty_level':   'N/A (deterministic model)',
         }
 
     def benchmark(

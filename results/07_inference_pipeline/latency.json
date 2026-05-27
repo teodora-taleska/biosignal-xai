@@ -2,10 +2,10 @@
   "benchmark": {
     "n_runs": 50,
     "device": "cuda",
-    "latency_ms_mean": 26.867,
-    "latency_ms_median": 26.669,
-    "latency_ms_p95": 30.076,
-    "throughput_per_sec": 37.5
+    "latency_ms_mean": 21.083,
+    "latency_ms_median": 20.505,
+    "latency_ms_p95": 24.747,
+    "throughput_per_sec": 48.8
   },
   "n_records": 20,
   "sample_results": [
@@ -31,7 +31,7 @@
         0.1276082545518875,
         -0.12310098111629486
       ],
-      "uncertainty_level": "not computed"
+      "uncertainty_level": "N/A (deterministic model)"
     },
     {
       "predicted_classes": [
@@ -55,7 +55,7 @@
         0.12832903861999512,
         -0.11500672250986099
       ],
-      "uncertainty_level": "not computed"
+      "uncertainty_level": "N/A (deterministic model)"
     },
     {
       "predicted_classes": [
@@ -79,7 +79,7 @@
         0.1310129016637802,
         -0.11054041981697083
       ],
-      "uncertainty_level": "not computed"
+      "uncertainty_level": "N/A (deterministic model)"
     }
   ]
 }

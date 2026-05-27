@@ -83,7 +83,11 @@ def build_ecg_prompt(
         superclasses = SUPERCLASSES
 
     probs    = result_dict['class_probabilities']
-    prob_str = '  '.join(f'{c}:{probs[c]:.2f}' for c in superclasses)
+    stds     = result_dict.get('uncertainty_per_class', {})
+    if stds:
+        prob_str = '  '.join(f'{c}:{probs[c]:.2f}+/-{stds[c]:.3f}' for c in superclasses)
+    else:
+        prob_str = '  '.join(f'{c}:{probs[c]:.2f}' for c in superclasses)
 
     if saliency is not None:
         scores    = saliency.mean(axis=1)
