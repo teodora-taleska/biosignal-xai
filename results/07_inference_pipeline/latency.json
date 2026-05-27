@@ -1,0 +1,85 @@
+{
+  "benchmark": {
+    "n_runs": 50,
+    "device": "cuda",
+    "latency_ms_mean": 26.377,
+    "latency_ms_median": 26.038,
+    "latency_ms_p95": 28.729,
+    "throughput_per_sec": 38.4
+  },
+  "n_records": 20,
+  "sample_results": [
+    {
+      "predicted_classes": [
+        "MI",
+        "STTC",
+        "CD"
+      ],
+      "class_probabilities": {
+        "NORM": 0.4914,
+        "MI": 0.5113,
+        "STTC": 0.5033,
+        "CD": 0.5319,
+        "HYP": 0.4693
+      },
+      "confidence_score": 0.5319,
+      "uncertainty": null,
+      "raw_logits": [
+        -0.034589074552059174,
+        0.04520583897829056,
+        0.013244103640317917,
+        0.1276082545518875,
+        -0.12310098111629486
+      ],
+      "uncertainty_level": "not computed"
+    },
+    {
+      "predicted_classes": [
+        "MI",
+        "STTC",
+        "CD"
+      ],
+      "class_probabilities": {
+        "NORM": 0.4955,
+        "MI": 0.5119,
+        "STTC": 0.5019,
+        "CD": 0.532,
+        "HYP": 0.4713
+      },
+      "confidence_score": 0.532,
+      "uncertainty": null,
+      "raw_logits": [
+        -0.017918337136507034,
+        0.047777216881513596,
+        0.007573986425995827,
+        0.12832903861999512,
+        -0.11500672250986099
+      ],
+      "uncertainty_level": "not computed"
+    },
+    {
+      "predicted_classes": [
+        "MI",
+        "STTC",
+        "CD"
+      ],
+      "class_probabilities": {
+        "NORM": 0.4943,
+        "MI": 0.5131,
+        "STTC": 0.5037,
+        "CD": 0.5327,
+        "HYP": 0.4724
+      },
+      "confidence_score": 0.5327,
+      "uncertainty": null,
+      "raw_logits": [
+        -0.02292940765619278,
+        0.05230262130498886,
+        0.014898061752319336,
+        0.1310129016637802,
+        -0.11054041981697083
+      ],
+      "uncertainty_level": "not computed"
+    }
+  ]
+}
