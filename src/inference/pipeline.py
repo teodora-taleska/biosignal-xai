@@ -159,10 +159,11 @@ class HeartBERTPipeline:
         logits = self.classifier.predict_logits(signal[np.newaxis])    # (1, 5)
         probs  = torch.sigmoid(torch.tensor(logits[0]))                # (5,)
 
+        thresholds = getattr(self, 'thresholds', None) or [self.threshold] * len(SUPERCLASSES)
         predicted = [
             SUPERCLASSES[i]
             for i, p in enumerate(probs)
-            if p.item() >= self.threshold
+            if p.item() >= thresholds[i]
         ]
         if not predicted:
             predicted = [SUPERCLASSES[probs.argmax().item()]]
