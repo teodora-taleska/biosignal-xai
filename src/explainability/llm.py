@@ -23,8 +23,8 @@ def safe_print(text: str) -> None:
         print(text.encode('ascii', errors='replace').decode('ascii'))
 
 
-def load_qwen3(
-    model_id: str = 'Qwen/Qwen3-0.6B',
+def load_qwen(
+    model_id: str = 'Qwen/Qwen2-0.5B-Instruct',
     device_map: str = 'auto',
 ):
     """
@@ -127,8 +127,8 @@ def generate_explanation(
 
     Args:
         prompt_text:    user prompt from build_ecg_prompt()
-        qwen_model:     loaded Qwen3 model (from load_qwen3)
-        qwen_tokenizer: loaded Qwen3 tokenizer (from load_qwen3)
+        qwen_model:     loaded Qwen3 model (from load_qwen)
+        qwen_tokenizer: loaded Qwen3 tokenizer (from load_qwen)
         system_prompt:  system message (override with custom instructions)
         max_new_tokens: generation limit
         temperature:    sampling temperature (lower = more deterministic)

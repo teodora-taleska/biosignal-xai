@@ -1,0 +1,8 @@
+Model,Latency (ms/rec),Throughput (rec/s),Trainable Params,Checkpoint (MB)
+FCN-Wang,0.9,1111,309765,1.26
+HeartBERT LoRA r=8,26.7 (a),38,889349,3.57
+HeartBERT DoRA r=8,26.7 (a),38,907781,3.65
+ECG-PT LoRA r=8,N/A,N/A,298752,1.2
+ECG-PT DoRA r=8,N/A,N/A,326400,1.32
+HuBERT-ECG LoRA r=8,N/A (b),N/A,294912,1.19
+HuBERT-ECG DoRA r=8,N/A (b),N/A,313344,1.27
