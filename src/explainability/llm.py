@@ -53,7 +53,7 @@ def load_qwen(
     )
     model.eval()
     dev = next(model.parameters()).device
-    print(f'Qwen3 loaded  |  device: {dev}')
+    print(f'{model_id} loaded  |  device: {dev}')
     return model, tokenizer
 
 
