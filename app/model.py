@@ -22,6 +22,7 @@ import torch
 
 from src.explainability.llm import load_qwen
 from src.explainability.saliency import compute_saliency, top_salient_leads
+from src.explainability.uncertainty import compute_tta_uncertainty
 from src.inference.pipeline import ECGInferencePipeline
 from src.models.fcn_wang import FCNWang
 from src.utils.config import CFG
@@ -107,11 +108,30 @@ def predict(signal: np.ndarray) -> dict:
 
     Returns prediction dict with keys:
         predicted_classes, class_probabilities, confidence_score,
-        uncertainty (None), raw_logits, uncertainty_level
+        uncertainty (TTA-based float), raw_logits, uncertainty_level
     """
-    pipeline = get_inference_pipeline()
-    x        = preprocess_signal(signal)   # (12, 1000)
-    return pipeline.predict(x)
+    pipeline      = get_inference_pipeline()
+    model, device = get_fcn_wang()
+    x             = preprocess_signal(signal)   # (12, 1000)
+
+    result = pipeline.predict(x)
+
+    # Overwrite pipeline placeholders with real TTA uncertainty.
+    # mean_probs replaces the single-pass probabilities with the more robust
+    # average across 20 runs; std_probs gives the +/- per class.
+    mean_probs, std_probs, unc, level = compute_tta_uncertainty(model, x, device)
+    result['class_probabilities']    = {
+        cls: round(float(mean_probs[i]), 4)
+        for i, cls in enumerate(SUPERCLASSES)
+    }
+    result['uncertainty']            = unc
+    result['uncertainty_level']      = level
+    result['uncertainty_per_class']  = {
+        cls: round(float(std_probs[i]), 4)
+        for i, cls in enumerate(SUPERCLASSES)
+    }
+
+    return result
 
 
 # ── Saliency ──────────────────────────────────────────────────────────────────

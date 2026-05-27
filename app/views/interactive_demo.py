@@ -179,7 +179,7 @@ def render() -> None:
         )
 
         if st.button(
-            f'{_icon("biotech", 16)} Run XAI analysis',
+            'Run XAI analysis',
             type='primary',
             key='id_xai_btn',
         ):
@@ -197,12 +197,8 @@ def render() -> None:
             # Step 2: Qwen2 clinical narrative
             qwen_model, qwen_tok = get_qwen3()
             if qwen_model is not None:
-                full_pred = dict(pred)
-                full_pred.setdefault('uncertainty', None)
-                full_pred.setdefault('uncertainty_level', 'not computed')
-
                 prompt = build_ecg_prompt(
-                    result_dict  = full_pred,
+                    result_dict  = pred,
                     saliency     = sal,
                     lead_names   = LEAD_NAMES,
                     true_classes = rec.get('superclass'),

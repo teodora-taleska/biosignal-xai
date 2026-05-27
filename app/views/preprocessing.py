@@ -1,5 +1,5 @@
 """
-Tab 2 — Preprocessing Pipeline.
+Tab 2:Preprocessing Pipeline.
 
 Educational visualisation of the ECG preprocessing steps used in this project:
   Step 1: Raw signal
@@ -124,7 +124,12 @@ def _window_diagram(signal: np.ndarray, t: np.ndarray) -> go.Figure:
 # ── Main render ───────────────────────────────────────────────────────────────
 
 def render() -> None:
-    st.subheader('🔬 Preprocessing Pipeline')
+    st.markdown(
+        '<h3 style="margin-bottom:4px;">'
+        '<span class="material-icons" style="vertical-align:middle;font-size:24px;color:#1976d2;">biotech</span>'
+        ' Preprocessing Pipeline</h3>',
+        unsafe_allow_html=True,
+    )
     st.markdown(
         'Visualise each preprocessing step applied to an ECG record. '
         'The model used in this demo was trained with **bandpass filter only** '
@@ -173,29 +178,29 @@ def render() -> None:
     st.divider()
 
     # ── Step 1: Raw ───────────────────────────────────────────────────────────
-    with st.expander('**Step 1 — Raw signal**', expanded=True):
+    with st.expander('**Step 1: Raw signal**', expanded=True):
         st.markdown(
             'The PTB-XL records are read directly from WFDB format. '
             'No preprocessing applied yet. Baseline wander and high-frequency noise are visible.'
         )
         st.plotly_chart(
-            _lead_strip(raw_lead, t, f'Raw — {chosen_lead}', color='#607d8b'),
+            _lead_strip(raw_lead, t, f'Raw - {chosen_lead}', color='#607d8b'),
             use_container_width=True, key='pp_step1',
         )
 
     # ── Step 2: Bandpass ──────────────────────────────────────────────────────
-    with st.expander('**Step 2 — Bandpass filter (0.5–40 Hz)**', expanded=True):
+    with st.expander('**Step 2: Bandpass filter (0.5-40 Hz)**', expanded=True):
         st.markdown(
-            'A 4th-order Butterworth bandpass filter (0.5–40 Hz) removes '
+            'A 4th-order Butterworth bandpass filter (0.5-40 Hz) removes '
             'baseline wander (< 0.5 Hz) and high-frequency EMG noise (> 40 Hz). '
             '**This is the only preprocessing step used for inference in this demo.**'
         )
         bp = bandpass_filter(raw)[:, li]
-        fig = _lead_strip(bp, t, f'Bandpass — {chosen_lead}', color=_BLUE, reference=raw_lead)
+        fig = _lead_strip(bp, t, f'Bandpass - {chosen_lead}', color=_BLUE, reference=raw_lead)
         st.plotly_chart(fig, use_container_width=True, key='pp_step2')
 
     # ── Step 3: Z-score (educational) ────────────────────────────────────────
-    with st.expander('**Step 3 — Z-score normalisation (for reference)**'):
+    with st.expander('**Step 3: Z-score normalisation (for reference)**'):
         st.markdown(
             'Z-score normalisation (subtract mean, divide by std) removes '
             'amplitude differences between patients. '
@@ -204,11 +209,11 @@ def render() -> None:
         )
         bp_full  = bandpass_filter(raw)
         norm_lead = normalize_signal(bp_full)[:, li]
-        fig = _lead_strip(norm_lead, t, f'Z-score — {chosen_lead}', color=_ORANGE, reference=bp)
+        fig = _lead_strip(norm_lead, t, f'Z-score - {chosen_lead}', color=_ORANGE, reference=bp)
         st.plotly_chart(fig, use_container_width=True, key='pp_step3')
 
     # ── Step 4: Sliding windows ───────────────────────────────────────────────
-    with st.expander('**Step 4 — Sliding windows (2.5 s, stride 1.25 s)**', expanded=True):
+    with st.expander('**Step 4: Sliding windows (2.5 s, stride 1.25 s)**', expanded=True):
         st.markdown(
             'The 10-second record (1000 samples) is split into overlapping '
             '**250-sample (2.5 s) windows** with a **stride of 125 samples (1.25 s)**. '

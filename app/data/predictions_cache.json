@@ -4,130 +4,220 @@
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.7575,
-      "MI": 0.1148,
-      "STTC": 0.1008,
-      "CD": 0.2738,
-      "HYP": 0.0516
+      "NORM": 0.6326,
+      "MI": 0.206,
+      "STTC": 0.1827,
+      "CD": 0.2881,
+      "HYP": 0.0854
     },
-    "confidence_score": 0.7575
+    "confidence_score": 0.7575,
+    "uncertainty": 0.0346,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0534,
+      "MI": 0.0425,
+      "STTC": 0.0264,
+      "CD": 0.0378,
+      "HYP": 0.0129
+    }
   },
   "1251": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.6678,
-      "MI": 0.2436,
-      "STTC": 0.1254,
-      "CD": 0.2491,
-      "HYP": 0.053
+      "NORM": 0.5405,
+      "MI": 0.3262,
+      "STTC": 0.2069,
+      "CD": 0.2721,
+      "HYP": 0.0841
     },
-    "confidence_score": 0.6678
+    "confidence_score": 0.6678,
+    "uncertainty": 0.0397,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.057,
+      "MI": 0.0661,
+      "STTC": 0.0256,
+      "CD": 0.0378,
+      "HYP": 0.0118
+    }
   },
   "17891": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9265,
-      "MI": 0.0044,
-      "STTC": 0.0287,
-      "CD": 0.0111,
-      "HYP": 0.2355
+      "NORM": 0.853,
+      "MI": 0.0094,
+      "STTC": 0.0585,
+      "CD": 0.0188,
+      "HYP": 0.3317
     },
-    "confidence_score": 0.9265
+    "confidence_score": 0.9265,
+    "uncertainty": 0.0146,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0227,
+      "MI": 0.0018,
+      "STTC": 0.0096,
+      "CD": 0.0026,
+      "HYP": 0.0363
+    }
   },
   "2848": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.987,
-      "MI": 0.0043,
-      "STTC": 0.0051,
-      "CD": 0.0212,
-      "HYP": 0.0395
+      "NORM": 0.9485,
+      "MI": 0.0151,
+      "STTC": 0.0174,
+      "CD": 0.042,
+      "HYP": 0.0967
     },
-    "confidence_score": 0.987
+    "confidence_score": 0.987,
+    "uncertainty": 0.0088,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0113,
+      "MI": 0.0035,
+      "STTC": 0.0036,
+      "CD": 0.0086,
+      "HYP": 0.0168
+    }
   },
   "931": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9845,
-      "MI": 0.0071,
-      "STTC": 0.0122,
-      "CD": 0.0397,
-      "HYP": 0.0203
+      "NORM": 0.954,
+      "MI": 0.0228,
+      "STTC": 0.0322,
+      "CD": 0.0722,
+      "HYP": 0.043
     },
-    "confidence_score": 0.9845
+    "confidence_score": 0.9845,
+    "uncertainty": 0.0092,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0099,
+      "MI": 0.0055,
+      "STTC": 0.0069,
+      "CD": 0.016,
+      "HYP": 0.0076
+    }
   },
   "18639": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.5373,
-      "MI": 0.3602,
-      "STTC": 0.1568,
-      "CD": 0.1838,
-      "HYP": 0.0792
+      "NORM": 0.4392,
+      "MI": 0.4024,
+      "STTC": 0.2383,
+      "CD": 0.2393,
+      "HYP": 0.1303
     },
-    "confidence_score": 0.5373
+    "confidence_score": 0.5373,
+    "uncertainty": 0.047,
+    "uncertainty_level": "high - prediction changes with small noise, treat with caution",
+    "uncertainty_per_class": {
+      "NORM": 0.0661,
+      "MI": 0.0874,
+      "STTC": 0.029,
+      "CD": 0.0357,
+      "HYP": 0.0169
+    }
   },
   "19669": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9611,
-      "MI": 0.0079,
-      "STTC": 0.0138,
-      "CD": 0.0225,
-      "HYP": 0.0793
+      "NORM": 0.8846,
+      "MI": 0.0193,
+      "STTC": 0.0429,
+      "CD": 0.0481,
+      "HYP": 0.1629
     },
-    "confidence_score": 0.9611
+    "confidence_score": 0.9611,
+    "uncertainty": 0.0149,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0237,
+      "MI": 0.0051,
+      "STTC": 0.0087,
+      "CD": 0.0092,
+      "HYP": 0.0278
+    }
   },
   "1266": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.994,
-      "MI": 0.0063,
-      "STTC": 0.0058,
-      "CD": 0.017,
-      "HYP": 0.0058
+      "NORM": 0.9813,
+      "MI": 0.0187,
+      "STTC": 0.0172,
+      "CD": 0.0354,
+      "HYP": 0.0145
     },
-    "confidence_score": 0.994
+    "confidence_score": 0.994,
+    "uncertainty": 0.0039,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0036,
+      "MI": 0.0032,
+      "STTC": 0.0033,
+      "CD": 0.0067,
+      "HYP": 0.0025
+    }
   },
   "7819": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.761,
-      "MI": 0.0368,
-      "STTC": 0.2239,
-      "CD": 0.1508,
-      "HYP": 0.102
+      "NORM": 0.6252,
+      "MI": 0.0594,
+      "STTC": 0.3306,
+      "CD": 0.1765,
+      "HYP": 0.1289
     },
-    "confidence_score": 0.761
+    "confidence_score": 0.761,
+    "uncertainty": 0.0294,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0484,
+      "MI": 0.0105,
+      "STTC": 0.0466,
+      "CD": 0.0291,
+      "HYP": 0.0124
+    }
   },
   "12835": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8887,
-      "MI": 0.1025,
-      "STTC": 0.0297,
-      "CD": 0.0581,
-      "HYP": 0.05
+      "NORM": 0.7509,
+      "MI": 0.1752,
+      "STTC": 0.0693,
+      "CD": 0.0918,
+      "HYP": 0.1142
     },
-    "confidence_score": 0.8887
+    "confidence_score": 0.8887,
+    "uncertainty": 0.0266,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0486,
+      "MI": 0.0385,
+      "STTC": 0.0126,
+      "CD": 0.0137,
+      "HYP": 0.0197
+    }
   },
   "9995": {
     "predicted_classes": [
@@ -135,26 +225,44 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.4147,
-      "MI": 0.08,
-      "STTC": 0.5166,
-      "CD": 0.1286,
-      "HYP": 0.6396
+      "NORM": 0.3519,
+      "MI": 0.1153,
+      "STTC": 0.5713,
+      "CD": 0.159,
+      "HYP": 0.659
     },
-    "confidence_score": 0.6396
+    "confidence_score": 0.6396,
+    "uncertainty": 0.0256,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0372,
+      "MI": 0.0165,
+      "STTC": 0.034,
+      "CD": 0.0162,
+      "HYP": 0.0241
+    }
   },
   "1172": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.2712,
-      "MI": 0.3623,
-      "STTC": 0.3234,
-      "CD": 0.8022,
-      "HYP": 0.4168
+      "NORM": 0.2482,
+      "MI": 0.3966,
+      "STTC": 0.3339,
+      "CD": 0.7915,
+      "HYP": 0.4381
     },
-    "confidence_score": 0.8022
+    "confidence_score": 0.8022,
+    "uncertainty": 0.0255,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0222,
+      "MI": 0.0329,
+      "STTC": 0.0187,
+      "CD": 0.0319,
+      "HYP": 0.0219
+    }
   },
   "7621": {
     "predicted_classes": [
@@ -162,325 +270,550 @@
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.6624,
-      "MI": 0.0421,
-      "STTC": 0.5063,
-      "CD": 0.0629,
-      "HYP": 0.0506
+      "NORM": 0.4995,
+      "MI": 0.0789,
+      "STTC": 0.5973,
+      "CD": 0.0863,
+      "HYP": 0.0923
     },
-    "confidence_score": 0.6624
+    "confidence_score": 0.6624,
+    "uncertainty": 0.0277,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0552,
+      "MI": 0.013,
+      "STTC": 0.0423,
+      "CD": 0.0126,
+      "HYP": 0.0152
+    }
   },
   "12172": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8152,
-      "MI": 0.0527,
-      "STTC": 0.1331,
-      "CD": 0.0642,
-      "HYP": 0.2111
+      "NORM": 0.5084,
+      "MI": 0.1326,
+      "STTC": 0.2985,
+      "CD": 0.0972,
+      "HYP": 0.3399
     },
-    "confidence_score": 0.8152
+    "confidence_score": 0.8152,
+    "uncertainty": 0.0461,
+    "uncertainty_level": "high - prediction changes with small noise, treat with caution",
+    "uncertainty_per_class": {
+      "NORM": 0.0857,
+      "MI": 0.0346,
+      "STTC": 0.053,
+      "CD": 0.0153,
+      "HYP": 0.0418
+    }
   },
   "7034": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9892,
-      "MI": 0.005,
-      "STTC": 0.0061,
-      "CD": 0.0208,
-      "HYP": 0.0147
+      "NORM": 0.9589,
+      "MI": 0.0175,
+      "STTC": 0.0237,
+      "CD": 0.0467,
+      "HYP": 0.0435
     },
-    "confidence_score": 0.9892
+    "confidence_score": 0.9892,
+    "uncertainty": 0.0064,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.008,
+      "MI": 0.0035,
+      "STTC": 0.0047,
+      "CD": 0.0078,
+      "HYP": 0.0082
+    }
   },
   "1790": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.5252,
-      "MI": 0.3418,
-      "STTC": 0.2022,
-      "CD": 0.1572,
-      "HYP": 0.1284
+      "NORM": 0.4141,
+      "MI": 0.4272,
+      "STTC": 0.2269,
+      "CD": 0.1966,
+      "HYP": 0.1568
     },
-    "confidence_score": 0.5252
+    "confidence_score": 0.5252,
+    "uncertainty": 0.0289,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.044,
+      "MI": 0.0429,
+      "STTC": 0.0173,
+      "CD": 0.0232,
+      "HYP": 0.0169
+    }
   },
   "3164": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9527,
-      "MI": 0.0316,
-      "STTC": 0.0157,
-      "CD": 0.0305,
-      "HYP": 0.0485
+      "NORM": 0.9064,
+      "MI": 0.0484,
+      "STTC": 0.0324,
+      "CD": 0.0488,
+      "HYP": 0.0905
     },
-    "confidence_score": 0.9527
+    "confidence_score": 0.9527,
+    "uncertainty": 0.01,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0159,
+      "MI": 0.008,
+      "STTC": 0.0055,
+      "CD": 0.0069,
+      "HYP": 0.0135
+    }
   },
   "12082": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8762,
-      "MI": 0.0279,
-      "STTC": 0.0841,
-      "CD": 0.1468,
-      "HYP": 0.1767
+      "NORM": 0.8111,
+      "MI": 0.0456,
+      "STTC": 0.1217,
+      "CD": 0.1743,
+      "HYP": 0.2019
     },
-    "confidence_score": 0.8762
+    "confidence_score": 0.8762,
+    "uncertainty": 0.0197,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0258,
+      "MI": 0.0081,
+      "STTC": 0.0174,
+      "CD": 0.032,
+      "HYP": 0.0153
+    }
   },
   "8902": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9523,
-      "MI": 0.0073,
-      "STTC": 0.0101,
-      "CD": 0.1268,
-      "HYP": 0.0928
+      "NORM": 0.8979,
+      "MI": 0.0215,
+      "STTC": 0.029,
+      "CD": 0.1567,
+      "HYP": 0.1736
     },
-    "confidence_score": 0.9523
+    "confidence_score": 0.9523,
+    "uncertainty": 0.0139,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0168,
+      "MI": 0.0039,
+      "STTC": 0.0055,
+      "CD": 0.0201,
+      "HYP": 0.0233
+    }
   },
   "16407": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9424,
-      "MI": 0.0142,
-      "STTC": 0.0708,
-      "CD": 0.1015,
-      "HYP": 0.0215
+      "NORM": 0.9114,
+      "MI": 0.0281,
+      "STTC": 0.0771,
+      "CD": 0.106,
+      "HYP": 0.0248
     },
-    "confidence_score": 0.9424
+    "confidence_score": 0.9424,
+    "uncertainty": 0.0096,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0169,
+      "MI": 0.0065,
+      "STTC": 0.0108,
+      "CD": 0.0109,
+      "HYP": 0.0029
+    }
   },
   "13404": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.588,
-      "MI": 0.3342,
-      "STTC": 0.1512,
-      "CD": 0.1331,
-      "HYP": 0.1368
+      "NORM": 0.5364,
+      "MI": 0.3711,
+      "STTC": 0.1757,
+      "CD": 0.1504,
+      "HYP": 0.1473
     },
-    "confidence_score": 0.588
+    "confidence_score": 0.588,
+    "uncertainty": 0.022,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0342,
+      "MI": 0.034,
+      "STTC": 0.0131,
+      "CD": 0.0195,
+      "HYP": 0.0093
+    }
   },
   "9174": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9744,
-      "MI": 0.0104,
-      "STTC": 0.0101,
-      "CD": 0.0306,
-      "HYP": 0.0683
+      "NORM": 0.9519,
+      "MI": 0.0186,
+      "STTC": 0.0176,
+      "CD": 0.0414,
+      "HYP": 0.1003
     },
-    "confidence_score": 0.9744
+    "confidence_score": 0.9744,
+    "uncertainty": 0.0064,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0081,
+      "MI": 0.0036,
+      "STTC": 0.0029,
+      "CD": 0.0058,
+      "HYP": 0.0118
+    }
   },
   "7170": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9599,
-      "MI": 0.0151,
-      "STTC": 0.0555,
-      "CD": 0.0243,
-      "HYP": 0.0115
+      "NORM": 0.8665,
+      "MI": 0.0421,
+      "STTC": 0.1433,
+      "CD": 0.0475,
+      "HYP": 0.0305
     },
-    "confidence_score": 0.9599
+    "confidence_score": 0.9599,
+    "uncertainty": 0.0161,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0284,
+      "MI": 0.0091,
+      "STTC": 0.0295,
+      "CD": 0.0077,
+      "HYP": 0.0058
+    }
   },
   "17358": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.923,
-      "MI": 0.0106,
-      "STTC": 0.0269,
-      "CD": 0.0375,
-      "HYP": 0.3087
+      "NORM": 0.8262,
+      "MI": 0.0241,
+      "STTC": 0.0639,
+      "CD": 0.0604,
+      "HYP": 0.4478
     },
-    "confidence_score": 0.923
+    "confidence_score": 0.923,
+    "uncertainty": 0.0218,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0353,
+      "MI": 0.0058,
+      "STTC": 0.0134,
+      "CD": 0.009,
+      "HYP": 0.0456
+    }
   },
   "14375": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9759,
-      "MI": 0.0142,
-      "STTC": 0.0084,
-      "CD": 0.0408,
-      "HYP": 0.0332
+      "NORM": 0.9356,
+      "MI": 0.0341,
+      "STTC": 0.0222,
+      "CD": 0.0652,
+      "HYP": 0.0712
     },
-    "confidence_score": 0.9759
+    "confidence_score": 0.9759,
+    "uncertainty": 0.0084,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0112,
+      "MI": 0.0059,
+      "STTC": 0.0039,
+      "CD": 0.0096,
+      "HYP": 0.0112
+    }
   },
   "16499": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9771,
-      "MI": 0.0154,
-      "STTC": 0.0038,
-      "CD": 0.0209,
-      "HYP": 0.0344
+      "NORM": 0.9485,
+      "MI": 0.0302,
+      "STTC": 0.0079,
+      "CD": 0.0334,
+      "HYP": 0.0559
     },
-    "confidence_score": 0.9771
+    "confidence_score": 0.9771,
+    "uncertainty": 0.0054,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0084,
+      "MI": 0.005,
+      "STTC": 0.0013,
+      "CD": 0.0048,
+      "HYP": 0.0074
+    }
   },
   "13923": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.7977,
-      "MI": 0.0903,
-      "STTC": 0.1114,
-      "CD": 0.1198,
-      "HYP": 0.1075
+      "NORM": 0.7203,
+      "MI": 0.1294,
+      "STTC": 0.153,
+      "CD": 0.1507,
+      "HYP": 0.1248
     },
-    "confidence_score": 0.7977
+    "confidence_score": 0.7977,
+    "uncertainty": 0.0205,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0289,
+      "MI": 0.0191,
+      "STTC": 0.0213,
+      "CD": 0.0239,
+      "HYP": 0.0093
+    }
   },
   "9338": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.5576,
-      "MI": 0.0549,
-      "STTC": 0.2167,
-      "CD": 0.0523,
-      "HYP": 0.4925
+      "NORM": 0.4264,
+      "MI": 0.0955,
+      "STTC": 0.2936,
+      "CD": 0.0738,
+      "HYP": 0.5388
     },
-    "confidence_score": 0.5576
+    "confidence_score": 0.5576,
+    "uncertainty": 0.0253,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0426,
+      "MI": 0.0158,
+      "STTC": 0.0311,
+      "CD": 0.0087,
+      "HYP": 0.0283
+    }
   },
   "16537": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8217,
-      "MI": 0.0942,
-      "STTC": 0.0864,
-      "CD": 0.1081,
-      "HYP": 0.0484
+      "NORM": 0.7353,
+      "MI": 0.1459,
+      "STTC": 0.1017,
+      "CD": 0.1219,
+      "HYP": 0.054
     },
-    "confidence_score": 0.8217
+    "confidence_score": 0.8217,
+    "uncertainty": 0.0181,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0356,
+      "MI": 0.0242,
+      "STTC": 0.011,
+      "CD": 0.0141,
+      "HYP": 0.0058
+    }
   },
   "2596": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9625,
-      "MI": 0.0094,
-      "STTC": 0.0053,
-      "CD": 0.0102,
-      "HYP": 0.0773
+      "NORM": 0.9057,
+      "MI": 0.0248,
+      "STTC": 0.0122,
+      "CD": 0.017,
+      "HYP": 0.1295
     },
-    "confidence_score": 0.9625
+    "confidence_score": 0.9625,
+    "uncertainty": 0.0102,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0216,
+      "MI": 0.0075,
+      "STTC": 0.0022,
+      "CD": 0.0026,
+      "HYP": 0.0171
+    }
   },
   "15057": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.7615,
-      "MI": 0.1322,
-      "STTC": 0.0924,
-      "CD": 0.2962,
-      "HYP": 0.1901
+      "NORM": 0.6264,
+      "MI": 0.2329,
+      "STTC": 0.1415,
+      "CD": 0.2984,
+      "HYP": 0.2204
     },
-    "confidence_score": 0.7615
+    "confidence_score": 0.7615,
+    "uncertainty": 0.0342,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0513,
+      "MI": 0.0487,
+      "STTC": 0.0181,
+      "CD": 0.0345,
+      "HYP": 0.0181
+    }
   },
   "5914": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9794,
-      "MI": 0.0081,
-      "STTC": 0.0073,
-      "CD": 0.018,
-      "HYP": 0.0469
+      "NORM": 0.9429,
+      "MI": 0.0178,
+      "STTC": 0.0178,
+      "CD": 0.0271,
+      "HYP": 0.0854
     },
-    "confidence_score": 0.9794
+    "confidence_score": 0.9794,
+    "uncertainty": 0.0072,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0125,
+      "MI": 0.0042,
+      "STTC": 0.0034,
+      "CD": 0.0045,
+      "HYP": 0.0114
+    }
   },
   "4059": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8529,
-      "MI": 0.0516,
-      "STTC": 0.1579,
-      "CD": 0.042,
-      "HYP": 0.0243
+      "NORM": 0.6604,
+      "MI": 0.1263,
+      "STTC": 0.2894,
+      "CD": 0.0735,
+      "HYP": 0.0482
     },
-    "confidence_score": 0.8529
+    "confidence_score": 0.8529,
+    "uncertainty": 0.0304,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.056,
+      "MI": 0.0318,
+      "STTC": 0.0456,
+      "CD": 0.011,
+      "HYP": 0.0074
+    }
   },
   "15001": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9746,
-      "MI": 0.0062,
-      "STTC": 0.0056,
-      "CD": 0.0117,
-      "HYP": 0.1397
+      "NORM": 0.9373,
+      "MI": 0.0137,
+      "STTC": 0.0122,
+      "CD": 0.0195,
+      "HYP": 0.2371
     },
-    "confidence_score": 0.9746
+    "confidence_score": 0.9746,
+    "uncertainty": 0.0109,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0128,
+      "MI": 0.003,
+      "STTC": 0.0025,
+      "CD": 0.0034,
+      "HYP": 0.033
+    }
   },
   "10238": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.5968,
-      "MI": 0.4632,
-      "STTC": 0.0901,
-      "CD": 0.0447,
-      "HYP": 0.0193
+      "NORM": 0.3846,
+      "MI": 0.5254,
+      "STTC": 0.2093,
+      "CD": 0.0749,
+      "HYP": 0.0462
     },
-    "confidence_score": 0.5968
+    "confidence_score": 0.5968,
+    "uncertainty": 0.0583,
+    "uncertainty_level": "high - prediction changes with small noise, treat with caution",
+    "uncertainty_per_class": {
+      "NORM": 0.098,
+      "MI": 0.1303,
+      "STTC": 0.0406,
+      "CD": 0.0133,
+      "HYP": 0.0092
+    }
   },
   "12034": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8343,
-      "MI": 0.1139,
-      "STTC": 0.1324,
-      "CD": 0.0769,
-      "HYP": 0.0475
+      "NORM": 0.6583,
+      "MI": 0.2083,
+      "STTC": 0.2272,
+      "CD": 0.1023,
+      "HYP": 0.0765
     },
-    "confidence_score": 0.8343
+    "confidence_score": 0.8343,
+    "uncertainty": 0.0298,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0553,
+      "MI": 0.0395,
+      "STTC": 0.0339,
+      "CD": 0.0104,
+      "HYP": 0.0099
+    }
   },
   "14304": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.7071,
-      "MI": 0.161,
-      "STTC": 0.0981,
-      "CD": 0.0811,
-      "HYP": 0.2869
+      "NORM": 0.6208,
+      "MI": 0.2441,
+      "STTC": 0.1169,
+      "CD": 0.1117,
+      "HYP": 0.3226
     },
-    "confidence_score": 0.7071
+    "confidence_score": 0.7071,
+    "uncertainty": 0.026,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0368,
+      "MI": 0.0444,
+      "STTC": 0.0135,
+      "CD": 0.0143,
+      "HYP": 0.0211
+    }
   },
   "6295": {
     "predicted_classes": [
@@ -488,26 +821,44 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.8166,
-      "MI": 0.0917,
-      "STTC": 0.0359,
-      "CD": 0.5791,
-      "HYP": 0.0572
+      "NORM": 0.7122,
+      "MI": 0.1644,
+      "STTC": 0.0867,
+      "CD": 0.5483,
+      "HYP": 0.1145
     },
-    "confidence_score": 0.8166
+    "confidence_score": 0.8166,
+    "uncertainty": 0.0321,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0438,
+      "MI": 0.0356,
+      "STTC": 0.0138,
+      "CD": 0.0511,
+      "HYP": 0.0161
+    }
   },
   "7561": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9676,
-      "MI": 0.0084,
-      "STTC": 0.016,
-      "CD": 0.0309,
-      "HYP": 0.0775
+      "NORM": 0.9228,
+      "MI": 0.0185,
+      "STTC": 0.0372,
+      "CD": 0.0518,
+      "HYP": 0.1434
     },
-    "confidence_score": 0.9676
+    "confidence_score": 0.9676,
+    "uncertainty": 0.0123,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0156,
+      "MI": 0.0042,
+      "STTC": 0.0081,
+      "CD": 0.0108,
+      "HYP": 0.0228
+    }
   },
   "1158": {
     "predicted_classes": [
@@ -515,39 +866,66 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.123,
-      "MI": 0.7345,
-      "STTC": 0.1636,
-      "CD": 0.4461,
-      "HYP": 0.8028
+      "NORM": 0.1285,
+      "MI": 0.7281,
+      "STTC": 0.166,
+      "CD": 0.4512,
+      "HYP": 0.7987
     },
-    "confidence_score": 0.8028
+    "confidence_score": 0.8028,
+    "uncertainty": 0.0175,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.014,
+      "MI": 0.0248,
+      "STTC": 0.012,
+      "CD": 0.0266,
+      "HYP": 0.0099
+    }
   },
   "14667": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.0984,
-      "MI": 0.9659,
-      "STTC": 0.0324,
-      "CD": 0.1029,
-      "HYP": 0.0465
+      "NORM": 0.1105,
+      "MI": 0.9567,
+      "STTC": 0.0478,
+      "CD": 0.1218,
+      "HYP": 0.0608
     },
-    "confidence_score": 0.9659
+    "confidence_score": 0.9659,
+    "uncertainty": 0.0151,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0318,
+      "MI": 0.0192,
+      "STTC": 0.0055,
+      "CD": 0.0134,
+      "HYP": 0.0058
+    }
   },
   "12328": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.4539,
-      "MI": 0.5788,
-      "STTC": 0.0484,
-      "CD": 0.0841,
-      "HYP": 0.1061
+      "NORM": 0.4115,
+      "MI": 0.6276,
+      "STTC": 0.0491,
+      "CD": 0.0795,
+      "HYP": 0.1029
     },
-    "confidence_score": 0.5788
+    "confidence_score": 0.5788,
+    "uncertainty": 0.0295,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0524,
+      "MI": 0.0688,
+      "STTC": 0.005,
+      "CD": 0.0124,
+      "HYP": 0.0091
+    }
   },
   "16609": {
     "predicted_classes": [
@@ -556,39 +934,66 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0881,
-      "MI": 0.7029,
-      "STTC": 0.5009,
-      "CD": 0.3,
-      "HYP": 0.92
+      "NORM": 0.0843,
+      "MI": 0.6441,
+      "STTC": 0.507,
+      "CD": 0.3074,
+      "HYP": 0.9163
     },
-    "confidence_score": 0.92
+    "confidence_score": 0.92,
+    "uncertainty": 0.0249,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0074,
+      "MI": 0.0633,
+      "STTC": 0.0201,
+      "CD": 0.0275,
+      "HYP": 0.0061
+    }
   },
   "13819": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.98,
-      "MI": 0.0176,
-      "STTC": 0.0101,
-      "CD": 0.0119,
-      "HYP": 0.0099
+      "NORM": 0.9385,
+      "MI": 0.0369,
+      "STTC": 0.0387,
+      "CD": 0.0284,
+      "HYP": 0.0302
     },
-    "confidence_score": 0.98
+    "confidence_score": 0.98,
+    "uncertainty": 0.008,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0116,
+      "MI": 0.0076,
+      "STTC": 0.0078,
+      "CD": 0.0073,
+      "HYP": 0.0058
+    }
   },
   "5826": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.1248,
-      "MI": 0.3486,
-      "STTC": 0.0258,
-      "CD": 0.9167,
-      "HYP": 0.044
+      "NORM": 0.0968,
+      "MI": 0.5014,
+      "STTC": 0.0535,
+      "CD": 0.8981,
+      "HYP": 0.0816
     },
-    "confidence_score": 0.9167
+    "confidence_score": 0.9167,
+    "uncertainty": 0.023,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0174,
+      "MI": 0.0607,
+      "STTC": 0.0074,
+      "CD": 0.0197,
+      "HYP": 0.0099
+    }
   },
   "18712": {
     "predicted_classes": [
@@ -597,65 +1002,110 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0139,
-      "MI": 0.9335,
-      "STTC": 0.8973,
-      "CD": 0.1516,
-      "HYP": 0.6966
+      "NORM": 0.0188,
+      "MI": 0.8883,
+      "STTC": 0.879,
+      "CD": 0.1667,
+      "HYP": 0.6825
     },
-    "confidence_score": 0.9335
+    "confidence_score": 0.9335,
+    "uncertainty": 0.0162,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0029,
+      "MI": 0.0277,
+      "STTC": 0.0149,
+      "CD": 0.0193,
+      "HYP": 0.0161
+    }
   },
   "16135": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.4278,
-      "MI": 0.4887,
-      "STTC": 0.2139,
-      "CD": 0.1822,
-      "HYP": 0.2751
+      "NORM": 0.3842,
+      "MI": 0.5136,
+      "STTC": 0.2545,
+      "CD": 0.1985,
+      "HYP": 0.3134
     },
-    "confidence_score": 0.4887
+    "confidence_score": 0.4887,
+    "uncertainty": 0.0296,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0382,
+      "MI": 0.0473,
+      "STTC": 0.0278,
+      "CD": 0.0157,
+      "HYP": 0.019
+    }
   },
   "4072": {
     "predicted_classes": [
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.2749,
-      "MI": 0.2543,
-      "STTC": 0.5913,
-      "CD": 0.3667,
-      "HYP": 0.0954
+      "NORM": 0.2796,
+      "MI": 0.3048,
+      "STTC": 0.5262,
+      "CD": 0.3892,
+      "HYP": 0.0992
     },
-    "confidence_score": 0.5913
+    "confidence_score": 0.5913,
+    "uncertainty": 0.0358,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0273,
+      "MI": 0.0566,
+      "STTC": 0.0385,
+      "CD": 0.0473,
+      "HYP": 0.0091
+    }
   },
   "3241": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.0703,
-      "MI": 0.9116,
-      "STTC": 0.214,
-      "CD": 0.1979,
-      "HYP": 0.0338
+      "NORM": 0.079,
+      "MI": 0.8937,
+      "STTC": 0.2808,
+      "CD": 0.2139,
+      "HYP": 0.0579
     },
-    "confidence_score": 0.9116
+    "confidence_score": 0.9116,
+    "uncertainty": 0.018,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0116,
+      "MI": 0.025,
+      "STTC": 0.028,
+      "CD": 0.0181,
+      "HYP": 0.0071
+    }
   },
   "16152": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.0107,
-      "MI": 0.9831,
-      "STTC": 0.3172,
-      "CD": 0.4571,
-      "HYP": 0.0599
+      "NORM": 0.0203,
+      "MI": 0.9664,
+      "STTC": 0.3245,
+      "CD": 0.5247,
+      "HYP": 0.0979
     },
-    "confidence_score": 0.9831
+    "confidence_score": 0.9831,
+    "uncertainty": 0.0192,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0043,
+      "MI": 0.0125,
+      "STTC": 0.0295,
+      "CD": 0.0375,
+      "HYP": 0.0124
+    }
   },
   "15279": {
     "predicted_classes": [
@@ -665,26 +1115,44 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0472,
-      "MI": 0.8274,
-      "STTC": 0.7136,
-      "CD": 0.5119,
-      "HYP": 0.8303
+      "NORM": 0.0508,
+      "MI": 0.826,
+      "STTC": 0.6683,
+      "CD": 0.4885,
+      "HYP": 0.8022
     },
-    "confidence_score": 0.8303
+    "confidence_score": 0.8303,
+    "uncertainty": 0.0216,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0063,
+      "MI": 0.038,
+      "STTC": 0.0246,
+      "CD": 0.0253,
+      "HYP": 0.0139
+    }
   },
   "16225": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.1012,
-      "MI": 0.9496,
-      "STTC": 0.0321,
-      "CD": 0.0727,
-      "HYP": 0.0161
+      "NORM": 0.0985,
+      "MI": 0.9437,
+      "STTC": 0.059,
+      "CD": 0.0877,
+      "HYP": 0.03
     },
-    "confidence_score": 0.9496
+    "confidence_score": 0.9496,
+    "uncertainty": 0.0131,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0213,
+      "MI": 0.0153,
+      "STTC": 0.0087,
+      "CD": 0.0153,
+      "HYP": 0.0049
+    }
   },
   "17007": {
     "predicted_classes": [
@@ -692,13 +1160,22 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0139,
-      "MI": 0.9781,
-      "STTC": 0.3155,
-      "CD": 0.6045,
-      "HYP": 0.0592
+      "NORM": 0.0236,
+      "MI": 0.9484,
+      "STTC": 0.3929,
+      "CD": 0.6074,
+      "HYP": 0.0929
     },
-    "confidence_score": 0.9781
+    "confidence_score": 0.9781,
+    "uncertainty": 0.0245,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0043,
+      "MI": 0.0189,
+      "STTC": 0.0398,
+      "CD": 0.0488,
+      "HYP": 0.0109
+    }
   },
   "8680": {
     "predicted_classes": [
@@ -706,26 +1183,44 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.059,
-      "MI": 0.8987,
-      "STTC": 0.2105,
-      "CD": 0.9208,
-      "HYP": 0.496
+      "NORM": 0.0787,
+      "MI": 0.8725,
+      "STTC": 0.2069,
+      "CD": 0.8811,
+      "HYP": 0.4751
     },
-    "confidence_score": 0.9208
+    "confidence_score": 0.9208,
+    "uncertainty": 0.014,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0094,
+      "MI": 0.0212,
+      "STTC": 0.0094,
+      "CD": 0.016,
+      "HYP": 0.0139
+    }
   },
   "947": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.2408,
-      "MI": 0.7708,
-      "STTC": 0.072,
-      "CD": 0.0623,
-      "HYP": 0.0242
+      "NORM": 0.2109,
+      "MI": 0.7814,
+      "STTC": 0.095,
+      "CD": 0.0806,
+      "HYP": 0.0332
     },
-    "confidence_score": 0.7708
+    "confidence_score": 0.7708,
+    "uncertainty": 0.0162,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0254,
+      "MI": 0.0312,
+      "STTC": 0.0105,
+      "CD": 0.0103,
+      "HYP": 0.0035
+    }
   },
   "13853": {
     "predicted_classes": [
@@ -733,39 +1228,66 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0018,
-      "MI": 0.9191,
-      "STTC": 0.1099,
-      "CD": 0.9964,
-      "HYP": 0.4095
+      "NORM": 0.002,
+      "MI": 0.9071,
+      "STTC": 0.119,
+      "CD": 0.9958,
+      "HYP": 0.4073
     },
-    "confidence_score": 0.9964
+    "confidence_score": 0.9964,
+    "uncertainty": 0.0088,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0002,
+      "MI": 0.0123,
+      "STTC": 0.0078,
+      "CD": 0.0007,
+      "HYP": 0.0231
+    }
   },
   "5251": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.3765,
-      "MI": 0.6468,
+      "NORM": 0.381,
+      "MI": 0.6441,
       "STTC": 0.0461,
-      "CD": 0.0991,
-      "HYP": 0.0852
+      "CD": 0.1075,
+      "HYP": 0.0839
     },
-    "confidence_score": 0.6468
+    "confidence_score": 0.6468,
+    "uncertainty": 0.0303,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0549,
+      "MI": 0.0728,
+      "STTC": 0.0043,
+      "CD": 0.0125,
+      "HYP": 0.0068
+    }
   },
   "3559": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.7328,
-      "MI": 0.0405,
-      "STTC": 0.0496,
-      "CD": 0.2934,
-      "HYP": 0.0686
+      "NORM": 0.6386,
+      "MI": 0.0718,
+      "STTC": 0.0705,
+      "CD": 0.3327,
+      "HYP": 0.0849
     },
-    "confidence_score": 0.7328
+    "confidence_score": 0.7328,
+    "uncertainty": 0.0245,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0475,
+      "MI": 0.0157,
+      "STTC": 0.0114,
+      "CD": 0.0381,
+      "HYP": 0.0098
+    }
   },
   "13849": {
     "predicted_classes": [
@@ -773,78 +1295,132 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0017,
-      "MI": 0.9148,
-      "STTC": 0.1235,
-      "CD": 0.9977,
-      "HYP": 0.1923
+      "NORM": 0.003,
+      "MI": 0.8689,
+      "STTC": 0.1483,
+      "CD": 0.9964,
+      "HYP": 0.209
     },
-    "confidence_score": 0.9977
+    "confidence_score": 0.9977,
+    "uncertainty": 0.0076,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0004,
+      "MI": 0.0203,
+      "STTC": 0.0071,
+      "CD": 0.0007,
+      "HYP": 0.0095
+    }
   },
   "6231": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.3031,
-      "MI": 0.5104,
-      "STTC": 0.4141,
-      "CD": 0.1244,
-      "HYP": 0.0522
+      "NORM": 0.2074,
+      "MI": 0.5168,
+      "STTC": 0.4972,
+      "CD": 0.151,
+      "HYP": 0.0958
     },
-    "confidence_score": 0.5104
+    "confidence_score": 0.5104,
+    "uncertainty": 0.0349,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0315,
+      "MI": 0.0691,
+      "STTC": 0.0442,
+      "CD": 0.0167,
+      "HYP": 0.0133
+    }
   },
   "16532": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.4589,
-      "MI": 0.4011,
-      "STTC": 0.1355,
-      "CD": 0.1951,
-      "HYP": 0.2236
+      "NORM": 0.4226,
+      "MI": 0.4253,
+      "STTC": 0.1523,
+      "CD": 0.2105,
+      "HYP": 0.2425
     },
-    "confidence_score": 0.4589
+    "confidence_score": 0.4589,
+    "uncertainty": 0.0293,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.04,
+      "MI": 0.044,
+      "STTC": 0.0123,
+      "CD": 0.0279,
+      "HYP": 0.0224
+    }
   },
   "12991": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.0319,
-      "MI": 0.966,
-      "STTC": 0.1435,
-      "CD": 0.0953,
-      "HYP": 0.0127
+      "NORM": 0.0561,
+      "MI": 0.9125,
+      "STTC": 0.2401,
+      "CD": 0.1049,
+      "HYP": 0.0253
     },
-    "confidence_score": 0.966
+    "confidence_score": 0.966,
+    "uncertainty": 0.0179,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.011,
+      "MI": 0.0248,
+      "STTC": 0.0338,
+      "CD": 0.0163,
+      "HYP": 0.0037
+    }
   },
   "16952": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.0963,
-      "MI": 0.9596,
-      "STTC": 0.1057,
-      "CD": 0.1078,
-      "HYP": 0.0316
+      "NORM": 0.101,
+      "MI": 0.9404,
+      "STTC": 0.1544,
+      "CD": 0.1561,
+      "HYP": 0.0569
     },
-    "confidence_score": 0.9596
+    "confidence_score": 0.9596,
+    "uncertainty": 0.0178,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0209,
+      "MI": 0.0193,
+      "STTC": 0.0196,
+      "CD": 0.0202,
+      "HYP": 0.0092
+    }
   },
   "2050": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.5824,
-      "MI": 0.0876,
-      "STTC": 0.3412,
-      "CD": 0.0306,
-      "HYP": 0.0142
+      "NORM": 0.3967,
+      "MI": 0.1522,
+      "STTC": 0.4316,
+      "CD": 0.0498,
+      "HYP": 0.0258
     },
-    "confidence_score": 0.5824
+    "confidence_score": 0.5824,
+    "uncertainty": 0.0292,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0593,
+      "MI": 0.0299,
+      "STTC": 0.0426,
+      "CD": 0.0099,
+      "HYP": 0.0045
+    }
   },
   "9756": {
     "predicted_classes": [
@@ -853,26 +1429,44 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0172,
-      "MI": 0.7334,
-      "STTC": 0.93,
-      "CD": 0.2367,
-      "HYP": 0.5091
+      "NORM": 0.0191,
+      "MI": 0.6453,
+      "STTC": 0.9205,
+      "CD": 0.2398,
+      "HYP": 0.4816
     },
-    "confidence_score": 0.93
+    "confidence_score": 0.93,
+    "uncertainty": 0.0224,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.002,
+      "MI": 0.0609,
+      "STTC": 0.0096,
+      "CD": 0.0148,
+      "HYP": 0.0245
+    }
   },
   "7877": {
     "predicted_classes": [
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.2323,
-      "MI": 0.4586,
-      "STTC": 0.4339,
-      "CD": 0.2141,
-      "HYP": 0.5319
+      "NORM": 0.2021,
+      "MI": 0.5012,
+      "STTC": 0.4245,
+      "CD": 0.2566,
+      "HYP": 0.5184
     },
-    "confidence_score": 0.5319
+    "confidence_score": 0.5319,
+    "uncertainty": 0.0319,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0221,
+      "MI": 0.0655,
+      "STTC": 0.0249,
+      "CD": 0.0249,
+      "HYP": 0.022
+    }
   },
   "16272": {
     "predicted_classes": [
@@ -880,52 +1474,88 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.018,
-      "MI": 0.7662,
-      "STTC": 0.173,
-      "CD": 0.9941,
-      "HYP": 0.4479
+      "NORM": 0.0198,
+      "MI": 0.7484,
+      "STTC": 0.1722,
+      "CD": 0.9929,
+      "HYP": 0.445
     },
-    "confidence_score": 0.9941
+    "confidence_score": 0.9941,
+    "uncertainty": 0.0121,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0017,
+      "MI": 0.0322,
+      "STTC": 0.0067,
+      "CD": 0.0012,
+      "HYP": 0.0186
+    }
   },
   "18364": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.0069,
-      "MI": 0.9956,
-      "STTC": 0.0444,
-      "CD": 0.328,
-      "HYP": 0.0362
+      "NORM": 0.0112,
+      "MI": 0.9914,
+      "STTC": 0.0589,
+      "CD": 0.3607,
+      "HYP": 0.0477
     },
-    "confidence_score": 0.9956
+    "confidence_score": 0.9956,
+    "uncertainty": 0.0097,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.002,
+      "MI": 0.0025,
+      "STTC": 0.0072,
+      "CD": 0.0318,
+      "HYP": 0.0051
+    }
   },
   "10984": {
     "predicted_classes": [
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.3172,
-      "MI": 0.408,
-      "STTC": 0.5232,
-      "CD": 0.1334,
-      "HYP": 0.3076
+      "NORM": 0.3295,
+      "MI": 0.4102,
+      "STTC": 0.5002,
+      "CD": 0.147,
+      "HYP": 0.2959
     },
-    "confidence_score": 0.5232
+    "confidence_score": 0.5232,
+    "uncertainty": 0.0309,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0315,
+      "MI": 0.049,
+      "STTC": 0.0377,
+      "CD": 0.0157,
+      "HYP": 0.0208
+    }
   },
   "11872": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.7132,
-      "MI": 0.4142,
-      "STTC": 0.0406,
-      "CD": 0.0971,
-      "HYP": 0.0414
+      "NORM": 0.5743,
+      "MI": 0.4757,
+      "STTC": 0.09,
+      "CD": 0.1294,
+      "HYP": 0.0806
     },
-    "confidence_score": 0.7132
+    "confidence_score": 0.7132,
+    "uncertainty": 0.0441,
+    "uncertainty_level": "high - prediction changes with small noise, treat with caution",
+    "uncertainty_per_class": {
+      "NORM": 0.0778,
+      "MI": 0.0962,
+      "STTC": 0.0145,
+      "CD": 0.0185,
+      "HYP": 0.0134
+    }
   },
   "3272": {
     "predicted_classes": [
@@ -933,52 +1563,88 @@
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.0122,
-      "MI": 0.9608,
-      "STTC": 0.6696,
-      "CD": 0.2095,
-      "HYP": 0.3746
+      "NORM": 0.0155,
+      "MI": 0.9496,
+      "STTC": 0.6523,
+      "CD": 0.2043,
+      "HYP": 0.3612
     },
-    "confidence_score": 0.9608
+    "confidence_score": 0.9608,
+    "uncertainty": 0.0176,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0021,
+      "MI": 0.0136,
+      "STTC": 0.0267,
+      "CD": 0.022,
+      "HYP": 0.0237
+    }
   },
   "12169": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.0048,
-      "MI": 0.9986,
-      "STTC": 0.2191,
-      "CD": 0.1314,
-      "HYP": 0.0967
+      "NORM": 0.0081,
+      "MI": 0.9969,
+      "STTC": 0.2541,
+      "CD": 0.1093,
+      "HYP": 0.1087
     },
-    "confidence_score": 0.9986
+    "confidence_score": 0.9986,
+    "uncertainty": 0.009,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0012,
+      "MI": 0.0007,
+      "STTC": 0.0237,
+      "CD": 0.0102,
+      "HYP": 0.0093
+    }
   },
   "8473": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.0032,
-      "MI": 0.9985,
-      "STTC": 0.027,
-      "CD": 0.3845,
-      "HYP": 0.0256
+      "NORM": 0.0062,
+      "MI": 0.997,
+      "STTC": 0.039,
+      "CD": 0.3827,
+      "HYP": 0.0403
     },
-    "confidence_score": 0.9985
+    "confidence_score": 0.9985,
+    "uncertainty": 0.0087,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0013,
+      "MI": 0.0009,
+      "STTC": 0.0046,
+      "CD": 0.0315,
+      "HYP": 0.0054
+    }
   },
   "12828": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.0355,
-      "MI": 0.9628,
-      "STTC": 0.2074,
-      "CD": 0.0362,
-      "HYP": 0.0299
+      "NORM": 0.0434,
+      "MI": 0.9258,
+      "STTC": 0.3001,
+      "CD": 0.048,
+      "HYP": 0.0497
     },
-    "confidence_score": 0.9628
+    "confidence_score": 0.9628,
+    "uncertainty": 0.0134,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0069,
+      "MI": 0.0174,
+      "STTC": 0.03,
+      "CD": 0.006,
+      "HYP": 0.0066
+    }
   },
   "9860": {
     "predicted_classes": [
@@ -986,13 +1652,22 @@
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.0199,
-      "MI": 0.9317,
-      "STTC": 0.7287,
-      "CD": 0.1298,
-      "HYP": 0.4409
+      "NORM": 0.0292,
+      "MI": 0.9055,
+      "STTC": 0.6933,
+      "CD": 0.1372,
+      "HYP": 0.4354
     },
-    "confidence_score": 0.9317
+    "confidence_score": 0.9317,
+    "uncertainty": 0.0164,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0042,
+      "MI": 0.0191,
+      "STTC": 0.0234,
+      "CD": 0.0129,
+      "HYP": 0.0225
+    }
   },
   "5856": {
     "predicted_classes": [
@@ -1000,39 +1675,66 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0187,
-      "MI": 0.9775,
-      "STTC": 0.215,
-      "CD": 0.8268,
-      "HYP": 0.1329
+      "NORM": 0.0252,
+      "MI": 0.9674,
+      "STTC": 0.2289,
+      "CD": 0.8018,
+      "HYP": 0.1535
     },
-    "confidence_score": 0.9775
+    "confidence_score": 0.9775,
+    "uncertainty": 0.0107,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0039,
+      "MI": 0.0069,
+      "STTC": 0.0121,
+      "CD": 0.0223,
+      "HYP": 0.0082
+    }
   },
   "210": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.7034,
-      "MI": 0.3534,
-      "STTC": 0.0252,
-      "CD": 0.1152,
-      "HYP": 0.0537
+      "NORM": 0.5222,
+      "MI": 0.4904,
+      "STTC": 0.0561,
+      "CD": 0.1661,
+      "HYP": 0.1013
     },
-    "confidence_score": 0.7034
+    "confidence_score": 0.7034,
+    "uncertainty": 0.0451,
+    "uncertainty_level": "high - prediction changes with small noise, treat with caution",
+    "uncertainty_per_class": {
+      "NORM": 0.0764,
+      "MI": 0.0853,
+      "STTC": 0.0093,
+      "CD": 0.0349,
+      "HYP": 0.0197
+    }
   },
   "16463": {
     "predicted_classes": [
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.2325,
-      "MI": 0.4392,
-      "STTC": 0.4697,
-      "CD": 0.1296,
-      "HYP": 0.3627
+      "NORM": 0.1918,
+      "MI": 0.5128,
+      "STTC": 0.476,
+      "CD": 0.1569,
+      "HYP": 0.366
     },
-    "confidence_score": 0.4697
+    "confidence_score": 0.4697,
+    "uncertainty": 0.0327,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0228,
+      "MI": 0.0525,
+      "STTC": 0.0344,
+      "CD": 0.0214,
+      "HYP": 0.0325
+    }
   },
   "4755": {
     "predicted_classes": [
@@ -1040,13 +1742,22 @@
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.0317,
-      "MI": 0.9329,
-      "STTC": 0.5408,
-      "CD": 0.1205,
-      "HYP": 0.0843
+      "NORM": 0.0358,
+      "MI": 0.9025,
+      "STTC": 0.5505,
+      "CD": 0.1485,
+      "HYP": 0.1199
     },
-    "confidence_score": 0.9329
+    "confidence_score": 0.9329,
+    "uncertainty": 0.0196,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0058,
+      "MI": 0.0284,
+      "STTC": 0.0372,
+      "CD": 0.0127,
+      "HYP": 0.0139
+    }
   },
   "16465": {
     "predicted_classes": [
@@ -1054,13 +1765,22 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0051,
-      "MI": 0.9972,
-      "STTC": 0.1156,
-      "CD": 0.771,
-      "HYP": 0.2971
+      "NORM": 0.0088,
+      "MI": 0.9942,
+      "STTC": 0.1581,
+      "CD": 0.7595,
+      "HYP": 0.3388
     },
-    "confidence_score": 0.9972
+    "confidence_score": 0.9972,
+    "uncertainty": 0.0133,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0019,
+      "MI": 0.0017,
+      "STTC": 0.0155,
+      "CD": 0.0278,
+      "HYP": 0.0199
+    }
   },
   "6666": {
     "predicted_classes": [
@@ -1068,78 +1788,132 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.1263,
-      "MI": 0.4709,
-      "STTC": 0.7002,
-      "CD": 0.1879,
-      "HYP": 0.6429
+      "NORM": 0.133,
+      "MI": 0.4468,
+      "STTC": 0.6665,
+      "CD": 0.2027,
+      "HYP": 0.618
     },
-    "confidence_score": 0.7002
+    "confidence_score": 0.7002,
+    "uncertainty": 0.0242,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0198,
+      "MI": 0.0436,
+      "STTC": 0.0231,
+      "CD": 0.0128,
+      "HYP": 0.0218
+    }
   },
   "7598": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.1459,
-      "MI": 0.2581,
-      "STTC": 0.3177,
-      "CD": 0.919,
-      "HYP": 0.34
+      "NORM": 0.1422,
+      "MI": 0.3338,
+      "STTC": 0.3692,
+      "CD": 0.8922,
+      "HYP": 0.4015
     },
-    "confidence_score": 0.919
+    "confidence_score": 0.919,
+    "uncertainty": 0.028,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0198,
+      "MI": 0.0414,
+      "STTC": 0.031,
+      "CD": 0.0152,
+      "HYP": 0.0323
+    }
   },
   "13946": {
     "predicted_classes": [
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.2299,
-      "MI": 0.4667,
-      "STTC": 0.4672,
-      "CD": 0.1982,
-      "HYP": 0.1071
+      "NORM": 0.2282,
+      "MI": 0.4777,
+      "STTC": 0.4504,
+      "CD": 0.2078,
+      "HYP": 0.111
     },
-    "confidence_score": 0.4672
+    "confidence_score": 0.4672,
+    "uncertainty": 0.0252,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0304,
+      "MI": 0.0484,
+      "STTC": 0.0224,
+      "CD": 0.02,
+      "HYP": 0.0049
+    }
   },
   "20776": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8783,
-      "MI": 0.0484,
-      "STTC": 0.1214,
-      "CD": 0.0276,
-      "HYP": 0.0291
+      "NORM": 0.8126,
+      "MI": 0.0821,
+      "STTC": 0.1561,
+      "CD": 0.0442,
+      "HYP": 0.0451
     },
-    "confidence_score": 0.8783
+    "confidence_score": 0.8783,
+    "uncertainty": 0.0193,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0375,
+      "MI": 0.0203,
+      "STTC": 0.0224,
+      "CD": 0.0084,
+      "HYP": 0.0078
+    }
   },
   "13361": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.5501,
-      "MI": 0.0586,
-      "STTC": 0.4758,
-      "CD": 0.0509,
-      "HYP": 0.0686
+      "NORM": 0.4488,
+      "MI": 0.0938,
+      "STTC": 0.5099,
+      "CD": 0.0729,
+      "HYP": 0.0864
     },
-    "confidence_score": 0.5501
+    "confidence_score": 0.5501,
+    "uncertainty": 0.0246,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0467,
+      "MI": 0.0188,
+      "STTC": 0.0334,
+      "CD": 0.0126,
+      "HYP": 0.0114
+    }
   },
   "8834": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8762,
-      "MI": 0.0704,
-      "STTC": 0.1096,
-      "CD": 0.0786,
-      "HYP": 0.0158
+      "NORM": 0.7019,
+      "MI": 0.1083,
+      "STTC": 0.2918,
+      "CD": 0.1057,
+      "HYP": 0.039
     },
-    "confidence_score": 0.8762
+    "confidence_score": 0.8762,
+    "uncertainty": 0.0331,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0585,
+      "MI": 0.0202,
+      "STTC": 0.0566,
+      "CD": 0.0221,
+      "HYP": 0.0081
+    }
   },
   "20068": {
     "predicted_classes": [
@@ -1147,78 +1921,132 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.059,
-      "MI": 0.1768,
-      "STTC": 0.9335,
-      "CD": 0.1245,
-      "HYP": 0.6209
+      "NORM": 0.049,
+      "MI": 0.1717,
+      "STTC": 0.9343,
+      "CD": 0.126,
+      "HYP": 0.6581
     },
-    "confidence_score": 0.9335
+    "confidence_score": 0.9335,
+    "uncertainty": 0.0138,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0059,
+      "MI": 0.0279,
+      "STTC": 0.0066,
+      "CD": 0.0115,
+      "HYP": 0.0172
+    }
   },
   "1998": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.0405,
-      "MI": 0.9262,
-      "STTC": 0.4669,
-      "CD": 0.1811,
-      "HYP": 0.1597
+      "NORM": 0.0461,
+      "MI": 0.9041,
+      "STTC": 0.4491,
+      "CD": 0.1877,
+      "HYP": 0.1703
     },
-    "confidence_score": 0.9262
+    "confidence_score": 0.9262,
+    "uncertainty": 0.019,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.008,
+      "MI": 0.0257,
+      "STTC": 0.0252,
+      "CD": 0.0212,
+      "HYP": 0.0151
+    }
   },
   "9211": {
     "predicted_classes": [
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.1934,
-      "MI": 0.1898,
-      "STTC": 0.8309,
-      "CD": 0.0908,
-      "HYP": 0.0512
+      "NORM": 0.1432,
+      "MI": 0.2869,
+      "STTC": 0.807,
+      "CD": 0.1195,
+      "HYP": 0.0676
     },
-    "confidence_score": 0.8309
+    "confidence_score": 0.8309,
+    "uncertainty": 0.0234,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0227,
+      "MI": 0.0478,
+      "STTC": 0.0234,
+      "CD": 0.0153,
+      "HYP": 0.0077
+    }
   },
   "7534": {
     "predicted_classes": [
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.1269,
-      "MI": 0.0752,
-      "STTC": 0.8267,
-      "CD": 0.1961,
-      "HYP": 0.2733
+      "NORM": 0.1119,
+      "MI": 0.1098,
+      "STTC": 0.815,
+      "CD": 0.2123,
+      "HYP": 0.2837
     },
-    "confidence_score": 0.8267
+    "confidence_score": 0.8267,
+    "uncertainty": 0.0147,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0137,
+      "MI": 0.0118,
+      "STTC": 0.0183,
+      "CD": 0.0159,
+      "HYP": 0.0137
+    }
   },
   "2867": {
     "predicted_classes": [
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.4415,
-      "MI": 0.088,
-      "STTC": 0.5329,
-      "CD": 0.063,
-      "HYP": 0.3971
+      "NORM": 0.4128,
+      "MI": 0.1074,
+      "STTC": 0.5245,
+      "CD": 0.0783,
+      "HYP": 0.4014
     },
-    "confidence_score": 0.5329
+    "confidence_score": 0.5329,
+    "uncertainty": 0.0291,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0427,
+      "MI": 0.0147,
+      "STTC": 0.043,
+      "CD": 0.0148,
+      "HYP": 0.0301
+    }
   },
   "2734": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.4553,
-      "MI": 0.452,
-      "STTC": 0.1698,
-      "CD": 0.0646,
-      "HYP": 0.3258
+      "NORM": 0.365,
+      "MI": 0.5465,
+      "STTC": 0.1971,
+      "CD": 0.0866,
+      "HYP": 0.3409
     },
-    "confidence_score": 0.4553
+    "confidence_score": 0.4553,
+    "uncertainty": 0.0301,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0405,
+      "MI": 0.0547,
+      "STTC": 0.0163,
+      "CD": 0.0137,
+      "HYP": 0.0252
+    }
   },
   "14869": {
     "predicted_classes": [
@@ -1226,26 +2054,44 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0075,
-      "MI": 0.2234,
-      "STTC": 0.9582,
-      "CD": 0.1522,
-      "HYP": 0.9941
+      "NORM": 0.0082,
+      "MI": 0.2519,
+      "STTC": 0.9528,
+      "CD": 0.1604,
+      "HYP": 0.9938
     },
-    "confidence_score": 0.9941
+    "confidence_score": 0.9941,
+    "uncertainty": 0.0077,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0009,
+      "MI": 0.0252,
+      "STTC": 0.004,
+      "CD": 0.0076,
+      "HYP": 0.0008
+    }
   },
   "6192": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8895,
-      "MI": 0.0168,
-      "STTC": 0.2327,
-      "CD": 0.0296,
-      "HYP": 0.0177
+      "NORM": 0.7282,
+      "MI": 0.0417,
+      "STTC": 0.4025,
+      "CD": 0.058,
+      "HYP": 0.04
     },
-    "confidence_score": 0.8895
+    "confidence_score": 0.8895,
+    "uncertainty": 0.0257,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0511,
+      "MI": 0.0096,
+      "STTC": 0.0505,
+      "CD": 0.0103,
+      "HYP": 0.0072
+    }
   },
   "12338": {
     "predicted_classes": [
@@ -1253,26 +2099,44 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0339,
-      "MI": 0.1686,
-      "STTC": 0.8982,
-      "CD": 0.1392,
-      "HYP": 0.9798
+      "NORM": 0.0281,
+      "MI": 0.2261,
+      "STTC": 0.9031,
+      "CD": 0.1486,
+      "HYP": 0.9794
     },
-    "confidence_score": 0.9798
+    "confidence_score": 0.9798,
+    "uncertainty": 0.0109,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0029,
+      "MI": 0.025,
+      "STTC": 0.0089,
+      "CD": 0.0153,
+      "HYP": 0.0025
+    }
   },
   "5868": {
     "predicted_classes": [
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.4855,
-      "MI": 0.0233,
-      "STTC": 0.2037,
-      "CD": 0.0517,
-      "HYP": 0.898
+      "NORM": 0.3628,
+      "MI": 0.0346,
+      "STTC": 0.2815,
+      "CD": 0.0596,
+      "HYP": 0.917
     },
-    "confidence_score": 0.898
+    "confidence_score": 0.898,
+    "uncertainty": 0.0168,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0361,
+      "MI": 0.0055,
+      "STTC": 0.0277,
+      "CD": 0.006,
+      "HYP": 0.0087
+    }
   },
   "8442": {
     "predicted_classes": [
@@ -1280,13 +2144,22 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.1538,
-      "MI": 0.4249,
-      "STTC": 0.5398,
-      "CD": 0.7117,
-      "HYP": 0.2991
+      "NORM": 0.1332,
+      "MI": 0.4164,
+      "STTC": 0.5957,
+      "CD": 0.6727,
+      "HYP": 0.3365
     },
-    "confidence_score": 0.7117
+    "confidence_score": 0.7117,
+    "uncertainty": 0.0401,
+    "uncertainty_level": "high - prediction changes with small noise, treat with caution",
+    "uncertainty_per_class": {
+      "NORM": 0.0174,
+      "MI": 0.0624,
+      "STTC": 0.0385,
+      "CD": 0.0597,
+      "HYP": 0.0226
+    }
   },
   "13577": {
     "predicted_classes": [
@@ -1295,26 +2168,44 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0044,
-      "MI": 0.9629,
-      "STTC": 0.4491,
-      "CD": 0.9384,
-      "HYP": 0.6147
+      "NORM": 0.0083,
+      "MI": 0.9428,
+      "STTC": 0.451,
+      "CD": 0.8989,
+      "HYP": 0.5977
     },
-    "confidence_score": 0.9629
+    "confidence_score": 0.9629,
+    "uncertainty": 0.0111,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0011,
+      "MI": 0.0096,
+      "STTC": 0.0215,
+      "CD": 0.0126,
+      "HYP": 0.0108
+    }
   },
   "2556": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.1888,
-      "MI": 0.5159,
-      "STTC": 0.4966,
-      "CD": 0.141,
-      "HYP": 0.3683
+      "NORM": 0.1668,
+      "MI": 0.4879,
+      "STTC": 0.5032,
+      "CD": 0.1537,
+      "HYP": 0.3928
     },
-    "confidence_score": 0.5159
+    "confidence_score": 0.5159,
+    "uncertainty": 0.0289,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0125,
+      "MI": 0.0581,
+      "STTC": 0.0266,
+      "CD": 0.0135,
+      "HYP": 0.0336
+    }
   },
   "13556": {
     "predicted_classes": [
@@ -1323,39 +2214,66 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0039,
-      "MI": 0.7152,
-      "STTC": 0.4402,
-      "CD": 0.9969,
-      "HYP": 0.6826
+      "NORM": 0.0063,
+      "MI": 0.6919,
+      "STTC": 0.5425,
+      "CD": 0.9939,
+      "HYP": 0.7412
     },
-    "confidence_score": 0.9969
+    "confidence_score": 0.9969,
+    "uncertainty": 0.0199,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0011,
+      "MI": 0.0451,
+      "STTC": 0.0318,
+      "CD": 0.001,
+      "HYP": 0.0205
+    }
   },
   "19251": {
     "predicted_classes": [
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.1617,
-      "MI": 0.3306,
-      "STTC": 0.7112,
-      "CD": 0.0604,
-      "HYP": 0.0978
+      "NORM": 0.1162,
+      "MI": 0.3184,
+      "STTC": 0.782,
+      "CD": 0.085,
+      "HYP": 0.1547
     },
-    "confidence_score": 0.7112
+    "confidence_score": 0.7112,
+    "uncertainty": 0.025,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0168,
+      "MI": 0.0524,
+      "STTC": 0.0262,
+      "CD": 0.0121,
+      "HYP": 0.0178
+    }
   },
   "14670": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.3303,
-      "MI": 0.6013,
-      "STTC": 0.3366,
-      "CD": 0.3201,
-      "HYP": 0.4285
+      "NORM": 0.3259,
+      "MI": 0.5919,
+      "STTC": 0.3335,
+      "CD": 0.3262,
+      "HYP": 0.4129
     },
-    "confidence_score": 0.6013
+    "confidence_score": 0.6013,
+    "uncertainty": 0.0287,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0296,
+      "MI": 0.0578,
+      "STTC": 0.0212,
+      "CD": 0.015,
+      "HYP": 0.0201
+    }
   },
   "7822": {
     "predicted_classes": [
@@ -1363,26 +2281,44 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0065,
-      "MI": 0.9966,
-      "STTC": 0.4626,
-      "CD": 0.0654,
-      "HYP": 0.8289
+      "NORM": 0.0102,
+      "MI": 0.9931,
+      "STTC": 0.468,
+      "CD": 0.0678,
+      "HYP": 0.8348
     },
-    "confidence_score": 0.9966
+    "confidence_score": 0.9966,
+    "uncertainty": 0.0104,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0016,
+      "MI": 0.0015,
+      "STTC": 0.0206,
+      "CD": 0.0081,
+      "HYP": 0.0204
+    }
   },
   "7022": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0199,
-      "MI": 0.4735,
-      "STTC": 0.121,
-      "CD": 0.9446,
-      "HYP": 0.2059
+      "NORM": 0.0259,
+      "MI": 0.468,
+      "STTC": 0.1301,
+      "CD": 0.9314,
+      "HYP": 0.2217
     },
-    "confidence_score": 0.9446
+    "confidence_score": 0.9446,
+    "uncertainty": 0.019,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0038,
+      "MI": 0.0621,
+      "STTC": 0.0066,
+      "CD": 0.0073,
+      "HYP": 0.0152
+    }
   },
   "347": {
     "predicted_classes": [
@@ -1390,13 +2326,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0845,
-      "MI": 0.3182,
-      "STTC": 0.7965,
-      "CD": 0.3876,
-      "HYP": 0.6614
+      "NORM": 0.0892,
+      "MI": 0.3193,
+      "STTC": 0.7827,
+      "CD": 0.3732,
+      "HYP": 0.633
     },
-    "confidence_score": 0.7965
+    "confidence_score": 0.7965,
+    "uncertainty": 0.0229,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0091,
+      "MI": 0.0448,
+      "STTC": 0.0173,
+      "CD": 0.0223,
+      "HYP": 0.0209
+    }
   },
   "17870": {
     "predicted_classes": [
@@ -1404,39 +2349,66 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0884,
-      "MI": 0.6977,
-      "STTC": 0.3763,
-      "CD": 0.6921,
-      "HYP": 0.3619
+      "NORM": 0.0798,
+      "MI": 0.7157,
+      "STTC": 0.3658,
+      "CD": 0.7096,
+      "HYP": 0.3602
     },
-    "confidence_score": 0.6977
+    "confidence_score": 0.6977,
+    "uncertainty": 0.0262,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.01,
+      "MI": 0.0461,
+      "STTC": 0.019,
+      "CD": 0.031,
+      "HYP": 0.0247
+    }
   },
   "2693": {
     "predicted_classes": [
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.4235,
-      "MI": 0.2659,
-      "STTC": 0.5026,
-      "CD": 0.1152,
-      "HYP": 0.0923
+      "NORM": 0.3804,
+      "MI": 0.3447,
+      "STTC": 0.4817,
+      "CD": 0.1436,
+      "HYP": 0.0998
     },
-    "confidence_score": 0.5026
+    "confidence_score": 0.5026,
+    "uncertainty": 0.0295,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.034,
+      "MI": 0.0635,
+      "STTC": 0.0296,
+      "CD": 0.0125,
+      "HYP": 0.0076
+    }
   },
   "7438": {
     "predicted_classes": [
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.0854,
-      "MI": 0.4675,
-      "STTC": 0.6977,
-      "CD": 0.1797,
-      "HYP": 0.0974
+      "NORM": 0.0875,
+      "MI": 0.5084,
+      "STTC": 0.6616,
+      "CD": 0.1871,
+      "HYP": 0.0958
     },
-    "confidence_score": 0.6977
+    "confidence_score": 0.6977,
+    "uncertainty": 0.0234,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0118,
+      "MI": 0.0434,
+      "STTC": 0.0301,
+      "CD": 0.0228,
+      "HYP": 0.009
+    }
   },
   "18756": {
     "predicted_classes": [
@@ -1444,39 +2416,66 @@
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.0419,
-      "MI": 0.7146,
-      "STTC": 0.7043,
-      "CD": 0.4097,
-      "HYP": 0.1262
+      "NORM": 0.0433,
+      "MI": 0.7076,
+      "STTC": 0.6868,
+      "CD": 0.4308,
+      "HYP": 0.1448
     },
-    "confidence_score": 0.7146
+    "confidence_score": 0.7146,
+    "uncertainty": 0.0242,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0056,
+      "MI": 0.0583,
+      "STTC": 0.0244,
+      "CD": 0.0223,
+      "HYP": 0.0103
+    }
   },
   "15795": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.4773,
-      "MI": 0.4937,
-      "STTC": 0.1057,
-      "CD": 0.0518,
-      "HYP": 0.0431
+      "NORM": 0.454,
+      "MI": 0.4254,
+      "STTC": 0.1523,
+      "CD": 0.0687,
+      "HYP": 0.0597
     },
-    "confidence_score": 0.4937
+    "confidence_score": 0.4937,
+    "uncertainty": 0.0227,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0307,
+      "MI": 0.0482,
+      "STTC": 0.0175,
+      "CD": 0.0096,
+      "HYP": 0.0078
+    }
   },
   "4476": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.4988,
-      "MI": 0.0236,
-      "STTC": 0.4896,
-      "CD": 0.0794,
-      "HYP": 0.4294
+      "NORM": 0.2191,
+      "MI": 0.0396,
+      "STTC": 0.7164,
+      "CD": 0.1012,
+      "HYP": 0.5542
     },
-    "confidence_score": 0.4988
+    "confidence_score": 0.4988,
+    "uncertainty": 0.0361,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0683,
+      "MI": 0.0067,
+      "STTC": 0.0577,
+      "CD": 0.0105,
+      "HYP": 0.0373
+    }
   },
   "11868": {
     "predicted_classes": [
@@ -1484,26 +2483,44 @@
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.5651,
-      "MI": 0.0291,
-      "STTC": 0.6177,
-      "CD": 0.0306,
-      "HYP": 0.0179
+      "NORM": 0.3522,
+      "MI": 0.0747,
+      "STTC": 0.7487,
+      "CD": 0.0558,
+      "HYP": 0.0412
     },
-    "confidence_score": 0.6177
+    "confidence_score": 0.6177,
+    "uncertainty": 0.0251,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0552,
+      "MI": 0.0167,
+      "STTC": 0.0387,
+      "CD": 0.0074,
+      "HYP": 0.0074
+    }
   },
   "5881": {
     "predicted_classes": [
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.0854,
-      "MI": 0.3141,
-      "STTC": 0.8285,
-      "CD": 0.0727,
-      "HYP": 0.0886
+      "NORM": 0.0707,
+      "MI": 0.3758,
+      "STTC": 0.8003,
+      "CD": 0.0779,
+      "HYP": 0.1019
     },
-    "confidence_score": 0.8285
+    "confidence_score": 0.8285,
+    "uncertainty": 0.0254,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0114,
+      "MI": 0.0615,
+      "STTC": 0.0294,
+      "CD": 0.0106,
+      "HYP": 0.014
+    }
   },
   "13954": {
     "predicted_classes": [
@@ -1511,39 +2528,66 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0212,
-      "MI": 0.2676,
-      "STTC": 0.833,
-      "CD": 0.8308,
-      "HYP": 0.2652
+      "NORM": 0.0296,
+      "MI": 0.3096,
+      "STTC": 0.7843,
+      "CD": 0.8162,
+      "HYP": 0.269
     },
-    "confidence_score": 0.833
+    "confidence_score": 0.833,
+    "uncertainty": 0.0168,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0032,
+      "MI": 0.027,
+      "STTC": 0.0184,
+      "CD": 0.017,
+      "HYP": 0.0183
+    }
   },
   "20602": {
     "predicted_classes": [
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.1242,
-      "MI": 0.3947,
-      "STTC": 0.6072,
-      "CD": 0.4258,
-      "HYP": 0.0882
+      "NORM": 0.1253,
+      "MI": 0.4345,
+      "STTC": 0.5857,
+      "CD": 0.4252,
+      "HYP": 0.1076
     },
-    "confidence_score": 0.6072
+    "confidence_score": 0.6072,
+    "uncertainty": 0.0279,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.014,
+      "MI": 0.0403,
+      "STTC": 0.0332,
+      "CD": 0.0405,
+      "HYP": 0.0116
+    }
   },
   "8475": {
     "predicted_classes": [
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.1503,
-      "MI": 0.2335,
-      "STTC": 0.7054,
-      "CD": 0.3563,
-      "HYP": 0.2895
+      "NORM": 0.1716,
+      "MI": 0.2687,
+      "STTC": 0.6252,
+      "CD": 0.3502,
+      "HYP": 0.2555
     },
-    "confidence_score": 0.7054
+    "confidence_score": 0.7054,
+    "uncertainty": 0.022,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0156,
+      "MI": 0.0282,
+      "STTC": 0.0305,
+      "CD": 0.0219,
+      "HYP": 0.0137
+    }
   },
   "12533": {
     "predicted_classes": [
@@ -1551,26 +2595,44 @@
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.0682,
-      "MI": 0.541,
-      "STTC": 0.7433,
-      "CD": 0.1758,
-      "HYP": 0.1693
+      "NORM": 0.0646,
+      "MI": 0.5167,
+      "STTC": 0.7276,
+      "CD": 0.1807,
+      "HYP": 0.1943
     },
-    "confidence_score": 0.7433
+    "confidence_score": 0.7433,
+    "uncertainty": 0.0287,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0076,
+      "MI": 0.0727,
+      "STTC": 0.0259,
+      "CD": 0.0203,
+      "HYP": 0.0172
+    }
   },
   "2151": {
     "predicted_classes": [
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.2145,
-      "MI": 0.0436,
-      "STTC": 0.8071,
-      "CD": 0.0472,
-      "HYP": 0.0763
+      "NORM": 0.1499,
+      "MI": 0.0771,
+      "STTC": 0.8283,
+      "CD": 0.0698,
+      "HYP": 0.1118
     },
-    "confidence_score": 0.8071
+    "confidence_score": 0.8071,
+    "uncertainty": 0.0164,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0234,
+      "MI": 0.0128,
+      "STTC": 0.0201,
+      "CD": 0.0119,
+      "HYP": 0.0138
+    }
   },
   "1792": {
     "predicted_classes": [
@@ -1578,52 +2640,88 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.1252,
-      "MI": 0.6868,
-      "STTC": 0.4921,
-      "CD": 0.1976,
-      "HYP": 0.6006
+      "NORM": 0.12,
+      "MI": 0.6853,
+      "STTC": 0.499,
+      "CD": 0.2088,
+      "HYP": 0.6008
     },
-    "confidence_score": 0.6868
+    "confidence_score": 0.6868,
+    "uncertainty": 0.0286,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0143,
+      "MI": 0.0521,
+      "STTC": 0.0347,
+      "CD": 0.0151,
+      "HYP": 0.0266
+    }
   },
   "1736": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.1007,
-      "MI": 0.9022,
-      "STTC": 0.2004,
-      "CD": 0.0704,
-      "HYP": 0.0269
+      "NORM": 0.0964,
+      "MI": 0.8426,
+      "STTC": 0.2962,
+      "CD": 0.0846,
+      "HYP": 0.0513
     },
-    "confidence_score": 0.9022
+    "confidence_score": 0.9022,
+    "uncertainty": 0.0208,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0135,
+      "MI": 0.0409,
+      "STTC": 0.0348,
+      "CD": 0.0076,
+      "HYP": 0.0073
+    }
   },
   "14005": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.2489,
-      "MI": 0.4711,
-      "STTC": 0.2468,
-      "CD": 0.3206,
-      "HYP": 0.1117
+      "NORM": 0.245,
+      "MI": 0.4912,
+      "STTC": 0.2401,
+      "CD": 0.3474,
+      "HYP": 0.1154
     },
-    "confidence_score": 0.4711
+    "confidence_score": 0.4711,
+    "uncertainty": 0.031,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0323,
+      "MI": 0.0649,
+      "STTC": 0.0154,
+      "CD": 0.0356,
+      "HYP": 0.0068
+    }
   },
   "20515": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.4138,
-      "MI": 0.3659,
-      "STTC": 0.2893,
-      "CD": 0.3282,
-      "HYP": 0.1955
+      "NORM": 0.4068,
+      "MI": 0.4034,
+      "STTC": 0.2738,
+      "CD": 0.3187,
+      "HYP": 0.1939
     },
-    "confidence_score": 0.4138
+    "confidence_score": 0.4138,
+    "uncertainty": 0.0363,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.05,
+      "MI": 0.054,
+      "STTC": 0.0234,
+      "CD": 0.0362,
+      "HYP": 0.0179
+    }
   },
   "15573": {
     "predicted_classes": [
@@ -1631,13 +2729,22 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.034,
-      "MI": 0.9072,
-      "STTC": 0.1516,
-      "CD": 0.807,
-      "HYP": 0.193
+      "NORM": 0.0497,
+      "MI": 0.856,
+      "STTC": 0.1543,
+      "CD": 0.7837,
+      "HYP": 0.2136
     },
-    "confidence_score": 0.9072
+    "confidence_score": 0.9072,
+    "uncertainty": 0.0166,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0096,
+      "MI": 0.0325,
+      "STTC": 0.0117,
+      "CD": 0.0185,
+      "HYP": 0.0108
+    }
   },
   "19305": {
     "predicted_classes": [
@@ -1645,13 +2752,22 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0044,
-      "MI": 0.6742,
-      "STTC": 0.2441,
-      "CD": 0.9964,
-      "HYP": 0.0894
+      "NORM": 0.0073,
+      "MI": 0.6688,
+      "STTC": 0.2705,
+      "CD": 0.994,
+      "HYP": 0.1035
     },
-    "confidence_score": 0.9964
+    "confidence_score": 0.9964,
+    "uncertainty": 0.0163,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0011,
+      "MI": 0.057,
+      "STTC": 0.0135,
+      "CD": 0.0011,
+      "HYP": 0.0086
+    }
   },
   "21093": {
     "predicted_classes": [
@@ -1659,13 +2775,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.003,
-      "MI": 0.1356,
-      "STTC": 0.1209,
-      "CD": 0.9912,
-      "HYP": 0.5354
+      "NORM": 0.0044,
+      "MI": 0.1355,
+      "STTC": 0.1272,
+      "CD": 0.9882,
+      "HYP": 0.5367
     },
-    "confidence_score": 0.9912
+    "confidence_score": 0.9912,
+    "uncertainty": 0.0077,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0005,
+      "MI": 0.0123,
+      "STTC": 0.0068,
+      "CD": 0.0019,
+      "HYP": 0.0169
+    }
   },
   "21325": {
     "predicted_classes": [
@@ -1674,13 +2799,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0207,
-      "MI": 0.6799,
-      "STTC": 0.1775,
-      "CD": 0.9791,
-      "HYP": 0.6509
+      "NORM": 0.022,
+      "MI": 0.6938,
+      "STTC": 0.1915,
+      "CD": 0.9777,
+      "HYP": 0.6498
     },
-    "confidence_score": 0.9791
+    "confidence_score": 0.9791,
+    "uncertainty": 0.0142,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0018,
+      "MI": 0.0395,
+      "STTC": 0.0087,
+      "CD": 0.003,
+      "HYP": 0.0179
+    }
   },
   "10283": {
     "predicted_classes": [
@@ -1688,38 +2822,65 @@
     ],
     "class_probabilities": {
       "NORM": 0.0001,
-      "MI": 0.0062,
-      "STTC": 0.004,
-      "CD": 1.0,
-      "HYP": 0.4846
+      "MI": 0.0087,
+      "STTC": 0.0056,
+      "CD": 0.9999,
+      "HYP": 0.5263
     },
-    "confidence_score": 1.0
+    "confidence_score": 1.0,
+    "uncertainty": 0.0035,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0,
+      "MI": 0.0009,
+      "STTC": 0.0005,
+      "CD": 0.0,
+      "HYP": 0.016
+    }
   },
   "12552": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0556,
-      "MI": 0.3063,
-      "STTC": 0.1288,
-      "CD": 0.9905,
-      "HYP": 0.2964
+      "NORM": 0.0739,
+      "MI": 0.352,
+      "STTC": 0.1579,
+      "CD": 0.9802,
+      "HYP": 0.3228
     },
-    "confidence_score": 0.9905
+    "confidence_score": 0.9905,
+    "uncertainty": 0.0175,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0081,
+      "MI": 0.0423,
+      "STTC": 0.0127,
+      "CD": 0.0037,
+      "HYP": 0.0208
+    }
   },
   "10501": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.3978,
-      "MI": 0.0995,
-      "STTC": 0.1828,
-      "CD": 0.7842,
-      "HYP": 0.1181
+      "NORM": 0.3266,
+      "MI": 0.1633,
+      "STTC": 0.2373,
+      "CD": 0.7588,
+      "HYP": 0.162
     },
-    "confidence_score": 0.7842
+    "confidence_score": 0.7842,
+    "uncertainty": 0.0302,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0421,
+      "MI": 0.0335,
+      "STTC": 0.0212,
+      "CD": 0.0392,
+      "HYP": 0.0149
+    }
   },
   "3299": {
     "predicted_classes": [
@@ -1727,39 +2888,66 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.8929,
-      "MI": 0.0183,
-      "STTC": 0.0116,
-      "CD": 0.5747,
-      "HYP": 0.0896
+      "NORM": 0.7686,
+      "MI": 0.0518,
+      "STTC": 0.0364,
+      "CD": 0.6448,
+      "HYP": 0.1579
     },
-    "confidence_score": 0.8929
+    "confidence_score": 0.8929,
+    "uncertainty": 0.028,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0393,
+      "MI": 0.0118,
+      "STTC": 0.0068,
+      "CD": 0.0602,
+      "HYP": 0.0215
+    }
   },
   "9108": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8796,
-      "MI": 0.0591,
-      "STTC": 0.11,
-      "CD": 0.164,
-      "HYP": 0.0413
+      "NORM": 0.6954,
+      "MI": 0.1139,
+      "STTC": 0.2828,
+      "CD": 0.2352,
+      "HYP": 0.0889
     },
-    "confidence_score": 0.8796
+    "confidence_score": 0.8796,
+    "uncertainty": 0.0355,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.057,
+      "MI": 0.0249,
+      "STTC": 0.0498,
+      "CD": 0.0321,
+      "HYP": 0.0135
+    }
   },
   "6284": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.2184,
-      "MI": 0.0827,
-      "STTC": 0.0391,
-      "CD": 0.9874,
-      "HYP": 0.2887
+      "NORM": 0.2354,
+      "MI": 0.1167,
+      "STTC": 0.0587,
+      "CD": 0.9742,
+      "HYP": 0.315
     },
-    "confidence_score": 0.9874
+    "confidence_score": 0.9874,
+    "uncertainty": 0.0108,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0144,
+      "MI": 0.0139,
+      "STTC": 0.0057,
+      "CD": 0.005,
+      "HYP": 0.0153
+    }
   },
   "3699": {
     "predicted_classes": [
@@ -1767,26 +2955,44 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.5324,
-      "MI": 0.1764,
-      "STTC": 0.0927,
-      "CD": 0.5406,
-      "HYP": 0.181
+      "NORM": 0.4587,
+      "MI": 0.2114,
+      "STTC": 0.1251,
+      "CD": 0.5743,
+      "HYP": 0.1994
     },
-    "confidence_score": 0.5406
+    "confidence_score": 0.5406,
+    "uncertainty": 0.0341,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0481,
+      "MI": 0.0433,
+      "STTC": 0.0169,
+      "CD": 0.0456,
+      "HYP": 0.0168
+    }
   },
   "12223": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.1164,
-      "MI": 0.7294,
-      "STTC": 0.3286,
-      "CD": 0.4162,
-      "HYP": 0.2567
+      "NORM": 0.1394,
+      "MI": 0.688,
+      "STTC": 0.3316,
+      "CD": 0.4138,
+      "HYP": 0.2399
     },
-    "confidence_score": 0.7294
+    "confidence_score": 0.7294,
+    "uncertainty": 0.0263,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0159,
+      "MI": 0.0521,
+      "STTC": 0.0238,
+      "CD": 0.0255,
+      "HYP": 0.0143
+    }
   },
   "2345": {
     "predicted_classes": [
@@ -1794,13 +3000,22 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.011,
-      "MI": 0.8754,
-      "STTC": 0.0975,
-      "CD": 0.9932,
-      "HYP": 0.3091
+      "NORM": 0.0154,
+      "MI": 0.8646,
+      "STTC": 0.1319,
+      "CD": 0.9872,
+      "HYP": 0.3356
     },
-    "confidence_score": 0.9932
+    "confidence_score": 0.9932,
+    "uncertainty": 0.0102,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0023,
+      "MI": 0.0206,
+      "STTC": 0.011,
+      "CD": 0.002,
+      "HYP": 0.015
+    }
   },
   "20902": {
     "predicted_classes": [
@@ -1808,13 +3023,22 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0238,
-      "MI": 0.8608,
-      "STTC": 0.1093,
-      "CD": 0.8973,
-      "HYP": 0.1939
+      "NORM": 0.039,
+      "MI": 0.8135,
+      "STTC": 0.1406,
+      "CD": 0.8518,
+      "HYP": 0.2162
     },
-    "confidence_score": 0.8973
+    "confidence_score": 0.8973,
+    "uncertainty": 0.0214,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0059,
+      "MI": 0.0386,
+      "STTC": 0.0105,
+      "CD": 0.0345,
+      "HYP": 0.0173
+    }
   },
   "6355": {
     "predicted_classes": [
@@ -1822,26 +3046,44 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0961,
-      "MI": 0.5118,
-      "STTC": 0.28,
-      "CD": 0.8582,
-      "HYP": 0.3084
+      "NORM": 0.1045,
+      "MI": 0.5075,
+      "STTC": 0.2818,
+      "CD": 0.8496,
+      "HYP": 0.3095
     },
-    "confidence_score": 0.8582
+    "confidence_score": 0.8582,
+    "uncertainty": 0.0157,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.008,
+      "MI": 0.0273,
+      "STTC": 0.0102,
+      "CD": 0.0163,
+      "HYP": 0.0168
+    }
   },
   "2153": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0097,
-      "MI": 0.2567,
-      "STTC": 0.1503,
-      "CD": 0.9946,
-      "HYP": 0.0881
+      "NORM": 0.0136,
+      "MI": 0.3052,
+      "STTC": 0.206,
+      "CD": 0.9888,
+      "HYP": 0.1066
     },
-    "confidence_score": 0.9946
+    "confidence_score": 0.9946,
+    "uncertainty": 0.0131,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0017,
+      "MI": 0.0377,
+      "STTC": 0.0161,
+      "CD": 0.0022,
+      "HYP": 0.0077
+    }
   },
   "1940": {
     "predicted_classes": [
@@ -1849,39 +3091,66 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0296,
-      "MI": 0.2112,
-      "STTC": 0.9173,
-      "CD": 0.2829,
-      "HYP": 0.6523
+      "NORM": 0.0312,
+      "MI": 0.278,
+      "STTC": 0.8794,
+      "CD": 0.2617,
+      "HYP": 0.6104
     },
-    "confidence_score": 0.9173
+    "confidence_score": 0.9173,
+    "uncertainty": 0.0219,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0052,
+      "MI": 0.0384,
+      "STTC": 0.0143,
+      "CD": 0.0296,
+      "HYP": 0.0221
+    }
   },
   "9562": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0006,
-      "MI": 0.1129,
-      "STTC": 0.0115,
-      "CD": 0.9998,
-      "HYP": 0.3496
+      "NORM": 0.0009,
+      "MI": 0.1011,
+      "STTC": 0.0139,
+      "CD": 0.9996,
+      "HYP": 0.3652
     },
-    "confidence_score": 0.9998
+    "confidence_score": 0.9998,
+    "uncertainty": 0.005,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0001,
+      "MI": 0.0137,
+      "STTC": 0.0012,
+      "CD": 0.0001,
+      "HYP": 0.0098
+    }
   },
   "16205": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.648,
-      "MI": 0.3106,
-      "STTC": 0.0607,
-      "CD": 0.3076,
-      "HYP": 0.0704
+      "NORM": 0.5145,
+      "MI": 0.4461,
+      "STTC": 0.0966,
+      "CD": 0.3617,
+      "HYP": 0.1099
     },
-    "confidence_score": 0.648
+    "confidence_score": 0.648,
+    "uncertainty": 0.0476,
+    "uncertainty_level": "high - prediction changes with small noise, treat with caution",
+    "uncertainty_per_class": {
+      "NORM": 0.0717,
+      "MI": 0.0786,
+      "STTC": 0.012,
+      "CD": 0.0604,
+      "HYP": 0.0156
+    }
   },
   "688": {
     "predicted_classes": [
@@ -1889,26 +3158,44 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.2158,
-      "MI": 0.5009,
-      "STTC": 0.3426,
-      "CD": 0.4793,
-      "HYP": 0.6874
+      "NORM": 0.208,
+      "MI": 0.5092,
+      "STTC": 0.3294,
+      "CD": 0.4972,
+      "HYP": 0.6704
     },
-    "confidence_score": 0.6874
+    "confidence_score": 0.6874,
+    "uncertainty": 0.0261,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0191,
+      "MI": 0.0378,
+      "STTC": 0.0188,
+      "CD": 0.0324,
+      "HYP": 0.0223
+    }
   },
   "12679": {
     "predicted_classes": [
       "STTC"
     ],
     "class_probabilities": {
-      "NORM": 0.1637,
-      "MI": 0.3064,
-      "STTC": 0.7351,
-      "CD": 0.4075,
-      "HYP": 0.3657
+      "NORM": 0.1839,
+      "MI": 0.3453,
+      "STTC": 0.6978,
+      "CD": 0.4067,
+      "HYP": 0.3473
     },
-    "confidence_score": 0.7351
+    "confidence_score": 0.7351,
+    "uncertainty": 0.0251,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0196,
+      "MI": 0.029,
+      "STTC": 0.0232,
+      "CD": 0.0319,
+      "HYP": 0.0219
+    }
   },
   "512": {
     "predicted_classes": [
@@ -1916,26 +3203,44 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0439,
-      "MI": 0.3327,
-      "STTC": 0.2772,
-      "CD": 0.9816,
-      "HYP": 0.6367
+      "NORM": 0.0556,
+      "MI": 0.375,
+      "STTC": 0.2732,
+      "CD": 0.9728,
+      "HYP": 0.6336
     },
-    "confidence_score": 0.9816
+    "confidence_score": 0.9816,
+    "uncertainty": 0.0163,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0058,
+      "MI": 0.034,
+      "STTC": 0.014,
+      "CD": 0.0051,
+      "HYP": 0.0227
+    }
   },
   "13052": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9498,
-      "MI": 0.0254,
-      "STTC": 0.0656,
-      "CD": 0.0269,
-      "HYP": 0.0242
+      "NORM": 0.8533,
+      "MI": 0.0577,
+      "STTC": 0.1542,
+      "CD": 0.0544,
+      "HYP": 0.0535
     },
-    "confidence_score": 0.9498
+    "confidence_score": 0.9498,
+    "uncertainty": 0.0182,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.03,
+      "MI": 0.0118,
+      "STTC": 0.0308,
+      "CD": 0.0095,
+      "HYP": 0.0092
+    }
   },
   "3708": {
     "predicted_classes": [
@@ -1943,39 +3248,66 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.1306,
-      "MI": 0.2805,
-      "STTC": 0.5549,
-      "CD": 0.5428,
-      "HYP": 0.2068
+      "NORM": 0.144,
+      "MI": 0.3497,
+      "STTC": 0.529,
+      "CD": 0.5421,
+      "HYP": 0.2095
     },
-    "confidence_score": 0.5549
+    "confidence_score": 0.5549,
+    "uncertainty": 0.0265,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0139,
+      "MI": 0.037,
+      "STTC": 0.0221,
+      "CD": 0.046,
+      "HYP": 0.0135
+    }
   },
   "3740": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.7797,
-      "MI": 0.1066,
-      "STTC": 0.0473,
-      "CD": 0.4967,
-      "HYP": 0.1438
+      "NORM": 0.6578,
+      "MI": 0.1814,
+      "STTC": 0.0861,
+      "CD": 0.5307,
+      "HYP": 0.197
     },
-    "confidence_score": 0.7797
+    "confidence_score": 0.7797,
+    "uncertainty": 0.0331,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0431,
+      "MI": 0.0294,
+      "STTC": 0.0132,
+      "CD": 0.06,
+      "HYP": 0.0197
+    }
   },
   "3855": {
     "predicted_classes": [
       "MI"
     ],
     "class_probabilities": {
-      "NORM": 0.0478,
-      "MI": 0.9628,
-      "STTC": 0.3088,
-      "CD": 0.1944,
-      "HYP": 0.1549
+      "NORM": 0.053,
+      "MI": 0.943,
+      "STTC": 0.3488,
+      "CD": 0.2015,
+      "HYP": 0.1832
     },
-    "confidence_score": 0.9628
+    "confidence_score": 0.9628,
+    "uncertainty": 0.0145,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0078,
+      "MI": 0.0131,
+      "STTC": 0.0196,
+      "CD": 0.0159,
+      "HYP": 0.0161
+    }
   },
   "11932": {
     "predicted_classes": [
@@ -1983,26 +3315,44 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.6065,
-      "MI": 0.077,
-      "STTC": 0.0485,
-      "CD": 0.7455,
-      "HYP": 0.0892
+      "NORM": 0.4565,
+      "MI": 0.1621,
+      "STTC": 0.0875,
+      "CD": 0.7246,
+      "HYP": 0.1292
     },
-    "confidence_score": 0.7455
+    "confidence_score": 0.7455,
+    "uncertainty": 0.0376,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0651,
+      "MI": 0.0376,
+      "STTC": 0.0137,
+      "CD": 0.0518,
+      "HYP": 0.0197
+    }
   },
   "7837": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.5379,
-      "MI": 0.2834,
-      "STTC": 0.3176,
-      "CD": 0.2071,
-      "HYP": 0.2147
+      "NORM": 0.5046,
+      "MI": 0.3145,
+      "STTC": 0.3204,
+      "CD": 0.2206,
+      "HYP": 0.211
     },
-    "confidence_score": 0.5379
+    "confidence_score": 0.5379,
+    "uncertainty": 0.0225,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0277,
+      "MI": 0.0433,
+      "STTC": 0.0139,
+      "CD": 0.0192,
+      "HYP": 0.0084
+    }
   },
   "10336": {
     "predicted_classes": [
@@ -2010,26 +3360,44 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0336,
-      "MI": 0.315,
-      "STTC": 0.2281,
-      "CD": 0.9901,
-      "HYP": 0.6411
+      "NORM": 0.0499,
+      "MI": 0.3379,
+      "STTC": 0.2199,
+      "CD": 0.9791,
+      "HYP": 0.6302
     },
-    "confidence_score": 0.9901
+    "confidence_score": 0.9901,
+    "uncertainty": 0.0149,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0063,
+      "MI": 0.0319,
+      "STTC": 0.0183,
+      "CD": 0.004,
+      "HYP": 0.0141
+    }
   },
   "7055": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.4051,
-      "MI": 0.2939,
-      "STTC": 0.325,
-      "CD": 0.1851,
-      "HYP": 0.0587
+      "NORM": 0.3974,
+      "MI": 0.2995,
+      "STTC": 0.3256,
+      "CD": 0.191,
+      "HYP": 0.0669
     },
-    "confidence_score": 0.4051
+    "confidence_score": 0.4051,
+    "uncertainty": 0.0309,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0431,
+      "MI": 0.0536,
+      "STTC": 0.0292,
+      "CD": 0.0211,
+      "HYP": 0.0075
+    }
   },
   "16748": {
     "predicted_classes": [
@@ -2037,52 +3405,88 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0045,
-      "MI": 0.7401,
-      "STTC": 0.0368,
-      "CD": 0.9955,
-      "HYP": 0.2427
+      "NORM": 0.0053,
+      "MI": 0.7328,
+      "STTC": 0.0407,
+      "CD": 0.9938,
+      "HYP": 0.2451
     },
-    "confidence_score": 0.9955
+    "confidence_score": 0.9955,
+    "uncertainty": 0.0108,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0008,
+      "MI": 0.0348,
+      "STTC": 0.0029,
+      "CD": 0.001,
+      "HYP": 0.0148
+    }
   },
   "8504": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0579,
-      "MI": 0.1218,
-      "STTC": 0.0255,
-      "CD": 0.9981,
-      "HYP": 0.4455
+      "NORM": 0.0634,
+      "MI": 0.1911,
+      "STTC": 0.0437,
+      "CD": 0.9962,
+      "HYP": 0.4871
     },
-    "confidence_score": 0.9981
+    "confidence_score": 0.9981,
+    "uncertainty": 0.0122,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0053,
+      "MI": 0.026,
+      "STTC": 0.0052,
+      "CD": 0.0007,
+      "HYP": 0.0236
+    }
   },
   "3201": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0265,
-      "MI": 0.2064,
-      "STTC": 0.0827,
-      "CD": 0.9926,
-      "HYP": 0.1642
+      "NORM": 0.0279,
+      "MI": 0.2538,
+      "STTC": 0.0998,
+      "CD": 0.99,
+      "HYP": 0.1688
     },
-    "confidence_score": 0.9926
+    "confidence_score": 0.9926,
+    "uncertainty": 0.0117,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.004,
+      "MI": 0.0338,
+      "STTC": 0.0077,
+      "CD": 0.0023,
+      "HYP": 0.0106
+    }
   },
   "12400": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8802,
-      "MI": 0.0379,
-      "STTC": 0.0395,
-      "CD": 0.0449,
-      "HYP": 0.2074
+      "NORM": 0.6842,
+      "MI": 0.0798,
+      "STTC": 0.1198,
+      "CD": 0.0884,
+      "HYP": 0.381
     },
-    "confidence_score": 0.8802
+    "confidence_score": 0.8802,
+    "uncertainty": 0.0299,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0509,
+      "MI": 0.0148,
+      "STTC": 0.0223,
+      "CD": 0.013,
+      "HYP": 0.0484
+    }
   },
   "12936": {
     "predicted_classes": [
@@ -2091,13 +3495,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0072,
-      "MI": 0.6224,
-      "STTC": 0.0442,
-      "CD": 0.9986,
-      "HYP": 0.5406
+      "NORM": 0.0109,
+      "MI": 0.6214,
+      "STTC": 0.0584,
+      "CD": 0.9969,
+      "HYP": 0.5258
     },
-    "confidence_score": 0.9986
+    "confidence_score": 0.9986,
+    "uncertainty": 0.0122,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0014,
+      "MI": 0.0393,
+      "STTC": 0.0043,
+      "CD": 0.0006,
+      "HYP": 0.0152
+    }
   },
   "1864": {
     "predicted_classes": [
@@ -2105,13 +3518,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0227,
-      "MI": 0.4744,
-      "STTC": 0.9278,
-      "CD": 0.2049,
-      "HYP": 0.9843
+      "NORM": 0.0259,
+      "MI": 0.5412,
+      "STTC": 0.9106,
+      "CD": 0.2023,
+      "HYP": 0.9819
     },
-    "confidence_score": 0.9843
+    "confidence_score": 0.9843,
+    "uncertainty": 0.0134,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0027,
+      "MI": 0.0396,
+      "STTC": 0.0078,
+      "CD": 0.0156,
+      "HYP": 0.0016
+    }
   },
   "15871": {
     "predicted_classes": [
@@ -2120,13 +3542,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0086,
-      "MI": 0.938,
-      "STTC": 0.8869,
-      "CD": 0.1632,
-      "HYP": 0.9716
+      "NORM": 0.0078,
+      "MI": 0.9133,
+      "STTC": 0.8865,
+      "CD": 0.1451,
+      "HYP": 0.9671
     },
-    "confidence_score": 0.9716
+    "confidence_score": 0.9716,
+    "uncertainty": 0.0088,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0007,
+      "MI": 0.0124,
+      "STTC": 0.0112,
+      "CD": 0.0151,
+      "HYP": 0.0043
+    }
   },
   "2409": {
     "predicted_classes": [
@@ -2134,13 +3565,22 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0054,
-      "MI": 0.7686,
-      "STTC": 0.0587,
-      "CD": 0.9977,
-      "HYP": 0.2862
+      "NORM": 0.0092,
+      "MI": 0.7741,
+      "STTC": 0.0846,
+      "CD": 0.9942,
+      "HYP": 0.3014
     },
-    "confidence_score": 0.9977
+    "confidence_score": 0.9977,
+    "uncertainty": 0.0126,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0013,
+      "MI": 0.0386,
+      "STTC": 0.0072,
+      "CD": 0.0011,
+      "HYP": 0.0148
+    }
   },
   "14729": {
     "predicted_classes": [
@@ -2148,13 +3588,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0484,
-      "MI": 0.8516,
-      "STTC": 0.144,
-      "CD": 0.3474,
-      "HYP": 0.8366
+      "NORM": 0.055,
+      "MI": 0.8118,
+      "STTC": 0.1458,
+      "CD": 0.3431,
+      "HYP": 0.8195
     },
-    "confidence_score": 0.8516
+    "confidence_score": 0.8516,
+    "uncertainty": 0.0198,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0071,
+      "MI": 0.0334,
+      "STTC": 0.0105,
+      "CD": 0.0313,
+      "HYP": 0.0168
+    }
   },
   "19526": {
     "predicted_classes": [
@@ -2163,13 +3612,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0094,
-      "MI": 0.8963,
-      "STTC": 0.915,
-      "CD": 0.1101,
-      "HYP": 0.9335
+      "NORM": 0.013,
+      "MI": 0.8229,
+      "STTC": 0.9093,
+      "CD": 0.1159,
+      "HYP": 0.9228
     },
-    "confidence_score": 0.9335
+    "confidence_score": 0.9335,
+    "uncertainty": 0.0129,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0014,
+      "MI": 0.0378,
+      "STTC": 0.0093,
+      "CD": 0.0071,
+      "HYP": 0.0087
+    }
   },
   "10594": {
     "predicted_classes": [
@@ -2177,13 +3635,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0149,
-      "MI": 0.3117,
-      "STTC": 0.9676,
-      "CD": 0.1084,
-      "HYP": 0.7295
+      "NORM": 0.0156,
+      "MI": 0.3492,
+      "STTC": 0.9519,
+      "CD": 0.1256,
+      "HYP": 0.7522
     },
-    "confidence_score": 0.9676
+    "confidence_score": 0.9676,
+    "uncertainty": 0.0131,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0014,
+      "MI": 0.0305,
+      "STTC": 0.0056,
+      "CD": 0.0094,
+      "HYP": 0.0185
+    }
   },
   "3895": {
     "predicted_classes": [
@@ -2191,26 +3658,44 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0041,
-      "MI": 0.2027,
-      "STTC": 0.8773,
-      "CD": 0.0804,
+      "NORM": 0.0032,
+      "MI": 0.2254,
+      "STTC": 0.8659,
+      "CD": 0.0799,
       "HYP": 0.9999
     },
-    "confidence_score": 0.9999
+    "confidence_score": 0.9999,
+    "uncertainty": 0.007,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0004,
+      "MI": 0.0188,
+      "STTC": 0.0108,
+      "CD": 0.0048,
+      "HYP": 0.0
+    }
   },
   "3688": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.4655,
-      "MI": 0.32,
-      "STTC": 0.0911,
-      "CD": 0.1377,
-      "HYP": 0.3973
+      "NORM": 0.3888,
+      "MI": 0.41,
+      "STTC": 0.1137,
+      "CD": 0.1632,
+      "HYP": 0.4073
     },
-    "confidence_score": 0.4655
+    "confidence_score": 0.4655,
+    "uncertainty": 0.0319,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0396,
+      "MI": 0.0681,
+      "STTC": 0.0121,
+      "CD": 0.0157,
+      "HYP": 0.0241
+    }
   },
   "3281": {
     "predicted_classes": [
@@ -2218,13 +3703,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0124,
-      "MI": 0.3495,
-      "STTC": 0.9287,
-      "CD": 0.3995,
-      "HYP": 0.9967
+      "NORM": 0.0083,
+      "MI": 0.3441,
+      "STTC": 0.937,
+      "CD": 0.3445,
+      "HYP": 0.9964
     },
-    "confidence_score": 0.9967
+    "confidence_score": 0.9967,
+    "uncertainty": 0.0192,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0012,
+      "MI": 0.0607,
+      "STTC": 0.0063,
+      "CD": 0.0274,
+      "HYP": 0.0002
+    }
   },
   "534": {
     "predicted_classes": [
@@ -2232,13 +3726,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0155,
-      "MI": 0.3003,
-      "STTC": 0.9445,
-      "CD": 0.0991,
-      "HYP": 0.9945
+      "NORM": 0.0177,
+      "MI": 0.2873,
+      "STTC": 0.9259,
+      "CD": 0.0988,
+      "HYP": 0.9934
     },
-    "confidence_score": 0.9945
+    "confidence_score": 0.9945,
+    "uncertainty": 0.009,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0022,
+      "MI": 0.0277,
+      "STTC": 0.0078,
+      "CD": 0.0064,
+      "HYP": 0.0007
+    }
   },
   "10388": {
     "predicted_classes": [
@@ -2246,26 +3749,44 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.6837,
-      "MI": 0.0382,
-      "STTC": 0.1663,
-      "CD": 0.0705,
-      "HYP": 0.6667
+      "NORM": 0.5811,
+      "MI": 0.0697,
+      "STTC": 0.2264,
+      "CD": 0.109,
+      "HYP": 0.7006
     },
-    "confidence_score": 0.6837
+    "confidence_score": 0.6837,
+    "uncertainty": 0.0262,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0448,
+      "MI": 0.0176,
+      "STTC": 0.0308,
+      "CD": 0.0177,
+      "HYP": 0.0201
+    }
   },
   "6380": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8425,
-      "MI": 0.0641,
-      "STTC": 0.0455,
-      "CD": 0.0562,
-      "HYP": 0.1524
+      "NORM": 0.7852,
+      "MI": 0.095,
+      "STTC": 0.064,
+      "CD": 0.0732,
+      "HYP": 0.181
     },
-    "confidence_score": 0.8425
+    "confidence_score": 0.8425,
+    "uncertainty": 0.0134,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0214,
+      "MI": 0.0155,
+      "STTC": 0.0065,
+      "CD": 0.0096,
+      "HYP": 0.014
+    }
   },
   "20950": {
     "predicted_classes": [
@@ -2273,13 +3794,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0017,
-      "MI": 0.0278,
-      "STTC": 0.0914,
-      "CD": 0.9989,
-      "HYP": 0.5572
+      "NORM": 0.0027,
+      "MI": 0.0384,
+      "STTC": 0.1083,
+      "CD": 0.9979,
+      "HYP": 0.5472
     },
-    "confidence_score": 0.9989
+    "confidence_score": 0.9989,
+    "uncertainty": 0.0055,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0004,
+      "MI": 0.0032,
+      "STTC": 0.0076,
+      "CD": 0.0004,
+      "HYP": 0.0158
+    }
   },
   "8744": {
     "predicted_classes": [
@@ -2287,13 +3817,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0282,
-      "MI": 0.1185,
-      "STTC": 0.766,
-      "CD": 0.2257,
-      "HYP": 0.9756
+      "NORM": 0.0342,
+      "MI": 0.1521,
+      "STTC": 0.7231,
+      "CD": 0.212,
+      "HYP": 0.9737
     },
-    "confidence_score": 0.9756
+    "confidence_score": 0.9756,
+    "uncertainty": 0.015,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0046,
+      "MI": 0.0225,
+      "STTC": 0.0226,
+      "CD": 0.0226,
+      "HYP": 0.0026
+    }
   },
   "7861": {
     "predicted_classes": [
@@ -2301,13 +3840,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0155,
-      "MI": 0.3746,
-      "STTC": 0.9276,
-      "CD": 0.0945,
-      "HYP": 0.9686
+      "NORM": 0.0152,
+      "MI": 0.3948,
+      "STTC": 0.9159,
+      "CD": 0.0986,
+      "HYP": 0.9623
     },
-    "confidence_score": 0.9686
+    "confidence_score": 0.9686,
+    "uncertainty": 0.0149,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0014,
+      "MI": 0.0557,
+      "STTC": 0.0091,
+      "CD": 0.0048,
+      "HYP": 0.0036
+    }
   },
   "21431": {
     "predicted_classes": [
@@ -2315,13 +3863,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0416,
-      "MI": 0.0517,
-      "STTC": 0.9103,
-      "CD": 0.2952,
-      "HYP": 0.9007
+      "NORM": 0.0313,
+      "MI": 0.0669,
+      "STTC": 0.928,
+      "CD": 0.2819,
+      "HYP": 0.9135
     },
-    "confidence_score": 0.9103
+    "confidence_score": 0.9103,
+    "uncertainty": 0.0136,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0052,
+      "MI": 0.0095,
+      "STTC": 0.0093,
+      "CD": 0.0341,
+      "HYP": 0.0101
+    }
   },
   "5163": {
     "predicted_classes": [
@@ -2331,13 +3888,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0061,
-      "MI": 0.986,
-      "STTC": 0.7839,
-      "CD": 0.594,
-      "HYP": 0.6881
+      "NORM": 0.0097,
+      "MI": 0.9665,
+      "STTC": 0.7793,
+      "CD": 0.531,
+      "HYP": 0.6756
     },
-    "confidence_score": 0.986
+    "confidence_score": 0.986,
+    "uncertainty": 0.0176,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0013,
+      "MI": 0.0082,
+      "STTC": 0.0216,
+      "CD": 0.0292,
+      "HYP": 0.0279
+    }
   },
   "21673": {
     "predicted_classes": [
@@ -2346,13 +3912,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0022,
-      "MI": 0.2478,
-      "STTC": 0.9842,
-      "CD": 0.522,
-      "HYP": 0.9913
+      "NORM": 0.0031,
+      "MI": 0.2626,
+      "STTC": 0.9796,
+      "CD": 0.5243,
+      "HYP": 0.9901
     },
-    "confidence_score": 0.9913
+    "confidence_score": 0.9913,
+    "uncertainty": 0.0132,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0006,
+      "MI": 0.0386,
+      "STTC": 0.0025,
+      "CD": 0.0233,
+      "HYP": 0.0011
+    }
   },
   "5810": {
     "predicted_classes": [
@@ -2360,13 +3935,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0317,
-      "MI": 0.4419,
-      "STTC": 0.7807,
-      "CD": 0.1321,
-      "HYP": 0.9955
+      "NORM": 0.0324,
+      "MI": 0.4588,
+      "STTC": 0.757,
+      "CD": 0.1302,
+      "HYP": 0.995
     },
-    "confidence_score": 0.9955
+    "confidence_score": 0.9955,
+    "uncertainty": 0.0191,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0031,
+      "MI": 0.0662,
+      "STTC": 0.0167,
+      "CD": 0.0089,
+      "HYP": 0.0005
+    }
   },
   "3603": {
     "predicted_classes": [
@@ -2374,13 +3958,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.6599,
-      "MI": 0.0231,
-      "STTC": 0.1449,
-      "CD": 0.0231,
-      "HYP": 0.8415
+      "NORM": 0.5594,
+      "MI": 0.0383,
+      "STTC": 0.1808,
+      "CD": 0.0333,
+      "HYP": 0.8676
     },
-    "confidence_score": 0.8415
+    "confidence_score": 0.8415,
+    "uncertainty": 0.0207,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0442,
+      "MI": 0.0074,
+      "STTC": 0.0281,
+      "CD": 0.0049,
+      "HYP": 0.0189
+    }
   },
   "16876": {
     "predicted_classes": [
@@ -2389,26 +3982,44 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0066,
-      "MI": 0.5172,
-      "STTC": 0.9869,
-      "CD": 0.4021,
-      "HYP": 0.9979
+      "NORM": 0.0072,
+      "MI": 0.4806,
+      "STTC": 0.9835,
+      "CD": 0.3938,
+      "HYP": 0.9974
     },
-    "confidence_score": 0.9979
+    "confidence_score": 0.9979,
+    "uncertainty": 0.0114,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.001,
+      "MI": 0.0316,
+      "STTC": 0.0017,
+      "CD": 0.0224,
+      "HYP": 0.0003
+    }
   },
   "14315": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.8089,
-      "MI": 0.0507,
-      "STTC": 0.0129,
-      "CD": 0.3714,
-      "HYP": 0.0908
+      "NORM": 0.6573,
+      "MI": 0.1289,
+      "STTC": 0.0332,
+      "CD": 0.4341,
+      "HYP": 0.1575
     },
-    "confidence_score": 0.8089
+    "confidence_score": 0.8089,
+    "uncertainty": 0.0305,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0487,
+      "MI": 0.0244,
+      "STTC": 0.0065,
+      "CD": 0.0522,
+      "HYP": 0.0209
+    }
   },
   "19686": {
     "predicted_classes": [
@@ -2417,26 +4028,44 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.052,
-      "MI": 0.9237,
-      "STTC": 0.2795,
-      "CD": 0.8821,
-      "HYP": 0.5374
+      "NORM": 0.0854,
+      "MI": 0.8627,
+      "STTC": 0.3052,
+      "CD": 0.8226,
+      "HYP": 0.5334
     },
-    "confidence_score": 0.9237
+    "confidence_score": 0.9237,
+    "uncertainty": 0.0182,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0099,
+      "MI": 0.0228,
+      "STTC": 0.0114,
+      "CD": 0.0304,
+      "HYP": 0.0166
+    }
   },
   "17298": {
     "predicted_classes": [
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.2255,
-      "MI": 0.0856,
-      "STTC": 0.4597,
-      "CD": 0.2378,
-      "HYP": 0.7319
+      "NORM": 0.1488,
+      "MI": 0.1337,
+      "STTC": 0.5474,
+      "CD": 0.2496,
+      "HYP": 0.7626
     },
-    "confidence_score": 0.7319
+    "confidence_score": 0.7319,
+    "uncertainty": 0.0228,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0215,
+      "MI": 0.0197,
+      "STTC": 0.0367,
+      "CD": 0.0214,
+      "HYP": 0.0145
+    }
   },
   "1013": {
     "predicted_classes": [
@@ -2445,26 +4074,44 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0202,
-      "MI": 0.2501,
-      "STTC": 0.9092,
-      "CD": 0.5262,
-      "HYP": 0.6601
+      "NORM": 0.0232,
+      "MI": 0.2851,
+      "STTC": 0.8849,
+      "CD": 0.5143,
+      "HYP": 0.6568
     },
-    "confidence_score": 0.9092
+    "confidence_score": 0.9092,
+    "uncertainty": 0.0194,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0032,
+      "MI": 0.0257,
+      "STTC": 0.0123,
+      "CD": 0.0373,
+      "HYP": 0.0183
+    }
   },
   "17226": {
     "predicted_classes": [
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.4983,
-      "MI": 0.0599,
-      "STTC": 0.3572,
-      "CD": 0.1195,
-      "HYP": 0.6086
+      "NORM": 0.3707,
+      "MI": 0.102,
+      "STTC": 0.4667,
+      "CD": 0.1458,
+      "HYP": 0.677
     },
-    "confidence_score": 0.6086
+    "confidence_score": 0.6086,
+    "uncertainty": 0.0282,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0401,
+      "MI": 0.0172,
+      "STTC": 0.0414,
+      "CD": 0.0144,
+      "HYP": 0.0281
+    }
   },
   "17868": {
     "predicted_classes": [
@@ -2472,26 +4119,44 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0647,
-      "MI": 0.0933,
-      "STTC": 0.6737,
-      "CD": 0.1644,
-      "HYP": 0.8856
+      "NORM": 0.058,
+      "MI": 0.1413,
+      "STTC": 0.6508,
+      "CD": 0.1683,
+      "HYP": 0.8799
     },
-    "confidence_score": 0.8856
+    "confidence_score": 0.8856,
+    "uncertainty": 0.0142,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0055,
+      "MI": 0.0242,
+      "STTC": 0.0159,
+      "CD": 0.0153,
+      "HYP": 0.0101
+    }
   },
   "11132": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.9036,
-      "MI": 0.0549,
-      "STTC": 0.0199,
-      "CD": 0.099,
-      "HYP": 0.0776
+      "NORM": 0.7414,
+      "MI": 0.1497,
+      "STTC": 0.0507,
+      "CD": 0.1764,
+      "HYP": 0.1644
     },
-    "confidence_score": 0.9036
+    "confidence_score": 0.9036,
+    "uncertainty": 0.0326,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0513,
+      "MI": 0.0412,
+      "STTC": 0.0096,
+      "CD": 0.0327,
+      "HYP": 0.0282
+    }
   },
   "3867": {
     "predicted_classes": [
@@ -2499,13 +4164,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0122,
-      "MI": 0.2751,
-      "STTC": 0.9442,
-      "CD": 0.0789,
-      "HYP": 0.9972
+      "NORM": 0.0172,
+      "MI": 0.2648,
+      "STTC": 0.9195,
+      "CD": 0.0859,
+      "HYP": 0.9965
     },
-    "confidence_score": 0.9972
+    "confidence_score": 0.9972,
+    "uncertainty": 0.0097,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0022,
+      "MI": 0.0323,
+      "STTC": 0.0091,
+      "CD": 0.0045,
+      "HYP": 0.0003
+    }
   },
   "8704": {
     "predicted_classes": [
@@ -2513,13 +4187,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0571,
-      "MI": 0.1237,
-      "STTC": 0.8413,
-      "CD": 0.2811,
-      "HYP": 0.947
+      "NORM": 0.061,
+      "MI": 0.1555,
+      "STTC": 0.8322,
+      "CD": 0.2794,
+      "HYP": 0.9432
     },
-    "confidence_score": 0.947
+    "confidence_score": 0.947,
+    "uncertainty": 0.0152,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0084,
+      "MI": 0.0164,
+      "STTC": 0.023,
+      "CD": 0.021,
+      "HYP": 0.0072
+    }
   },
   "5338": {
     "predicted_classes": [
@@ -2527,39 +4210,66 @@
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0163,
-      "MI": 0.7927,
-      "STTC": 0.0635,
-      "CD": 0.9884,
-      "HYP": 0.151
+      "NORM": 0.0223,
+      "MI": 0.7986,
+      "STTC": 0.0802,
+      "CD": 0.9808,
+      "HYP": 0.1743
     },
-    "confidence_score": 0.9884
+    "confidence_score": 0.9884,
+    "uncertainty": 0.0105,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0026,
+      "MI": 0.028,
+      "STTC": 0.0061,
+      "CD": 0.0038,
+      "HYP": 0.0121
+    }
   },
   "7882": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0352,
-      "MI": 0.166,
-      "STTC": 0.021,
-      "CD": 0.9989,
-      "HYP": 0.3021
+      "NORM": 0.0359,
+      "MI": 0.2353,
+      "STTC": 0.0371,
+      "CD": 0.9979,
+      "HYP": 0.3659
     },
-    "confidence_score": 0.9989
+    "confidence_score": 0.9989,
+    "uncertainty": 0.0109,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0035,
+      "MI": 0.0265,
+      "STTC": 0.0047,
+      "CD": 0.0004,
+      "HYP": 0.0195
+    }
   },
   "4546": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.428,
-      "MI": 0.1848,
-      "STTC": 0.2042,
-      "CD": 0.7332,
-      "HYP": 0.2836
+      "NORM": 0.3815,
+      "MI": 0.2468,
+      "STTC": 0.221,
+      "CD": 0.6889,
+      "HYP": 0.273
     },
-    "confidence_score": 0.7332
+    "confidence_score": 0.7332,
+    "uncertainty": 0.0307,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0403,
+      "MI": 0.0316,
+      "STTC": 0.0186,
+      "CD": 0.0452,
+      "HYP": 0.0181
+    }
   },
   "15863": {
     "predicted_classes": [
@@ -2567,26 +4277,44 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0297,
-      "MI": 0.3216,
-      "STTC": 0.9577,
-      "CD": 0.136,
-      "HYP": 0.7334
+      "NORM": 0.0327,
+      "MI": 0.3589,
+      "STTC": 0.9408,
+      "CD": 0.1546,
+      "HYP": 0.6985
     },
-    "confidence_score": 0.9577
+    "confidence_score": 0.9577,
+    "uncertainty": 0.0205,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.004,
+      "MI": 0.057,
+      "STTC": 0.0073,
+      "CD": 0.0123,
+      "HYP": 0.0222
+    }
   },
   "18017": {
     "predicted_classes": [
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.1653,
-      "MI": 0.1808,
-      "STTC": 0.4571,
-      "CD": 0.2457,
-      "HYP": 0.774
+      "NORM": 0.1295,
+      "MI": 0.2475,
+      "STTC": 0.456,
+      "CD": 0.2718,
+      "HYP": 0.7775
     },
-    "confidence_score": 0.774
+    "confidence_score": 0.774,
+    "uncertainty": 0.0218,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0127,
+      "MI": 0.0378,
+      "STTC": 0.025,
+      "CD": 0.0202,
+      "HYP": 0.0135
+    }
   },
   "20236": {
     "predicted_classes": [
@@ -2594,13 +4322,22 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.0029,
-      "MI": 0.1003,
-      "STTC": 0.9913,
-      "CD": 0.0633,
-      "HYP": 0.9862
+      "NORM": 0.0035,
+      "MI": 0.0931,
+      "STTC": 0.9884,
+      "CD": 0.0722,
+      "HYP": 0.9831
     },
-    "confidence_score": 0.9913
+    "confidence_score": 0.9913,
+    "uncertainty": 0.0038,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0005,
+      "MI": 0.0101,
+      "STTC": 0.0013,
+      "CD": 0.0055,
+      "HYP": 0.0016
+    }
   },
   "8524": {
     "predicted_classes": [
@@ -2608,51 +4345,87 @@
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.2163,
-      "MI": 0.5168,
-      "STTC": 0.4932,
-      "CD": 0.2159,
-      "HYP": 0.8069
+      "NORM": 0.2102,
+      "MI": 0.5512,
+      "STTC": 0.4548,
+      "CD": 0.2239,
+      "HYP": 0.7995
     },
-    "confidence_score": 0.8069
+    "confidence_score": 0.8069,
+    "uncertainty": 0.0277,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0238,
+      "MI": 0.0619,
+      "STTC": 0.023,
+      "CD": 0.0141,
+      "HYP": 0.0159
+    }
   },
   "12301": {
     "predicted_classes": [
       "NORM"
     ],
     "class_probabilities": {
-      "NORM": 0.7226,
-      "MI": 0.0857,
-      "STTC": 0.0561,
-      "CD": 0.0405,
-      "HYP": 0.4252
+      "NORM": 0.6348,
+      "MI": 0.1373,
+      "STTC": 0.0775,
+      "CD": 0.0575,
+      "HYP": 0.4609
     },
-    "confidence_score": 0.7226
+    "confidence_score": 0.7226,
+    "uncertainty": 0.0274,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0495,
+      "MI": 0.0322,
+      "STTC": 0.013,
+      "CD": 0.0086,
+      "HYP": 0.0335
+    }
   },
   "9024": {
     "predicted_classes": [
       "HYP"
     ],
     "class_probabilities": {
-      "NORM": 0.2055,
-      "MI": 0.0885,
-      "STTC": 0.2126,
-      "CD": 0.2014,
-      "HYP": 0.9691
+      "NORM": 0.1668,
+      "MI": 0.1239,
+      "STTC": 0.262,
+      "CD": 0.2274,
+      "HYP": 0.9712
     },
-    "confidence_score": 0.9691
+    "confidence_score": 0.9691,
+    "uncertainty": 0.0185,
+    "uncertainty_level": "moderate - some sensitivity to signal noise detected",
+    "uncertainty_per_class": {
+      "NORM": 0.0198,
+      "MI": 0.0199,
+      "STTC": 0.0251,
+      "CD": 0.0251,
+      "HYP": 0.0026
+    }
   },
   "9110": {
     "predicted_classes": [
       "CD"
     ],
     "class_probabilities": {
-      "NORM": 0.0186,
-      "MI": 0.081,
-      "STTC": 0.1744,
-      "CD": 0.9686,
-      "HYP": 0.3363
+      "NORM": 0.0191,
+      "MI": 0.1011,
+      "STTC": 0.1885,
+      "CD": 0.9674,
+      "HYP": 0.3458
     },
-    "confidence_score": 0.9686
+    "confidence_score": 0.9686,
+    "uncertainty": 0.0093,
+    "uncertainty_level": "low - prediction stable under signal perturbations",
+    "uncertainty_per_class": {
+      "NORM": 0.0013,
+      "MI": 0.0127,
+      "STTC": 0.0163,
+      "CD": 0.0045,
+      "HYP": 0.012
+    }
   }
 }

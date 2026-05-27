@@ -21,6 +21,7 @@ import wfdb
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
+from src.explainability.uncertainty import compute_tta_uncertainty
 from src.models.fcn_wang import FCNWang
 from src.preprocessing.label_utils import load_all_labels
 from src.utils.config import CFG
@@ -80,7 +81,7 @@ def _preprocess(signal: np.ndarray) -> np.ndarray:
 
 @torch.no_grad()
 def _predict(model: FCNWang, x_np: np.ndarray, device: torch.device) -> dict:
-    """Run the model on a (12, 1000) array. Returns prediction dict."""
+    """Run the model on a (12, 1000) array. Returns prediction dict with TTA uncertainty."""
     x = torch.tensor(x_np, dtype=torch.float32).unsqueeze(0).to(device)
     logits = model(x)
     probs  = torch.sigmoid(logits).squeeze(0).cpu()
@@ -90,11 +91,17 @@ def _predict(model: FCNWang, x_np: np.ndarray, device: torch.device) -> dict:
     if not predicted:
         predicted = [SUPERCLASSES[probs.argmax().item()]]
 
+    mean_probs, std_probs, unc, level = compute_tta_uncertainty(model, x_np, device)
+
     return {
-        'predicted_classes':   predicted,
-        'class_probabilities': {cls: round(probs[i].item(), 4)
-                                for i, cls in enumerate(SUPERCLASSES)},
-        'confidence_score':    round(probs.max().item(), 4),
+        'predicted_classes':     predicted,
+        'class_probabilities':   {cls: round(float(mean_probs[i]), 4)
+                                  for i, cls in enumerate(SUPERCLASSES)},
+        'confidence_score':      round(probs.max().item(), 4),
+        'uncertainty':           unc,
+        'uncertainty_level':     level,
+        'uncertainty_per_class': {cls: round(float(std_probs[i]), 4)
+                                  for i, cls in enumerate(SUPERCLASSES)},
     }
 
 

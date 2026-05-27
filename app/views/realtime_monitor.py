@@ -176,6 +176,7 @@ def _run_monitor(
         ecg_ph.plotly_chart(
             _ecg_fig(signal, start, end),
             use_container_width=True,
+            key=f'rt_ecg_{i}',
         )
 
         # Probability bars (full-signal prediction, stable)
@@ -183,20 +184,31 @@ def _run_monitor(
             _prob_fig(full_result['class_probabilities'],
                       full_result['predicted_classes']),
             use_container_width=True,
+            key=f'rt_prob_{i}',
         )
 
         # Alert banner
         predicted = full_result['predicted_classes']
         if predicted == ['NORM']:
-            alert_ph.success(
-                f'{_icon("check_circle")} Sinus rhythm -- within normal limits',
-                icon=None,
+            alert_ph.markdown(
+                '<div style="background:#d4edda;border:1px solid #c3e6cb;border-radius:6px;'
+                'padding:10px 16px;display:flex;align-items:center;gap:8px;">'
+                '<span class="material-icons" style="color:#388e3c;font-size:20px;">check_circle</span>'
+                '<span style="color:#155724;font-weight:500;">Sinus rhythm: within normal limits</span>'
+                '</div>',
+                unsafe_allow_html=True,
             )
         else:
-            alert_ph.error(
-                f'{_icon("warning")} Anomaly detected: '
-                f'**{", ".join(predicted)}** '
-                f'(confidence {full_result["confidence_score"]:.0%})',
+            classes_str = ', '.join(predicted)
+            conf_str    = f'{full_result["confidence_score"]:.0%}'
+            alert_ph.markdown(
+                '<div style="background:#f8d7da;border:1px solid #f5c6cb;border-radius:6px;'
+                'padding:10px 16px;display:flex;align-items:center;gap:8px;">'
+                '<span class="material-icons" style="color:#d32f2f;font-size:20px;">warning</span>'
+                f'<span style="color:#721c24;font-weight:500;">Anomaly detected: '
+                f'<strong>{classes_str}</strong> (confidence {conf_str})</span>'
+                '</div>',
+                unsafe_allow_html=True,
             )
 
         time.sleep(delay)
@@ -209,16 +221,16 @@ def _run_monitor(
         correct = set(full_result['predicted_classes']) == set(true_cls)
         if correct:
             st.success(
-                f'Prediction correct — true label: {", ".join(true_cls)}'
+                f'Prediction correct. True label: {", ".join(true_cls)}'
             )
         elif set(full_result['predicted_classes']) & set(true_cls):
             st.warning(
-                f'Partial match — predicted: {", ".join(full_result["predicted_classes"])}, '
+                f'Partial match. Predicted: {", ".join(full_result["predicted_classes"])}, '
                 f'true: {", ".join(true_cls)}'
             )
         else:
             st.error(
-                f'Incorrect — predicted: {", ".join(full_result["predicted_classes"])}, '
+                f'Incorrect. Predicted: {", ".join(full_result["predicted_classes"])}, '
                 f'true: {", ".join(true_cls)}'
             )
 
@@ -257,7 +269,7 @@ def render() -> None:
             'Record',
             list(options.keys()),
             format_func=lambda x: (
-                f'#{x}  —  {", ".join(options[x]["superclass"])}'
+                f'#{x}: {", ".join(options[x]["superclass"])}'
                 + (f'  (age {int(options[x]["age"])})' if options[x].get('age') else '')
             ),
             key='rt_record',

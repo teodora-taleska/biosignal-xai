@@ -32,7 +32,7 @@ def _time_axis(n_samples: int, fs: int = _FS) -> np.ndarray:
 def render_ecg(
     signal:     np.ndarray,
     lead_names: list[str] = LEAD_NAMES,
-    title:      str       = 'ECG — 12 leads',
+    title:      str       = 'ECG: 12 leads',
     height:     int       = 480,
     fs:         int       = _FS,
     key:        str       = 'ecg_viewer',
