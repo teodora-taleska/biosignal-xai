@@ -31,9 +31,13 @@ class _HuBERTHead(nn.Module):
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        hidden = self.encoder(x).last_hidden_state   # (B, T, H)
-        pooled = hidden.mean(dim=1)                  # (B, H)
-        return self.classifier(pooled)               # (B, num_labels)
+        # HuBERT feature extractor expects (B, T) — reshape leads into batch dim.
+        B, num_leads, T = x.shape                          # (B, 12, 1000)
+        x = x.reshape(B * num_leads, T)                    # (B*12, 1000)
+        hidden = self.encoder(x).last_hidden_state          # (B*12, T', H)
+        pooled = hidden.mean(dim=1)                         # (B*12, H)
+        pooled = pooled.reshape(B, num_leads, -1).mean(1)   # (B, H) — mean over leads
+        return self.classifier(pooled)                      # (B, num_labels)
 
 
 class HuBERTECGClassifier(nn.Module):
