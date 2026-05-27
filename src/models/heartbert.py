@@ -278,11 +278,17 @@ class HeartBERTClassifier:
         self.model.eval()
         return self
 
-    def predict_logits(self, X: np.ndarray) -> np.ndarray:
-        """Return raw logits (before sigmoid), shape (N, 5)."""
+    def predict_logits(self, X: np.ndarray, batch_size: int = 16) -> np.ndarray:
+        """Return raw logits (before sigmoid), shape (N, 5).
+
+        Runs inference in mini-batches to avoid OOM on large test sets.
+        """
         assert self.model is not None, "Call .load() first."
-        enc = {k: v.to(self.device) for k, v in self._encode(X).items()}
         self.model.eval()
-        with torch.no_grad():
-            logits = self.model(**enc).logits.cpu()
-        return logits.numpy()
+        all_logits = []
+        for i in range(0, len(X), batch_size):
+            chunk = X[i:i + batch_size]
+            enc = {k: v.to(self.device) for k, v in self._encode(chunk).items()}
+            with torch.no_grad():
+                all_logits.append(self.model(**enc).logits.cpu())
+        return torch.cat(all_logits).numpy()

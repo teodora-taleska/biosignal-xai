@@ -283,11 +283,17 @@ class ECGPTClassifier:
         self.model.eval()
         return self
 
-    def predict_logits(self, X: np.ndarray) -> np.ndarray:
-        """Return raw logits (before sigmoid), shape (N, 5)."""
+    def predict_logits(self, X: np.ndarray, batch_size: int = 16) -> np.ndarray:
+        """Return raw logits (before sigmoid), shape (N, 5).
+
+        Runs inference in mini-batches to avoid OOM on large test sets.
+        """
         assert self.model is not None, "Call .load() first."
-        token_ids = self._tokenizer.tokenize_batch(X).to(self.device)
         self.model.eval()
-        with torch.no_grad():
-            logits = self.model(input_ids=token_ids).logits.cpu()
-        return logits.numpy()
+        all_logits = []
+        for i in range(0, len(X), batch_size):
+            chunk = X[i:i + batch_size]
+            token_ids = self._tokenizer.tokenize_batch(chunk).to(self.device)
+            with torch.no_grad():
+                all_logits.append(self.model(input_ids=token_ids).logits.cpu())
+        return torch.cat(all_logits).numpy()
