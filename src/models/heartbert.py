@@ -292,3 +292,33 @@ class HeartBERTClassifier:
             with torch.no_grad():
                 all_logits.append(self.model(**enc).logits.cpu())
         return torch.cat(all_logits).numpy()
+
+    def get_attention_weights(self, x: np.ndarray) -> tuple:
+        """
+        Return last-layer CLS attention weights over ECG letter tokens.
+
+        The RoBERTa tokenizer produces [CLS] + up to 510 letter tokens + [SEP]
+        = 512 tokens total (max_length=512). This method returns the attention
+        that the CLS token pays to each letter token, normalised to [0, 1].
+
+        Args:
+            x: (1000,) float32 Lead II signal for a single record
+
+        Returns:
+            positions: (N,) int numpy array -- Lead II sample indices (0-based)
+            weights:   (N,) float32 numpy array -- normalised attention weights
+        """
+        assert self.model is not None, "Call .load() first."
+        enc = {k: v.to(self.device) for k, v in self._encode(x[np.newaxis]).items()}
+        self.model.eval()
+        with torch.no_grad():
+            out = self.model(**enc, output_attentions=True)
+        # out.attentions: tuple of (1, num_heads, seq_len, seq_len), one per layer
+        last_layer = out.attentions[-1]            # (1, num_heads, seq_len, seq_len)
+        avg_heads  = last_layer[0].mean(dim=0)     # (seq_len, seq_len)
+        cls_attn   = avg_heads[0].cpu().numpy()    # (seq_len,) -- CLS row
+        # Drop CLS (index 0) and SEP (index -1); keep ECG letter tokens
+        ecg_attn  = cls_attn[1:-1].astype(np.float32)
+        ecg_attn  = ecg_attn / (ecg_attn.max() + 1e-8)   # normalise to [0, 1]
+        positions = np.arange(len(ecg_attn), dtype=np.int32)
+        return positions, ecg_attn

@@ -95,13 +95,16 @@ def build_ecg_prompt(
 
     true_str = ', '.join(true_classes) if true_classes else 'unknown'
 
+    unc     = result_dict['uncertainty']
+    unc_str = f'{unc:.4f}' if unc is not None else 'N/A'
+
     return (
         f'ECG ANALYSIS RESULT\n'
         f'True diagnosis (if known): {true_str}\n'
         f'Predicted class:           {", ".join(result_dict["predicted_classes"])}\n'
         f'Confidence score:          {result_dict["confidence_score"]:.2f}\n'
         f'Class probabilities:       {prob_str}\n'
-        f'Signal uncertainty:        {result_dict["uncertainty"]:.4f}'
+        f'Signal uncertainty:        {unc_str}'
         f' ({result_dict["uncertainty_level"]})\n'
         f'Top salient leads:         {top_leads}\n\n'
         f'Please provide a 3-5 sentence clinical interpretation of these results.'

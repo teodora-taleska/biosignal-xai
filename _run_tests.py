@@ -199,6 +199,38 @@ try:
 except Exception as e:
     fail("test_ecgpt_predict_logits_shape", e)
 
+# ── explainability ────────────────────────────────────────────────────────────
+
+try:
+    from src.explainability.llm import build_ecg_prompt
+    result_dict = {
+        'predicted_classes':   ['NORM'],
+        'class_probabilities': {'NORM': 0.9, 'MI': 0.1, 'STTC': 0.1, 'CD': 0.1, 'HYP': 0.1},
+        'confidence_score':    0.9,
+        'uncertainty':         None,
+        'raw_logits':          [1.0, -1.0, -1.0, -1.0, -1.0],
+        'uncertainty_level':   'not computed',
+    }
+    prompt = build_ecg_prompt(
+        result_dict, saliency=None,
+        lead_names=['I','II','III','aVR','aVL','aVF','V1','V2','V3','V4','V5','V6'],
+    )
+    assert isinstance(prompt, str) and len(prompt) > 0
+    ok("test_build_ecg_prompt_none_uncertainty")
+except Exception as e:
+    fail("test_build_ecg_prompt_none_uncertainty", e)
+
+try:
+    from src.models.heartbert import HeartBERTClassifier
+    hb = HeartBERTClassifier()
+    try:
+        hb.get_attention_weights(np.zeros(1000, dtype=np.float32))
+        fail("test_heartbert_get_attention_requires_load", "no AssertionError raised")
+    except AssertionError:
+        ok("test_heartbert_get_attention_requires_load")
+except Exception as e:
+    fail("test_heartbert_get_attention_requires_load", e)
+
 # ── Summary ───────────────────────────────────────────────────────────────────
 print(f"\n{len(PASS)} passed, {len(FAIL)} failed")
 if FAIL:
