@@ -196,7 +196,8 @@ def _build_monitor_html(
   }}
 
   // Audio
-  let audioCtx = null;
+  let audioCtx    = null;
+  let scheduled   = [];   // track every oscillator so we can cancel on Stop
   function getAudio() {{
     if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     return audioCtx;
@@ -211,9 +212,14 @@ def _build_monitor_html(
       g.gain.exponentialRampToValueAtTime(0.0001, startT + dur);
       o.connect(g); g.connect(ac.destination);
       o.start(startT); o.stop(startT + dur + 0.05);
+      scheduled.push(o);
     }}
     tone(t,        FREQ1, 0.08);
     tone(t + 0.13, FREQ2, 0.07);
+  }}
+  function cancelScheduled() {{
+    scheduled.forEach(o => {{ try {{ o.stop(); }} catch(_) {{}} }});
+    scheduled = [];
   }}
 
   // Animation state
@@ -224,6 +230,7 @@ def _build_monitor_html(
 
   function stop() {{
     if (animId) {{ cancelAnimationFrame(animId); animId = null; }}
+    cancelScheduled();
     running = false;
     btn.textContent = '▶ Play again';
     prog.textContent = 'Done — ' + (N / FS).toFixed(0) + ' s recorded';
@@ -233,6 +240,8 @@ def _build_monitor_html(
     const ac = getAudio();
     const resume = ac.state === 'suspended' ? ac.resume() : Promise.resolve();
     resume.then(() => {{
+      // Cancel any beats left over from a previous play before scheduling new ones
+      cancelScheduled();
       // Schedule all beats upfront relative to audio clock
       audioBase = ac.currentTime + 0.05;
       peaks.forEach(p => {{
