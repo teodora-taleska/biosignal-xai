@@ -173,7 +173,7 @@ def render() -> None:
                     predicted_set = set(pred['predicted_classes'])
                     true_set      = set(true_classes)
                     if predicted_set & true_set:
-                        st.warning('⚠️ Partial match')
+                        st.warning('Partial match')
                     else:
                         st.error('❌ Incorrect prediction')
 
