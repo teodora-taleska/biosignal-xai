@@ -168,14 +168,14 @@ def render() -> None:
                     f'**Ground truth:** {", ".join(true_classes)}'
                 )
                 if correct:
-                    st.success('✅ Correct prediction')
+                    st.success('Correct prediction')
                 else:
                     predicted_set = set(pred['predicted_classes'])
                     true_set      = set(true_classes)
                     if predicted_set & true_set:
                         st.warning('Partial match')
                     else:
-                        st.error('❌ Incorrect prediction')
+                        st.error('Incorrect prediction')
 
     # ── XAI analysis ──────────────────────────────────────────────────────────
     if pred:
