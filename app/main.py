@@ -102,15 +102,15 @@ st.markdown("""
 
 # ── App header ────────────────────────────────────────────────────────────────
 st.markdown(
-    '<div style="display:flex;align-items:center;gap:10px;margin-bottom:0;">'
-    '<span class="material-icons" style="font-size:32px;color:#1976d2;">favorite</span>'
-    '<div>'
-    '<h2 style="color:#1976d2;margin:0;line-height:1.2;">BioSignal-XAI</h2>'
+    '<div style="margin-bottom:0;">'
+    '<h2 style="color:#1976d2;margin:0;line-height:1.2;display:flex;align-items:center;gap:8px;">'
+    '<span class="material-icons" style="font-size:32px;">favorite</span>'
+    'BioSignal-XAI'
+    '</h2>'
     '<p style="color:#555555;margin:0;font-size:13px;">'
     'ECG anomaly detection &nbsp;|&nbsp; FCN-Wang &nbsp;|&nbsp; PTB-XL &nbsp;|&nbsp; '
     'Interactive clinical demo'
     '</p>'
-    '</div>'
     '</div>',
     unsafe_allow_html=True,
 )
