@@ -260,7 +260,7 @@ BioSignal-XAI is a **research prototype**. It is not a certified medical device 
 ```bibtex
 @misc{biosignalxai2026,
   author       = {Taleska, Teodora},
-  title        = {BioSignal-XAI: ECG Anomaly Detection with Explainable AI},
+  title        = {BioSignal-XAI: ECG Diagnostic Classification with Explainable AI},
   year         = {2026},
   howpublished = {\url{https://github.com/teodora-taleska/biosignal-xai}},
   note         = {University research project}
