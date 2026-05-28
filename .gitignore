@@ -223,6 +223,7 @@ data/
 !app/data/
 *.pt
 *.pt
+!app/model/checkpoint.pt
 /docs
 *.safetensors
 /.superpowers

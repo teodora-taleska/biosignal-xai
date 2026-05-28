@@ -42,9 +42,17 @@ def load_metadata() -> pd.DataFrame:
 
 
 def load_signal(filename_lr: str) -> np.ndarray:
-    """Load a WFDB record by filename_lr. Returns (1000, 12) float32 array."""
-    # filename_lr is relative to data/, e.g. 'records100/00000/00001_lr'
-    path = str(_DATA_DIR / filename_lr)
+    """Load a WFDB record by filename_lr. Returns (1000, 12) float32 array.
+
+    Checks app/data/signals/ first (embedded for cloud deployment),
+    then falls back to the full PTB-XL data directory.
+    """
+    # filename_lr is e.g. 'records100/00000/00001_lr' (no extension — WFDB convention)
+    embedded = APP_DATA / 'signals' / filename_lr
+    if Path(str(embedded) + '.hea').exists():
+        path = str(embedded)
+    else:
+        path = str(_DATA_DIR / filename_lr)
     signal, _ = wfdb.rdsamp(path)
     return signal.astype(np.float32)
 

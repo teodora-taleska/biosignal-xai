@@ -41,9 +41,13 @@ def _find_file(start: Path, rel: str) -> Path:
     raise FileNotFoundError(f"Cannot find '{rel}' above {start}")
 
 
-_REPO_ROOT = Path(__file__).resolve().parent.parent
+_APP_DIR   = Path(__file__).resolve().parent
+_REPO_ROOT = _APP_DIR.parent
 CKPT_REL   = 'results/fcn_wang_baseline/checkpoint.pt'
-CKPT_PATH  = _find_file(_REPO_ROOT, CKPT_REL)
+
+# Prefer embedded checkpoint committed for cloud deployment; fall back to results/
+_embedded_ckpt = _APP_DIR / 'model' / 'checkpoint.pt'
+CKPT_PATH = _embedded_ckpt if _embedded_ckpt.exists() else _find_file(_REPO_ROOT, CKPT_REL)
 
 SUPERCLASSES = CFG['data']['superclasses']
 LEAD_NAMES   = ['I', 'II', 'III', 'aVR', 'aVL', 'aVF', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6']
