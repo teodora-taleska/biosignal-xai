@@ -20,6 +20,7 @@ from app.data.loader import (
     load_signal,
     load_curated_index,
     load_predictions_cache,
+    load_dataset_stats,
     SUPERCLASSES,
     LEAD_NAMES,
     SCP_CSV,
@@ -33,18 +34,27 @@ from app.components.ecg_viewer import render_ecg
 # ── Cached data loaders ───────────────────────────────────────────────────────
 
 @st.cache_data(show_spinner='Loading PTB-XL metadata …')
-def _get_metadata() -> pd.DataFrame:
-    return load_metadata()
+def _get_metadata() -> pd.DataFrame | None:
+    """Returns full metadata DataFrame, or None if CSV not available (cloud)."""
+    try:
+        return load_metadata()
+    except FileNotFoundError:
+        return None
 
 
 @st.cache_data(show_spinner='Computing class distribution …')
 def _get_label_counts() -> dict[str, int]:
-    """Count records per superclass using proper SCP→superclass mapping."""
-    from src.preprocessing.label_utils import load_all_labels
-    df = load_all_labels(str(DATA_CSV), str(SCP_CSV))
-    import numpy as np
-    label_matrix = np.stack(df['label_vec'].values)
-    return {sc: int(label_matrix[:, i].sum()) for i, sc in enumerate(SUPERCLASSES)}
+    """Count records per superclass.
+
+    Uses the full CSV pipeline locally; falls back to pre-computed stats on cloud.
+    """
+    try:
+        from src.preprocessing.label_utils import load_all_labels
+        df = load_all_labels(str(DATA_CSV), str(SCP_CSV))
+        label_matrix = np.stack(df['label_vec'].values)
+        return {sc: int(label_matrix[:, i].sum()) for i, sc in enumerate(SUPERCLASSES)}
+    except FileNotFoundError:
+        return load_dataset_stats()['class_counts']
 
 
 @st.cache_data(show_spinner='Loading curated index …')
@@ -201,16 +211,21 @@ def render() -> None:
 
     # Dataset summary metrics
     try:
-        df = _get_metadata()
-        curated    = _get_curated()
+        curated     = _get_curated()
         predictions = _get_predictions()
     except FileNotFoundError as e:
         st.error(f'Cache not built yet. Run `python app/data/cache.py` first.\n\n{e}')
         return
 
+    # Full metadata available locally; fall back to pre-computed stats on cloud
+    df    = _get_metadata()
+    stats = load_dataset_stats()
+    total_records   = len(df)              if df is not None else stats['total_records']
+    unique_patients = df['patient_id'].nunique() if df is not None else stats['unique_patients']
+
     m1, m2, m3, m4 = st.columns(4)
-    m1.metric('Total records',    f'{len(df):,}')
-    m2.metric('Unique patients',  f'{df["patient_id"].nunique():,}')
+    m1.metric('Total records',    f'{total_records:,}')
+    m2.metric('Unique patients',  f'{unique_patients:,}')
     m3.metric('Superclasses',     str(len(SUPERCLASSES)))
     m4.metric('Curated subset',   str(len(curated)))
 

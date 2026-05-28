@@ -73,6 +73,15 @@ def load_predictions_cache() -> dict:
         return json.load(f)
 
 
+def load_dataset_stats() -> dict:
+    """Load pre-computed dataset statistics (total records, class counts, etc.).
+    Used as a fallback when ptbxl_database.csv is not available (cloud deployment).
+    Returns dict with keys: total_records, unique_patients, class_counts."""
+    path = APP_DATA / 'dataset_stats.json'
+    with open(path) as f:
+        return json.load(f)
+
+
 def load_narratives_cache() -> dict:
     """Load pre-generated Qwen2 narratives keyed by ecg_id string.
     Returns empty dict if cache not built yet (run app/data/cache_narratives.py)."""

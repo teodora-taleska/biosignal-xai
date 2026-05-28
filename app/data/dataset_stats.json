@@ -1,0 +1,11 @@
+{
+  "total_records": 21799,
+  "unique_patients": 18869,
+  "class_counts": {
+    "NORM": 9514,
+    "MI": 5469,
+    "STTC": 5108,
+    "CD": 4898,
+    "HYP": 2649
+  }
+}
