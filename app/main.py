@@ -117,11 +117,11 @@ st.markdown(
 st.divider()
 
 # ── Tab routing ───────────────────────────────────────────────────────────────
-tab1, tab2, tab3, tab4 = st.tabs([
+tab1, tab2, tab3 = st.tabs([
     'Data Explorer',
     'Preprocessing',
     'Interactive Demo',
-    'Live Monitor',
+    # 'Live Monitor',
 ])
 
 with tab1:
@@ -136,6 +136,6 @@ with tab3:
     from app.views.interactive_demo import render
     render()
 
-with tab4:
-    from app.views.realtime_monitor import render
-    render()
+# with tab4:
+#     from app.views.realtime_monitor import render
+#     render()
