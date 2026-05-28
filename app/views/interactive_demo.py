@@ -254,7 +254,7 @@ def render() -> None:
             ):
                 _section_header('chat', 'Clinical narrative (Qwen2-0.5B-Instruct)')
                 st.caption(
-                    'AI-generated interpretation -- for educational purposes only. '
+                    'AI-generated interpretation, for educational purposes only. '
                     'Always requires clinical correlation.'
                 )
                 st.info(explanation)
