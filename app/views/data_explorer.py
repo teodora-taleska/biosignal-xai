@@ -100,7 +100,7 @@ def _class_distribution_chart() -> None:
         plot_bgcolor='#ffffff', paper_bgcolor='#ffffff',
         margin=dict(l=20, r=20, t=40, b=20),
     )
-    st.plotly_chart(fig, use_container_width=True, key='de_class_dist')
+    st.plotly_chart(fig, width="stretch", key='de_class_dist')
 
 
 # ── Curated table with filters ────────────────────────────────────────────────
@@ -163,7 +163,7 @@ def _curated_table(records: list[dict]) -> list[dict]:
             'Primary':  rec.get('primary_class', '—'),
         })
     df_show = pd.DataFrame(rows)
-    st.dataframe(df_show, use_container_width=True, height=260)
+    st.dataframe(df_show, width="stretch", height=260)
     st.caption(f'{len(filtered)} records shown')
     return filtered
 

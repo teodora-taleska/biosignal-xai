@@ -68,7 +68,7 @@ def render_confidence_gauge(
         showlegend=False,
     )
 
-    st.plotly_chart(fig, use_container_width=True, key=key)
+    st.plotly_chart(fig, width="stretch", key=key)
 
     # Legend note if ground truth is shown
     if true_set:

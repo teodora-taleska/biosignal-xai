@@ -12,7 +12,7 @@ Usage:
 """
 from __future__ import annotations
 
-import streamlit.components.v1 as components
+import streamlit as st
 
 _NORMAL_PARAMS = dict(
     freq1=80, freq2=100, dur1=0.08, dur2=0.06,
@@ -90,4 +90,4 @@ def render_heartbeat(is_anomaly: bool = False, volume: float = 0.25) -> None:
         volume:     Web Audio gain 0–1; default 0.25
     """
     params = _ANOMALY_PARAMS if is_anomaly else _NORMAL_PARAMS
-    components.html(_build_html(params, volume=volume), height=44)
+    st.iframe(_build_html(params, volume=volume), height=44)

@@ -175,7 +175,7 @@ def _run_monitor(
         # ECG chart (Lead II, sliding window highlighted)
         ecg_ph.plotly_chart(
             _ecg_fig(signal, start, end),
-            use_container_width=True,
+            width="stretch",
             key=f'rt_ecg_{i}',
         )
 
@@ -183,7 +183,7 @@ def _run_monitor(
         prob_ph.plotly_chart(
             _prob_fig(full_result['class_probabilities'],
                       full_result['predicted_classes']),
-            use_container_width=True,
+            width="stretch",
             key=f'rt_prob_{i}',
         )
 

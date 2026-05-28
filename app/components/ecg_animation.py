@@ -14,7 +14,7 @@ from __future__ import annotations
 import json
 
 import numpy as np
-import streamlit.components.v1 as components
+import streamlit as st
 
 
 # ── R-peak detection ──────────────────────────────────────────────────────────
@@ -333,5 +333,5 @@ def render_ecg_monitor(
 
     lead2 = signal[:, 1].tolist()   # Lead II as plain list for JSON
     html  = _build_monitor_html(lead2, peaks, bpm, is_anomaly, height)
-    components.html(html, height=height)
+    st.iframe(html, height=height)
     return bpm, peaks

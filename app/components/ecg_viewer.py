@@ -88,7 +88,7 @@ def render_ecg(
     fig.update_xaxes(showgrid=True, gridcolor='#f0f0f0', title_text='s', title_font_size=10)
     fig.update_yaxes(showgrid=True, gridcolor='#f0f0f0', title_text='mV', title_font_size=10)
 
-    st.plotly_chart(fig, use_container_width=True, key=key)
+    st.plotly_chart(fig, width="stretch", key=key)
 
 
 def render_ecg_with_saliency(
@@ -200,7 +200,7 @@ def render_ecg_with_saliency(
     fig.update_xaxes(showgrid=False)
     fig.update_yaxes(showgrid=False)
 
-    st.plotly_chart(fig, use_container_width=True, key=key)
+    st.plotly_chart(fig, width="stretch", key=key)
 
     # Colorbar legend caption
     st.caption('Saliency colorbar: light blue = low gradient magnitude → dark red = high')
