@@ -18,13 +18,20 @@ from app.components.ecg_animation import render_ecg_monitor
 from app.components.confidence_gauge import render_confidence_gauge
 from app.components.ecg_viewer import render_ecg_with_saliency
 from app.components.patient_card import render_patient_card
+import os
+
 from app.data.loader import (
     LEAD_NAMES,
     SUPERCLASSES,
     load_curated_index,
+    load_narratives_cache,
     load_predictions_cache,
     load_signal,
 )
+
+# Cloud mode: set CLOUD_MODE=true in Streamlit secrets or environment.
+# In cloud mode, Qwen2 is never loaded — pre-cached narratives are served instead.
+_CLOUD_MODE = os.getenv('CLOUD_MODE', 'false').lower() == 'true'
 
 
 # ── Cached data ───────────────────────────────────────────────────────────────
@@ -39,7 +46,12 @@ def _get_predictions() -> dict:
     return load_predictions_cache()
 
 
-@st.cache_data(show_spinner='Loading ECG signal …')
+@st.cache_data(show_spinner=False)
+def _get_narratives() -> dict:
+    return load_narratives_cache()
+
+
+@st.cache_data(show_spinner='Loading ECG signal ...')
 def _get_signal(filename_lr: str) -> np.ndarray:
     return load_signal(filename_lr)
 
@@ -84,6 +96,8 @@ def render() -> None:
     except FileNotFoundError as e:
         st.error(f'Cache not built. Run `python app/data/cache.py` first.\n\n{e}')
         return
+
+    narratives = _get_narratives() if _CLOUD_MODE else {}
 
     # ── Patient selector ──────────────────────────────────────────────────────
     _section_header('search', 'Patient selector')
@@ -183,10 +197,9 @@ def render() -> None:
             type='primary',
             key='id_xai_btn',
         ):
-            from app.model import get_saliency, get_top_leads, get_qwen3
-            from src.explainability.llm import build_ecg_prompt, generate_explanation
+            from app.model import get_saliency, get_top_leads
 
-            # Step 1: gradient saliency
+            # Step 1: gradient saliency (always computed live)
             with st.spinner('Computing gradient saliency ...'):
                 sal = get_saliency(raw, target_class=target_class, result=pred)
                 top = get_top_leads(sal, top_k=3)
@@ -194,22 +207,29 @@ def render() -> None:
             st.session_state['_top']        = top
             st.session_state['_sal_target'] = target_class
 
-            # Step 2: Qwen2 clinical narrative
-            qwen_model, qwen_tok = get_qwen3()
-            if qwen_model is not None:
-                prompt = build_ecg_prompt(
-                    result_dict  = pred,
-                    saliency     = sal,
-                    lead_names   = LEAD_NAMES,
-                    true_classes = rec.get('superclass'),
-                )
-                with st.spinner('Qwen2 generating clinical narrative ...'):
-                    explanation = generate_explanation(prompt, qwen_model, qwen_tok)
-                st.session_state['_xai_explanation']        = explanation
+            # Step 2: narrative -- cached in cloud mode, live Qwen2 in local mode
+            if _CLOUD_MODE:
+                cached = narratives.get(str(rec['ecg_id']))
+                st.session_state['_xai_explanation']        = cached
                 st.session_state['_xai_explanation_target'] = target_class
             else:
-                st.warning('Qwen2 model unavailable -- showing saliency only.')
-                st.session_state.pop('_xai_explanation', None)
+                from app.model import get_qwen3
+                from src.explainability.llm import build_ecg_prompt, generate_explanation
+                qwen_model, qwen_tok = get_qwen3()
+                if qwen_model is not None:
+                    prompt = build_ecg_prompt(
+                        result_dict  = pred,
+                        saliency     = sal,
+                        lead_names   = LEAD_NAMES,
+                        true_classes = rec.get('superclass'),
+                    )
+                    with st.spinner('Qwen2 generating clinical narrative ...'):
+                        explanation = generate_explanation(prompt, qwen_model, qwen_tok)
+                    st.session_state['_xai_explanation']        = explanation
+                    st.session_state['_xai_explanation_target'] = target_class
+                else:
+                    st.warning('Qwen2 model unavailable -- showing saliency only.')
+                    st.session_state.pop('_xai_explanation', None)
 
         # Display results when available for the selected target class
         if (
@@ -227,8 +247,9 @@ def render() -> None:
                 key        = 'id_ecg_sal',
             )
 
+            explanation = st.session_state.get('_xai_explanation')
             if (
-                '_xai_explanation' in st.session_state
+                explanation is not None
                 and st.session_state.get('_xai_explanation_target') == target_class
             ):
                 _section_header('chat', 'Clinical narrative (Qwen2-0.5B-Instruct)')
@@ -236,4 +257,4 @@ def render() -> None:
                     'AI-generated interpretation -- for educational purposes only. '
                     'Always requires clinical correlation.'
                 )
-                st.info(st.session_state['_xai_explanation'])
+                st.info(explanation)

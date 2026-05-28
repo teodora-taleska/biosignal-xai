@@ -58,8 +58,18 @@ def load_curated_index() -> list[dict]:
 
 
 def load_predictions_cache() -> dict:
-    """Load pre-computed XResNet1D predictions keyed by ecg_id string.
+    """Load pre-computed FCN-Wang predictions keyed by ecg_id string.
     Raises FileNotFoundError if cache not built yet."""
     path = APP_DATA / 'predictions_cache.json'
     with open(path) as f:
+        return json.load(f)
+
+
+def load_narratives_cache() -> dict:
+    """Load pre-generated Qwen2 narratives keyed by ecg_id string.
+    Returns empty dict if cache not built yet (run app/data/cache_narratives.py)."""
+    path = APP_DATA / 'narratives_cache.json'
+    if not path.exists():
+        return {}
+    with open(path, encoding='utf-8') as f:
         return json.load(f)
