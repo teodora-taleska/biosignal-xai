@@ -104,8 +104,8 @@ st.markdown("""
 st.markdown(
     '<div style="margin-bottom:0;">'
     '<h2 style="color:#1976d2;margin:0;line-height:1.2;display:flex;align-items:center;gap:8px;">'
-    '<span class="material-icons" style="font-size:32px;">favorite</span>'
-    'BioSignal-XAI'
+    '<span class="material-icons" style="font-size:32px;line-height:1;">favorite</span>'
+    '<span>BioSignal-XAI</span>'
     '</h2>'
     '<p style="color:#555555;margin:0;font-size:13px;">'
     'ECG anomaly detection &nbsp;|&nbsp; FCN-Wang &nbsp;|&nbsp; PTB-XL &nbsp;|&nbsp; '
