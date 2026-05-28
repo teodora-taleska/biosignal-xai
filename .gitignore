@@ -224,9 +224,12 @@ data/
 *.pt
 *.pt
 !app/model/checkpoint.pt
-/docs
+docs/notebooks
+docs/specs
+docs/superpowers
 *.safetensors
 /.superpowers
 CLAUDE.md
 /archive
 
+docs/transformer_research.md
