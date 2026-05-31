@@ -2,11 +2,13 @@
 HeartBERT — RoBERTa pretrained on ECG-as-text (Bayesiano/HeartBERT).
 
 Reference: https://huggingface.co/Bayesiano/HeartBERT
+Weights hosted on Google Drive (folder ID: 10flbRia9rDWeS8-TLScRUT6JBv81iN-4).
 Adapted for PTB-XL 5-class multi-label classification with PEFT (LoRA / DoRA).
 """
 
 import json
 import os
+from pathlib import Path
 
 import numpy as np
 import torch
@@ -18,11 +20,11 @@ from src.evaluation.metrics import compute_auc, compute_probs
 from src.utils.profiler import ExperimentProfiler
 
 
-def _ecg_to_text(signal: np.ndarray, n_bins: int = 20) -> str:
-    """Quantise a 1-D ECG waveform into a letter string."""
+def _ecg_to_text(signal: np.ndarray, n_bins: int = 32) -> str:
+    """Quantise a 1-D ECG waveform into a letter string (supports up to 52 bins)."""
     bins    = np.linspace(signal.min(), signal.max(), n_bins)
     indices = np.digitize(signal, bins).clip(0, n_bins - 1)
-    letters = "ABCDEFGHIJKLMNOPQRST"
+    letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     return " ".join(letters[i] for i in indices)
 
 
@@ -44,7 +46,9 @@ class HeartBERTClassifier:
     model.save("results/heartbert_lora_r8/best_adapter")
     """
 
-    HF_ID = "Bayesiano/HeartBERT"
+    HF_ID      = "Bayesiano/HeartBERT"
+    GDRIVE_ID  = "10flbRia9rDWeS8-TLScRUT6JBv81iN-4"
+    CACHE_DIR  = Path.home() / ".cache" / "heartbert"
 
     def __init__(self, num_labels: int = 5):
         self.num_labels = num_labels
@@ -54,15 +58,64 @@ class HeartBERTClassifier:
 
     # ── Loading ───────────────────────────────────────────────────────────────
 
-    def load(self):
-        """Download pretrained weights from HuggingFace (falls back to roberta-base)."""
+    @classmethod
+    def _ensure_local_weights(cls) -> Path:
+        """
+        Return a local directory containing the HeartBERT checkpoint.
+
+        Priority:
+          1. ~/.cache/heartbert  — already downloaded on a previous run
+          2. Google Drive folder (ID: 10flbRia9rDWeS8-TLScRUT6JBv81iN-4)
+          3. HuggingFace Hub (Bayesiano/HeartBERT) — if public
+        """
+        marker = cls.CACHE_DIR / "pytorch_model.bin"
+        if marker.exists():
+            print(f"HeartBERT weights found in cache: {cls.CACHE_DIR}")
+            return cls.CACHE_DIR
+
+        # Try Google Drive first (known-good source)
         try:
-            AutoTokenizer.from_pretrained(self.HF_ID)
-            base_id = self.HF_ID
-            print(f"Loading HeartBERT from {self.HF_ID} ...")
-        except Exception:
+            import gdown
+            print(f"Downloading HeartBERT from Google Drive → {cls.CACHE_DIR} ...")
+            cls.CACHE_DIR.mkdir(parents=True, exist_ok=True)
+            gdown.download_folder(
+                id     = cls.GDRIVE_ID,
+                output = str(cls.CACHE_DIR),
+                quiet  = False,
+            )
+            if marker.exists():
+                print("  Download complete.")
+                return cls.CACHE_DIR
+            print("  WARNING: download finished but pytorch_model.bin not found.")
+        except Exception as e:
+            print(f"  Google Drive download failed: {e}")
+
+        # Fall back to HuggingFace Hub
+        try:
+            AutoTokenizer.from_pretrained(cls.HF_ID, trust_remote_code=True)
+            print(f"Loading HeartBERT from HuggingFace ({cls.HF_ID}) ...")
+            return cls.HF_ID
+        except Exception as e:
+            print(f"  HuggingFace load also failed: {e}")
+
+        return None
+
+    def load(self):
+        """Load HeartBERT weights (Google Drive cache → HF Hub → roberta-base fallback)."""
+        source = self._ensure_local_weights()
+
+        if source is not None:
+            base_id = str(source)
+            print(f"Loading HeartBERT from {base_id} ...")
+        else:
             base_id = "roberta-base"
-            print(f"{self.HF_ID} not available — loading roberta-base (same architecture).")
+            print(
+                "WARNING: HeartBERT weights could not be downloaded from Google Drive "
+                "or HuggingFace.\n"
+                "  Falling back to roberta-base (same architecture, general-language "
+                "weights — NOT ECG-pretrained)."
+            )
+
         self.tokenizer = AutoTokenizer.from_pretrained(base_id)
         self.model = AutoModelForSequenceClassification.from_pretrained(
             base_id,
@@ -78,8 +131,8 @@ class HeartBERTClassifier:
 
     def apply_peft(
         self,
-        r: int         = 8,
-        alpha: int     = 16,
+        r: int         = 16,
+        alpha: int     = 32,
         dropout: float = 0.1,
         use_dora: bool = False,
     ):
