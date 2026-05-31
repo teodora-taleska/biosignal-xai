@@ -23,9 +23,10 @@ def run_peft_experiment(
     train_ds,
     val_ds,
     experiment_name: str,
-    epochs: int      = 15,
+    epochs: int      = 25,
     lr: float        = 1e-4,
     batch_size: int  = 32,
+    patience: int    = 2,
     save_dir: str    = "results/",
     num_workers: int = 0,
 ):
@@ -37,9 +38,10 @@ def run_peft_experiment(
     model           : HuBERTECGClassifier (nn.Module) with count_parameters() and save()
     train_ds / val_ds : ECGDatasetFull instances
     experiment_name : used for results directory name and logging
-    epochs          : training epochs
+    epochs          : maximum training epochs
     lr              : AdamW learning rate
     batch_size      : samples per gradient step (keep ≤ 32 for 8 GB VRAM)
+    patience        : early stopping — halt if val AUC hasn't improved for N epochs
     save_dir        : parent directory for results
     num_workers     : DataLoader workers (0 on Windows)
 
@@ -80,6 +82,7 @@ def run_peft_experiment(
 
     profiler.start()
     best_auc, history = 0.0, []
+    epochs_no_improve = 0
 
     for epoch in range(epochs):
         profiler.start_epoch()
@@ -138,9 +141,16 @@ def run_peft_experiment(
         adapter_path = os.path.join(save_path, "best_adapter")
         if auc_macro > best_auc:
             best_auc = auc_macro
+            epochs_no_improve = 0
             model.save(adapter_path)
             print(f"Saved → {adapter_path}")
             print(f"  * Best saved — AUC {best_auc:.4f}")
+        else:
+            epochs_no_improve += 1
+            if epochs_no_improve >= patience:
+                print(f"  Early stopping (no AUC improvement for {patience} epochs)")
+                profiler.end_epoch()
+                break
 
         profiler.end_epoch()
 

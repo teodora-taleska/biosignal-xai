@@ -183,9 +183,10 @@ class HeartBERTClassifier:
         X_val: np.ndarray,
         y_val: np.ndarray,
         experiment_name: str = "heartbert",
-        epochs: int          = 15,
+        epochs: int          = 25,
         lr: float            = 2e-4,
         batch_size: int      = 16,
+        patience: int        = 2,
         save_dir: str        = "results/",
     ):
         """
@@ -240,6 +241,7 @@ class HeartBERTClassifier:
 
         profiler.start()
         best_auc, history = 0.0, []
+        epochs_no_improve = 0
 
         for epoch in range(epochs):
             profiler.start_epoch()
@@ -286,8 +288,15 @@ class HeartBERTClassifier:
 
             if auc_macro > best_auc:
                 best_auc = auc_macro
+                epochs_no_improve = 0
                 self.save(os.path.join(save_path, "best_adapter"))
                 print(f"  * Best saved — AUC {best_auc:.4f}")
+            else:
+                epochs_no_improve += 1
+                if epochs_no_improve >= patience:
+                    print(f"  Early stopping (no AUC improvement for {patience} epochs)")
+                    profiler.end_epoch()
+                    break
 
             profiler.end_epoch()
 
