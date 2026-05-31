@@ -80,13 +80,13 @@ class HuBERTECGClassifier(nn.Module):
 
     def apply_peft(
         self,
-        r: int         = 8,
-        alpha: int     = 16,
+        r: int         = 16,
+        alpha: int     = 32,
         dropout: float = 0.1,
         use_dora: bool = False,
     ):
         """
-        Attach LoRA (use_dora=False) or DoRA (use_dora=True) to Q/V projections.
+        Attach LoRA (use_dora=False) or DoRA (use_dora=True) to Q/K/V projections.
         Falls back to head-only fine-tuning if layer names don't match.
         """
         assert self._head is not None, "Call .load() first."
@@ -94,7 +94,7 @@ class HuBERTECGClassifier(nn.Module):
             r              = r,
             lora_alpha     = alpha,
             lora_dropout   = dropout,
-            target_modules = ["q_proj", "v_proj"],
+            target_modules = ["q_proj", "k_proj", "v_proj"],
             bias           = "none",
             use_dora       = use_dora,
         )

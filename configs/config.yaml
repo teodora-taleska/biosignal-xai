@@ -10,8 +10,8 @@ training:
   batch_size: 64
   batch_size_full: 4        # HuBERT-ECG: DataLoader BS 4 → encoder sees 4×12=48 items
   batch_size_peft: 16       # HeartBERT / ECG-PT: RoBERTa/GPT-2 at seq_len 512
-  epochs: 15
-  lr_pretrained: 0.0001
+  epochs: 25
+  lr_pretrained: 0.00015
   weight_decay: 0.01
   grad_clip: 1.0
   num_workers: 0           # 0 for Windows, 4 for Linux

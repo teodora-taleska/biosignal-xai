@@ -79,14 +79,25 @@ class ECGPTClassifier:
     # ── Loading ───────────────────────────────────────────────────────────────
 
     def load(self):
-        """Download ECG-PT (falls back to GPT-2 if checkpoint is not public)."""
+        """Download ECG-PT (falls back to GPT-2 if checkpoint is not public).
+
+        ECG-PT (Tconnector/ecg-pt) is a GPT-2 model pretrained on ECG reconstruction.
+        If the checkpoint is unavailable (private or deleted on HF), gpt2 is used
+        instead — same architecture, general-language weights.
+        """
         try:
-            AutoConfig.from_pretrained(self.HF_ID)
+            AutoConfig.from_pretrained(self.HF_ID, trust_remote_code=True)
             base_id = self.HF_ID
             print(f"Loading ECG-PT from {self.HF_ID} ...")
-        except Exception:
+        except Exception as e:
             base_id = "gpt2"
-            print(f"{self.HF_ID} not available — loading GPT-2 (same architecture).")
+            print(
+                f"WARNING: {self.HF_ID} could not be loaded ({e}).\n"
+                f"  Falling back to gpt2 (GPT-2 architecture, "
+                f"general-language weights — NOT ECG-pretrained).\n"
+                f"  To use the real ECG-PT weights, ensure the HF checkpoint "
+                f"is accessible (check your HF_TOKEN or the model visibility)."
+            )
 
         self.model = AutoModelForSequenceClassification.from_pretrained(
             base_id,
@@ -106,8 +117,8 @@ class ECGPTClassifier:
 
     def apply_peft(
         self,
-        r: int         = 8,
-        alpha: int     = 16,
+        r: int         = 16,
+        alpha: int     = 32,
         dropout: float = 0.05,
         use_dora: bool = False,
     ):
@@ -146,8 +157,8 @@ class ECGPTClassifier:
         X_val: np.ndarray,
         y_val: np.ndarray,
         experiment_name: str = "ecgpt",
-        epochs: int          = 15,
-        lr: float            = 1e-4,
+        epochs: int          = 25,
+        lr: float            = 2e-4,
         batch_size: int      = 16,
         save_dir: str        = "results/",
     ):
