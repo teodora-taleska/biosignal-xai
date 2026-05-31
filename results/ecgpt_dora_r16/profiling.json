@@ -1,0 +1,22 @@
+{
+  "experiment": "ecgpt_dora_r16",
+  "total_time_sec": 443.9,
+  "total_time_human": "7.4min",
+  "avg_epoch_time_sec": 55.5,
+  "epoch_times_sec": [
+    55.53,
+    55.4,
+    56.22,
+    55.14,
+    54.98,
+    54.67,
+    56.45,
+    55.5
+  ],
+  "peak_gpu_memory_mb": 1142.7,
+  "peak_gpu_memory_gb": 1.12,
+  "trainable_params": 621312,
+  "total_params": 125064960,
+  "trainable_pct": 0.5,
+  "checkpoint_size_mb": 2.5
+}

@@ -1,0 +1,25 @@
+{
+  "experiment": "heartbert_dora_r16",
+  "total_time_sec": 5412.3,
+  "total_time_human": "1.5h",
+  "avg_epoch_time_sec": 492.0,
+  "epoch_times_sec": [
+    488.65,
+    492.33,
+    492.66,
+    493.46,
+    493.55,
+    491.65,
+    492.13,
+    491.82,
+    492.1,
+    492.5,
+    491.43
+  ],
+  "peak_gpu_memory_mb": 5694.4,
+  "peak_gpu_memory_gb": 5.56,
+  "trainable_params": 898565,
+  "total_params": 84353290,
+  "trainable_pct": 1.07,
+  "checkpoint_size_mb": 3.61
+}
