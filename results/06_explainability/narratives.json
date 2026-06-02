@@ -8,8 +8,8 @@
       "predicted": [
         "NORM"
       ],
-      "confidence": 0.728,
-      "narrative": "The ECG analysis result indicates a true diagnosis of \"NORM\" with a predicted class of \"NORM\". The confidence score is 0.73, indicating a high level of certainty in the prediction. The classification probabilities for each feature are as follows:\n- Signal uncertainty: Not computed.\n- Top salient leads: Not computed.\n\nThis suggests that the patient's heart rhythm appears to be normal, but further investigation or additional data would be needed to confirm this conclusion. It's important to note that while the prediction is accurate, it does not necessarily mean the patient has no symptoms or conditions associated with their heart rhythm. A thorough evaluation by a healthcare provider is recommended to ensure proper diagnosis and management."
+      "confidence": 0.3412,
+      "narrative": "The ECG analysis result indicates a true diagnosis of \"NORM\" with a predicted class of \"NORM\". The confidence score is 0.34, indicating a high level of certainty in the prediction. The classification probabilities for each feature are as follows:\n- Signal uncertainty: Not computed.\n- Top salient leads: Not computed.\n\nThis suggests that the patient's heart rhythm appears to be normal, but further investigation or additional data would be needed to confirm this conclusion. It's important to note that while the prediction is accurate, it does not necessarily mean the patient has no symptoms or conditions associated with their heart rhythm. A thorough evaluation by a healthcare provider is recommended to ensure proper diagnosis and management."
     },
     {
       "record": "records100/05000/05771_lr",
@@ -17,10 +17,10 @@
         "NORM"
       ],
       "predicted": [
-        "CD"
+        "NORM"
       ],
-      "confidence": 0.7801,
-      "narrative": "The ECG analysis result indicates a false positive in detecting normal heart rhythms. The prediction is based on the presence of a normal heart rhythm, which is not confirmed by the ECG findings. The confidence score is high, indicating a strong likelihood of the predicted class being correct.\n\nThe classification is classified as \"CD\" due to the absence of any abnormality or irregularities in the ECG. This suggests that there may be some underlying cardiac issues, but further investigation is needed to confirm this.\n\nThe signal uncertainty is not calculated because it is not possible to determine the exact location of the detected leads without additional information about the patient's anatomy and physiology. However, the overall accuracy of the prediction is high, suggesting that the model has recognized the presence of normal heart rhythms with a high degree of certainty.\n\nIn summary, the ECG analysis result highlights a false positive for normal heart rhythms, with a high confidence score and low signal uncertainty. Further investigation is required to confirm the presence of underlying cardiac issues."
+      "confidence": 0.4633,
+      "narrative": "The ECG analysis result indicates a false positive in the presence of normal heart rhythm. The predicted class is \"NORM,\" which suggests a normal heart rhythm with no abnormality detected. The confidence score is 0.46, indicating a low level of certainty about the true diagnosis.\n\nThe classification probability for each lead is as follows:\n\n- Signal uncertainty: Not computed\n- Top salient leads: Not computed\n\nThis means there's no clear indication of any abnormalities or conditions present in the ECG data. It's important to note that this type of ECG analysis might be used for diagnostic purposes but should not replace medical evaluation. Further investigation may be necessary to confirm the diagnosis."
     },
     {
       "record": "records100/05000/05916_lr",
@@ -30,8 +30,8 @@
       "predicted": [
         "NORM"
       ],
-      "confidence": 0.9649,
-      "narrative": "The ECG analysis result indicates a true diagnosis of \"NORM\" with a predicted class of \"NORM\". The confidence score is 0.96, indicating high certainty of the prediction. The classification probabilities for each feature are as follows:\n- Signal uncertainty: Not computed\n- Top salient leads: Not computed\n\nThis suggests a normal heart rhythm with no significant abnormalities or features to be considered for further evaluation. It's important to note that this analysis does not provide any specific diagnostic information, but rather provides a general understanding of the ECG findings. For more detailed guidance on cardiac care, consulting with a qualified healthcare provider would be recommended."
+      "confidence": 0.9473,
+      "narrative": "The ECG analysis result indicates a true diagnosis of \"NORM\" with a predicted class of \"NORM\". The confidence score is 0.95, indicating a high level of certainty in the prediction. The class probabilities for each feature are as follows:\n- Signal uncertainty: Not computed\n- Top salient leads: Not computed\n\nThis suggests that there was no significant signal or lead activity detected during the ECG reading, which could be due to various factors such as poor signal quality, presence of artifacts, or insufficient data collection. It's important to note that this type of analysis may not necessarily indicate a definitive diagnosis, as it can still be influenced by other factors like patient history, lifestyle, and environmental exposures. For more accurate diagnoses, further evaluation using specialized diagnostic tools or consulting with a medical professional should be considered."
     }
   ],
   "MI": [
@@ -46,8 +46,8 @@
       "predicted": [
         "STTC"
       ],
-      "confidence": 0.8751,
-      "narrative": "The ECG analysis result indicates a true diagnosis of myocardial infarction (MI). The predicted class is STTC, which suggests there may be an underlying cardiac cause. The confidence score is high at 0.88, indicating a high likelihood of this diagnosis based on the available information. The signal uncertainty is not computed, suggesting that further investigation or validation would be necessary to confirm the diagnosis.\n\nIn terms of top salient leads, no significant leads were identified in this analysis. This could indicate that the patient's heart rhythm was stable during the ECG, but further evaluation might be needed for definitive diagnosis. It's important to note that this analysis does not provide any diagnostic criteria or recommendations for treatment. For a definitive diagnosis, it's recommended to consult with a cardiology specialist who can perform additional tests and make a more informed decision."
+      "confidence": 0.7306,
+      "narrative": "The ECG analysis result indicates an MI, STTC, CD, and HYP in the heart. The predicted class is STTC, which is a common pattern seen in this context. The confidence score is high at 0.73, indicating a strong likelihood of the prediction being correct. The signal uncertainty is not computed, suggesting there may be some variability in the data.\n\nIn terms of classification, the probability for each lead is as follows:\n- True Diagnosis (MI): 0.20%\n- True Diagnosis (STTC): 0.73%\n- True Diagnosis (CD): 0.10%\n- True Diagnosis (HYP): 0.20%\n\nIt's important to note that the accuracy of the prediction depends on the quality of the data used for training the model. If the data is not representative or if any of the leads have been incorrectly classified, the prediction could be incorrect. It's recommended to review the data and consider retraining the model with new data to improve its accuracy."
     },
     {
       "record": "records100/03000/03336_lr",
@@ -57,8 +57,8 @@
       "predicted": [
         "MI"
       ],
-      "confidence": 0.6382,
-      "narrative": "The ECG analysis result indicates a probable myocardial infarction (MI) with a probability of 64%. The predicted class is \"MI\". The confidence score is 0.64, indicating a high likelihood of this outcome. The classification probabilities for MI, STTC, CD, and HYP are all in the normal range. However, the signal uncertainty is not computed due to the lack of data. This suggests that further investigation or additional information may be needed to confirm the diagnosis."
+      "confidence": 0.7676,
+      "narrative": "The ECG analysis result indicates an MI diagnosis with a true positive prediction. The confidence score is high at 0.77, indicating a high likelihood of this diagnosis being correct based on the available data. The predicted class is also accurate, with a probability of 0.77 for MI. The signal uncertainty is not computed, which could indicate some level of noise in the data or potential issues with the model's accuracy.\n\nIn terms of top salient leads, there is no indication of any significant abnormalities or anomalies in the ECG. This suggests that the model performed well in predicting the presence of an MI without any specific information about the lead values. However, it's important to note that this conclusion should be interpreted within the context of the entire dataset and the context of the patient's history and medical condition. Further investigation might be necessary to confirm the diagnosis or rule out other possible causes."
     },
     {
       "record": "records100/18000/18710_lr",
@@ -69,8 +69,8 @@
       "predicted": [
         "CD"
       ],
-      "confidence": 0.9184,
-      "narrative": "The ECG analysis result indicates a patient with a suspected myocardial infarction (MI) and congestive heart failure (CHF). The predicted class is \"CD,\" which aligns with the clinical diagnosis of MI and CHF. The confidence score is high at 0.92, indicating a strong likelihood of the prediction being correct.\n\nHowever, the model does not compute any signal uncertainty or top salient leads for this case. This suggests that further investigation might be necessary to confirm the diagnosis or rule out other potential causes of the symptoms. It's important to consult with a cardiologist for a comprehensive evaluation and management plan."
+      "confidence": 0.8365,
+      "narrative": "The ECG analysis result indicates a probable myocardial infarction (MI) with a probability of 70%. The predicted class is \"CD\", which aligns with the clinical diagnosis. The confidence score is 0.84, indicating high certainty. The signal uncertainty is not calculated due to the lack of computed top salient leads. This suggests a potential for further investigation or follow-up in order to confirm the diagnosis."
     }
   ],
   "STTC": [
@@ -83,10 +83,11 @@
       ],
       "predicted": [
         "MI",
-        "STTC"
+        "STTC",
+        "HYP"
       ],
-      "confidence": 0.7458,
-      "narrative": "The ECG analysis result indicates a patient with suspected myocardial infarction (MI) or severe heart failure (HYP). The predicted class is based on the presence of symptoms such as chest pain, shortness of breath, nausea, and dizziness. The confidence score is high, suggesting a high likelihood of this diagnosis.\n\nThe classification is based on the presence of certain features in the ECG, including an abnormal T wave inversion (STTC) and a normal QRS complex (NORM). However, there is no clear indication of the presence of any specific lead or pattern of leads involved.\n\nThe signal uncertainty is not computed, which means the model cannot accurately predict the exact location of the leads involved in the ECG. This could be due to the complexity of the ECG patterns observed, or it might indicate a need for further investigation or diagnostic testing.\n\nOverall, the prediction is highly uncertain, indicating that further evaluation may be necessary to confirm the diagnosis. It's important for healthcare providers to consider the patient's history, symptoms, and other relevant factors when making a decision about the course"
+      "confidence": 0.8111,
+      "narrative": "The ECG analysis result indicates a patient with suspected myocardial infarction (MI) with ST-segment elevation (STE). The prediction is based on the presence of ST-T changes in the left ventricular hypertrophy (HYP) pattern. The confidence score is high, indicating a strong likelihood of this finding being due to a myocardial infarction. The predicted class is MI, which suggests the presence of an acute myocardial injury. The signal uncertainty is not computed, suggesting there may be some variability in the signal intensity.\n\nIn terms of top salient leads, it's unclear without more context. However, given the severity of the STT changes, it's possible that the lead(s) with the highest signal intensity could be associated with the most severe form of the condition. It's important for further evaluation and management to confirm the diagnosis and consider appropriate treatment options."
     },
     {
       "record": "records100/10000/10517_lr",
@@ -96,8 +97,8 @@
       "predicted": [
         "STTC"
       ],
-      "confidence": 0.6228,
-      "narrative": "The ECG analysis result indicates a true diagnosis of ST-T interval prolongation in a patient with no known underlying cardiac condition. The predicted class is ST-T interval prolongation, which suggests an abnormality in the heart's electrical activity pattern. The confidence score is high at 0.62, indicating a high level of certainty about the accuracy of the prediction. The signal uncertainty is not computed, suggesting there may be some variability in the data due to noise or other factors.\n\nIn terms of classification probabilities, the model assigns a probability of 0.27 for \"ST-T interval prolongation,\" which is slightly higher than the normal range of values. This could indicate a more severe form of the condition, such as arrhythmia or ventricular tachycardia. However, without further information on the specific cause of the arrhythmia, it's difficult to definitively classify the patient's condition.\n\nOverall, this ECG analysis provides valuable insight into the potential underlying causes of the patient's symptoms, but more detailed diagnostic tests and patient history would be necessary to make a definitive diagnosis"
+      "confidence": 0.5818,
+      "narrative": "The ECG analysis result indicates a true diagnosis of ST-T complex heart block with a predicted class as STTC. The confidence score is 0.58, indicating a high level of certainty in the prediction. The classification probability for this condition is NORM:0.32, MI:0.13, STTC:0.58, CD:0.04, and HYP:0.11. There's no significant signal uncertainty detected.\n\nThis suggests that the patient has a potentially life-threatening condition requiring immediate medical attention. It's crucial to perform further diagnostic tests or consult with a cardiologist to confirm the diagnosis and plan appropriate treatment."
     },
     {
       "record": "records100/20000/20753_lr",
@@ -107,8 +108,8 @@
       "predicted": [
         "STTC"
       ],
-      "confidence": 0.5378,
-      "narrative": "The ECG analysis result indicates a true diagnosis of ST-T complex heart block with a predicted class as STTC. The confidence score is high at 0.54, indicating a high likelihood of this finding being correct based on the available data. The classification probability for STTC is 0.54, which suggests a high probability of this finding occurring in patients with ST-T complex heart block.\n\nIn terms of signal uncertainty, there is no computed value provided, suggesting that the prediction was made without any significant signal changes or artifacts. However, it's important to note that this information alone does not definitively confirm the diagnosis, as other factors such as patient history, physical examination findings, or echocardiographic imaging may also influence the diagnosis.\n\nOverall, the clinical interpretation is that the patient's ECG shows a ST-T complex heart block, but further evaluation is needed to confirm this diagnosis. This could be due to various reasons, including underlying cardiac disease, medication use, or other medical conditions. It's crucial to discuss this with the patient and their healthcare provider to determine the best course"
+      "confidence": 0.6277,
+      "narrative": "The ECG analysis result indicates a true diagnosis of ST-T complex heart block with a predicted class of STTC. The confidence score is high at 0.63, indicating a strong prediction accuracy. However, the signal uncertainty is not computed as it's not part of the prediction process.\n\nThis suggests that the model may have made an error in its classification or might be using a different algorithm to predict this type of heart block. It's important for clinicians to review the model's output carefully and consider alternative interpretations if necessary."
     }
   ],
   "CD": [
@@ -121,8 +122,8 @@
       "predicted": [
         "CD"
       ],
-      "confidence": 0.8455,
-      "narrative": "The ECG analysis result indicates a diagnosis of Chronic Myocardial Infarction (MI) with a probability of 0.85. The predicted class is \"CD\" based on the presence of a normal heart rhythm. The confidence score is 0.85 indicating high certainty. The classification probabilities for each lead are not provided in this context. Signal uncertainty is not calculated due to the lack of information about the signal strength or duration. The top salient leads are not computed as they were not part of the analysis. This suggests that further investigation is needed to confirm the diagnosis and determine the underlying cause."
+      "confidence": 0.6754,
+      "narrative": "The ECG analysis result indicates a probable cardiac arrest with a high probability of a myocardial infarction (MI). The predicted class is CD, which suggests the presence of a severe cardiac event. The confidence score is 0.68, indicating a moderate level of certainty in the prediction. The signal uncertainty is not computed, suggesting that there may be some residual information about the heart's activity.\n\nIn terms of top salient leads, it appears that the patient has a history of atrial fibrillation, but this does not necessarily rule out the possibility of other causes for the cardiac arrest. It is important to note that this interpretation is based on the available data and should be interpreted within the context of the patient's medical history and current symptoms. A thorough evaluation by a qualified healthcare provider would be necessary to accurately assess the cause of the cardiac arrest."
     },
     {
       "record": "records100/03000/03486_lr",
@@ -132,10 +133,10 @@
         "HYP"
       ],
       "predicted": [
-        "NORM"
+        "STTC"
       ],
-      "confidence": 0.3888,
-      "narrative": "The ECG analysis result indicates a normal heart rhythm with no signs of arrhythmia or abnormality. The predicted class is \"NORM,\" which suggests a normal heart rhythm. The confidence score is 0.39, indicating moderate to high confidence in the prediction. The class probabilities for each lead are as follows:\n- NORM: 0.39 - This corresponds to a low probability of an abnormal heart rhythm.\n- MI: 0.21 - This represents a slightly higher probability of an abnormal heart rhythm compared to the other leads.\n- STTC: 0.09 - This indicates a lower probability of an abnormal heart rhythm than the other leads.\n- CD: 0.38 - This signifies a moderate probability of an abnormal heart rhythm.\n- HYP: 0.13 - This indicates a very low probability of an abnormal heart rhythm.\n\nIn terms of signal uncertainty, there is no indication of any significant signal anomalies detected. However, it's important to note that this analysis does not include any specific information about the presence of arrhythmias"
+      "confidence": 0.5883,
+      "narrative": "The ECG analysis result indicates a normal heart rhythm with no abnormality or abnormalities detected in the ST segment. The predicted class is \"STTC,\" which suggests a normal heart rhythm without any specific symptoms or signs. The confidence score is 0.59, indicating a moderate level of certainty about the classification.\n\nIn terms of class probabilities, there's a high probability for \"STTC\" at 0.59, followed by \"CD\" at 0.10, \"HYP\" at 0.11, and \"NORM\" at 0.13. This suggests that the majority of the leads have normal electrical activity but may show some variation due to variations in the heart rate or rhythm.\n\nRegarding signal uncertainty, it's not possible to determine the exact values based on this information alone. However, since the confidence score is relatively low, it could indicate that the prediction was made based on limited data or assumptions about the cardiac function.\n\nOverall, the ECG analysis provides a clear indication of normal heart rhythm without any specific findings, suggesting that the patient's"
     },
     {
       "record": "records100/10000/10283_lr",
@@ -145,8 +146,8 @@
       "predicted": [
         "CD"
       ],
-      "confidence": 0.9732,
-      "narrative": "The ECG analysis result indicates a true diagnosis of \"CD\" with a confidence score of 0.97. The predicted class is \"CD\", which aligns with the actual diagnosis. The prediction accuracy is high at 97%, indicating a strong match between the model's predictions and the actual heart rhythm. However, there is no indication of any significant signal uncertainty or top salient leads in this case. This suggests that the cardiac rhythm may be normal or stable, but further evaluation would be needed to confirm the diagnosis."
+      "confidence": 0.9647,
+      "narrative": "The ECG analysis result indicates a false positive diagnosis for a cardiac condition. The prediction is based on the presence of a normal heart rhythm with no discernible abnormality or signal in the leads. The confidence score is high at 0.96, indicating a strong probability of this being a true diagnosis. However, the predicted class is CD, which suggests there may be some confusion between a normal heart rhythm and a cardiac arrhythmia. The confidence score is also low, suggesting there might be some uncertainty about the classification. The top salient leads are not computed due to lack of information. This could indicate that further investigation or additional ECG data would be needed to confirm the diagnosis."
     }
   ],
   "HYP": [
@@ -156,10 +157,10 @@
         "HYP"
       ],
       "predicted": [
-        "MI"
+        "STTC"
       ],
-      "confidence": 0.6543,
-      "narrative": "The ECG analysis result indicates a hypoplastic left heart syndrome (Hyp) with a MI probability of 0.65%. The predicted class is \"MI\" due to the presence of an abnormal ventricular impulse. The confidence score is 0.65, which suggests a high likelihood of this finding being true based on the available information. The signal uncertainty is not computed, indicating there may be some variability in the data. The top salient leads are not computed as they were not part of the analysis. This result supports the hypothesis that the patient has a history of cardiac arrhythmia and requires further evaluation for definitive diagnosis."
+      "confidence": 0.5614,
+      "narrative": "The ECG analysis result indicates a false positive in the classification as \"STTC\" due to the presence of a normal heart rhythm. The prediction is based on the presence of an abnormality in the ST segment, which is typically associated with arrhythmias or cardiac events. The confidence score is 0.56, indicating a moderate level of certainty. The predicted class is \"STTC,\" which suggests that the patient's heart rhythm is normal but may be affected by an abnormality in the ST segment. The signal uncertainty is not computed, suggesting that further investigation is needed for a definitive diagnosis.\n\nIn terms of top salient leads, it appears that there is no significant deviation from the normal pattern observed in the ECG. This could indicate that the patient has a normal heart rhythm without any abnormalities detected. However, further evaluation would be necessary to confirm this conclusion."
     },
     {
       "record": "records100/16000/16061_lr",
@@ -172,8 +173,8 @@
         "STTC",
         "HYP"
       ],
-      "confidence": 0.9388,
-      "narrative": "The ECG analysis result indicates an MI with a high probability of occurrence in this patient. The predicted class is STTC, which suggests there might be some cardiac activity present. The confidence score is 0.94, indicating a high level of certainty about the presence of cardiac activity.\n\nThe prediction for the class \"HYP\" seems to be incorrect based on the information provided. This could indicate a misinterpretation or a misunderstanding of the ECG findings. It's important to note that the accuracy of the prediction depends on the quality of the data used to train the model. If the data is not accurate, the prediction may also be inaccurate.\n\nIn terms of signal uncertainty, it's unclear how much uncertainty there is in the signal due to the lack of computed top salient leads. Without more context, it's difficult to determine if there is any significant signal variability or if the prediction was made based solely on the observed ECG patterns.\n\nOverall, the ECG analysis provides insights into the presence of cardiac activity but does not definitively confirm the diagnosis. Further investigation or confirmation by a healthcare"
+      "confidence": 0.955,
+      "narrative": "The ECG analysis result indicates an MI (myocardial infarction) with ST-T changes and hypokinesia. The predicted class is STTC, which suggests a myocardial infarction. The confidence score is high at 0.95, indicating a high likelihood of this diagnosis based on the ECG findings.\n\nThe classification probability for STTC is 0.95, indicating a high chance of this finding being true. The prediction of hypokinesia is also high at 0.95, suggesting a high risk of this condition occurring.\n\nThe signal uncertainty is not computed, which could be due to the lack of sufficient data or the presence of other conditions that might affect the ECG readings. However, given the high confidence level and the high probability of STTC, it's reasonable to assume that this is likely the case.\n\nOverall, the ECG analysis provides strong evidence for a MI diagnosis, but further investigation is needed to confirm this conclusion. It's important to note that this information should only be interpreted in conjunction with clinical judgment and expert opinion."
     },
     {
       "record": "records100/14000/14201_lr",
@@ -183,10 +184,11 @@
         "HYP"
       ],
       "predicted": [
+        "MI",
         "CD"
       ],
-      "confidence": 0.9649,
-      "narrative": "The ECG analysis result indicates a positive cardiac event with an ST-T wave abnormality, indicating a potential for arrhythmia or ventricular tachycardia. The predicted class is CD, which suggests a diagnosis of symptomatic ventricular tachycardia. The confidence score is high at 0.96, suggesting a high likelihood of this diagnosis based on the current information. The signal uncertainty is not computed, but it's important to note that the presence of a T-wave inversion in the ST segment may indicate a more severe condition requiring further evaluation.\n\nIn terms of top salient leads, there are no specific leads identified in the ECG data. This could be due to the lack of sufficient data or the presence of other relevant factors that might influence the classification. However, if additional information were provided, such as a history of heart disease or a family history of similar conditions, it would be helpful to determine the underlying cause of the arrhythmia."
+      "confidence": 0.6415,
+      "narrative": "The ECG analysis result indicates a patient with a history of hypertension and diabetes mellitus. The ECG shows a normal pattern in ST segment elevation, but there is an increased frequency of QRS complex tachycardia, which could be indicative of a heart rhythm disturbance. The predicted class is for myocardial infarction, with a probability of 0.64. However, the confidence score is low at 0.64, suggesting a high degree of uncertainty in predicting this outcome.\n\nIn terms of signal uncertainty, it's not possible to determine the exact value without further information or testing. The top salient leads are not included in the prediction as they were not observed during the ECG analysis. This suggests that the ECG may have missed some important cardiac events, possibly due to the patient's condition. \n\nOverall, the ECG analysis provides a preliminary diagnosis of a potentially life-threatening condition, but more detailed imaging studies and laboratory tests would be needed to confirm the diagnosis. It's crucial to consult a cardiologist for a proper evaluation and treatment plan."
     }
   ]
 }
