@@ -46,13 +46,18 @@ def render_confidence_gauge(
     line_colors = [_COLOR_TRUE if c in true_set else 'rgba(0,0,0,0)' for c in labels]
     line_widths = [2 if c in true_set else 0 for c in labels]
 
-    # Label shows mean ± std, e.g. "74% ± 3%"
-    text_labels = [
+    # Labels positioned past the whisker tip to avoid overlap
+    _PAD = 0.02
+    text_labels  = [
         f'{v:.0%} ± {e:.0%}' if e > 0 else f'{v:.0%}'
         for v, e in zip(values, errors)
     ]
+    text_x = [v + e + _PAD for v, e in zip(values, errors)]
 
-    fig = go.Figure(go.Bar(
+    fig = go.Figure()
+
+    # Bars (no built-in text — labels are added separately below)
+    fig.add_trace(go.Bar(
         x           = values,
         y           = labels,
         orientation = 'h',
@@ -67,15 +72,26 @@ def render_confidence_gauge(
             thickness = 1.5,
             width     = 6,
         ),
-        text        = text_labels,
-        textposition= 'outside',
+        text        = None,
         hovertemplate='%{y}: %{x:.1%}<extra></extra>',
     ))
 
+    # Invisible scatter to place labels clearly after the whisker
+    fig.add_trace(go.Scatter(
+        x    = text_x,
+        y    = labels,
+        mode = 'text',
+        text = text_labels,
+        textposition = 'middle right',
+        textfont     = dict(size=12, color='#333'),
+        hoverinfo    = 'skip',
+        showlegend   = False,
+    ))
+
     fig.update_layout(
-        xaxis=dict(range=[0, 1.25], tickformat='.0%', showgrid=False),
+        xaxis=dict(range=[0, 1.35], tickformat='.0%', showgrid=False),
         yaxis=dict(autorange='reversed'),
-        margin=dict(l=10, r=60, t=10, b=10),
+        margin=dict(l=10, r=10, t=10, b=10),
         height=height,
         plot_bgcolor='#ffffff',
         paper_bgcolor='#ffffff',
