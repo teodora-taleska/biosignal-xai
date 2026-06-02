@@ -170,11 +170,12 @@ def render() -> None:
                 if conf_std > 0 else f"{conf_val:.0%}"
             )
 
-            info_col, metric_col = st.columns([1, 6])
+            metric_col, gap_col, info_col = st.columns([4, 1, 1])
             with metric_col:
                 st.metric('Confidence', conf_label)
             with info_col:
-                with st.popover('ℹ', use_container_width=True):
+                st.markdown('<div style="margin-top:28px;"></div>', unsafe_allow_html=True)
+                with st.popover('ℹ️', use_container_width=True):
                     st.markdown(
                         '**What does this confidence score mean?**\n\n'
                         'The percentage shows how strongly the model believes '
