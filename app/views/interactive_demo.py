@@ -170,34 +170,29 @@ def render() -> None:
                 if conf_std > 0 else f"{conf_val:.0%}"
             )
 
-            metric_col, gap_col, info_col = st.columns([4, 1, 1])
-            with metric_col:
-                st.metric('Confidence', conf_label)
-            with info_col:
-                st.markdown('<div style="margin-top:28px;"></div>', unsafe_allow_html=True)
-                with st.popover('ⓘ', use_container_width=True):
-                    st.markdown(
-                        '**What does this confidence score mean?**\n\n'
-                        'The percentage shows how strongly the model believes '
-                        'in its top prediction based on a single analysis of the ECG.\n\n'
-                        'The **± figure** tells you how *stable* that answer is. '
-                        'We run the same analysis 20 times with very small random '
-                        'variations added to the signal, similar to the natural '
-                        'noise present in any real ECG recording. '
-                        'The ± shows how much the result changed across those 20 runs.\n\n'
-                        '**How to read it:**\n'
-                        '- **87% ± 2%**: High confidence, very stable. '
-                        'The model gives the same answer consistently. '
-                        'The true likelihood is reliably in the 85–89% range.\n'
-                        '- **87% ± 15%**: High raw score, but unstable. '
-                        'Small signal changes shift the answer noticeably. '
-                        'Clinical review is recommended before acting on this result.\n'
-                        '- **52% ± 3%**: Low confidence, stable. '
-                        'The model is consistently uncertain, the signal may not '
-                        'contain clear enough features to classify.\n\n'
-                        '*This tool is for research purposes only and does not '
-                        'replace clinical judgement.*'
-                    )
+            st.metric(
+                'Confidence',
+                conf_label,
+                help=(
+                    'The percentage shows how strongly the model believes in its top '
+                    'prediction based on a single analysis of the ECG.\n\n'
+                    'The ± figure tells you how stable that answer is. '
+                    'The same analysis is run 20 times with very small random variations '
+                    'added to the signal — similar to the natural noise in any real ECG. '
+                    'The ± shows how much the result changed across those 20 runs.\n\n'
+                    'How to read it:\n'
+                    '• 87% ± 2% — High confidence, very stable. '
+                    'The model gives the same answer consistently.\n'
+                    '• 87% ± 15% — High raw score, but unstable. '
+                    'Small signal changes shift the answer noticeably. '
+                    'Clinical review is recommended.\n'
+                    '• 52% ± 3% — Low confidence, stable. '
+                    'The model is consistently uncertain — the signal may lack '
+                    'clear discriminating features.\n\n'
+                    'This tool is for research purposes only and does not replace '
+                    'clinical judgement.'
+                ),
+            )
 
             true_classes = rec.get('superclass', [])
             correct = set(pred['predicted_classes']) == set(true_classes)
