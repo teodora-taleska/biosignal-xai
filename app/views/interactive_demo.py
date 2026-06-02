@@ -175,7 +175,10 @@ def render() -> None:
                 st.metric('Confidence', conf_label)
             with info_col:
                 st.markdown('<div style="margin-top:28px;"></div>', unsafe_allow_html=True)
-                with st.popover('ℹ️', use_container_width=True):
+                with st.popover(
+                    _icon('info', 20),
+                    use_container_width=True,
+                ):
                     st.markdown(
                         '**What does this confidence score mean?**\n\n'
                         'The percentage shows how strongly the model believes '
