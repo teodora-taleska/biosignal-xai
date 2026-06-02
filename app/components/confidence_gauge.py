@@ -27,7 +27,7 @@ def render_confidence_gauge(
     key: str = 'confidence_gauge',
 ) -> None:
     """
-    Render a horizontal bar chart of class probabilities.
+    Render a horizontal bar chart of class probabilities with ± uncertainty bars.
 
     Args:
         result:       prediction dict from app.model.predict()
@@ -37,14 +37,20 @@ def render_confidence_gauge(
     probs      = result['class_probabilities']
     predicted  = set(result['predicted_classes'])
     true_set   = set(true_classes or [])
+    stds       = result.get('uncertainty_per_class', {})
 
-    labels  = SUPERCLASSES
-    values  = [probs[c] for c in labels]
-    colors  = [_COLOR_HIGH if c in predicted else _COLOR_LOW for c in labels]
-
-    # Marker line highlights ground-truth bars
+    labels      = SUPERCLASSES
+    values      = [probs[c] for c in labels]
+    errors      = [stds.get(c, 0.0) for c in labels]
+    colors      = [_COLOR_HIGH if c in predicted else _COLOR_LOW for c in labels]
     line_colors = [_COLOR_TRUE if c in true_set else 'rgba(0,0,0,0)' for c in labels]
     line_widths = [2 if c in true_set else 0 for c in labels]
+
+    # Label shows mean ± std, e.g. "74% ± 3%"
+    text_labels = [
+        f'{v:.0%} ± {e:.0%}' if e > 0 else f'{v:.0%}'
+        for v, e in zip(values, errors)
+    ]
 
     fig = go.Figure(go.Bar(
         x           = values,
@@ -53,15 +59,23 @@ def render_confidence_gauge(
         marker_color      = colors,
         marker_line_color = line_colors,
         marker_line_width = line_widths,
-        text        = [f'{v:.0%}' for v in values],
+        error_x = dict(
+            type      = 'data',
+            array     = errors,
+            visible   = any(e > 0 for e in errors),
+            color     = '#555',
+            thickness = 1.5,
+            width     = 6,
+        ),
+        text        = text_labels,
         textposition= 'outside',
         hovertemplate='%{y}: %{x:.1%}<extra></extra>',
     ))
 
     fig.update_layout(
-        xaxis=dict(range=[0, 1.15], tickformat='.0%', showgrid=False),
+        xaxis=dict(range=[0, 1.25], tickformat='.0%', showgrid=False),
         yaxis=dict(autorange='reversed'),
-        margin=dict(l=10, r=50, t=10, b=10),
+        margin=dict(l=10, r=60, t=10, b=10),
         height=height,
         plot_bgcolor='#ffffff',
         paper_bgcolor='#ffffff',
@@ -74,4 +88,7 @@ def render_confidence_gauge(
     if true_set:
         st.caption(
             f'🟦 Predicted  ·  🟩 Ground truth: {", ".join(sorted(true_set))}'
+            '  ·  Error bars show ± stability under signal noise (20 passes)'
         )
+    else:
+        st.caption('Error bars show ± stability under signal noise (20 passes)')

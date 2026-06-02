@@ -159,7 +159,44 @@ def render() -> None:
                     unsafe_allow_html=True,
                 )
             st.markdown('')
-            st.metric('Confidence', f"{pred['confidence_score']:.0%}")
+
+            # Confidence score with ± stability range
+            top_cls   = pred['predicted_classes'][0] if pred['predicted_classes'] else None
+            unc_pc    = pred.get('uncertainty_per_class', {})
+            conf_std  = unc_pc.get(top_cls, 0.0) if top_cls else 0.0
+            conf_val  = pred['confidence_score']
+            conf_label = (
+                f"{conf_val:.0%} ± {conf_std:.0%}"
+                if conf_std > 0 else f"{conf_val:.0%}"
+            )
+
+            info_col, metric_col = st.columns([1, 6])
+            with metric_col:
+                st.metric('Confidence', conf_label)
+            with info_col:
+                with st.popover('ℹ', use_container_width=True):
+                    st.markdown(
+                        '**What does this confidence score mean?**\n\n'
+                        'The percentage shows how strongly the model believes '
+                        'in its top prediction based on a single analysis of the ECG.\n\n'
+                        'The **± figure** tells you how *stable* that answer is. '
+                        'We run the same analysis 20 times with very small random '
+                        'variations added to the signal — similar to the natural '
+                        'noise present in any real ECG recording. '
+                        'The ± shows how much the result changed across those 20 runs.\n\n'
+                        '**How to read it:**\n'
+                        '- **87% ± 2%** — High confidence, very stable. '
+                        'The model gives the same answer consistently. '
+                        'The true likelihood is reliably in the 85–89% range.\n'
+                        '- **87% ± 15%** — High raw score, but unstable. '
+                        'Small signal changes shift the answer noticeably. '
+                        'Clinical review is recommended before acting on this result.\n'
+                        '- **52% ± 3%** — Low confidence, stable. '
+                        'The model is consistently uncertain — the signal may not '
+                        'contain clear enough features to classify.\n\n'
+                        '*This tool is for research purposes only and does not '
+                        'replace clinical judgement.*'
+                    )
 
             true_classes = rec.get('superclass', [])
             correct = set(pred['predicted_classes']) == set(true_classes)
