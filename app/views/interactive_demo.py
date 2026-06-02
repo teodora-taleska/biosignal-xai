@@ -173,25 +173,25 @@ def render() -> None:
             st.metric(
                 'Confidence',
                 conf_label,
-                help=(
+                help='\n\n'.join([
                     'The percentage shows how strongly the model believes in its top '
-                    'prediction based on a single analysis of the ECG.\n\n'
+                    'prediction based on a single analysis of the ECG.',
                     'The ± figure tells you how stable that answer is. '
                     'The same analysis is run 20 times with very small random variations '
                     'added to the signal, similar to the natural noise in any real ECG. '
-                    'The ± shows how much the result changed across those 20 runs.\n\n'
-                    'How to read it:\n'
+                    'The ± shows how much the result changed across those 20 runs.',
+                    'How to read it:',
                     '• 87% ± 2%: High confidence, very stable. '
-                    'The model gives the same answer consistently.\n'
+                    'The model gives the same answer consistently.',
                     '• 87% ± 15%: High raw score, but unstable. '
                     'Small signal changes shift the answer noticeably. '
-                    'Clinical review is recommended.\n'
+                    'Clinical review is recommended.',
                     '• 52% ± 3%: Low confidence, stable. '
                     'The model is consistently uncertain, the signal may lack '
-                    'clear discriminating features.\n\n'
+                    'clear discriminating features.',
                     'This tool is for research purposes only and does not replace '
-                    'clinical judgement.'
-                ),
+                    'clinical judgement.',
+                ]),
             )
 
             true_classes = rec.get('superclass', [])
