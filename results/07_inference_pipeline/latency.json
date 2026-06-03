@@ -2,10 +2,10 @@
   "benchmark": {
     "n_runs": 50,
     "device": "cuda",
-    "latency_ms_mean": 13.697,
-    "latency_ms_median": 13.44,
-    "latency_ms_p95": 16.538,
-    "throughput_per_sec": 74.4
+    "latency_ms_mean": 15.639,
+    "latency_ms_median": 14.301,
+    "latency_ms_p95": 23.879,
+    "throughput_per_sec": 69.9
   },
   "n_records": 20,
   "sample_results": [

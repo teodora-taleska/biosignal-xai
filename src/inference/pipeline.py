@@ -101,6 +101,43 @@ class ECGInferencePipeline:
         """Run predict() on a list of signals. Returns list of result dicts."""
         return [self.predict(s) for s in signals]
 
+    def benchmark(
+        self,
+        signals: list,
+        n_warmup: int = 5,
+        n_runs:   int = 50,
+    ) -> dict:
+        """
+        Measure end-to-end wall-clock latency per record (preprocessing + inference).
+
+        Returns dict with keys:
+            n_runs, device, latency_ms_mean, latency_ms_median,
+            latency_ms_p95, throughput_per_sec
+        """
+        import time
+        n = len(signals)
+
+        for i in range(n_warmup):
+            self.predict(signals[i % n])
+
+        times = []
+        for i in range(n_runs):
+            sig = signals[i % n]
+            t0  = time.perf_counter()
+            self.predict(sig)
+            times.append((time.perf_counter() - t0) * 1000)
+
+        times  = np.array(times)
+        median = float(np.median(times))
+        return {
+            'n_runs':             n_runs,
+            'device':             str(self.device),
+            'latency_ms_mean':    round(float(np.mean(times)),            3),
+            'latency_ms_median':  round(median,                           3),
+            'latency_ms_p95':     round(float(np.percentile(times, 95)), 3),
+            'throughput_per_sec': round(1000 / median,                    1),
+        }
+
     @staticmethod
     def _uncertainty_level(uncertainty: Optional[float]) -> str:
         """
@@ -216,6 +253,100 @@ class HeartBERTPipeline:
             t0  = time.perf_counter()
             self.predict(sig)
             times.append((time.perf_counter() - t0) * 1000)    # ms
+
+        times  = np.array(times)
+        median = float(np.median(times))
+        return {
+            'n_runs':             n_runs,
+            'device':             str(self.classifier.device),
+            'latency_ms_mean':    round(float(np.mean(times)),            3),
+            'latency_ms_median':  round(median,                           3),
+            'latency_ms_p95':     round(float(np.percentile(times, 95)), 3),
+            'throughput_per_sec': round(1000 / median,                    1),
+        }
+
+
+class ECGPTPipeline:
+    """
+    Inference pipeline for ECG-PT LoRA on PTB-XL 5-class classification.
+
+    Wraps an ECGPTClassifier and exposes the same predict() / benchmark() dict
+    interface as HeartBERTPipeline. Lead II is extracted and patch-tokenised
+    internally by the classifier, so this pipeline accepts the same raw
+    (1000, 12) or (12, 1000) signals as the other pipelines.
+
+    Usage
+    -----
+    pipeline = ECGPTPipeline(loaded_ecgpt_classifier)
+    result   = pipeline.predict(signal_np)
+    report   = pipeline.benchmark(signals, n_warmup=5, n_runs=50)
+    """
+
+    def __init__(self, classifier):
+        self.classifier = classifier
+        self.threshold  = CFG['inference']['threshold']
+
+    def predict(self, signal: np.ndarray) -> dict:
+        """
+        Run inference on a single ECG record.
+
+        Args:
+            signal: (12, 1000), (1000, 12), or (1000,) float32 numpy array.
+                    (1000, 12) is transposed to (12, 1000) automatically.
+                    Lead II (row index 1) is extracted and patch-tokenised.
+
+        Returns dict with keys:
+            predicted_classes, class_probabilities, confidence_score,
+            uncertainty (always None), raw_logits, uncertainty_level
+        """
+        if signal.shape == (1000, 12):
+            signal = signal.T          # -> (12, 1000)
+        if signal.ndim == 2:
+            signal = signal[1]         # Lead II, shape (1000,)
+
+        logits = self.classifier.predict_logits(signal[np.newaxis])   # (1, 5)
+        probs  = torch.sigmoid(torch.tensor(logits[0]))               # (5,)
+
+        thresholds = getattr(self, 'thresholds', None) or [self.threshold] * len(SUPERCLASSES)
+        predicted = [
+            SUPERCLASSES[i]
+            for i, p in enumerate(probs)
+            if p.item() >= thresholds[i]
+        ]
+        if not predicted:
+            predicted = [SUPERCLASSES[probs.argmax().item()]]
+
+        return {
+            'predicted_classes':   predicted,
+            'class_probabilities': {
+                c: round(probs[i].item(), 4)
+                for i, c in enumerate(SUPERCLASSES)
+            },
+            'confidence_score':    round(probs.max().item(), 4),
+            'uncertainty':         None,
+            'raw_logits':          logits[0].tolist(),
+            'uncertainty_level':   'N/A (deterministic model)',
+        }
+
+    def benchmark(
+        self,
+        signals: list,
+        n_warmup: int = 5,
+        n_runs:   int = 50,
+    ) -> dict:
+        """Measure end-to-end latency (Lead II extraction + tokenisation + inference)."""
+        import time
+        n = len(signals)
+
+        for i in range(n_warmup):
+            self.predict(signals[i % n])
+
+        times = []
+        for i in range(n_runs):
+            sig = signals[i % n]
+            t0  = time.perf_counter()
+            self.predict(sig)
+            times.append((time.perf_counter() - t0) * 1000)
 
         times  = np.array(times)
         median = float(np.median(times))
