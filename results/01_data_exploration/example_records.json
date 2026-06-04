@@ -1,32 +1,34 @@
 {
   "NORM": {
-    "ecg_id": 1,
-    "filename_lr": "records100/00000/00001_lr",
-    "strat_fold": 3,
-    "age": 56.0,
-    "sex": "F",
+    "ecg_id": 3740,
+    "filename_lr": "records100/03000/03740_lr",
+    "strat_fold": 10,
+    "age": 23.0,
+    "sex": "M",
     "scp_codes": {
-      "NORM": 100.0,
-      "LVOLT": 0.0,
+      "NORM": 80.0,
+      "IRBBB": 100.0,
       "SR": 0.0
     }
   },
   "MI": {
-    "ecg_id": 177,
-    "filename_lr": "records100/00000/00177_lr",
-    "strat_fold": 4,
-    "age": 73.0,
-    "sex": "M",
+    "ecg_id": 16225,
+    "filename_lr": "records100/16000/16225_lr",
+    "strat_fold": 10,
+    "age": 66.0,
+    "sex": "F",
     "scp_codes": {
-      "ASMI": 100.0,
+      "IMI": 50.0,
+      "ASMI": 50.0,
+      "ABQRS": 0.0,
       "SR": 0.0
     }
   },
   "STTC": {
-    "ecg_id": 22,
-    "filename_lr": "records100/00000/00022_lr",
-    "strat_fold": 4,
-    "age": 17.0,
+    "ecg_id": 8834,
+    "filename_lr": "records100/08000/08834_lr",
+    "strat_fold": 10,
+    "age": 56.0,
     "sex": "F",
     "scp_codes": {
       "NDT": 100.0,
@@ -34,25 +36,25 @@
     }
   },
   "CD": {
-    "ecg_id": 32,
-    "filename_lr": "records100/00000/00032_lr",
-    "strat_fold": 1,
-    "age": 18.0,
+    "ecg_id": 3699,
+    "filename_lr": "records100/03000/03699_lr",
+    "strat_fold": 10,
+    "age": 76.0,
     "sex": "M",
     "scp_codes": {
-      "LPFB": 100.0,
+      "LAFB": 100.0,
       "SR": 0.0
     }
   },
   "HYP": {
-    "ecg_id": 30,
-    "filename_lr": "records100/00000/00030_lr",
-    "strat_fold": 9,
-    "age": 25.0,
-    "sex": "M",
+    "ecg_id": 534,
+    "filename_lr": "records100/00000/00534_lr",
+    "strat_fold": 10,
+    "age": 80.0,
+    "sex": "F",
     "scp_codes": {
-      "LVH": 100.0,
-      "SR": 0.0
+      "ISC_": 100.0,
+      "LVH": 100.0
     }
   }
 }
