@@ -1,0 +1,54 @@
+{
+  "baselines": [
+    {
+      "Model": "HeartBERT",
+      "Preprocessing": "Raw",
+      "pos_weight": "\u2717",
+      "AUC": 0.82,
+      "Fmax": 0.594,
+      "Params": 889000
+    },
+    {
+      "Model": "ECG-PT",
+      "Preprocessing": "Raw",
+      "pos_weight": "\u2717",
+      "AUC": 0.619,
+      "Fmax": 0.412,
+      "Params": 299000
+    },
+    {
+      "Model": "HuBERT-ECG",
+      "Preprocessing": "Raw",
+      "pos_weight": "\u2717",
+      "AUC": 0.549,
+      "Fmax": 0.399,
+      "Params": 295000
+    }
+  ],
+  "new": [
+    {
+      "Model": "HeartBERT",
+      "Preprocessing": "Bandpass + z-score",
+      "pos_weight": "\u2713",
+      "AUC": 0.773989189635523,
+      "Fmax": 0.5386351251876614,
+      "Params": 741893
+    },
+    {
+      "Model": "ECG-PT",
+      "Preprocessing": "Bandpass only",
+      "pos_weight": "\u2713",
+      "AUC": 0.6228131022088526,
+      "Fmax": 0.4390905548435324,
+      "Params": 298752
+    },
+    {
+      "Model": "HuBERT-ECG",
+      "Preprocessing": "Bandpass + per-lead z-score",
+      "pos_weight": "\u2713",
+      "AUC": 0.5718457433041375,
+      "Fmax": 0.40398454292607544,
+      "Params": 442368
+    }
+  ]
+}

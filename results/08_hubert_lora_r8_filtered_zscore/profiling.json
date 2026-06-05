@@ -1,0 +1,24 @@
+{
+  "experiment": "08_hubert_lora_r8_filtered_zscore",
+  "total_time_sec": 5590.7,
+  "total_time_human": "1.6h",
+  "avg_epoch_time_sec": 559.1,
+  "epoch_times_sec": [
+    620.94,
+    633.88,
+    693.04,
+    551.83,
+    382.28,
+    394.45,
+    499.86,
+    553.2,
+    680.2,
+    581.03
+  ],
+  "peak_gpu_memory_mb": 1546.7,
+  "peak_gpu_memory_gb": 1.51,
+  "trainable_params": 442368,
+  "total_params": 93571461,
+  "trainable_pct": 0.47,
+  "checkpoint_size_mb": 1.79
+}
