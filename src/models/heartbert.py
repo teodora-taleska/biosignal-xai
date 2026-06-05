@@ -12,6 +12,7 @@ from pathlib import Path
 
 import numpy as np
 import torch
+import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 from peft import get_peft_model, LoraConfig, TaskType
@@ -187,6 +188,7 @@ class HeartBERTClassifier:
         lr: float            = 2e-4,
         batch_size: int      = 16,
         patience: int        = 2,
+        pos_weight           = None,
         save_dir: str        = "results/",
     ):
         """
@@ -239,6 +241,12 @@ class HeartBERTClassifier:
         print(f" Trainable  : {p['trainable']:,}  ({p['percentage']})")
         print(f"{'='*60}\n")
 
+        # Use weighted loss when pos_weight is provided, else model's internal loss
+        criterion = (
+            nn.BCEWithLogitsLoss(pos_weight=pos_weight.to(self.device))
+            if pos_weight is not None else None
+        )
+
         profiler.start()
         best_auc, history = 0.0, []
         epochs_no_improve = 0
@@ -253,7 +261,11 @@ class HeartBERTClassifier:
                     ids.to(self.device), mask.to(self.device), labels.to(self.device)
                 )
                 optimizer.zero_grad()
-                loss = self.model(input_ids=ids, attention_mask=mask, labels=labels).loss
+                if criterion is not None:
+                    out  = self.model(input_ids=ids, attention_mask=mask)
+                    loss = criterion(out.logits, labels)
+                else:
+                    loss = self.model(input_ids=ids, attention_mask=mask, labels=labels).loss
                 loss.backward()
                 optimizer.step()
                 total_loss += loss.item()
@@ -266,8 +278,13 @@ class HeartBERTClassifier:
                     ids, mask, labels = (
                         ids.to(self.device), mask.to(self.device), labels.to(self.device)
                     )
-                    out = self.model(input_ids=ids, attention_mask=mask, labels=labels)
-                    val_loss += out.loss.item()
+                    out = self.model(input_ids=ids, attention_mask=mask)
+                    if criterion is not None:
+                        val_loss += criterion(out.logits, labels).item()
+                    else:
+                        val_loss += self.model(
+                            input_ids=ids, attention_mask=mask, labels=labels
+                        ).loss.item()
                     val_logits_list.append(out.logits.cpu())
                     val_labels_list.append(labels.cpu())
 

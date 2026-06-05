@@ -23,12 +23,13 @@ def run_peft_experiment(
     train_ds,
     val_ds,
     experiment_name: str,
-    epochs: int      = 25,
-    lr: float        = 1e-4,
-    batch_size: int  = 32,
-    patience: int    = 2,
-    save_dir: str    = "results/",
-    num_workers: int = 0,
+    epochs: int           = 25,
+    lr: float             = 1e-4,
+    batch_size: int       = 32,
+    patience: int         = 2,
+    pos_weight            = None,
+    save_dir: str         = "results/",
+    num_workers: int      = 0,
 ):
     """
     Training loop for PEFT models that accept (B, 12, 1000) float32 tensors.
@@ -42,6 +43,7 @@ def run_peft_experiment(
     lr              : AdamW learning rate
     batch_size      : samples per gradient step (keep ≤ 32 for 8 GB VRAM)
     patience        : early stopping — halt if val AUC hasn't improved for N epochs
+    pos_weight      : optional (5,) tensor of per-class positive weights for BCEWithLogitsLoss
     save_dir        : parent directory for results
     num_workers     : DataLoader workers (0 on Windows)
 
@@ -62,7 +64,9 @@ def run_peft_experiment(
         val_ds,   batch_size=batch_size, shuffle=False, num_workers=num_workers
     )
 
-    criterion = nn.BCEWithLogitsLoss()
+    criterion = nn.BCEWithLogitsLoss(
+        pos_weight=pos_weight.to(device) if pos_weight is not None else None
+    )
     optimizer = torch.optim.AdamW(
         filter(lambda p: p.requires_grad, model.parameters()),
         lr=lr, weight_decay=0.01,

@@ -8,6 +8,12 @@ from src.utils.config import CFG
 # The five PTB-XL diagnostic superclasses — order matches the label vector
 SUPERCLASSES = CFG['data']['superclasses']  # ['NORM', 'MI', 'STTC', 'CD', 'HYP']
 
+# Per-class positive weights for BCEWithLogitsLoss, proportional to the
+# negative-to-positive ratio in the PTB-XL training set (folds 1-8).
+# NORM: 44.5 %  MI: 25.6 %  STTC: 23.9 %  CD: 22.9 %  HYP: 12.4 %
+import torch as _torch
+DEFAULT_POS_WEIGHT = _torch.tensor([1.0, 1.74, 1.82, 1.94, 3.59])
+
 # Map from SCP-ECG diagnostic_class strings (as they appear in scp_statements.csv)
 # to our canonical superclass abbreviations.
 _DIAG_CLASS_MAP = {

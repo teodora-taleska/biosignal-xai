@@ -3,6 +3,10 @@ from scipy.signal import butter, filtfilt
 
 from src.utils.config import CFG
 
+
+# ── Pre-computed filter coefficients for 0.5-40 Hz at 100 Hz ─────────────────
+_B4, _A4 = butter(4, [0.5 / 50.0, 40.0 / 50.0], btype='band')
+
 def bandpass_filter(signal, lowcut=0.5, highcut=40.0, fs=100, order=4):
     """
     Remove baseline wander (below 0.5 Hz) and high-frequency noise (above 40 Hz).
@@ -76,6 +80,45 @@ def create_windows(signal, window_size=CFG['data']['window_size'], stride=CFG['d
         windows.append(signal[start : start + window_size])
         start += stride
     return windows  # typically 7 windows per 10-second record
+
+
+def zscore_1d(signal: np.ndarray) -> np.ndarray:
+    """Z-score normalise a single 1-D signal to mean=0, std=1."""
+    std = signal.std()
+    return ((signal - signal.mean()) / (std if std > 1e-8 else 1.0)).astype(np.float32)
+
+
+def preprocess_batch_1d(
+    X: np.ndarray,
+    do_filter: bool = True,
+    normalise: str  = 'zscore',
+) -> np.ndarray:
+    """
+    Preprocess a batch of 1-D single-lead ECG signals for text-based models
+    (HeartBERT, ECG-PT).
+
+    Parameters
+    ----------
+    X         : (N, T) float32 — batch of single-lead signals
+    do_filter : apply 4th-order Butterworth bandpass (0.5–40 Hz)
+    normalise : 'zscore' | 'minmax' | 'none'
+
+    Returns
+    -------
+    (N, T) float32
+    """
+    out = np.empty_like(X, dtype=np.float32)
+    for i, sig in enumerate(X):
+        s = sig.astype(np.float64)
+        if do_filter:
+            s = filtfilt(_B4, _A4, s)
+        if normalise == 'zscore':
+            s = zscore_1d(s)
+        elif normalise == 'minmax':
+            rng = s.max() - s.min()
+            s = ((s - s.min()) / (rng if rng > 1e-8 else 1.0))
+        out[i] = s.astype(np.float32)
+    return out
 
 
 def preprocess_record(signal):
